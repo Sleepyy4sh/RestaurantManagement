@@ -1,0 +1,10 @@
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.formMain.resources
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.cache
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CoreCompileInputs.cache
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
+G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
