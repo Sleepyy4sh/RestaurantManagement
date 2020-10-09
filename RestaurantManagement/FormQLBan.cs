@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace RestaurantManagement
 {
-    public partial class formMain : Form
+    public partial class FormQLBan : Form
     {
-        public formMain()
+        public FormQLBan()
         {
             InitializeComponent();
+        }
+
+        private void btSignout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formLogin = new FormLogin();
+            formLogin.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagement
 {
-    partial class formMain
+    partial class FormQLBan
     {
         /// <summary>
         /// Required designer variable.
@@ -92,8 +92,9 @@
             this.btSignout.TabIndex = 5;
             this.btSignout.Text = "Đăng xuất";
             this.btSignout.UseVisualStyleBackColor = true;
+            this.btSignout.Click += new System.EventHandler(this.btSignout_Click);
             // 
-            // formMain
+            // FormQLBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,8 +106,8 @@
             this.Controls.Add(this.btQLBan);
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.btQLMenu);
-            this.Name = "formMain";
-            this.Text = "Restaurant Management";
+            this.Name = "FormQLBan";
+            this.Text = "Quản lý bàn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
