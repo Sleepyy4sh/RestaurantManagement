@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagement
 {
-    partial class formMain
+    partial class FormQLBan
     {
         /// <summary>
         /// Required designer variable.
@@ -33,11 +33,12 @@
             this.btQLBan = new System.Windows.Forms.Button();
             this.btQLNhanvien = new System.Windows.Forms.Button();
             this.btThongke = new System.Windows.Forms.Button();
+            this.btSignout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btQLMenu
             // 
-            this.btQLMenu.Location = new System.Drawing.Point(12, 213);
+            this.btQLMenu.Location = new System.Drawing.Point(11, 179);
             this.btQLMenu.Name = "btQLMenu";
             this.btQLMenu.Size = new System.Drawing.Size(109, 55);
             this.btQLMenu.TabIndex = 0;
@@ -58,7 +59,7 @@
             // 
             // btQLBan
             // 
-            this.btQLBan.Location = new System.Drawing.Point(10, 139);
+            this.btQLBan.Location = new System.Drawing.Point(10, 118);
             this.btQLBan.Name = "btQLBan";
             this.btQLBan.Size = new System.Drawing.Size(110, 55);
             this.btQLBan.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btQLNhanvien
             // 
-            this.btQLNhanvien.Location = new System.Drawing.Point(12, 285);
+            this.btQLNhanvien.Location = new System.Drawing.Point(12, 240);
             this.btQLNhanvien.Name = "btQLNhanvien";
             this.btQLNhanvien.Size = new System.Drawing.Size(109, 55);
             this.btQLNhanvien.TabIndex = 3;
@@ -76,26 +77,37 @@
             // 
             // btThongke
             // 
-            this.btThongke.Location = new System.Drawing.Point(12, 359);
+            this.btThongke.Location = new System.Drawing.Point(12, 301);
             this.btThongke.Name = "btThongke";
             this.btThongke.Size = new System.Drawing.Size(109, 55);
             this.btThongke.TabIndex = 4;
             this.btThongke.Text = "Thống kê doanh thu";
             this.btThongke.UseVisualStyleBackColor = true;
             // 
-            // formMain
+            // btSignout
+            // 
+            this.btSignout.Location = new System.Drawing.Point(12, 362);
+            this.btSignout.Name = "btSignout";
+            this.btSignout.Size = new System.Drawing.Size(109, 55);
+            this.btSignout.TabIndex = 5;
+            this.btSignout.Text = "Đăng xuất";
+            this.btSignout.UseVisualStyleBackColor = true;
+            this.btSignout.Click += new System.EventHandler(this.btSignout_Click);
+            // 
+            // FormQLBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btSignout);
             this.Controls.Add(this.btThongke);
             this.Controls.Add(this.btQLNhanvien);
             this.Controls.Add(this.btQLBan);
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.btQLMenu);
-            this.Name = "formMain";
-            this.Text = "Restaurant Management";
+            this.Name = "FormQLBan";
+            this.Text = "Quản lý bàn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button btQLBan;
         private System.Windows.Forms.Button btQLNhanvien;
         private System.Windows.Forms.Button btThongke;
+        private System.Windows.Forms.Button btSignout;
     }
 }
 
