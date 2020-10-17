@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignupMaster));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tbRepassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btExit = new System.Windows.Forms.Button();
             this.btSignup = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btExit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbRepassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,15 +67,66 @@
             this.panel1.Size = new System.Drawing.Size(958, 529);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // tbRepassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.label1.Location = new System.Drawing.Point(311, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng ký nhà hàng mới";
+            this.tbRepassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.tbRepassword.Location = new System.Drawing.Point(404, 337);
+            this.tbRepassword.Name = "tbRepassword";
+            this.tbRepassword.Size = new System.Drawing.Size(402, 38);
+            this.tbRepassword.TabIndex = 12;
+            this.tbRepassword.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label2.Location = new System.Drawing.Point(62, 339);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(253, 36);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Nhập lại mật khẩu";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(20, 452);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(73, 53);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(809, 26);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(108, 81);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 15;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btExit
+            // 
+            this.btExit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btExit.Location = new System.Drawing.Point(499, 409);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(145, 55);
+            this.btExit.TabIndex = 14;
+            this.btExit.Text = "Thoát";
+            this.btExit.UseVisualStyleBackColor = false;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btSignup
             // 
@@ -84,7 +135,7 @@
             this.btSignup.Location = new System.Drawing.Point(661, 409);
             this.btSignup.Name = "btSignup";
             this.btSignup.Size = new System.Drawing.Size(145, 55);
-            this.btSignup.TabIndex = 12;
+            this.btSignup.TabIndex = 13;
             this.btSignup.Text = "Đăng ký";
             this.btSignup.UseVisualStyleBackColor = false;
             this.btSignup.Click += new System.EventHandler(this.btSignup_Click);
@@ -126,66 +177,15 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Tài khoản";
             // 
-            // btExit
+            // label1
             // 
-            this.btExit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btExit.Location = new System.Drawing.Point(499, 409);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(145, 55);
-            this.btExit.TabIndex = 13;
-            this.btExit.Text = "Thoát";
-            this.btExit.UseVisualStyleBackColor = false;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(809, 26);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(108, 81);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(20, 452);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(73, 53);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label2.Location = new System.Drawing.Point(62, 339);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 36);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Nhập lại mật khẩu";
-            // 
-            // tbRepassword
-            // 
-            this.tbRepassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.tbRepassword.Location = new System.Drawing.Point(404, 337);
-            this.tbRepassword.Name = "tbRepassword";
-            this.tbRepassword.Size = new System.Drawing.Size(402, 38);
-            this.tbRepassword.TabIndex = 18;
-            this.tbRepassword.UseSystemPasswordChar = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label1.Location = new System.Drawing.Point(311, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(392, 42);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Đăng ký nhà hàng mới";
             // 
             // FormSignupMaster
             // 
@@ -199,9 +199,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSignupMaster_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
