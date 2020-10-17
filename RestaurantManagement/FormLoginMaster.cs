@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Security.Cryptography;
+using System.IO;
 using System.Data.SqlClient;
 
 namespace RestaurantManagement
 {
-    public partial class FormLogin : Form
+    public partial class FormLoginMaster : Form
     {
-        public FormLogin()
+        public FormLoginMaster()
         {
             InitializeComponent();
         }
+
 
         private void btLogin_Click(object sender, EventArgs e)
         {
@@ -35,13 +36,9 @@ namespace RestaurantManagement
                 for (int i = 0; i < hash.Length; i++)
                     sb.Append(hash[i].ToString("x2"));
 
-                string nameDB;
-                using (StreamReader sr = new StreamReader("database.txt"))
-                {
-                    nameDB = sr.ReadLine();
-                }
+                string nameDB = "MASTER_USER";
 
-                String connString = @"Server=DESKTOP-7N34GNC;Database="+ nameDB + ";User Id=sa;Password=abc123;";
+                String connString = @"Server=DESKTOP-7N34GNC;Database=" + nameDB + ";User Id=sa;Password=abc123;";
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 
@@ -59,12 +56,12 @@ namespace RestaurantManagement
                     {
                         flag = true;
                         if (reader.GetString(1) == sb.ToString())
-                        {                        
+                        {
                             this.Hide();
                             Form formQLBan = new FormQLBan();
                             formQLBan.ShowDialog();
                             this.Close();
-                        } 
+                        }
                         else
                         {
                             MessageBox.Show("Sai mật khẩu");
@@ -76,19 +73,14 @@ namespace RestaurantManagement
                 {
                     MessageBox.Show("Không tìm thấy tài khoản");
                 }
-            }                
-        }
+            }
+    }
 
         private void btSignup_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formSignup = new FormSignup(this);
-            formSignup.ShowDialog();
-        }
-
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Form formSignupMaster = new FormSignupMaster(this);
+            formSignupMaster.ShowDialog();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RestaurantManagement
 {
@@ -16,7 +17,10 @@ namespace RestaurantManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            if (!File.Exists("database.txt"))
+                Application.Run(new FormLoginMaster());
+            else
+                Application.Run(new FormLogin());
         }
     }
 }

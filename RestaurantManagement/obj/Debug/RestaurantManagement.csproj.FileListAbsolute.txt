@@ -20,3 +20,5 @@ G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\Rest
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLoginMaster.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignupMaster.resources
