@@ -29,12 +29,30 @@ namespace RestaurantManagement
             this.Close();
         }
 
+        bool whitespaceContain(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == ' ')
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
+        }
+
         private void btSignup_Click(object sender, EventArgs e)
         {
             if (tbUsername.Text == "")
             {
                 MessageBox.Show("Hãy nhập tài khoản");
             }
+            else
+            if (whitespaceContain(tbUsername.Text))
+            {
+                MessageBox.Show("Tài khản không được có khoảng trắng");
+            }    
             else
             {
                 if (tbPassword.Text == "")
@@ -63,7 +81,7 @@ namespace RestaurantManagement
                         for (int i = 0; i < hash.Length; i++)
                             sb.Append(hash[i].ToString("x2"));
 
-                        String connString = @"Server=DESKTOP-7N34GNC;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                        String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
 
                         SqlConnection connection = new SqlConnection(connString);
                         connection.Open();

@@ -41,7 +41,7 @@ namespace RestaurantManagement
                     nameDB = sr.ReadLine();
                 }
 
-                String connString = @"Server=DESKTOP-7N34GNC;Database="+ nameDB + ";User Id=sa;Password=abc123;";
+                String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 

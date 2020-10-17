@@ -38,7 +38,7 @@ namespace RestaurantManagement
 
                 string nameDB = "MASTER_USER";
 
-                String connString = @"Server=DESKTOP-7N34GNC;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 
@@ -57,6 +57,12 @@ namespace RestaurantManagement
                         flag = true;
                         if (reader.GetString(1) == sb.ToString())
                         {
+                            var myFile = File.Create("database.txt");
+                            myFile.Close();
+                            using (StreamWriter sw = new StreamWriter("database.txt"))
+                            {
+                                sw.WriteLine(tbUsername.Text);
+                            }
                             this.Hide();
                             Form formQLBan = new FormQLBan();
                             formQLBan.ShowDialog();
