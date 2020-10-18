@@ -114,7 +114,7 @@ namespace RestaurantManagement
                         MessageBox.Show("Mật khẩu không khớp");
                     }
                     else
-                        try
+                        //try
                         {
                             string nameDB = "MASTER_USER";
 
@@ -142,10 +142,10 @@ namespace RestaurantManagement
                             Form formQLBan = new FormQLBan(true);
                             formQLBan.ShowDialog();
                         }
-                        catch
-                        {
-                            MessageBox.Show("Tài khoản đã tồn tại");
-                        }
+                        //catch
+                        //{
+                        //    MessageBox.Show("Tài khoản đã tồn tại");
+                        //}
                 }
             }
         }
