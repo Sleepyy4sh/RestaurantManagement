@@ -12,16 +12,25 @@ namespace RestaurantManagement
 {
     public partial class FormQLBan : Form
     {
-        public FormQLBan()
+        bool AD;
+        public FormQLBan(bool AD)
         {
+            this.AD = AD;
             InitializeComponent();
         }
-
         private void btSignout_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form formLogin = new FormLogin();
             formLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void btQLMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formQLMenu = new FormQLMenu(AD);
+            formQLMenu.ShowDialog();
             this.Close();
         }
     }

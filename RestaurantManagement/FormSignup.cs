@@ -95,7 +95,7 @@ namespace RestaurantManagement
                         connection.Close();
                         loginSucessful = true;
                         this.Hide();
-                        Form formQLBan = new FormQLBan();
+                        Form formQLBan = new FormQLBan(false);
                         formQLBan.ShowDialog();
                     }
                     catch

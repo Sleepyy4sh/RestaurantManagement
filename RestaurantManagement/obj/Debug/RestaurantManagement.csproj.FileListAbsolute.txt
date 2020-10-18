@@ -22,3 +22,20 @@ G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\Rest
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLoginMaster.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignupMaster.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLogin.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLoginMaster.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLBan.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignup.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignupMaster.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.cache
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CoreCompileInputs.cache
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources

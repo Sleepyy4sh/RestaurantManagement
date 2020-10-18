@@ -15,6 +15,7 @@ namespace RestaurantManagement
 {
     public partial class FormLogin : Form
     {
+        bool AD;
         public FormLogin()
         {
             InitializeComponent();
@@ -59,9 +60,12 @@ namespace RestaurantManagement
                     {
                         flag = true;
                         if (reader.GetString(1) == sb.ToString())
-                        {                        
+                        {
+                            int temp = reader.GetInt32(2);
+                            if (temp == 1) AD = true; else AD = false;
+
                             this.Hide();
-                            Form formQLBan = new FormQLBan();
+                            Form formQLBan = new FormQLBan(AD);
                             formQLBan.ShowDialog();
                             this.Close();
                         } 

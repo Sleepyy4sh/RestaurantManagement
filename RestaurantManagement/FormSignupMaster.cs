@@ -57,6 +57,11 @@ namespace RestaurantManagement
             command.Parameters.AddWithValue("@ad", 1);
             command.ExecuteNonQuery();
 
+            sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+
             connection.Close();
 
             var myFile = File.Create("database.txt");
@@ -92,6 +97,11 @@ namespace RestaurantManagement
                 MessageBox.Show("Tài khản không được có khoảng trắng");
             }
             else
+            if (! ((tbUsername.Text[0] >= 'a' && tbUsername.Text[0] <= 'z') || (tbUsername.Text[0] >= 'A' && tbUsername.Text[0] <= 'Z')))
+            {
+                MessageBox.Show("Tài khoản phải bắt đầu bằng chữ cái");
+            }
+            else
             {
                 if (tbPassword.Text == "")
                 {
@@ -104,7 +114,7 @@ namespace RestaurantManagement
                         MessageBox.Show("Mật khẩu không khớp");
                     }
                     else
-                        try
+                        //try
                         {
                             string nameDB = "MASTER_USER";
 
@@ -129,13 +139,13 @@ namespace RestaurantManagement
                             CreateDataBase(tbUsername.Text, sb.ToString());
                             loginSucessful = true;
                             this.Hide();
-                            Form formQLBan = new FormQLBan();
+                            Form formQLBan = new FormQLBan(true);
                             formQLBan.ShowDialog();
                         }
-                        catch
-                        {
-                            MessageBox.Show("Tài khoản đã tồn tại");
-                        }
+                        //catch
+                        //{
+                        //    MessageBox.Show("Tài khoản đã tồn tại");
+                        //}
                 }
             }
         }
