@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace RestaurantManagement
 {
     public partial class FormSignup : Form
     {
         private Form formLogin;
+        bool loginSucessful = false;
         public FormSignup(Form f)
         {
             formLogin = f;
@@ -24,8 +26,20 @@ namespace RestaurantManagement
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formLogin.Show();
             this.Close();
+        }
+
+        bool whitespaceContain(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == ' ')
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
         }
 
         private void btSignup_Click(object sender, EventArgs e)
@@ -34,6 +48,11 @@ namespace RestaurantManagement
             {
                 MessageBox.Show("Hãy nhập tài khoản");
             }
+            else
+            if (whitespaceContain(tbUsername.Text))
+            {
+                MessageBox.Show("Tài khản không được có khoảng trắng");
+            }    
             else
             {
                 if (tbPassword.Text == "")
@@ -47,51 +66,52 @@ namespace RestaurantManagement
                         MessageBox.Show("Mật khẩu không khớp");
                     }
                     else
+                    try
                     {
-                        bool flag = false;
-                        if (!File.Exists("account.txt"))
+                        string nameDB;
+                        using (StreamReader sr = new StreamReader("database.txt"))
                         {
-                            var myFile = File.Create("account.txt");
-                            myFile.Close();
+                            nameDB = sr.ReadLine();    
                         }
+                    
+                        MD5 mh = MD5.Create();
+                            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(tbPassword.Text);
+                        byte[] hash = mh.ComputeHash(inputBytes);
+                        StringBuilder sb = new StringBuilder();
+                        for (int i = 0; i < hash.Length; i++)
+                            sb.Append(hash[i].ToString("x2"));
 
-                        using (StreamReader sr = new StreamReader("account.txt"))
-                        {
-                            string line;
-                            int i = 1;
-                            while ((line = sr.ReadLine()) != null)
-                            {
-                                if (i % 2 == 1 && line == tbUsername.Text)
-                                {
-                                    MessageBox.Show("Tài khoản đã tồn tại");
-                                    flag = true;
-                                    break;
-                                }
-                                i++;
-                            }
-                        }
-                        if (!flag)
-                        {
-                            using (StreamWriter sw = new StreamWriter("account.txt", true))
-                            {
-                                sw.WriteLine(tbUsername.Text);
-                                MD5 mh = MD5.Create();
-                                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(tbPassword.Text);
-                                byte[] hash = mh.ComputeHash(inputBytes);
-                                StringBuilder sb = new StringBuilder();
-                                for (int i = 0; i < hash.Length; i++)
-                                    sb.Append(hash[i].ToString("x2"));
+                        String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
 
-                                sw.WriteLine(sb.ToString());
-                            }
-                            this.Hide();
-                            Form formQLBan = new FormQLBan();
-                            formQLBan.ShowDialog();
-                            formLogin.Close();
-                        }
+                        SqlConnection connection = new SqlConnection(connString);
+                        connection.Open();
+                        String sqlQuery = "insert into USERS(USERNAME, PASS, AD) values(@username, @pass, @ad)";
+                        SqlCommand command = new SqlCommand(sqlQuery, connection);
+                        
+                        command.Parameters.AddWithValue("@username", tbUsername.Text);
+                        command.Parameters.AddWithValue("@pass", sb.ToString());
+                        command.Parameters.AddWithValue("@ad", 0);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        loginSucessful = true;
+                        this.Hide();
+                        Form formQLBan = new FormQLBan();
+                        formQLBan.ShowDialog();
                     }
+                    catch
+                    {
+                        MessageBox.Show("Tài khoản đã tồn tại");
+                    }                       
                 }
             }
+        }
+
+        private void FormSignup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (loginSucessful)
+                formLogin.Close();
+            else 
+                formLogin.Show();
         }
     }
 }
