@@ -39,7 +39,7 @@ namespace RestaurantManagement
             Food_Delete f = new Food_Delete();
             f.Set(byt, name, price);
             f.SetParent(this);
-            f.SetTransform(150, 210, 0, 0);
+            f.SetTransform(175, 245, 0, 0);
             this.flowLayoutPanel1.Controls.Add(f);
         }
         public bool InsertData(string name, string price, Byte[] byt)

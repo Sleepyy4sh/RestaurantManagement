@@ -46,7 +46,6 @@ namespace RestaurantManagement
             try
             {
                 String sqlQuery = "insert into " + table + "(NAME,PRICE,IMAGE) VALUES (@name,@price,@Image)";
-                MessageBox.Show(sqlQuery);
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@price", price);

@@ -111,7 +111,7 @@
             this.bAdd.TabIndex = 7;
             this.bAdd.Text = "Thêm";
             this.bAdd.UseVisualStyleBackColor = false;
-            this.bAdd.Click += new System.EventHandler(this.button2_Click);
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // pictureBox1
             // 

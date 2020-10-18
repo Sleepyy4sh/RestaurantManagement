@@ -57,7 +57,7 @@ namespace RestaurantManagement
             command.Parameters.AddWithValue("@ad", 1);
             command.ExecuteNonQuery();
 
-            sqlQuery = "CREATE TABLE MENU(NAME VARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
+            sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
