@@ -49,9 +49,10 @@
             this.btQLMenu.Location = new System.Drawing.Point(13, 120);
             this.btQLMenu.Name = "btQLMenu";
             this.btQLMenu.Size = new System.Drawing.Size(156, 66);
-            this.btQLMenu.TabIndex = 0;
+            this.btQLMenu.TabIndex = 1;
             this.btQLMenu.Text = "Quản lý Menu";
             this.btQLMenu.UseVisualStyleBackColor = false;
+            this.btQLMenu.Click += new System.EventHandler(this.btQLMenu_Click);
             // 
             // lTitle
             // 
@@ -61,7 +62,7 @@
             this.lTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lTitle.Location = new System.Drawing.Point(485, 47);
             this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(316, 58);
+            this.lTitle.Size = new System.Drawing.Size(252, 46);
             this.lTitle.TabIndex = 1;
             this.lTitle.Text = "Quản Lý Bàn";
             // 
@@ -72,7 +73,7 @@
             this.btQLBan.Location = new System.Drawing.Point(13, 27);
             this.btQLBan.Name = "btQLBan";
             this.btQLBan.Size = new System.Drawing.Size(156, 66);
-            this.btQLBan.TabIndex = 2;
+            this.btQLBan.TabIndex = 0;
             this.btQLBan.Text = "Quản lý bàn";
             this.btQLBan.UseVisualStyleBackColor = false;
             // 
@@ -143,7 +144,7 @@
             // 
             // FormQLBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(1138, 652);
@@ -153,6 +154,7 @@
             this.Controls.Add(this.lTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.Name = "FormQLBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bàn";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

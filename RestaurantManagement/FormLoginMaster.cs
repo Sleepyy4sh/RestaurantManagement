@@ -64,7 +64,7 @@ namespace RestaurantManagement
                                 sw.WriteLine(tbUsername.Text);
                             }
                             this.Hide();
-                            Form formQLBan = new FormQLBan();
+                            Form formQLBan = new FormQLBan(true);
                             formQLBan.ShowDialog();
                             this.Close();
                         }
