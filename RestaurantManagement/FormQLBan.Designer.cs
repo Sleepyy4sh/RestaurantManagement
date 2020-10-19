@@ -153,6 +153,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormQLBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bàn";
