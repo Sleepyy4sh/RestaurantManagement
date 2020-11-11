@@ -81,28 +81,28 @@
     <Compile Include="Food\Food_Select.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SignupMasterForm.cs">
+    <Compile Include="Account\SignupMasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignupMasterForm.Designer.cs">
+    <Compile Include="Account\SignupMasterForm.Designer.cs">
       <DependentUpon>SignupMasterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignupForm.cs">
+    <Compile Include="Account\SignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignupForm.Designer.cs">
+    <Compile Include="Account\SignupForm.Designer.cs">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginMasterForm.cs">
+    <Compile Include="Account\LoginMasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginMasterForm.Designer.cs">
+    <Compile Include="Account\LoginMasterForm.Designer.cs">
       <DependentUpon>LoginMasterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Account\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Account\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
@@ -110,42 +110,6 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Account\FormSignupMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Account\FormSignupMaster.Designer.cs">
-      <DependentUpon>FormSignupMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Account\FormLoginMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Account\FormLoginMaster.Designer.cs">
-      <DependentUpon>FormLoginMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Account\FormSignup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Account\FormSignup.Designer.cs">
-      <DependentUpon>FormSignup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Account\FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Account\FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormQLBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQLBan.Designer.cs">
-      <DependentUpon>FormQLBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormQLMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQLMenu.Designer.cs">
-      <DependentUpon>FormQLMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Table\Menu_Select.cs">
       <SubType>Form</SubType>
@@ -158,37 +122,19 @@
     <EmbeddedResource Include="Food\AddFood.resx">
       <DependentUpon>AddFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Account\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Account\FormLoginMaster.resx">
-      <DependentUpon>FormLoginMaster.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQLBan.resx">
-      <DependentUpon>FormQLBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Account\FormSignup.resx">
-      <DependentUpon>FormSignup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Account\FormSignupMaster.resx">
-      <DependentUpon>FormSignupMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormQLMenu.resx">
-      <DependentUpon>FormQLMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Account\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginMasterForm.resx">
+    <EmbeddedResource Include="Account\LoginMasterForm.resx">
       <DependentUpon>LoginMasterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignupForm.resx">
+    <EmbeddedResource Include="Account\SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignupMasterForm.resx">
+    <EmbeddedResource Include="Account\SignupMasterForm.resx">
       <DependentUpon>SignupMasterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Table\Menu_Select.resx">

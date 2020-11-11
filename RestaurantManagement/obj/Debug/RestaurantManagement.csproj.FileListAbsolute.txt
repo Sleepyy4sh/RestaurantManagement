@@ -9,9 +9,6 @@ G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\Restaurant
 G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
 G:\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
-G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLogin.resources
-G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLBan.resources
-G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignup.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.cache
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CoreCompileInputs.cache
@@ -20,8 +17,6 @@ G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\Rest
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
-G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLoginMaster.resources
-G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignupMaster.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
 E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
 E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
@@ -40,7 +35,6 @@ E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagemen
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
-G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CopyComplete
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
