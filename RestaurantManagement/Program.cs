@@ -18,9 +18,9 @@ namespace RestaurantManagement
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (!File.Exists("database.txt"))
-                Application.Run(new FormLoginMaster());
+                Application.Run(new LoginMasterForm());
             else
-                Application.Run(new FormLogin());
+                Application.Run(new LoginForm());
         }
     }
 }

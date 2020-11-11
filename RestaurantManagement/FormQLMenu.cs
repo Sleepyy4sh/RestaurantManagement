@@ -21,26 +21,27 @@ namespace RestaurantManagement
             InitializeComponent();
             this.ActiveControl = btQLMenu;
             lbDelete.Hide();
-            data = new DataFood_Fix(this);
-            data.ReadDATA();
-            CheckDelete();
-            if (this.AD)
-            {
-                bAddFood.Enabled = true;
-                bDelete.Enabled = true;
-            } else
-            {
-                bAddFood.Enabled = false;
-                bDelete.Enabled = false;
-            }
+            //data = new DataFood_Fix(this);
+            //data.ReadDATA();
+            //CheckDelete();
+            //if (this.AD)
+            //{
+            //    bAddFood.Enabled = true;
+            //    bDelete.Enabled = true;
+            //}
+            //else
+            //{
+            //    bAddFood.Enabled = false;
+            //    bDelete.Enabled = false;
+            //}
         }
         public void Add(string name, string price, Byte[] byt)
         {
-            Food_Delete f = new Food_Delete();
-            f.Set(byt, name, price);
-            f.SetParent(this);
-            f.SetTransform(175, 245, 0, 0);
-            this.flowLayoutPanel1.Controls.Add(f);
+            //Food_Delete f = new Food_Delete();
+            //f.Set(byt, name, price);
+            //f.SetParent(this);
+            //f.SetTransform(175, 245, 0, 0);
+            //this.flowLayoutPanel1.Controls.Add(f);
         }
         public bool InsertData(string name, string price, Byte[] byt)
         {
@@ -54,8 +55,8 @@ namespace RestaurantManagement
 
         private void bAddFood_Click(object sender, EventArgs e)
         {
-            AddFood addFood = new AddFood(this);
-            addFood.ShowDialog();
+            //AddFood addFood = new AddFood(this);
+            //addFood.ShowDialog();
         }
         public bool DeleteFood(string name)
         {

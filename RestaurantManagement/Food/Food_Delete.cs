@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,14 @@ namespace RestaurantManagement
 {
     class Food_Delete : Food
     {
-        FormQLMenu parent;
+        FormMain parent;
         public override void OnPicter_DClick(object sender, EventArgs e)
         {
             // Khi ẩn món ,form tự động dồn những món bên phải (dưới) lên
             if (parent.DeleteFood(lName.Text))
                 this.Hide();
         }
-        public void SetParent(FormQLMenu parent)
+        public void SetParent(FormMain parent)
         {
             this.parent = parent;
         }

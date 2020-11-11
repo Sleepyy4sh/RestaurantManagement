@@ -14,8 +14,8 @@ namespace RestaurantManagement
     {
         String connString;
         SqlConnection connection;
-        FormQLMenu parent;
-        public DataFood_Fix(FormQLMenu parentf,string server = "DESKTOP-7N34GNC,1433", string database = "User")
+        FormMain parent;
+        public DataFood_Fix(FormMain parentf,string server = "DESKTOP-7N34GNC,1433", string database = "User")
         {
             string nameDB;
             using (StreamReader sr = new StreamReader("database.txt"))
@@ -36,7 +36,7 @@ namespace RestaurantManagement
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                parent.Add(reader.GetString(0), reader.GetString(1),(Byte[])reader[2]);
+                parent.Add_Food(reader.GetString(0), reader.GetString(1),(Byte[])reader[2]);
             }
             reader.Close();
         }

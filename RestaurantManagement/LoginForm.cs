@@ -7,18 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Security.Cryptography;
+using System.IO;
 using System.Data.SqlClient;
 
 namespace RestaurantManagement
 {
-    public partial class FormLogin : Form
+    public partial class LoginForm : Form
     {
-        bool AD;
-        public FormLogin()
+        public LoginForm()
         {
             InitializeComponent();
+        }
+
+        string EncodePass(string str)
+        {
+            MD5 mh = MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(str);
+            byte[] hash = mh.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+                sb.Append(hash[i].ToString("x2"));
+            return sb.ToString();
         }
 
         private void btLogin_Click(object sender, EventArgs e)
@@ -29,12 +39,7 @@ namespace RestaurantManagement
             }
             else
             {
-                MD5 mh = MD5.Create();
-                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(tbPassword.Text);
-                byte[] hash = mh.ComputeHash(inputBytes);
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < hash.Length; i++)
-                    sb.Append(hash[i].ToString("x2"));
+                string password = EncodePass(tbPassword.Text);
 
                 string nameDB;
                 using (StreamReader sr = new StreamReader("database.txt"))
@@ -59,16 +64,17 @@ namespace RestaurantManagement
                     if (reader.GetString(0) == tbUsername.Text)
                     {
                         flag = true;
-                        if (reader.GetString(1) == sb.ToString())
+                        if (reader.GetString(1) == password)
                         {
                             int temp = reader.GetInt32(2);
+                            bool AD;
                             if (temp == 1) AD = true; else AD = false;
 
                             this.Hide();
-                            Form formQLBan = new FormQLBan(AD);
-                            formQLBan.ShowDialog();
+                            Form formMain = new FormMain(AD);
+                            formMain.ShowDialog();
                             this.Close();
-                        } 
+                        }
                         else
                         {
                             MessageBox.Show("Sai mật khẩu");
@@ -80,19 +86,14 @@ namespace RestaurantManagement
                 {
                     MessageBox.Show("Không tìm thấy tài khoản");
                 }
-            }                
+            }
         }
 
         private void btSignup_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formSignup = new FormSignup(this);
-            formSignup.ShowDialog();
-        }
-
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Form signupForm = new SignupForm(this);
+            signupForm.ShowDialog();
         }
     }
 }

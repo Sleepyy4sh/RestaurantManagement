@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,45 +64,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFood.cs">
+    <Compile Include="Food\AddFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFood.Designer.cs">
+    <Compile Include="Food\AddFood.Designer.cs">
       <DependentUpon>AddFood.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataFood_Fix.cs" />
-    <Compile Include="DataFood_ReadOnly.cs" />
-    <Compile Include="Food.cs">
+    <Compile Include="Food\DataFood_Fix.cs" />
+    <Compile Include="Food\DataFood_ReadOnly.cs" />
+    <Compile Include="Food\Food.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Food_Delete.cs">
+    <Compile Include="Food\Food_Delete.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Food_Select.cs">
+    <Compile Include="Food\Food_Select.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormSignupMaster.cs">
+    <Compile Include="SignupMasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSignupMaster.Designer.cs">
+    <Compile Include="SignupMasterForm.Designer.cs">
+      <DependentUpon>SignupMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMasterForm.Designer.cs">
+      <DependentUpon>LoginMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FormSignupMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FormSignupMaster.Designer.cs">
       <DependentUpon>FormSignupMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLoginMaster.cs">
+    <Compile Include="Account\FormLoginMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoginMaster.Designer.cs">
+    <Compile Include="Account\FormLoginMaster.Designer.cs">
       <DependentUpon>FormLoginMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSignup.cs">
+    <Compile Include="Account\FormSignup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSignup.Designer.cs">
+    <Compile Include="Account\FormSignup.Designer.cs">
       <DependentUpon>FormSignup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Account\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="Account\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQLBan.cs">
@@ -99,36 +147,51 @@
     <Compile Include="FormQLMenu.Designer.cs">
       <DependentUpon>FormQLMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu_Select.cs">
+    <Compile Include="Table\Menu_Select.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu_Select.Designer.cs">
+    <Compile Include="Table\Menu_Select.Designer.cs">
       <DependentUpon>Menu_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddFood.resx">
+    <EmbeddedResource Include="Food\AddFood.resx">
       <DependentUpon>AddFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Account\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoginMaster.resx">
+    <EmbeddedResource Include="Account\FormLoginMaster.resx">
       <DependentUpon>FormLoginMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLBan.resx">
       <DependentUpon>FormQLBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSignup.resx">
+    <EmbeddedResource Include="Account\FormSignup.resx">
       <DependentUpon>FormSignup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSignupMaster.resx">
+    <EmbeddedResource Include="Account\FormSignupMaster.resx">
       <DependentUpon>FormSignupMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLMenu.resx">
       <DependentUpon>FormQLMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu_Select.resx">
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginMasterForm.resx">
+      <DependentUpon>LoginMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignupMasterForm.resx">
+      <DependentUpon>SignupMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\Menu_Select.resx">
       <DependentUpon>Menu_Select.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,6 +203,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,6 +216,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Revenue\" />
+    <Folder Include="Staff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

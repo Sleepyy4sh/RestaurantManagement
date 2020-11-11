@@ -39,3 +39,18 @@ E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagemen
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CopyComplete
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Docking.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginForm.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
