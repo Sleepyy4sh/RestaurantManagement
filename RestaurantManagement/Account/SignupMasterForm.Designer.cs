@@ -151,6 +151,7 @@
             this.btExit.Size = new System.Drawing.Size(143, 48);
             this.btExit.TabIndex = 4;
             this.btExit.Values.Text = "THOÁT";
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // label3
             // 

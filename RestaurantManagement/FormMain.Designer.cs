@@ -38,10 +38,10 @@
             this.pageQLNV = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pageThongKe = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pageTaiKhoan = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lb1 = new System.Windows.Forms.Label();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.lbDelete = new System.Windows.Forms.Label();
-            this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.Navigator)).BeginInit();
             this.Navigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageQLBan)).BeginInit();
@@ -69,7 +69,7 @@
             this.pageQLNV,
             this.pageThongKe,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 4;
+            this.Navigator.SelectedIndex = 3;
             this.Navigator.Size = new System.Drawing.Size(1223, 543);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -153,7 +153,7 @@
             this.pageThongKe.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageThongKe.Name = "pageThongKe";
             this.pageThongKe.Size = new System.Drawing.Size(1221, 484);
-            this.pageThongKe.Text = "Thống Kê Doanh Thu";
+            this.pageThongKe.Text = "Thống Kê";
             this.pageThongKe.ToolTipTitle = "Page ToolTip";
             this.pageThongKe.UniqueName = "CC90403B1D8642C7A2909E6A147096A4";
             // 
@@ -170,6 +170,15 @@
             this.pageTaiKhoan.Text = "Tải Khoản";
             this.pageTaiKhoan.ToolTipTitle = "Page ToolTip";
             this.pageTaiKhoan.UniqueName = "72EE1F9F8D394B17F5BE0583764C6EB4";
+            // 
+            // btMasterSignout
+            // 
+            this.btMasterSignout.Location = new System.Drawing.Point(16, 353);
+            this.btMasterSignout.Name = "btMasterSignout";
+            this.btMasterSignout.Size = new System.Drawing.Size(323, 72);
+            this.btMasterSignout.TabIndex = 0;
+            this.btMasterSignout.Values.Text = "Đăng xuất tài khoản nhà hàng";
+            this.btMasterSignout.Click += new System.EventHandler(this.btMasterSignout_Click);
             // 
             // lb1
             // 
@@ -207,15 +216,6 @@
             this.lbDelete.Size = new System.Drawing.Size(462, 39);
             this.lbDelete.TabIndex = 4;
             this.lbDelete.Text = "Nhấn đúp vào món ăn để xóa";
-            // 
-            // btMasterSignout
-            // 
-            this.btMasterSignout.Location = new System.Drawing.Point(16, 353);
-            this.btMasterSignout.Name = "btMasterSignout";
-            this.btMasterSignout.Size = new System.Drawing.Size(323, 72);
-            this.btMasterSignout.TabIndex = 0;
-            this.btMasterSignout.Values.Text = "Đăng xuất tài khoản nhà hàng";
-            this.btMasterSignout.Click += new System.EventHandler(this.btMasterSignout_Click);
             // 
             // FormMain
             // 
