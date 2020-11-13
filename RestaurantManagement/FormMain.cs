@@ -21,6 +21,7 @@ namespace RestaurantManagement
             this.AD = AD;
             InitializeComponent();
             InitFood();
+            InitAccount();
         }
 
         public void Add_Food(string name, string price, Byte[] byt)
@@ -103,6 +104,19 @@ namespace RestaurantManagement
             this.Close();
             Form formLoginMaster = new LoginMasterForm();
             formLoginMaster.ShowDialog();
+        }
+
+        void InitAccount()
+        {
+            btMasterSignout.Enabled = AD;
+        }
+
+        private void btSignout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            this.Close();
         }
     }
 }

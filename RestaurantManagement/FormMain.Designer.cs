@@ -42,6 +42,7 @@
             this.lb1 = new System.Windows.Forms.Label();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.lbDelete = new System.Windows.Forms.Label();
+            this.btSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.Navigator)).BeginInit();
             this.Navigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageQLBan)).BeginInit();
@@ -69,7 +70,7 @@
             this.pageQLNV,
             this.pageThongKe,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 3;
+            this.Navigator.SelectedIndex = 4;
             this.Navigator.Size = new System.Drawing.Size(1223, 543);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -160,6 +161,7 @@
             // pageTaiKhoan
             // 
             this.pageTaiKhoan.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.pageTaiKhoan.Controls.Add(this.btSignout);
             this.pageTaiKhoan.Controls.Add(this.btMasterSignout);
             this.pageTaiKhoan.Flags = 65534;
             this.pageTaiKhoan.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageTaiKhoan.ImageSmall")));
@@ -217,6 +219,15 @@
             this.lbDelete.TabIndex = 4;
             this.lbDelete.Text = "Nhấn đúp vào món ăn để xóa";
             // 
+            // btSignout
+            // 
+            this.btSignout.Location = new System.Drawing.Point(16, 261);
+            this.btSignout.Name = "btSignout";
+            this.btSignout.Size = new System.Drawing.Size(323, 72);
+            this.btSignout.TabIndex = 1;
+            this.btSignout.Values.Text = "Đăng xuất";
+            this.btSignout.Click += new System.EventHandler(this.btSignout_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,5 +271,6 @@
         private System.Windows.Forms.Label lbDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btMasterSignout;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btSignout;
     }
 }
