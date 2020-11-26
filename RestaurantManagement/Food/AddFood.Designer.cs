@@ -136,11 +136,11 @@
             // 
             // kryptonLabel5
             // 
-            this.kryptonLabel5.Location = new System.Drawing.Point(151, 81);
+            this.kryptonLabel5.Location = new System.Drawing.Point(162, 81);
             this.kryptonLabel5.Name = "kryptonLabel5";
-            this.kryptonLabel5.Size = new System.Drawing.Size(59, 20);
+            this.kryptonLabel5.Size = new System.Drawing.Size(28, 20);
             this.kryptonLabel5.TabIndex = 43;
-            this.kryptonLabel5.Values.Text = "Tên món";
+            this.kryptonLabel5.Values.Text = "Giá";
             // 
             // AddFood
             // 

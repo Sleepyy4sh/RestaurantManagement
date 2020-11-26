@@ -20,12 +20,20 @@ namespace RestaurantManagement
         public SignupMasterForm(Form f)
         {
             this.formLoginMaster = f;
+            initIn4Server();
             InitializeComponent();
         }
-
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
+        }
         void CreateDataBase(string nameDB, string password)
         {
-            String connString = @"Server=DESKTOP-J6GHMMO;User Id=sa;Password=Turtle19520253;";
+            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 
@@ -131,7 +139,7 @@ namespace RestaurantManagement
 
                             string password = EncodePass(tbPassword.Text);
 
-                            String connString = @"Server=DESKTOP-J6GHMMO;Database=" + nameDB + ";User Id=sa;Password=Turtle19520253;";
+                            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
 
                             SqlConnection connection = new SqlConnection(connString);
                             connection.Open();
@@ -146,7 +154,7 @@ namespace RestaurantManagement
 
                             loginSucessful = true;
                             this.Hide();
-                            Form formQLMenu = new FormQLMenu(true);
+                            Form formQLMenu = new FormMain(true);
                             formQLMenu.ShowDialog();
                         }
                         catch

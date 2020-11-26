@@ -19,6 +19,7 @@ namespace RestaurantManagement
         {
             InitializeComponent();
             this.tbPassword.KeyDown += new KeyEventHandler(Enter_Event);
+            initIn4Server();
         }
         private void Enter_Event(object sender, KeyEventArgs args)
         {
@@ -35,7 +36,15 @@ namespace RestaurantManagement
                 sb.Append(hash[i].ToString("x2"));
             return sb.ToString();
         }
-
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
+            //MessageBox.Show(server + ID + Svpassword);
+        }
         private void btLogin_Click(object sender, EventArgs e)
         {
             if (tbUsername.Text == "" || tbPassword.Text == "")
@@ -52,7 +61,7 @@ namespace RestaurantManagement
                     nameDB = sr.ReadLine();
                 }
 
-                String connString = @"Server=DESKTOP-J6GHMMO;Database=" + nameDB + ";User Id=sa;Password=Turtle19520253;";
+                String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 
@@ -76,7 +85,7 @@ namespace RestaurantManagement
                             if (temp == 1) AD = true; else AD = false;
 
                             this.Hide();
-                            Form FormQLMenu = new FormQLMenu(AD);
+                            Form FormQLMenu = new FormMain(AD);
                             FormQLMenu.ShowDialog();
                             this.Close();
                         }

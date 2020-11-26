@@ -14,9 +14,22 @@ namespace RestaurantManagement
     {
         String connString;
         SqlConnection connection;
-        FormQLMenu parent;
-        public DataFood_Fix(FormQLMenu parentf, string server = "DESKTOP-J6GHMMO", string database = "User")
+        FormMain parent;
+        public DataFood_Fix()
         {
+            initIn4Server();
+        }
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
+        }
+        public DataFood_Fix(FormMain parentf, string database = "User")
+        {
+            initIn4Server();
             string nameDB;
             using (StreamReader sr = new StreamReader("database.txt"))
             {
@@ -24,7 +37,8 @@ namespace RestaurantManagement
             }
             database = nameDB;
             this.parent = parentf;
-            connString = @"Server=" + server + ";Database=" + database + ";User Id=sa;Password=Turtle19520253;";
+            connString = @"Server=" + server + ";Database=" + database + ";User Id="+ ID+";Password="+Svpassword+";";
+
             connection = new SqlConnection(connString);
             connection.Open();
         }

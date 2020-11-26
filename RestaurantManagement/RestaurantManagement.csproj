@@ -70,6 +70,13 @@
     <Compile Include="AddTable.Designer.cs">
       <DependentUpon>AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBill.cs" />
     <Compile Include="DataTable.cs" />
     <Compile Include="FixFood.cs">
       <SubType>Form</SubType>
@@ -125,11 +132,11 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQLBan.cs" />
-    <Compile Include="FormQLMenu.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormQLMenu.Designer.cs">
-      <DependentUpon>FormQLMenu.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Table.cs" />
     <Compile Include="Table\Menu_Select.cs">
@@ -143,14 +150,17 @@
     <EmbeddedResource Include="AddTable.resx">
       <DependentUpon>AddTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FixFood.resx">
       <DependentUpon>FixFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Food\AddFood.resx">
       <DependentUpon>AddFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQLMenu.resx">
-      <DependentUpon>FormQLMenu.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Account\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

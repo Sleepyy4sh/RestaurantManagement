@@ -13,8 +13,8 @@ namespace RestaurantManagement
 {
     public partial class AddFood : Form
     {
-        FormQLMenu Fix;
-        public AddFood(FormQLMenu fix)
+        FormMain Fix;
+        public AddFood(FormMain fix)
         {
             Fix = fix;
             InitializeComponent();

@@ -30,6 +30,7 @@
         {
             this.btAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.SuspendLayout();
             // 
             // btAdd
@@ -48,11 +49,20 @@
             this.tbName.Size = new System.Drawing.Size(113, 23);
             this.tbName.TabIndex = 1;
             // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(97, 39);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(54, 20);
+            this.kryptonLabel1.TabIndex = 2;
+            this.kryptonLabel1.Values.Text = "Tên bàn";
+            // 
             // AddTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 149);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.btAdd);
             this.Name = "AddTable";
@@ -67,5 +77,6 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton btAdd;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbName;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }

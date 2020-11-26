@@ -13,8 +13,8 @@ namespace RestaurantManagement
     public partial class Menu_Select : Form
     {
         DataFood_ReadOnly data;
-        FormQLMenu formQLMenu;
-        public Menu_Select(FormQLMenu formQL)
+        FormMain formQLMenu;
+        public Menu_Select(FormMain formQL)
         {
             InitializeComponent();
             formQLMenu = formQL;

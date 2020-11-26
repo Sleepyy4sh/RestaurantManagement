@@ -53,7 +53,7 @@ E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagemen
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CopyComplete
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources

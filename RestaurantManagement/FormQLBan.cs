@@ -11,7 +11,7 @@ using System.IO;
 
 namespace RestaurantManagement
 {
-    public partial class FormQLMenu : Form
+    public partial class FormMain : Form
     {
         DataTable dataTable;
         Table tableSelected;
@@ -49,6 +49,7 @@ namespace RestaurantManagement
         public void Add_Table(string name,string Status)
         {
             Table table = new Table(this);
+            //table.CheckEmpty();
             table.SetName(name, Status);
             //f.SetParent(this);
             table.SetTransform(flowTable.Size.Width/5-6, flowTable.Size.Width/5/5*7, -1, -1);
@@ -78,9 +79,13 @@ namespace RestaurantManagement
                     };
             }
         }
-        public void InitFoodInlist(string nameTable)
+        public void SaveStatus(string name,string status)
         {
-            dataTable.ReadListFood(nameTable);
+             dataTable.FixStatus(name,status);
+        }
+        public void InitFoodInlist(Table table)
+        {
+            dataTable.ReadListFood(table.Name);
         }
         public void Add_FoodINLIST(string name,string index)
         {
@@ -96,6 +101,7 @@ namespace RestaurantManagement
         private void btAddTable_Click(object sender, EventArgs e)
         {
             AddTable addTable = new AddTable(this);
+            
             addTable.ShowDialog();
             this.btAddTable.Location = new Point(5000, 5000);
         }
@@ -104,8 +110,48 @@ namespace RestaurantManagement
         {
             Menu_Select menu_Select = new Menu_Select(this);
             menu_Select.Size = flowTable.Size;
-            menu_Select.Location = flowTable.Location;
             menu_Select.ShowDialog();
+            menu_Select.Location = flowTable.Location;
+        }
+        public void AddToBill(string name,string index,string price)
+        {
+            bill.AddFood(name,index,price);
+        }
+        Bill bill;
+        private void btPay_Click(object sender, EventArgs e)
+        {
+            bill = new Bill(tableSelected, this);
+            dataTable.ReadToBILL(tableSelected.Name);
+            bill.ShowDialog();
+        }
+        public void ClearAllFood(Table table)
+        {
+            for (int i = 0; i < listFoodInList.Count; i++)
+            {
+                dataTable.DeleteData(table.Name, listFoodInList[i].name);
+                listFoodInList[i].Hide();
+                listFoodInList.RemoveAt(i);
+            }
+            table.cbStatus.SelectedIndex = 3;
+            UnSelectTable();
+        }
+        public void DeleteTable(Table table)
+        {
+            if (TableEmpty(table))
+            {
+                table.Hide();
+                dataTable.DeleteTable(table.Name);
+            }
+            else
+            {
+                MessageBox.Show("Bàn còn món ăn", "Không thể xóa");
+            }
+        }
+        public bool TableEmpty(Table table)
+        {
+            if (dataTable.CountFoodTable(table.Name) == 1)
+                return true;
+            return false;
         }
     }
 }

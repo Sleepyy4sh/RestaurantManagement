@@ -12,8 +12,8 @@ namespace RestaurantManagement
 {
     public partial class AddTable : Form
     {
-        FormQLMenu FormQLBan;
-        public AddTable(FormQLMenu formQLMenu)
+        FormMain FormQLBan;
+        public AddTable(FormMain formQLMenu)
         {
             InitializeComponent();
             this.FormQLBan = formQLMenu;

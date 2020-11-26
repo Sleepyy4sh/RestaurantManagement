@@ -13,10 +13,10 @@ namespace RestaurantManagement
 {
     public partial class FixFood : Form
     {
-        FormQLMenu mainform;
+        FormMain mainform;
         string name, price;
         Food_Fix food;
-        public FixFood(Food_Fix food, FormQLMenu fix, string name, string price, Image image)
+        public FixFood(Food_Fix food, FormMain fix, string name, string price, Image image)
         {
             InitializeComponent();
             price = price.Remove(price.Length - 7, 7);

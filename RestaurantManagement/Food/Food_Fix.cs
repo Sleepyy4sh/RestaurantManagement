@@ -10,7 +10,7 @@ namespace RestaurantManagement
 {
     public class Food_Fix : Food
     {
-        FormQLMenu parent;
+        FormMain parent;
         private PictureBox btDelete = new PictureBox();
 
         private PictureBox btFix = new PictureBox();
@@ -47,7 +47,7 @@ namespace RestaurantManagement
             this.lName.Text = name;
             this.lPrice.Text = price + "000 VNĐ";
         }
-        public void SetParent(FormQLMenu parent)
+        public void SetParent(FormMain parent)
         {
             this.parent = parent;
         }

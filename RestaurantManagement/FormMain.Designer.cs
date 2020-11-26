@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagement
 {
-    partial class FormQLMenu
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.Navigator = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageQLBan = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.btPay = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -81,7 +81,7 @@
             this.pageQLNV,
             this.pageThongKe,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 1;
+            this.Navigator.SelectedIndex = 0;
             this.Navigator.Size = new System.Drawing.Size(1223, 543);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -111,6 +111,7 @@
             this.btPay.Size = new System.Drawing.Size(90, 25);
             this.btPay.TabIndex = 2;
             this.btPay.Values.Text = "Thanh Toán";
+            this.btPay.Click += new System.EventHandler(this.btPay_Click);
             // 
             // btOrder
             // 

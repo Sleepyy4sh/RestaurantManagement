@@ -19,6 +19,7 @@ namespace RestaurantManagement
         bool loginSucessful = false;
         public SignupForm(Form f)
         {
+            initIn4Server();
             this.formLogin = f;
             InitializeComponent();
             this.tbRepassword.KeyDown += new KeyEventHandler(Enter_Event);
@@ -51,6 +52,14 @@ namespace RestaurantManagement
             for (int i = 0; i < hash.Length; i++)
                 sb.Append(hash[i].ToString("x2"));
             return sb.ToString();
+        }
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
         }
         private void btSignup_Click(object sender, EventArgs e)
         {
@@ -86,7 +95,7 @@ namespace RestaurantManagement
 
                             string password = EncodePass(tbPassword.Text);
 
-                            String connString = @"Server=DESKTOP-J6GHMMO;Database=" + nameDB + ";User Id=sa;Password=Turtle19520253;";
+                            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
 
                             SqlConnection connection = new SqlConnection(connString);
                             connection.Open();
@@ -100,7 +109,7 @@ namespace RestaurantManagement
                             connection.Close();
                             loginSucessful = true;
                             this.Hide();
-                            Form FormQLMenu = new FormQLMenu(false);
+                            Form FormQLMenu = new FormMain(false);
                             FormQLMenu.ShowDialog();
                         }
                         catch

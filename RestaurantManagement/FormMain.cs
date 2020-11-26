@@ -11,14 +11,14 @@ using System.IO;
 
 namespace RestaurantManagement
 {
-    public partial class FormQLMenu : Form
+    public partial class FormMain : Form
     {
         bool AD;
         bool ableDelete = false;
         DataFood_Fix dataFood;
 
         List<Food_Fix> ListFood = new List<Food_Fix>();
-        public FormQLMenu(bool AD)
+        public FormMain(bool AD)
         {
             this.AD = AD;
             InitializeComponent();

@@ -18,8 +18,8 @@ namespace RestaurantManagement
         public string name;
         public string index;
 
-        FormQLMenu formQLBan;
-        public FoodInList(FormQLMenu form)
+        FormMain formQLBan;
+        public FoodInList(FormMain form)
         {
             formQLBan = form;
             SetSize();
@@ -51,7 +51,7 @@ namespace RestaurantManagement
             btSubtractIndexFood.Click += new EventHandler(btSubtract_Click) ;
 
             tbIndexFood.Size = new Size(this.Size.Height, this.Size.Height);
-            tbIndexFood.Location = new Point(btSubtractIndexFood.Size.Width + btSubtractIndexFood.Location.X, 0);
+            tbIndexFood.Location = new Point(btSubtractIndexFood.Size.Width + btSubtractIndexFood.Location.X, 5);
             tbIndexFood.Text = "1";
             tbIndexFood.TextChanged += new EventHandler(tbIndexFood_Change);
             tbIndexFood.Leave += new EventHandler(tbIndexFood_Leave);
@@ -60,6 +60,7 @@ namespace RestaurantManagement
             btPlusIndexFood.Location = new Point(tbIndexFood.Location.X + tbIndexFood.Size.Width,0) ;
             btPlusIndexFood.Text = "+";
             btPlusIndexFood.Click += new EventHandler(btPlusIndexFood_Click);
+           
 
             btDelete.Size = new Size(this.Size.Height, this.Size.Height);
             btDelete.Location = new Point(btPlusIndexFood.Location.X + btPlusIndexFood.Size.Width,0) ;

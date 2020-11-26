@@ -12,8 +12,8 @@ namespace RestaurantManagement
     public class Food_Select :Food
     {
         Menu_Select parent;
-        FormQLMenu formQLBan;
-        public Food_Select(FormQLMenu formQL)
+        FormMain formQLBan;
+        public Food_Select(FormMain formQL)
         {
             this.formQLBan = formQL;
             this.pFood.Click += new EventHandler(OnPicter_click);

@@ -14,8 +14,8 @@ namespace RestaurantManagement
     {
         String connString;
         SqlConnection connection;
-        FormQLMenu parent;
-        public DataTable(FormQLMenu parentf, string server = "DESKTOP-J6GHMMO", string database = "User")
+        FormMain parent;
+        public DataTable(FormMain parentf, string server = "DESKTOP-J6GHMMO", string database = "User")
         {
             string nameDB;
             using (StreamReader sr = new StreamReader("database.txt"))
@@ -55,6 +55,18 @@ namespace RestaurantManagement
                 if (reader.Read() == false) break;
                 if (reader.GetString(0) == nameTable && reader.GetString(1) != "")
                     parent.Add_FoodINLIST(reader.GetString(1), reader.GetString(3));
+            }
+            reader.Close();
+        }
+        public void ReadToBILL(string nameTable, string table = "Listtable")
+        {
+            String sqlQuery = "select * from " + table+ " JOIN MENU ON ListTable.FOOD = MENU.NAME WHERE LISTTABLE.NAME = '"+nameTable +"'";
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                    parent.AddToBill(reader.GetString(1), reader.GetString(3),reader.GetString(5));
                 //parent.Add_Table(reader.GetString(0), reader.GetString(2));
             }
             reader.Close();
@@ -110,6 +122,29 @@ namespace RestaurantManagement
                 return false;
             }
         }
+        public bool FixStatus(string name, string status)
+        {
+            string table = "listtable";
+            try
+            {
+                String sqlQuery = "update " + table + " set status = @status where name = @name";
+                //MessageBox.Show(sqlQuery);
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@status", status);
+                int rs = command.ExecuteNonQuery();
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+                return true;
+            }
+            catch
+            {
+                //MessageBox.Show("Sửa thất bại", "Lổi");
+                return false;
+            }
+        }
         public bool DeleteData(string nametable, string nameFood)
         {
             try
@@ -143,6 +178,41 @@ namespace RestaurantManagement
                 //parent.Add_Table(reader.GetString(0), reader.GetString(2));
             }
             reader.Close();
+        }
+        public bool DeleteTable(string nametable)
+        {
+            try
+            {
+                string table = "listtable";
+                String sqlQuery = "DELETE FROM " + table + " WHERE name= @name";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@name", nametable);
+                int rs = command.ExecuteNonQuery();
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+                return true;
+            }
+            catch
+            {
+                //MessageBox.Show("Món ăn " + nameFood + " không tồn tại", "Lỗi");
+                return false;
+            }
+        }
+        public int CountFoodTable(string nametable)
+        {
+            String sqlQuery = "select Count(food) from listtable where name = '" + nametable + "'" ;
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            int i =1;
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                i = reader.GetInt32(0);
+            }
+            reader.Close();
+            return i;
         }
     }
 }
