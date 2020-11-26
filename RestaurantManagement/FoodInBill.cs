@@ -14,7 +14,7 @@ namespace RestaurantManagement
         Label lbIndex = new Label();
         Label lbSum = new Label();
 
-        Bill bill = new Bill();
+        //Bill bill = new Bill();
         public FoodInBill()
         {
             //init();
@@ -22,15 +22,15 @@ namespace RestaurantManagement
 
         void init()
         {
-            lbName.Size = new Size(bill.Size.Width / 5 * 3, 30);
+            //lbName.Size = new Size(bill.Size.Width / 5 * 3, 30);
             lbName.Location = new Point(0, 0);
             lbName.Text = "Tên";
 
-            lbIndex.Size = new Size(bill.Size.Width / 5 * 1, 30);
+           // lbIndex.Size = new Size(bill.Size.Width / 5 * 1, 30);
             lbIndex.Location = new Point(lbName.Size.Width, 0);
             lbIndex.Text = "Số lượng";
 
-            lbSum.Size = new Size(bill.Size.Width / 5 * 1, 30);
+            //lbSum.Size = new Size(bill.Size.Width / 5 * 1, 30);
             lbSum.Location = new Point(lbIndex.Size.Width+lbIndex.Location.X, 0);
             lbSum.Text = "Tổng";
 
