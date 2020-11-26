@@ -18,8 +18,13 @@ namespace RestaurantManagement
         public LoginMasterForm()
         {
             InitializeComponent();
+            this.tbPassword.KeyDown += new KeyEventHandler(Enter_Event);
         }
-
+        private void Enter_Event(object sender, KeyEventArgs args)
+        {
+            if (args.KeyCode == Keys.Enter)
+                btLogin_Click(sender, args);
+        }
         string EncodePass(string str)
         {
             MD5 mh = MD5.Create();
@@ -42,7 +47,7 @@ namespace RestaurantManagement
 
                 string nameDB = "MASTER_USER";
 
-                String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                String connString = @"Server=DESKTOP-J6GHMMO;Database=" + nameDB + ";User Id=sa;Password=Turtle19520253;";
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 
@@ -70,10 +75,10 @@ namespace RestaurantManagement
                                     sw.WriteLine(tbUsername.Text);
                                 }
                             }
-                            
+
                             this.Hide();
-                            Form formMain = new FormMain(true);
-                            formMain.ShowDialog();
+                            Form FormQLMenu = new FormQLMenu(true);
+                            FormQLMenu.ShowDialog();
                             this.Close();
                         }
                         else

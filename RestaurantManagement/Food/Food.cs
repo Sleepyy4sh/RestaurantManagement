@@ -11,18 +11,24 @@ using System.IO;
 namespace RestaurantManagement
 {
     // Tạo nhóm để hiển thị món ăn
-    abstract public class Food :Panel
+    abstract public class Food : Panel
     {
+        protected string name;
         protected PictureBox pFood = new PictureBox();
         protected Label lName = new Label();
         protected Label lPrice = new Label();
         public void Set(Byte[] url, string name, string price)
         {
+            this.name = name;
             pFood.Image = ByteToImg(url);
             lName.Text = name;
-            lPrice.Text = price;
+            lPrice.Text = price + "000 VNĐ";
             init();
-            this.pFood.DoubleClick += new System.EventHandler(OnPicter_DClick);
+            //this.pFood.DoubleClick += new System.EventHandler(OnPicter_DClick);
+        }
+        public string GetName()
+        {
+            return name;
         }
         private Image ByteToImg(Byte[] byteString)
         {
@@ -42,9 +48,8 @@ namespace RestaurantManagement
             pFood.SizeMode = PictureBoxSizeMode.Zoom;
             this.BackColor = Color.White;
         }
-        abstract public void OnPicter_DClick(Object sender, EventArgs e);
         // cài đặt thông số
-        public void SetTransform(int sizeX,int sizeY, int posX,int posY)
+        public void SetTransform(int sizeX, int sizeY, int posX, int posY)
         {
             this.Size = new Size(sizeX, sizeY);
             this.Location = new Point(posX, posY);
@@ -52,9 +57,9 @@ namespace RestaurantManagement
             // tỉ lệ 5:7
             //////////////////
             //vị trí
-            pFood.Location = new Point(posX , posY );
-            lName.Location = new Point(posX , posY + (int) (5f * (sizeY / 7)) );
-            lPrice.Location = new Point(posX , posY + (int ) (6f * (sizeY / 7) ));
+            pFood.Location = new Point(posX, posY);
+            lName.Location = new Point(posX, posY + (int)(5f * (sizeY / 7)));
+            lPrice.Location = new Point(posX, posY + (int)(6f * (sizeY / 7)));
 
             //kích thước
             pFood.Size = new Size(sizeX, sizeX);

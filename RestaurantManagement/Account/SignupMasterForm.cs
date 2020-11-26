@@ -25,7 +25,7 @@ namespace RestaurantManagement
 
         void CreateDataBase(string nameDB, string password)
         {
-            String connString = @"Server=DESKTOP-7N34GNC,1433;User Id=sa;Password=abc123;";
+            String connString = @"Server=DESKTOP-J6GHMMO;User Id=sa;Password=Turtle19520253;";
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 
@@ -53,6 +53,11 @@ namespace RestaurantManagement
             command.ExecuteNonQuery();
 
             sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+
+            sqlQuery = "CREATE TABLE ListTable(NAME NVARCHAR(30) NOT NULL, FOOD NVARCHAR(255) NOT NULL, STATUS NVARCHAR(100), INDEXFOOD VARCHAR(100), CONSTRAINT PK_FOOD PRIMARY KEY (NAME,FOOD))";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
@@ -126,7 +131,7 @@ namespace RestaurantManagement
 
                             string password = EncodePass(tbPassword.Text);
 
-                            String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                            String connString = @"Server=DESKTOP-J6GHMMO;Database=" + nameDB + ";User Id=sa;Password=Turtle19520253;";
 
                             SqlConnection connection = new SqlConnection(connString);
                             connection.Open();
@@ -136,12 +141,13 @@ namespace RestaurantManagement
                             command.Parameters.AddWithValue("@username", tbUsername.Text);
                             command.Parameters.AddWithValue("@pass", password);
                             command.ExecuteNonQuery();
-                            connection.Close();
                             CreateDataBase(tbUsername.Text, password);
+                            connection.Close();
+
                             loginSucessful = true;
                             this.Hide();
-                            Form formMain = new FormMain(true);
-                            formMain.ShowDialog();
+                            Form formQLMenu = new FormQLMenu(true);
+                            formQLMenu.ShowDialog();
                         }
                         catch
                         {

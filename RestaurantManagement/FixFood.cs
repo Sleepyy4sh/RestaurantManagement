@@ -11,14 +11,23 @@ using System.IO;
 
 namespace RestaurantManagement
 {
-    public partial class AddFood : Form
+    public partial class FixFood : Form
     {
-        FormQLMenu Fix;
-        public AddFood(FormQLMenu fix)
+        FormQLMenu mainform;
+        string name, price;
+        Food_Fix food;
+        public FixFood(Food_Fix food, FormQLMenu fix, string name, string price, Image image)
         {
-            Fix = fix;
             InitializeComponent();
+            price = price.Remove(price.Length - 7, 7);
+            this.food = food;
+            this.mainform = fix;
+            this.tbName.Text = this.name = name;
+            this.tbPrice.Text = this.price = price;
+            pictureBox1.Image = image;
+
         }
+        bool isFixImage = false;
         string path = "";
         private void bBrowser_Click(object sender, EventArgs e)
         {
@@ -30,16 +39,19 @@ namespace RestaurantManagement
                 {
                     pictureBox1.Image = Image.FromFile(pathtemp);
                     path = pathtemp;
+                    isFixImage = true;
                 }
                 catch
                 {
                     MessageBox.Show("File không phải hình ảnh, vui lòng chọn lại");
+                    isFixImage = false;
                 }
             //MessageBox.Show(path);
         }
 
         private void bAdd_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Clicked");
             if (tbName.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn", "Thiếu thông tin");
@@ -52,19 +64,31 @@ namespace RestaurantManagement
             {
                 MessageBox.Show("Giá chỉ được nhập số", "Sai định dạng");
             }
-            else if (path == "")
+            else if (path == "" & isFixImage)
             {
                 MessageBox.Show("Vui lòng chọn hình ảnh ", "Thiếu thông tin");
             }
             else
             {
-                if (Fix.InsertData(ChuanHoa(tbName.Text), RemoveSpace(tbPrice.Text), converImgToByte(path)))
+                if (isFixImage)
                 {
-                    MessageBox.Show("Thêm món " + ChuanHoa(tbName.Text) + " thành công");
+                    if (mainform.FixData(food, this.name, ChuanHoa(tbName.Text), tbPrice.Text, converImgToByte(path)))
+                    {
+                        MessageBox.Show("Sửa món " + ChuanHoa(tbName.Text) + " thành công");
+                        tbName.Text = "";
+                        tbPrice.Text = "";
+                        pictureBox1.Image = null;
+                        this.Close();
+                    }
+                }
+                else
+                if (mainform.FixDataWithoutImage(food, this.name, ChuanHoa(tbName.Text), RemoveSpace(tbPrice.Text)))
+                {
+                    MessageBox.Show("Sửa món " + ChuanHoa(tbName.Text) + " thành công");
                     tbName.Text = "";
                     tbPrice.Text = "";
                     pictureBox1.Image = null;
-                    //this.Close();
+                    this.Close();
                 }
             }
         }
@@ -122,14 +146,22 @@ namespace RestaurantManagement
             }
             return S;
         }
-        bool CheckNumber(string num)
+
+        private void tbPrice_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < num.Length; i++)
-                if (num[i] < '0' || num[i] > '9')
+            String S = tbPrice.Text;
+            int pos = S.Length;
+            for (int i = 0; i < S.Length; i++)
+            {
+                if (!(S[i] >= '0' && S[i] <= '9'))
                 {
-                    return false;
+                    S = S.Remove(i, 1);
+                    pos = i;
+                    break;
                 }
-            return true;
+            }
+            tbPrice.Text = S;
+            tbPrice.SelectionStart = pos;
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
@@ -148,22 +180,15 @@ namespace RestaurantManagement
             //tbName.Text = S;
             //tbName.SelectionStart = pos;
         }
-        private void tbPrice_TextChanged(object sender, EventArgs e)
-        {
-            String S = tbPrice.Text;
-            int pos = S.Length;
-            for (int i = 0; i < S.Length; i++)
-            {
-                if (!(S[i] >= '0' && S[i] <= '9'))
-                {
-                    S = S.Remove(i, 1);
-                    pos = i;
-                    break;
-                }
-            }
-            tbPrice.Text = S;
-            tbPrice.SelectionStart = pos;
-        }
 
+        bool CheckNumber(string num)
+        {
+            for (int i = 0; i < num.Length; i++)
+                if (num[i] < '0' || num[i] > '9')
+                {
+                    return false;
+                }
+            return true;
+        }
     }
 }

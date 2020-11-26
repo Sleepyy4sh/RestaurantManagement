@@ -14,7 +14,7 @@ namespace RestaurantManagement
         String connString;
         SqlConnection connection;
         Menu_Select parent;
-        public DataFood_ReadOnly(Menu_Select parentf, string server= "Server=DESKTOP-7N34GNC,1433", string database = "User")
+        public DataFood_ReadOnly(Menu_Select parentf, string server = "DESKTOP-J6GHMMO", string database = "User")
         {
             string nameDB;
             using (StreamReader sr = new StreamReader("database.txt"))
@@ -23,19 +23,19 @@ namespace RestaurantManagement
             }
             database = nameDB;
             this.parent = parentf;
-            connString = @"Server=" +server +";Database="+database+";User Id=sa;Password=abc123;";
+            connString = @"Server=" + server + ";Database=" + database + ";User Id=sa;Password=Turtle19520253;";
             connection = new SqlConnection(connString);
             connection.Open();
         }
         public void ReadDATA(string table = "MENU")
         {
-            String sqlQuery = "select * from "+table;
+            String sqlQuery = "select * from " + table;
             SqlCommand command = new SqlCommand(sqlQuery, connection);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                parent.Add(reader.GetString(0),reader.GetString(1),(Byte[])reader[2]);
+                parent.Add(reader.GetString(0), reader.GetString(1), (Byte[])reader[2]);
             }
             reader.Close();
         }

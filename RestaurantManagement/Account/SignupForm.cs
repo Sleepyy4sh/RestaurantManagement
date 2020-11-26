@@ -21,6 +21,12 @@ namespace RestaurantManagement
         {
             this.formLogin = f;
             InitializeComponent();
+            this.tbRepassword.KeyDown += new KeyEventHandler(Enter_Event);
+        }
+        private void Enter_Event(object sender, KeyEventArgs args)
+        {
+            if (args.KeyCode == Keys.Enter)
+                btSignup_Click(sender, args);
         }
 
         bool whitespaceContain(string s)
@@ -80,7 +86,7 @@ namespace RestaurantManagement
 
                             string password = EncodePass(tbPassword.Text);
 
-                            String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                            String connString = @"Server=DESKTOP-J6GHMMO;Database=" + nameDB + ";User Id=sa;Password=Turtle19520253;";
 
                             SqlConnection connection = new SqlConnection(connString);
                             connection.Open();
@@ -94,8 +100,8 @@ namespace RestaurantManagement
                             connection.Close();
                             loginSucessful = true;
                             this.Hide();
-                            Form formMain = new FormMain(false);
-                            formMain.ShowDialog();
+                            Form FormQLMenu = new FormQLMenu(false);
+                            FormQLMenu.ShowDialog();
                         }
                         catch
                         {
