@@ -64,30 +64,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTable.cs">
+    <Compile Include="Table\AddTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTable.Designer.cs">
+    <Compile Include="Table\AddTable.Designer.cs">
       <DependentUpon>AddTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bill.cs">
+    <Compile Include="Table\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bill.Designer.cs">
+    <Compile Include="Table\Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBill.cs" />
-    <Compile Include="DataTable.cs" />
-    <Compile Include="FixFood.cs">
+    <Compile Include="Table\DataBill.cs" />
+    <Compile Include="Table\DataTable.cs" />
+    <Compile Include="Table\FixFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FixFood.Designer.cs">
+    <Compile Include="Table\FixFood.Designer.cs">
       <DependentUpon>FixFood.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodInBill.cs">
+    <Compile Include="Table\FoodInBill.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FoodInList.cs">
+    <Compile Include="Table\FoodInList.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Food\AddFood.cs">
@@ -138,7 +138,9 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table.cs" />
+    <Compile Include="Table\Table.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Table\Menu_Select.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,13 +149,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddTable.resx">
+    <EmbeddedResource Include="Table\AddTable.resx">
       <DependentUpon>AddTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bill.resx">
+    <EmbeddedResource Include="Table\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FixFood.resx">
+    <EmbeddedResource Include="Table\FixFood.resx">
       <DependentUpon>FixFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Food\AddFood.resx">
