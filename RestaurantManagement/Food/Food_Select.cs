@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Drawing;
 
 namespace RestaurantManagement
 {
@@ -15,6 +16,7 @@ namespace RestaurantManagement
         FormMain formQLBan;
         public Food_Select(FormMain formQL)
         {
+            pSelected.Hide();
             this.formQLBan = formQL;
             this.pFood.Click += new EventHandler(OnPicter_click);
         }
@@ -25,6 +27,7 @@ namespace RestaurantManagement
                 //MessageBox.Show("Món " + lName.Text + " đã được chọn");
                 formQLBan.Add_FoodINLIST(lName.Text, "1");
                 formQLBan.SaveListFood();
+                pSelected.Show();
             }
         }
         bool Exist(string food)

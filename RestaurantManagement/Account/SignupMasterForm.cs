@@ -33,7 +33,7 @@ namespace RestaurantManagement
         }
         void CreateDataBase(string nameDB, string password)
         {
-            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+            String connString = @"Server=" + server +";User Id=" + ID + ";Password=" + Svpassword + ";";
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 

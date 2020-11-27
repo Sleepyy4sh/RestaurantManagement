@@ -14,6 +14,7 @@ namespace RestaurantManagement
     abstract public class Food : Panel
     {
         protected string name;
+        protected PictureBox pSelected = new PictureBox();
         protected PictureBox pFood = new PictureBox();
         protected Label lName = new Label();
         protected Label lPrice = new Label();
@@ -66,6 +67,13 @@ namespace RestaurantManagement
             lName.Size = new Size(sizeX, sizeY / 7);
             lPrice.Size = new Size(sizeX, sizeY / 7);
             /////////////////////
+            ///
+            pSelected.Image = Image.FromFile("images/SelectedFood_Icon.png");
+            pSelected.SizeMode = PictureBoxSizeMode.Zoom;
+            pSelected.Size = new Size(lPrice.Size.Height, lPrice.Size.Height);
+            //pSelected.Location = new Point((int)Math.Truncate(this.Location.X + this.lPrice.Size.Height * 6.65f), this.Location.Y);
+            
+            this.Controls.Add(pSelected);
 
             //thêm vào nhóm
             this.Controls.Add(pFood);

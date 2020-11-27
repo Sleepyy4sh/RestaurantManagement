@@ -78,10 +78,10 @@
     </Compile>
     <Compile Include="Table\DataBill.cs" />
     <Compile Include="Table\DataTable.cs" />
-    <Compile Include="Table\FixFood.cs">
+    <Compile Include="Food\FixFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Table\FixFood.Designer.cs">
+    <Compile Include="Food\FixFood.Designer.cs">
       <DependentUpon>FixFood.cs</DependentUpon>
     </Compile>
     <Compile Include="Table\FoodInBill.cs">
@@ -155,7 +155,7 @@
     <EmbeddedResource Include="Table\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Table\FixFood.resx">
+    <EmbeddedResource Include="Food\FixFood.resx">
       <DependentUpon>FixFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Food\AddFood.resx">

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 namespace RestaurantManagement
 {
     public class Table : Panel
@@ -101,6 +102,9 @@ namespace RestaurantManagement
         {
             GetImageTable();
             FormQLBan.SaveStatus(Name,cbStatus.SelectedItem.ToString());
+           // Thread.Sleep(1000);
+            if (cbStatus.SelectedIndex != 2) 
+                CheckEmpty();
         }
         void GetImageTable()
         {
@@ -145,7 +149,7 @@ namespace RestaurantManagement
 
             //kích thước
             pTable.Size = new Size(sizeX, sizeX);
-            lbName.Size = new Size(sizeX / 5, sizeY / 7);
+            lbName.Size = new Size(sizeX , sizeY / 7);
             cbStatus.Size = new Size(sizeX / 5*3, sizeY / 7);
             btOder.Size = new Size(sizeX / 5 * 2, sizeY / 7);
             btOder.Text = "Gọi món";

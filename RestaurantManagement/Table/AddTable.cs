@@ -30,6 +30,7 @@ namespace RestaurantManagement
                 FormQLBan.btAddTable.Show();
                 FormQLBan.InSertTable(tbName.Text, "Bàn trống", "", "");
                 tbName.Text = "";
+                this.Hide();
             }
             else
             {

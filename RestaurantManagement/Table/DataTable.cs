@@ -183,7 +183,9 @@ namespace RestaurantManagement
             SqlDataReader reader = command.ExecuteReader();
             while (reader.HasRows)
             {
-                if (reader.Read() == false) break;
+                if (reader.Read() == false) 
+                    
+                    break;
                 //parent.Add_Table(reader.GetString(0), reader.GetString(2));
             }
             reader.Close();
@@ -213,14 +215,28 @@ namespace RestaurantManagement
         {
             String sqlQuery = "select Count(food) from listtable where name = '" + nametable + "'" ;
             SqlCommand command = new SqlCommand(sqlQuery, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            int i =1;
-            while (reader.HasRows)
-            {
-                if (reader.Read() == false) break;
-                i = reader.GetInt32(0);
-            }
-            reader.Close();
+            SqlDataReader reader;
+            bool kt = false;
+            int i = 1;
+                try
+                {
+                    reader = command.ExecuteReader();
+                    while (reader.HasRows)
+                    {
+                        if (reader.Read() == false)
+                        {
+                            reader.Close();
+                            return i;
+                        }
+                        i = reader.GetInt32(0);
+                        reader.Close();
+                    }
+                    kt = true;
+                }
+                catch
+                {
+                    kt = false;
+                }
             return i;
         }
     }

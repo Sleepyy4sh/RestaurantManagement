@@ -70,13 +70,16 @@ namespace RestaurantManagement
         }
         public void SaveListFood()
         {
-            if (tableSelected != null) 
-            for (int i = 0; i < listFoodInList.Count; i++)
+            if (tableSelected != null)
             {
+                for (int i = 0; i < listFoodInList.Count; i++)
+                {
                     if (!dataTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].index))
                     {
                         dataTable.FixData(tableSelected.Name, tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].name, listFoodInList[i].index);
                     };
+                }
+                tableSelected.CheckEmpty();
             }
         }
         public void SaveStatus(string name,string status)
@@ -104,6 +107,7 @@ namespace RestaurantManagement
             
             addTable.ShowDialog();
             this.btAddTable.Location = new Point(5000, 5000);
+            addTable.Hide();
         }
 
         private void btOrder_Click(object sender, EventArgs e)
