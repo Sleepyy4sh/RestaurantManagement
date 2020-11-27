@@ -12,10 +12,12 @@ namespace RestaurantManagement
     //Class này để món ăn có thể được chọn vào bàn/hóa đơn
     public class Food_Select :Food
     {
+        public string name;
         Menu_Select parent;
         FormMain formQLBan;
         public Food_Select(FormMain formQL)
         {
+            name = lName.Text;
             pSelected.Hide();
             this.formQLBan = formQL;
             this.pFood.Click += new EventHandler(OnPicter_click);
@@ -27,8 +29,17 @@ namespace RestaurantManagement
                 //MessageBox.Show("Món " + lName.Text + " đã được chọn");
                 formQLBan.Add_FoodINLIST(lName.Text, "1");
                 formQLBan.SaveListFood();
-                pSelected.Show();
+                //parent.CheckSelected(pSelected);
+                Tick();
             }
+        }
+        public void Tick()
+        {
+            this.pSelected.Show();
+        }
+        public void UnTick()
+        {
+            this.pSelected.Hide();
         }
         bool Exist(string food)
         {

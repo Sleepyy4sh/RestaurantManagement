@@ -64,6 +64,7 @@ namespace RestaurantManagement
                     dataTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
                     listFoodInList[i].Hide();
                     listFoodInList.RemoveAt(i);
+                    //if (menu_Select != null) menu_Select.UnTick(name);
                     return;
                 }
             }
@@ -109,13 +110,22 @@ namespace RestaurantManagement
             this.btAddTable.Location = new Point(5000, 5000);
             addTable.Hide();
         }
-
+        Menu_Select menu_Select;
         private void btOrder_Click(object sender, EventArgs e)
         {
-            Menu_Select menu_Select = new Menu_Select(this);
+            menu_Select = new Menu_Select(this);
             menu_Select.Size = flowTable.Size;
             menu_Select.ShowDialog();
             menu_Select.Location = flowTable.Location;
+        }
+        public bool InList(string name)
+        {
+            for (int i = 0; i < listFoodInList.Count; i++) 
+            {
+                if (listFoodInList[i].name == name)
+                    return true;
+            }    
+            return false ;
         }
         public void AddToBill(string name,string index,string price)
         {
