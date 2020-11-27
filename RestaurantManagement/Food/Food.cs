@@ -74,6 +74,7 @@ namespace RestaurantManagement
             //pSelected.Location = new Point((int)Math.Truncate(this.Location.X + this.lPrice.Size.Height * 6.65f), this.Location.Y);
             
             this.Controls.Add(pSelected);
+            pSelected.Hide();
 
             //thêm vào nhóm
             this.Controls.Add(pFood);
