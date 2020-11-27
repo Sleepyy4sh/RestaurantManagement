@@ -19,8 +19,15 @@ namespace RestaurantManagement
         bool loginSucessful = false;
         public SignupForm(Form f)
         {
+            initIn4Server();
             this.formLogin = f;
             InitializeComponent();
+            this.tbRepassword.KeyDown += new KeyEventHandler(Enter_Event);
+        }
+        private void Enter_Event(object sender, KeyEventArgs args)
+        {
+            if (args.KeyCode == Keys.Enter)
+                btSignup_Click(sender, args);
         }
 
         bool whitespaceContain(string s)
@@ -45,6 +52,14 @@ namespace RestaurantManagement
             for (int i = 0; i < hash.Length; i++)
                 sb.Append(hash[i].ToString("x2"));
             return sb.ToString();
+        }
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
         }
         private void btSignup_Click(object sender, EventArgs e)
         {
@@ -80,7 +95,7 @@ namespace RestaurantManagement
 
                             string password = EncodePass(tbPassword.Text);
 
-                            String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
 
                             SqlConnection connection = new SqlConnection(connString);
                             connection.Open();
@@ -94,8 +109,8 @@ namespace RestaurantManagement
                             connection.Close();
                             loginSucessful = true;
                             this.Hide();
-                            Form formMain = new FormMain(false);
-                            formMain.ShowDialog();
+                            Form FormQLMenu = new FormMain(false);
+                            FormQLMenu.ShowDialog();
                         }
                         catch
                         {

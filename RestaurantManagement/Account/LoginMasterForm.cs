@@ -18,8 +18,14 @@ namespace RestaurantManagement
         public LoginMasterForm()
         {
             InitializeComponent();
+            initIn4Server();
+            this.tbPassword.KeyDown += new KeyEventHandler(Enter_Event);
         }
-
+        private void Enter_Event(object sender, KeyEventArgs args)
+        {
+            if (args.KeyCode == Keys.Enter)
+                btLogin_Click(sender, args);
+        }
         string EncodePass(string str)
         {
             MD5 mh = MD5.Create();
@@ -29,6 +35,14 @@ namespace RestaurantManagement
             for (int i = 0; i < hash.Length; i++)
                 sb.Append(hash[i].ToString("x2"));
             return sb.ToString();
+        }
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
         }
         private void btLogin_Click(object sender, EventArgs e)
         {
@@ -42,7 +56,7 @@ namespace RestaurantManagement
 
                 string nameDB = "MASTER_USER";
 
-                String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                 SqlConnection connection = new SqlConnection(connString);
                 connection.Open();
 
@@ -70,10 +84,10 @@ namespace RestaurantManagement
                                     sw.WriteLine(tbUsername.Text);
                                 }
                             }
-                            
+
                             this.Hide();
-                            Form formMain = new FormMain(true);
-                            formMain.ShowDialog();
+                            Form FormQLMenu = new FormMain(true);
+                            FormQLMenu.ShowDialog();
                             this.Close();
                         }
                         else

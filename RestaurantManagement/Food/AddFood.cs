@@ -24,16 +24,17 @@ namespace RestaurantManagement
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
-            path = openFileDialog.FileName;
-            try
-            {
-                pictureBox1.Image = Image.FromFile(path);
-            }
-            catch (Exception ex)
-            {
-                path = "";
-                MessageBox.Show("File không phải hình ảnh, vui lòng chọn lại");
-            }
+            string pathtemp = openFileDialog.FileName;
+            if (pathtemp != "")
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(pathtemp);
+                    path = pathtemp;
+                }
+                catch
+                {
+                    MessageBox.Show("File không phải hình ảnh, vui lòng chọn lại");
+                }
             //MessageBox.Show(path);
         }
 
@@ -47,21 +48,24 @@ namespace RestaurantManagement
             {
                 MessageBox.Show("Vui lòng nhập giá", "Thiếu thông tin");
             }
-            else if (pictureBox1.Image == null)
+            else if (!CheckNumber(RemoveSpace(tbPrice.Text)))
+            {
+                MessageBox.Show("Giá chỉ được nhập số", "Sai định dạng");
+            }
+            else if (path == "")
             {
                 MessageBox.Show("Vui lòng chọn hình ảnh ", "Thiếu thông tin");
             }
             else
             {
-                if (Fix.InsertData(tbName.Text, tbPrice.Text, converImgToByte(path)))
+                if (Fix.InsertData(ChuanHoa(tbName.Text), RemoveSpace(tbPrice.Text), converImgToByte(path)))
                 {
-                    MessageBox.Show("Thêm món " + tbName.Text + " thành công");
+                    MessageBox.Show("Thêm món " + ChuanHoa(tbName.Text) + " thành công");
                     tbName.Text = "";
                     tbPrice.Text = "";
                     pictureBox1.Image = null;
-                    this.Close();
+                    //this.Close();
                 }
-
             }
         }
 
@@ -78,5 +82,88 @@ namespace RestaurantManagement
             fs.Close();
             return picbyte;
         }
+        string ChuanHoa(string S)
+        {
+            while (S.Length > 0 && S[0] == ' ')
+            {
+                Console.WriteLine(S);
+                S = S.Remove(0, 1);
+            };
+            while (S.Length > 0 && S[S.Length - 1] == ' ')
+            {
+                S = S.Remove(S.Length - 1, 1);
+            };
+            if (S.Length > 0 && S[0] >= 'a' && S[0] <= 'z')
+            {
+                char c = S[0];
+                string s = c.ToString();
+                s = s.ToUpper();
+                Console.WriteLine(s);
+                S = S.Remove(0, 1);
+                S = s + S;
+            }
+            for (int i = 0; i < S.Length - 1; i++)
+            {
+                while (S[i] == S[i + 1] & S[i + 1] == ' ')
+                {
+                    S = S.Remove(i + 1, 1);
+                }
+            }
+            return S;
+        }
+        string RemoveSpace(string S)
+        {
+            for (int i = 0; i < S.Length; i++)
+            {
+                while (i <= S.Length && S[i] == ' ')
+                {
+                    S = S.Remove(i, 1);
+                }
+            }
+            return S;
+        }
+        bool CheckNumber(string num)
+        {
+            for (int i = 0; i < num.Length; i++)
+                if (num[i] < '0' || num[i] > '9')
+                {
+                    return false;
+                }
+            return true;
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+            //String S = tbName.Text;
+            //int pos = S.Length;
+            //for (int i = 0; i < S.Length; i++)
+            //{
+            //    if (!(S[i] >= '0' && S[i] <= '9') && !(S[i] >= 'a' && S[i] <= 'z') && !(S[i] >= 'a' && S[i] <= 'z') && S[i] != ' ')
+            //    {
+            //        S = S.Remove(i, 1);
+            //        pos = i;
+            //        break;
+            //    }
+            //}
+            //tbName.Text = S;
+            //tbName.SelectionStart = pos;
+        }
+        private void tbPrice_TextChanged(object sender, EventArgs e)
+        {
+            String S = tbPrice.Text;
+            int pos = S.Length;
+            for (int i = 0; i < S.Length; i++)
+            {
+                if (!(S[i] >= '0' && S[i] <= '9'))
+                {
+                    S = S.Remove(i, 1);
+                    pos = i;
+                    break;
+                }
+            }
+            tbPrice.Text = S;
+            tbPrice.SelectionStart = pos;
+        }
+
     }
 }

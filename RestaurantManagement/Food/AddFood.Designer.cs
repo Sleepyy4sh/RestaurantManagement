@@ -30,132 +30,142 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFood));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbPrice = new System.Windows.Forms.TextBox();
-            this.bBrowser = new System.Windows.Forms.Button();
-            this.bAdd = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lVND = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bBrowser = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.bAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.tbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbPrice = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // kryptonLabel3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên";
+            this.kryptonLabel3.Location = new System.Drawing.Point(150, 155);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel3.TabIndex = 37;
+            this.kryptonLabel3.Values.Text = "Hình ảnh";
             // 
-            // label2
+            // kryptonLabel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(143, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Giá";
+            this.kryptonLabel2.Location = new System.Drawing.Point(150, 84);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(6, 2);
+            this.kryptonLabel2.TabIndex = 36;
+            this.kryptonLabel2.Values.Text = "";
             // 
-            // label3
+            // lVND
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(143, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Hình ảnh";
+            this.lVND.Location = new System.Drawing.Point(434, 84);
+            this.lVND.Name = "lVND";
+            this.lVND.Size = new System.Drawing.Size(59, 20);
+            this.lVND.TabIndex = 34;
+            this.lVND.Values.Text = "000 VNĐ";
             // 
-            // tbName
+            // pictureBox2
             // 
-            this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(202, 53);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(292, 23);
-            this.tbName.TabIndex = 3;
-            // 
-            // tbPrice
-            // 
-            this.tbPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(202, 89);
-            this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(292, 23);
-            this.tbPrice.TabIndex = 4;
-            // 
-            // bBrowser
-            // 
-            this.bBrowser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bBrowser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBrowser.Location = new System.Drawing.Point(315, 228);
-            this.bBrowser.Name = "bBrowser";
-            this.bBrowser.Size = new System.Drawing.Size(76, 28);
-            this.bBrowser.TabIndex = 6;
-            this.bBrowser.Text = "Duyệt";
-            this.bBrowser.UseVisualStyleBackColor = false;
-            this.bBrowser.Click += new System.EventHandler(this.bBrowser_Click);
-            // 
-            // bAdd
-            // 
-            this.bAdd.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAdd.Location = new System.Drawing.Point(304, 288);
-            this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(99, 47);
-            this.bAdd.TabIndex = 7;
-            this.bAdd.Text = "Thêm";
-            this.bAdd.UseVisualStyleBackColor = false;
-            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(14, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(106, 96);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(286, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(252, 115);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(129, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // bBrowser
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 96);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.bBrowser.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bBrowser.Location = new System.Drawing.Point(271, 220);
+            this.bBrowser.Name = "bBrowser";
+            this.bBrowser.Size = new System.Drawing.Size(90, 25);
+            this.bBrowser.TabIndex = 38;
+            this.bBrowser.Values.Text = "Duyệt";
+            this.bBrowser.Click += new System.EventHandler(this.bBrowser_Click);
+            // 
+            // bAdd
+            // 
+            this.bAdd.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bAdd.Location = new System.Drawing.Point(264, 268);
+            this.bAdd.Name = "bAdd";
+            this.bAdd.Size = new System.Drawing.Size(110, 42);
+            this.bAdd.TabIndex = 39;
+            this.bAdd.Values.Text = "Thêm";
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(225, 45);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(203, 23);
+            this.tbName.TabIndex = 40;
+            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.Location = new System.Drawing.Point(225, 81);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(203, 23);
+            this.tbPrice.TabIndex = 41;
+            this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
+            // 
+            // kryptonLabel4
+            // 
+            this.kryptonLabel4.Location = new System.Drawing.Point(151, 45);
+            this.kryptonLabel4.Name = "kryptonLabel4";
+            this.kryptonLabel4.Size = new System.Drawing.Size(59, 20);
+            this.kryptonLabel4.TabIndex = 42;
+            this.kryptonLabel4.Values.Text = "Tên món";
+            // 
+            // kryptonLabel5
+            // 
+            this.kryptonLabel5.Location = new System.Drawing.Point(162, 81);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(28, 20);
+            this.kryptonLabel5.TabIndex = 43;
+            this.kryptonLabel5.Values.Text = "Giá";
             // 
             // AddFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(591, 375);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.bAdd);
-            this.Controls.Add(this.bBrowser);
+            this.Controls.Add(this.kryptonLabel5);
+            this.Controls.Add(this.kryptonLabel4);
             this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bAdd);
+            this.Controls.Add(this.bBrowser);
+            this.Controls.Add(this.kryptonLabel3);
+            this.Controls.Add(this.kryptonLabel2);
+            this.Controls.Add(this.lVND);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddFood";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm món";
             this.Load += new System.EventHandler(this.AddFood_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,14 +173,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbPrice;
-        private System.Windows.Forms.Button bBrowser;
-        private System.Windows.Forms.Button bAdd;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lVND;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton bBrowser;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton bAdd;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbPrice;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
     }
 }

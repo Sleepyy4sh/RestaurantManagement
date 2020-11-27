@@ -20,12 +20,20 @@ namespace RestaurantManagement
         public SignupMasterForm(Form f)
         {
             this.formLoginMaster = f;
+            initIn4Server();
             InitializeComponent();
         }
-
+        string server, ID, Svpassword;
+        void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
+        }
         void CreateDataBase(string nameDB, string password)
         {
-            String connString = @"Server=DESKTOP-7N34GNC,1433;User Id=sa;Password=abc123;";
+            String connString = @"Server=" + server +";User Id=" + ID + ";Password=" + Svpassword + ";";
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 
@@ -53,6 +61,11 @@ namespace RestaurantManagement
             command.ExecuteNonQuery();
 
             sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+
+            sqlQuery = "CREATE TABLE ListTable(NAME NVARCHAR(30) NOT NULL, FOOD NVARCHAR(255) NOT NULL, STATUS NVARCHAR(100), INDEXFOOD VARCHAR(100), CONSTRAINT PK_FOOD PRIMARY KEY (NAME,FOOD))";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
@@ -126,7 +139,7 @@ namespace RestaurantManagement
 
                             string password = EncodePass(tbPassword.Text);
 
-                            String connString = @"Server=DESKTOP-7N34GNC,1433;Database=" + nameDB + ";User Id=sa;Password=abc123;";
+                            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
 
                             SqlConnection connection = new SqlConnection(connString);
                             connection.Open();
@@ -136,12 +149,13 @@ namespace RestaurantManagement
                             command.Parameters.AddWithValue("@username", tbUsername.Text);
                             command.Parameters.AddWithValue("@pass", password);
                             command.ExecuteNonQuery();
-                            connection.Close();
                             CreateDataBase(tbUsername.Text, password);
+                            connection.Close();
+
                             loginSucessful = true;
                             this.Hide();
-                            Form formMain = new FormMain(true);
-                            formMain.ShowDialog();
+                            Form formQLMenu = new FormMain(true);
+                            formQLMenu.ShowDialog();
                         }
                         catch
                         {

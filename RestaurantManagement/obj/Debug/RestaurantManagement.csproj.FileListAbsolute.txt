@@ -20,12 +20,6 @@ G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\Rest
 E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
 E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
 E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLogin.resources
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormLoginMaster.resources
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLBan.resources
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignup.resources
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormSignupMaster.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.cache
@@ -33,7 +27,6 @@ E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagemen
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
-E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormQLMenu.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CopyComplete
@@ -48,3 +41,19 @@ G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\Rest
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
 G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Docking.dll
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginForm.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CopyComplete
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
