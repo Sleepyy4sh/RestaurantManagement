@@ -19,7 +19,7 @@ namespace RestaurantManagement
         public FoodInBill(Bill bill)
         {
             this.bill = bill;
-            this.Size = new Size(bill.FlowPanelFood.Size.Width,30);
+            this.Size = new Size(bill.FlowPanelFood.Size.Width-10,30);
             init();
         }
 
@@ -46,11 +46,15 @@ namespace RestaurantManagement
         }
         public void Set(string name,string index ,string price)
         {
-            this.name = lbName.Text = name;
-            lbIndex.Text = "X " + index;
-            int i = Int32.Parse(index);
-            int p = Int32.Parse(price);
-            lbSum.Text = "= " + (i*p).ToString()+ "000 VNĐ" ;
+            if (name != "")
+            {
+                this.name = lbName.Text = name;
+                lbIndex.Text = "X " + index;
+                //MessageBox.Show(index);
+                int i = Int32.Parse(index);
+                int p = Int32.Parse(price);
+                lbSum.Text = "= " + (i * p).ToString() + "000 VNĐ";
+            }
            // MessageBox.Show(index);
         }
     }

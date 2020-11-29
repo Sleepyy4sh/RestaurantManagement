@@ -35,7 +35,9 @@ namespace RestaurantManagement
         }
         public void Tick()
         {
+           // this.pSelected.Hide();
             this.pSelected.Show();
+            //MessageBox.Show(name);
         }
         public void UnTick()
         {

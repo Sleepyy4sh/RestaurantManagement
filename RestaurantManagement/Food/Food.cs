@@ -52,7 +52,7 @@ namespace RestaurantManagement
         // cài đặt thông số
         public void SetTransform(int sizeX, int sizeY, int posX, int posY)
         {
-            this.Size = new Size(sizeX, sizeY);
+            this.Size = new Size(sizeX-4, sizeY);
             this.Location = new Point(posX, posY);
 
             // tỉ lệ 5:7

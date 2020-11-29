@@ -51,8 +51,8 @@ namespace RestaurantManagement
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Clicked");
-            if (tbName.Text == "")
+            if (tbName.Text == "")           // MessageBox.Show("Clicked");
+
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn", "Thiếu thông tin");
             }
