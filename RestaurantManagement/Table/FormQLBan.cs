@@ -172,9 +172,15 @@ namespace RestaurantManagement
         Bill bill;
         private void btPay_Click(object sender, EventArgs e)
         {
-            bill = new Bill(tableSelected, this);
-            dataTable.ReadToBILL(tableSelected.Name);
-            bill.ShowDialog();
+            if (!tableSelected.isEmpty)
+            {
+                bill = new Bill(tableSelected, this);
+                dataTable.ReadToBILL(tableSelected.Name);
+                bill.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Bàn đang trống");
+            }    
         }
         public void ClearAllFood(Table table)
         {
@@ -192,7 +198,7 @@ namespace RestaurantManagement
         }
         public void DeleteTable(Table table)
         {
-            if (TableEmpty(table))
+            if ( table.cbStatus.SelectedIndex == 0 || table.cbStatus.SelectedIndex == 3)
             {
                 table.Hide();
                 dataTable.DeleteTable(table.Name);
@@ -206,7 +212,10 @@ namespace RestaurantManagement
             }
             else
             {
-                MessageBox.Show("Bàn còn món ăn", "Không thể xóa");
+                if (table.cbStatus.SelectedIndex == 2)
+                    MessageBox.Show("Bàn còn món ăn", "Không thể xóa");
+                else
+                    MessageBox.Show("Bàn đã được đặt", "Lỗi");
             }
         }
         public bool TableEmpty(Table table)

@@ -91,7 +91,7 @@ namespace RestaurantManagement
                     break;
                 }
             }
-            tbIndexFood.Text = S;
+            index = tbIndexFood.Text = S;
             tbIndexFood.SelectionStart = pos;
             formQLBan.SaveListFood();
         }

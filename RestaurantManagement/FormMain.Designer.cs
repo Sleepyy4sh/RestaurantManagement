@@ -84,7 +84,7 @@
             this.pageQLNV,
             this.pageThongKe,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 1;
+            this.Navigator.SelectedIndex = 0;
             this.Navigator.Size = new System.Drawing.Size(2025, 897);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
