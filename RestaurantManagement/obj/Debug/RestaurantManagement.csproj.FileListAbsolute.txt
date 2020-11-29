@@ -57,3 +57,29 @@ E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagemen
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
 E:\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Docking.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojAssemblyReference.cache
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.cache
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CoreCompileInputs.cache
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.CopyComplete
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb

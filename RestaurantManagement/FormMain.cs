@@ -15,7 +15,7 @@ namespace RestaurantManagement
     {
         bool AD;
         bool ableDelete = false;
-        DataFood_Fix dataFood;
+        public DataFood_Fix dataFood;
 
         List<Food_Fix> ListFood = new List<Food_Fix>();
         public FormMain(bool AD)
@@ -56,8 +56,8 @@ namespace RestaurantManagement
                 {
                     MessageBox.Show("Món " + name + " đã được xóa");
                     DeleteInList(name);
+                    return true;
                 }
-                return true;
             }
             return false;
         }
@@ -115,7 +115,7 @@ namespace RestaurantManagement
         }
         public bool FixData(Food_Fix food, string nametemp, string name, string price, Byte[] byt)
         {
-            MessageBox.Show(nametemp + " " + name + " " + price);
+            //MessageBox.Show(nametemp + " " + name + " " + price);
             if (dataFood.FixData(nametemp, name, price, byt))
             {
                 food.Set(byt, name, price);
@@ -125,7 +125,7 @@ namespace RestaurantManagement
         }
         public bool FixDataWithoutImage(Food_Fix food, string nametemp, string name, string price)
         {
-            MessageBox.Show(nametemp + " " + name + " " + price);
+            //MessageBox.Show(nametemp + " " + name + " " + price);
             if (dataFood.FixDataWithoutImage(nametemp, name, price))
             {
                 food.SetWithoutImage(name, price);
@@ -276,5 +276,11 @@ namespace RestaurantManagement
                 CheckSearch();
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

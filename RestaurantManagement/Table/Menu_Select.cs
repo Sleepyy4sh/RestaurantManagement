@@ -27,20 +27,23 @@ namespace RestaurantManagement
             Food_Select f = new Food_Select(formQLMenu);
             foods.Add(f);
             f.name = name;
-            if (formQLMenu.InList(f.name))
-                f.Tick();
-            else
-                f.UnTick();
             f.Set(url, name, price);
             f.SetParent(this);
             f.SetTransform(150, 210, 0, 0);
             this.flowLayoutPanel1.Controls.Add(f);
+            if (formQLMenu.InList(f.name))
+            {
+                f.Tick();
+                //MessageBox.Show(f.name);
+            }
+            else;
+            // f.UnTick();
         }
         public void UnTick(string name)
         {
             for (int i=0;i<foods.Count;i++)
             {
-                if (foods[i].name == name)
+                if (foods[i].name == name) ;
                     foods[i].UnTick();
             }    
         }
@@ -56,6 +59,11 @@ namespace RestaurantManagement
         private void Menu_Select_FormClosed(object sender, FormClosedEventArgs e)
         {
             //formQLMenu.UnSelectTable();
+        }
+
+        private void btFinished_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

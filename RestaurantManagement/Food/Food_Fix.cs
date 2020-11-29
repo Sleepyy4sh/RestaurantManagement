@@ -39,8 +39,13 @@ namespace RestaurantManagement
         }
         public void OnbtFix_Click(object sender, EventArgs e)
         {
-            FixFood fix = new FixFood(this, parent, lName.Text, lPrice.Text, pFood.Image);
-            fix.ShowDialog();
+            if (parent.dataFood.IsUse(lName.Text))
+                MessageBox.Show("Món ăn đang được dùng", "Lỗi");
+            else
+            {
+                FixFood fix = new FixFood(this, parent, lName.Text, lPrice.Text, pFood.Image);
+                fix.ShowDialog();
+            }
         }
         public void SetWithoutImage(string name, string price)
         {

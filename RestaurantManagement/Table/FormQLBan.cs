@@ -40,34 +40,70 @@ namespace RestaurantManagement
             listFoodInList = null;
             tableSelected = table;
             listFoodInList = new List<FoodInList>();
-            lbListFood.Text = "Danh sách món; bàn: " + table.Name;
+            lbListFood.Text = "Danh sách món bàn: " + table.Name;
             flowListFood.Controls.Add(lbListFood);
             lbListFood.Show();
             btPay.Show();
             btOrder.Show();
         }
-        public void Add_Table(string name,string Status)
+        List<Table> listTable = new List<Table>();
+        public bool Add_Table(string name,string Status)
         {
-            Table table = new Table(this);
-            //table.CheckEmpty();
-            table.SetName(name, Status);
-            //f.SetParent(this);
-            table.SetTransform(flowTable.Size.Width/5-6, flowTable.Size.Width/5/5*7, -1, -1);
-            this.flowTable.Controls.Add(table);
-        }     
+           
+            if (!TableExist(name))
+            {
+                Table table = new Table(this);
+                listTable.Add(table);
+                table.SetName(name, Status);
+                table.CheckEmpty();
+                //f.SetParent(this);
+                int scale = 5;
+                table.SetTransform(flowTable.Size.Width / scale - 10, flowTable.Size.Width / scale / scale * 7, -1, -1);
+                this.flowTable.Controls.Add(table);
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Bàn đã tồn tại", "Lỗi");
+                return false;
+            }    
+        }
+        bool TableExist(string name)
+        {
+            for (int i = 0; i < listTable.Count; i++)
+            {
+                if (name == listTable[i].Name)
+                    return true;
+            }
+
+            return false;
+        }
+        public void SetTableNotEmpty(string name)
+        {
+            for (int i=0;i<listTable.Count;i++)
+            {
+                if (listTable[i].Name == name)
+                {
+                    listTable[i].isEmpty = false;
+                    listTable[i].CheckEmpty();
+                }
+            }    
+        }
         public void DeleteFoodInList(string name)
         {
             for (int i = 0; i < listFoodInList.Count; i++) 
             {
-                if (listFoodInList[i].name == name )
+                while (i<listFoodInList.Count && listFoodInList[i].name == name )
                 {
                     dataTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
                     listFoodInList[i].Hide();
                     listFoodInList.RemoveAt(i);
                     //if (menu_Select != null) menu_Select.UnTick(name);
-                    return;
                 }
             }
+            if (listFoodInList.Count == 0)
+                tableSelected.isEmpty = true;
+            tableSelected.CheckEmpty();
         }
         public void SaveListFood()
         {
@@ -97,6 +133,8 @@ namespace RestaurantManagement
             food.Set(name, index);
             listFoodInList.Add(food);
             this.flowListFood.Controls.Add(food);
+            tableSelected.isEmpty = false;
+            tableSelected.CheckEmpty();
         }
         public void InSertTable(string nameTable,string status,string food,string index)
         {
@@ -144,8 +182,11 @@ namespace RestaurantManagement
             {
                 dataTable.DeleteData(table.Name, listFoodInList[i].name);
                 listFoodInList[i].Hide();
-                listFoodInList.RemoveAt(i);
+                //listFoodInList.RemoveAt(i,1);
             }
+            listFoodInList = new List<FoodInList>();
+            table.isEmpty = true;
+            table.CheckEmpty();
             table.cbStatus.SelectedIndex = 3;
             UnSelectTable();
         }
@@ -155,6 +196,13 @@ namespace RestaurantManagement
             {
                 table.Hide();
                 dataTable.DeleteTable(table.Name);
+                for (int i = 0; i < listTable.Count; i++)
+                {
+                    if (listTable[i].Name == table.Name)
+                    {
+                        listTable.RemoveAt(i);
+                    }    
+                }                    
             }
             else
             {

@@ -51,6 +51,7 @@ namespace RestaurantManagement
                     parent.Add_Table(reader.GetString(0), reader.GetString(2));
                     tmp = reader.GetString(0);
                 }
+                else parent.SetTableNotEmpty(reader.GetString(0));
             }
             reader.Close();
         }  
@@ -76,6 +77,7 @@ namespace RestaurantManagement
             {
                 if (reader.Read() == false) break;
                     parent.AddToBill(reader.GetString(1), reader.GetString(3),reader.GetString(5));
+                //MessageBox.Show("d" + reader.GetString(3));
                 //parent.Add_Table(reader.GetString(0), reader.GetString(2));
             }
             reader.Close();

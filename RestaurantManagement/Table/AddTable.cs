@@ -24,13 +24,15 @@ namespace RestaurantManagement
             tbName.Text = ChuanHoa(tbName.Text);
             if (tbName.Text != "")
             {
-                FormQLBan.Add_Table(tbName.Text, "");
-                FormQLBan.btAddTable.Hide();
-                FormQLBan.flowTable.Controls.Add(FormQLBan.btAddTable);
-                FormQLBan.btAddTable.Show();
-                FormQLBan.InSertTable(tbName.Text, "Bàn trống", "", "");
-                tbName.Text = "";
-                this.Hide();
+                if (FormQLBan.Add_Table(tbName.Text, ""))
+                {
+                    FormQLBan.btAddTable.Hide();
+                    FormQLBan.flowTable.Controls.Add(FormQLBan.btAddTable);
+                    FormQLBan.btAddTable.Show();
+                    FormQLBan.InSertTable(tbName.Text, "Bàn trống", "", "");
+                    tbName.Text = "";
+                    this.Hide();
+                }
             }
             else
             {

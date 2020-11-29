@@ -10,7 +10,7 @@ using System.IO;
 
 namespace RestaurantManagement
 {
-    class DataFood_Fix
+    public class DataFood_Fix
     {
         String connString;
         SqlConnection connection;
@@ -81,68 +81,121 @@ namespace RestaurantManagement
         }
         public bool FixData(string nametemp, string name, string price, Byte[] bye)
         {
-            string table = "Menu";
-            try
+            if (!IsUse(name))
             {
-                String sqlQuery = "update " + table + " set name = " + "'" + name + "'" + ", price = " + "'" + price + "'" + ", image = @Image" + " where name =" + "'" + nametemp + "'";
-                MessageBox.Show(sqlQuery);
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-                SqlParameter parImage = new SqlParameter("@Image", SqlDbType.Image);
-                parImage.Value = bye;
-                command.Parameters.Add(parImage);
-                int rs = command.ExecuteNonQuery();
-                if (rs != 1)
+                string table = "Menu";
+                try
                 {
-                    throw new Exception("Failed Query");
+                    String sqlQuery = "update " + table + " set name = " + "'" + name + "'" + ", price = " + "'" + price + "'" + ", image = @Image" + " where name =" + "'" + nametemp + "'";
+                    //MessageBox.Show(sqlQuery);
+                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+                    SqlParameter parImage = new SqlParameter("@Image", SqlDbType.Image);
+                    parImage.Value = bye;
+                    command.Parameters.Add(parImage);
+                    int rs = command.ExecuteNonQuery();
+                    if (rs != 1)
+                    {
+                        throw new Exception("Failed Query");
+                    }
+                    return true;
                 }
-                return true;
+                catch
+                {
+                    MessageBox.Show("Sửa thất bại", "Lổi");
+                    return false;
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Sửa thất bại", "Lổi");
+                MessageBox.Show("Món ăn đang được dùng", "Lỗi");
                 return false;
             }
+            
         }
         public bool FixDataWithoutImage(string nametemp, string name, string price)
         {
-            string table = "Menu";
-            try
+            if (!IsUse(name))
             {
-                String sqlQuery = "update " + table + " set name = " + "'" + name + "'" + ", price = " + "'" + price + "'" + " where name =" + "'" + nametemp + "'";
-                //MessageBox.Show(sqlQuery);
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-                int rs = command.ExecuteNonQuery();
-                if (rs != 1)
+                string table = "Menu";
+                try
                 {
-                    throw new Exception("Failed Query");
+                    String sqlQuery = "update " + table + " set name = " + "'" + name + "'" + ", price = " + "'" + price + "'" + " where name =" + "'" + nametemp + "'";
+                    //MessageBox.Show(sqlQuery);
+                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+                    int rs = command.ExecuteNonQuery();
+                    if (rs != 1)
+                    {
+                        throw new Exception("Failed Query");
+                    }
+                    return true;
                 }
-                return true;
+                catch
+                {
+                    MessageBox.Show("Sửa thất bại", "Lổi");
+                    return false;
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Sửa thất bại", "Lổi");
+                MessageBox.Show("Món ăn đang được dùng", "Lỗi");
                 return false;
             }
         }
         public bool DeleteData(string name = "", string table = "MENU")
         {
-            try
-            {
-                String sqlQuery = "DELETE FROM " + table + " WHERE NAME= @name";
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@name", name);
-                int rs = command.ExecuteNonQuery();
-                if (rs != 1)
+            String sqlQuery;
+            SqlCommand command;
+            SqlDataReader reader;
+            if (!IsUse(name))
+            { 
+                bool kt = false;
+                try
                 {
-                    throw new Exception("Failed Query");
+                    sqlQuery = "DELETE FROM " + table + " WHERE NAME= @name";
+                    command = new SqlCommand(sqlQuery, connection);
+                    command.Parameters.AddWithValue("@name", name);
+                    int rs = command.ExecuteNonQuery();
+                    if (rs != 1)
+                    {
+                        throw new Exception("Failed Query");
+                    }
+                    return true;
                 }
-                return true;
+                catch
+                {
+                    MessageBox.Show("Món ăn " + name + " không tồn tại", "Lỗi");
+                    return false;
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Món ăn " + name + " không tồn tại", "Lỗi");
+                MessageBox.Show("Món ăn đang được dùng", "Lỗi");
                 return false;
+            }    
+        }
+        public bool IsUse(string name)
+        {
+            String sqlQuery = "select Count(food) from listtable where FOOD = '" + name + "'";
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            SqlDataReader reader;
+
+            reader = command.ExecuteReader();
+
+            int i = 0;
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false)
+                {
+                    //reader.Close();
+                    break;
+                }
+                i = reader.GetInt32(0);
             }
+            reader.Close();
+            if (i != 0)
+                return true;
+            else return false;
         }
     }
 }

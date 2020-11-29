@@ -40,7 +40,7 @@ namespace RestaurantManagement
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            if (tbName.Text == "")
+            if (ChuanHoa(tbName.Text) == "")
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn", "Thiếu thông tin");
             }

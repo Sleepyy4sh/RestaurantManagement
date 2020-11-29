@@ -13,6 +13,7 @@ namespace RestaurantManagement
 {
     public class Table : Panel
     {
+        public bool isEmpty = true;
         FormMain FormQLBan ;
         public string Name;
         protected PictureBox pTable = new PictureBox();
@@ -24,9 +25,9 @@ namespace RestaurantManagement
         {
             init();
             FormQLBan = formQL;
-            GetImageTable();
             this.pTable.Click += new EventHandler(Table_Click);
             //CheckEmpty();
+            GetImageTable();
         }
         void Table_Click(object sender,EventArgs args)
         {
@@ -43,6 +44,7 @@ namespace RestaurantManagement
                 FormQLBan.SelectedTable(this);
                 FormQLBan.InitFoodInlist(this);
             }
+            //MessageBox.Show(isEmpty.ToString());
         }
         public void SetName(string Name, string Status)
         {
@@ -53,6 +55,7 @@ namespace RestaurantManagement
                 {
                     case "Đang sửa":
                         cbStatus.SelectedIndex = 0;
+
                         pTable.Image = Image.FromFile("images/table_Fixing.png");
                         break;
                     case "Đã đặt":
@@ -60,6 +63,7 @@ namespace RestaurantManagement
                         pTable.Image = Image.FromFile("images/table_Reserve.png");
                         break;
                     case "Đang dùng":
+                        isEmpty = false;
                         cbStatus.SelectedIndex = 2;
                         pTable.Image = Image.FromFile("images/table_Using.png");
                         break;
@@ -69,6 +73,7 @@ namespace RestaurantManagement
                         break;
                 }
             }
+            CheckEmpty();
         }
         public void init()
         {
@@ -94,6 +99,7 @@ namespace RestaurantManagement
             cbStatus.Items.Add("Đang dùng");
             cbStatus.Items.Add("Bàn trống");
             cbStatus.SelectedIndex = 3;
+            pTable.Image = Image.FromFile("images/table_Free.png");
 
             cbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cbStatus.SelectedIndexChanged += new EventHandler(cbStatus_Changed);
@@ -101,9 +107,7 @@ namespace RestaurantManagement
         void cbStatus_Changed(object sender,EventArgs args)
         {
             GetImageTable();
-            FormQLBan.SaveStatus(Name,cbStatus.SelectedItem.ToString());
-           // Thread.Sleep(1000);
-            if (cbStatus.SelectedIndex != 2) 
+            FormQLBan.SaveStatus(Name, cbStatus.SelectedItem.ToString());
                 CheckEmpty();
         }
         void GetImageTable()
@@ -126,11 +130,18 @@ namespace RestaurantManagement
         }
         public void CheckEmpty()
         {
-            if (!FormQLBan.TableEmpty(this))
+            if (!isEmpty)
             {
                 cbStatus.SelectedIndex = 2;
-                pTable.Image = Image.FromFile("images/table_Using.png");
+                //pTable.Image = Image.FromFile("images/table_Using.png");
             }
+            else
+            if (cbStatus.SelectedIndex == 2) 
+            {
+                cbStatus.SelectedIndex = 3;
+               // pTable.Image = Image.FromFile("images/table_Free.png");
+            }
+            GetImageTable();
         }
         // cài đặt thông số
         public void SetTransform(int sizeX, int sizeY, int posX, int posY)
