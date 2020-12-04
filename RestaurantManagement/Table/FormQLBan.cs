@@ -21,7 +21,7 @@ namespace RestaurantManagement
             dataTable = new DataTable(this);
             dataTable.ReadListTable();
             btAddTable.Hide();
-            flowTable.Controls.Add(btAddTable);
+            fpTables.Controls.Add(btAddTable);
             btAddTable.Show();
         }
         public void UnSelectTable()
@@ -31,17 +31,17 @@ namespace RestaurantManagement
             lbListFood.Hide();
             btPay.Hide();
             btOrder.Hide();
-            flowListFood.Controls.Clear();
+            fpListFood.Controls.Clear();
         }
         public void SelectedTable(Table table)
         {
-            flowListFood.Controls.Clear();
+            fpListFood.Controls.Clear();
             tableSelected = null;
             listFoodInList = null;
             tableSelected = table;
             listFoodInList = new List<FoodInList>();
             lbListFood.Text = "Danh sách món bàn: " + table.Name;
-            flowListFood.Controls.Add(lbListFood);
+            fpListFood.Controls.Add(lbListFood);
             lbListFood.Show();
             btPay.Show();
             btOrder.Show();
@@ -58,8 +58,8 @@ namespace RestaurantManagement
                 table.CheckEmpty();
                 //f.SetParent(this);
                 int scale = 5;
-                table.SetTransform(flowTable.Size.Width / scale - 10, flowTable.Size.Width / scale / scale * 7, -1, -1);
-                this.flowTable.Controls.Add(table);
+                table.SetTransform(fpTables.Size.Width / scale - 10, fpTables.Size.Width / scale / scale * 7, -1, -1);
+                this.fpTables.Controls.Add(table);
                 return true;
             }
             else
@@ -132,7 +132,7 @@ namespace RestaurantManagement
             FoodInList food= new FoodInList(this);
             food.Set(name, index);
             listFoodInList.Add(food);
-            this.flowListFood.Controls.Add(food);
+            this.fpListFood.Controls.Add(food);
             tableSelected.isEmpty = false;
             tableSelected.CheckEmpty();
         }
@@ -152,9 +152,9 @@ namespace RestaurantManagement
         private void btOrder_Click(object sender, EventArgs e)
         {
             menu_Select = new Menu_Select(this);
-            menu_Select.Size = flowTable.Size;
+            menu_Select.Size = fpTables.Size;
             menu_Select.ShowDialog();
-            menu_Select.Location = flowTable.Location;
+            menu_Select.Location = fpTables.Location;
         }
         public bool InList(string name)
         {

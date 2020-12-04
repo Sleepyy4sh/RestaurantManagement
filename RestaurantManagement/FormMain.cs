@@ -18,15 +18,17 @@ namespace RestaurantManagement
         public DataFood_Fix dataFood;
 
         List<Food_Fix> ListFood = new List<Food_Fix>();
+
         public FormMain(bool AD)
         {
             this.AD = AD;
             InitializeComponent();
+            ReSize();
             InitFood();
             InitTable();
             UnSelectTable();
             InitAccount();
-            btAddTable.Size = new Size(flowTable.Size.Width / 5 - 6, flowTable.Size.Width / 5 / 5 * 7);
+            btAddTable.Size = new Size(fpTables.Size.Width / 5 - 6, fpTables.Size.Width / 5 / 5 * 7);
         }
 
         public void Add_Food(string name, string price, Byte[] byt)
@@ -36,7 +38,7 @@ namespace RestaurantManagement
             f.Set(byt, name, price);
             f.SetParent(this);
             f.SetTransform(175, 245, 0, 0);
-            this.flowLayoutPanel1.Controls.Add(f);
+            this.fpFoods.Controls.Add(f);
         }
         void DeleteInList(string name)
         {
@@ -191,7 +193,7 @@ namespace RestaurantManagement
         }
         void CheckSearch()
         {
-            flowLayoutPanel1.Controls.Clear();
+            fpFoods.Controls.Clear();
             //Xóa mấy dấu cách nhập thừa
             tbSearch.Text = ChuanHoa(tbSearch.Text);
             // Không nhập gì thì hiện hết
@@ -206,7 +208,7 @@ namespace RestaurantManagement
         {
             for (int i = 0; i < ListFood.Count; i++)
             {
-                flowLayoutPanel1.Controls.Add(ListFood[i]);
+                fpFoods.Controls.Add(ListFood[i]);
             }
         }
         void Search(string child)
@@ -215,7 +217,7 @@ namespace RestaurantManagement
             {
                 if (IsChild(child, ListFood[i].GetName()))
                 {
-                    flowLayoutPanel1.Controls.Add(ListFood[i]);
+                    fpFoods.Controls.Add(ListFood[i]);
                 }
             }
         }
