@@ -19,6 +19,7 @@ namespace RestaurantManagement
         public FixFood(Food_Fix food, FormMain fix, string name, string price, Image image)
         {
             InitializeComponent();
+            ReSize();
             price = price.Remove(price.Length - 7, 7);
             this.food = food;
             this.mainform = fix;

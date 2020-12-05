@@ -20,6 +20,7 @@ namespace RestaurantManagement
             InitializeComponent();
             this.tbPassword.KeyDown += new KeyEventHandler(Enter_Event);
             initIn4Server();
+            ReSize();
         }
         private void Enter_Event(object sender, KeyEventArgs args)
         {

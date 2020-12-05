@@ -161,14 +161,14 @@ namespace RestaurantManagement
             //kích thước
             pTable.Size = new Size(sizeX, sizeX);
             lbName.Size = new Size(sizeX , sizeY / 7);
-            cbStatus.Size = new Size(sizeX / 5*3, sizeY / 7);
+            cbStatus.Size = new Size(sizeX / 5 * 3, sizeY / 7);
             btOder.Size = new Size(sizeX / 5 * 2, sizeY / 7);
             btOder.Text = "Gọi món";
             btDelete.Size = new Size(this.Size.Width/6,this.Size.Width/6);
 
-            // MessageBox.Show(btOder.Location.ToString());
-            //  MessageBox.Show(lbName.Location.ToString()) ;
-            /////////////////////
+            //Font
+            lbName.Font = new Font("Times New Roman", sizeY / 7 / 3.5f);
+            cbStatus.Font = new Font("Times New Roman", sizeY / 7 / 3.5f);
 
             //thêm vào nhóm
             this.Controls.Add(btDelete);

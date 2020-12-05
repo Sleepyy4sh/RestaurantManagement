@@ -23,6 +23,7 @@ namespace RestaurantManagement
             this.formLogin = f;
             InitializeComponent();
             this.tbRepassword.KeyDown += new KeyEventHandler(Enter_Event);
+            ReSize();
         }
         private void Enter_Event(object sender, KeyEventArgs args)
         {

@@ -29,6 +29,8 @@ namespace RestaurantManagement
             this.Controls.Add(tbIndexFood);
             this.Controls.Add(btSubtractIndexFood);
             this.Controls.Add(btDelete);
+
+            tbIndexFood.MaxLength = 4;
         }
         public void SetSize(int x =254,int y=30)
         {

@@ -37,7 +37,8 @@ namespace RestaurantManagement
             ListFood.Add(f);
             f.Set(byt, name, price);
             f.SetParent(this);
-            f.SetTransform(175, 245, 0, 0);
+            int unitFood = 5;
+            f.SetTransform(fpFoods.Size.Width / unitFood - unitFood, (fpFoods.Size.Width / unitFood - unitFood) / 5 * 7, 0, 0);
             this.fpFoods.Controls.Add(f);
         }
         void DeleteInList(string name)

@@ -34,7 +34,6 @@
             this.btPay = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btOrder = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.fpListFood = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbListFood = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.fpTables = new System.Windows.Forms.FlowLayoutPanel();
             this.btAddTable = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pageQLMenu = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -50,6 +49,7 @@
             this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbListFood = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Navigator)).BeginInit();
             this.Navigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageQLBan)).BeginInit();
@@ -82,9 +82,9 @@
             this.pageQLBan,
             this.pageQLMenu,
             this.pageQLNV,
-            this.pageThongKe,
-            this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 0;
+            this.pageTaiKhoan,
+            this.pageThongKe});
+            this.Navigator.SelectedIndex = 1;
             this.Navigator.Size = new System.Drawing.Size(2025, 897);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -134,17 +134,6 @@
             this.fpListFood.Name = "fpListFood";
             this.fpListFood.Size = new System.Drawing.Size(409, 555);
             this.fpListFood.TabIndex = 0;
-            // 
-            // lbListFood
-            // 
-            this.lbListFood.AutoSize = false;
-            this.fpListFood.SetFlowBreak(this.lbListFood, true);
-            this.lbListFood.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lbListFood.Location = new System.Drawing.Point(3, 3);
-            this.lbListFood.Name = "lbListFood";
-            this.lbListFood.Size = new System.Drawing.Size(244, 25);
-            this.lbListFood.TabIndex = 0;
-            this.lbListFood.Values.Text = " Danh sách món ";
             // 
             // fpTables
             // 
@@ -234,10 +223,10 @@
             // 
             this.fpFoods.AutoScroll = true;
             this.fpFoods.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.fpFoods.Location = new System.Drawing.Point(-1, 2);
+            this.fpFoods.Location = new System.Drawing.Point(3, 3);
             this.fpFoods.Margin = new System.Windows.Forms.Padding(2);
             this.fpFoods.Name = "fpFoods";
-            this.fpFoods.Size = new System.Drawing.Size(1272, 654);
+            this.fpFoods.Size = new System.Drawing.Size(122, 654);
             this.fpFoods.TabIndex = 0;
             // 
             // pageQLNV
@@ -263,7 +252,7 @@
             this.pageThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.pageThongKe.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageThongKe.Name = "pageThongKe";
-            this.pageThongKe.Size = new System.Drawing.Size(1494, 681);
+            this.pageThongKe.Size = new System.Drawing.Size(2023, 838);
             this.pageThongKe.Text = "Thống Kê";
             this.pageThongKe.ToolTipTitle = "Page ToolTip";
             this.pageThongKe.UniqueName = "CC90403B1D8642C7A2909E6A147096A4";
@@ -279,7 +268,7 @@
             this.pageTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.pageTaiKhoan.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageTaiKhoan.Name = "pageTaiKhoan";
-            this.pageTaiKhoan.Size = new System.Drawing.Size(1517, 681);
+            this.pageTaiKhoan.Size = new System.Drawing.Size(2023, 838);
             this.pageTaiKhoan.Text = "Tải Khoản";
             this.pageTaiKhoan.ToolTipTitle = "Page ToolTip";
             this.pageTaiKhoan.UniqueName = "72EE1F9F8D394B17F5BE0583764C6EB4";
@@ -328,13 +317,23 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // lbListFood
+            // 
+            this.lbListFood.AutoSize = true;
+            this.lbListFood.Location = new System.Drawing.Point(3, 0);
+            this.lbListFood.Name = "lbListFood";
+            this.lbListFood.Size = new System.Drawing.Size(35, 13);
+            this.lbListFood.TabIndex = 0;
+            this.lbListFood.Text = "label1";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1122, 540);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1370, 540);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Navigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -349,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageQLBan)).EndInit();
             this.pageQLBan.ResumeLayout(false);
             this.fpListFood.ResumeLayout(false);
+            this.fpListFood.PerformLayout();
             this.fpTables.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pageQLMenu)).EndInit();
             this.pageQLMenu.ResumeLayout(false);
@@ -383,9 +383,9 @@
         private System.Windows.Forms.FlowLayoutPanel fpListFood;
         public ComponentFactory.Krypton.Toolkit.KryptonButton btAddTable;
         public System.Windows.Forms.FlowLayoutPanel fpTables;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbListFood;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btOrder;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btPay;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbListFood;
     }
 }

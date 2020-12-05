@@ -18,6 +18,7 @@ namespace RestaurantManagement
         {
             Fix = fix;
             InitializeComponent();
+            ReSize();
         }
         string path = "";
         private void bBrowser_Click(object sender, EventArgs e)

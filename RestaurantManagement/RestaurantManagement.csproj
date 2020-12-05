@@ -64,7 +64,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Layout.cs">
+    <Compile Include="Layout\Layout-AddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-FixFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-LoginMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-SignupMasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">

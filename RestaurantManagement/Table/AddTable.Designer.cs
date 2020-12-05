@@ -30,25 +30,23 @@
         {
             this.btAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.SuspendLayout();
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(299, 162);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btAdd.Location = new System.Drawing.Point(224, 132);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(160, 45);
+            this.btAdd.Size = new System.Drawing.Size(120, 37);
             this.btAdd.TabIndex = 0;
             this.btAdd.Values.Text = "Thêm";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(233, 120);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbName.Location = new System.Drawing.Point(175, 98);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(304, 34);
+            this.tbName.Size = new System.Drawing.Size(228, 30);
             this.tbName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -60,27 +58,25 @@
             this.tbName.StateNormal.Border.Rounding = 5;
             this.tbName.TabIndex = 1;
             // 
-            // kryptonLabel1
+            // lbName
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(331, 87);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(88, 28);
-            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel1.TabIndex = 2;
-            this.kryptonLabel1.Values.Text = "Tên bàn";
+            this.lbName.Location = new System.Drawing.Point(248, 71);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(72, 23);
+            this.lbName.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.TabIndex = 2;
+            this.lbName.Values.Text = "Tên bàn";
             // 
             // AddTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(752, 281);
-            this.Controls.Add(this.kryptonLabel1);
+            this.ClientSize = new System.Drawing.Size(564, 228);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.btAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm bàn";
@@ -93,6 +89,6 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton btAdd;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbName;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbName;
     }
 }

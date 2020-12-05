@@ -16,6 +16,7 @@ namespace RestaurantManagement
         public AddTable(FormMain formQLMenu)
         {
             InitializeComponent();
+            ReSize();
             this.FormQLBan = formQLMenu;
         }
 

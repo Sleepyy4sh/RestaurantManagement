@@ -224,5 +224,19 @@ namespace RestaurantManagement
                 return true;
             return false;
         }
+        DataBill dataBill = new DataBill();
+        string[] foods ;
+        int[] indexs;
+        public void SaveBill(string Total)
+        {
+            foods = new string[listFoodInList.Count];
+            indexs = new int[listFoodInList.Count];
+            for (int i=0;i<listFoodInList.Count; i++)
+            {
+                foods[i] = listFoodInList[i].name;
+                indexs[i] =Int32.Parse(listFoodInList[i].index);
+            }
+            dataBill.InsertCTHD(foods,indexs, Total, DateTime.Now.ToString());
+        }
     }
 }
