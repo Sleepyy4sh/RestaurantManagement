@@ -75,7 +75,7 @@ namespace RestaurantManagement
             }
             catch
             {
-                MessageBox.Show("Món ăn đã tồn tại", "Lổi trùng lặp");
+                MessageBox.Show("Món ăn đã tồn tại", "Lỗi trùng lặp");
                 return false;
             }
         }
@@ -101,7 +101,7 @@ namespace RestaurantManagement
                 }
                 catch
                 {
-                    MessageBox.Show("Sửa thất bại", "Lổi");
+                    MessageBox.Show("Sửa thất bại", "Lỗi");
                     return false;
                 }
             }
@@ -131,7 +131,7 @@ namespace RestaurantManagement
                 }
                 catch
                 {
-                    MessageBox.Show("Sửa thất bại", "Lổi");
+                    MessageBox.Show("Sửa thất bại", "Lỗi");
                     return false;
                 }
             }

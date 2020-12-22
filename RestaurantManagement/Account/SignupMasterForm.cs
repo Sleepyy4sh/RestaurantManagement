@@ -81,6 +81,11 @@ namespace RestaurantManagement
             reader = command.ExecuteReader();
             reader.Close();
 
+            sqlQuery = "CREATE TABLE NV(USERNAME CHAR(30) PRIMARY KEY, PASSWORD CHAR(100), FULLNAME NVARCHAR(50), PHONENUMBER CHAR(15) UNIQUE, ADDRESS NVARCHAR(100), DOB SMALLDATETIME, ICNUMBER CHAR(15) UNIQUE, EMAIL CHAR(50) UNIQUE)";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+      
             connection.Close();
 
             var myFile = File.Create("database.txt");
@@ -144,7 +149,7 @@ namespace RestaurantManagement
                         MessageBox.Show("Mật khẩu không khớp");
                     }
                     else
-                        try
+                      try
                         {
                             string nameDB = "MASTER_USER";
 
@@ -168,7 +173,7 @@ namespace RestaurantManagement
                             Form formQLMenu = new FormMain(true);
                             formQLMenu.ShowDialog();
                         }
-                        catch
+                      catch
                         {
                             MessageBox.Show("Tài khoản đã tồn tại");
                         }

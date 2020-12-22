@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace RestaurantManagement
 {
@@ -16,7 +17,9 @@ namespace RestaurantManagement
         bool AD;
         bool ableDelete = false;
         public DataFood_Fix dataFood;
-
+        string server, ID, Svpassword, nameDB;
+        String connString, sqlQuery;
+        SqlConnection connection;
         List<Food_Fix> ListFood = new List<Food_Fix>();
 
         public FormMain(bool AD)
@@ -24,11 +27,26 @@ namespace RestaurantManagement
             this.AD = AD;
             InitializeComponent();
             ReSize();
+            initIn4Server();
             InitFood();
             InitTable();
+            InitRevenue();
+            InitStaff();
             UnSelectTable();
             InitAccount();
             btAddTable.Size = new Size(fpTables.Size.Width / 5 - 6, fpTables.Size.Width / 5 / 5 * 7);
+        }
+
+        private void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
+            using (StreamReader sr = new StreamReader("database.txt"))
+            {
+                nameDB = sr.ReadLine();
+            }
         }
 
         public void Add_Food(string name, string price, Byte[] byt)
@@ -222,6 +240,7 @@ namespace RestaurantManagement
                 }
             }
         }
+
         bool IsChild(string child, string parent)
         {
             if (parent.Length >= child.Length)
@@ -280,10 +299,6 @@ namespace RestaurantManagement
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }

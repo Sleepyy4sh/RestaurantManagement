@@ -64,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormQLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLNV.Designer.cs">
+      <DependentUpon>FormQLNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRevenue.Designer.cs">
+      <DependentUpon>FormRevenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\Layout-AddFood.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -236,7 +236,7 @@ namespace RestaurantManagement
                 foods[i] = listFoodInList[i].name;
                 indexs[i] =Int32.Parse(listFoodInList[i].index);
             }
-            dataBill.InsertCTHD(foods,indexs, Total, DateTime.Now.ToString());
+            dataBill.InsertCTHD(foods,indexs, Total, DateTime.Now.ToString("MM/dd/yyyy HH:mm"));
         }
     }
 }
