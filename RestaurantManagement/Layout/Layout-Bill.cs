@@ -18,6 +18,7 @@ namespace RestaurantManagement
             int sHeight = SystemInformation.VirtualScreen.Height;
             Size sScreen = new Size(sWidth, sHeight);
 
+            this.FormBorderStyle = FormBorderStyle.None;
             float heightFont = sScreen.Height / 48;
             this.Size = new Size((int)(sScreen.Width / 4f), (int)(sScreen.Height / 10 *8));
 
@@ -44,7 +45,11 @@ namespace RestaurantManagement
 
             btComfirm.Font = tbValue.Font;
             btComfirm.Size = tbValue.Size;
-            btComfirm.Location = new Point(tbValue.Location.X, lbTotal.Location.Y +tbValue.Height + tbValue.Height / 2);
+            btComfirm.Location = new Point(this.Width-btComfirm.Width-btComfirm.Width/2, lbTotal.Location.Y +tbValue.Height + tbValue.Height / 2);
+
+            btCancel.Font = btComfirm.Font;
+            btCancel.Size = btComfirm.Size;
+            btCancel.Location = new Point(btCancel.Width/2, lbTotal.Location.Y + tbValue.Height + tbValue.Height / 2);
         }
     }
 }

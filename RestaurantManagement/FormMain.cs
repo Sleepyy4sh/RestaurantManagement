@@ -22,6 +22,7 @@ namespace RestaurantManagement
         SqlConnection connection;
         List<Food_Fix> ListFood = new List<Food_Fix>();
 
+
         public FormMain(bool AD)
         {
             this.AD = AD;
@@ -49,15 +50,18 @@ namespace RestaurantManagement
             }
         }
 
-        public void Add_Food(string name, string price, Byte[] byt)
+        public void AddFood(string name, string price, Byte[] byt,int isFood)
         {
             Food_Fix f = new Food_Fix();
             ListFood.Add(f);
-            f.Set(byt, name, price);
+            f.Set(byt, name, price,isFood);
             f.SetParent(this);
             int unitFood = 5;
             f.SetTransform(fpFoods.Size.Width / unitFood - unitFood, (fpFoods.Size.Width / unitFood - unitFood) / 5 * 7, 0, 0);
-            this.fpFoods.Controls.Add(f);
+            if (isFood == 0) 
+                this.fpFoods.Controls.Add(f);
+            else
+                this.fpDrinks.Controls.Add(f);
         }
         void DeleteInList(string name)
         {
@@ -125,11 +129,11 @@ namespace RestaurantManagement
                 btFix.BackColor = Color.White;
             }
         }
-        public bool InsertData(string name, string price, Byte[] byt)
+        public bool InsertData(string name, string price, Byte[] byt,int isfood)
         {
-            if (dataFood.InSertData(name, price, byt))
+            if (dataFood.InSertData(name, price, byt,isfood))
             {
-                Add_Food(name, price, byt);
+                AddFood(name, price, byt,isfood);
                 return true;
             }
             return false;
@@ -156,6 +160,8 @@ namespace RestaurantManagement
         }
         private void InitFood()
         {
+            fpFoods.Controls.Clear();
+            fpDrinks.Controls.Clear();
             dataFood = new DataFood_Fix(this);
             CheckDelete();
             dataFood.ReadDATA();
@@ -227,7 +233,10 @@ namespace RestaurantManagement
         {
             for (int i = 0; i < ListFood.Count; i++)
             {
-                fpFoods.Controls.Add(ListFood[i]);
+                if (ListFood[i].isFood==0)
+                    fpFoods.Controls.Add(ListFood[i]);
+                else
+                    fpDrinks.Controls.Add(ListFood[i]);
             }
         }
         void Search(string child)
@@ -236,9 +245,27 @@ namespace RestaurantManagement
             {
                 if (IsChild(child, ListFood[i].GetName()))
                 {
-                    fpFoods.Controls.Add(ListFood[i]);
+                    if (ListFood[i].isFood == 0)
+                        fpFoods.Controls.Add(ListFood[i]);
+                    else
+                        fpDrinks.Controls.Add(ListFood[i]);
                 }
             }
+        }
+
+        private void cbIsFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbIsFood.SelectedIndex)
+            {
+                case 0:
+                    fpFoods.Show();
+                    fpDrinks.Hide();
+                    break;
+                case 1:
+                    fpDrinks.Show();
+                    fpFoods.Hide();
+                    break;
+            }    
         }
 
         bool IsChild(string child, string parent)
@@ -298,7 +325,10 @@ namespace RestaurantManagement
                 CheckSearch();
             }
         }
-
+        private void btReFresh_Click(object sender, EventArgs e)    
+        {
+            InitFood();
+        }
 
     }
 }

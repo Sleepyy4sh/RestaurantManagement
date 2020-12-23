@@ -35,9 +35,9 @@ namespace RestaurantManagement
             ID = in4[1];
             Svpassword = in4[2];
         }
-        public bool InsertCTHD(string[] foods,int[] indexs,string TRIGIA, string TIME)
+        public bool InsertCTHD(string[] foods,int[] indexs,string TRIGIA, string TIME, int GiamGia, int type)
         {
-            string id = InsertHoaDon(TRIGIA, TIME);
+            string id = InsertHoaDon(TRIGIA, TIME,GiamGia,type);
             if (id != "")
             {
                 string table = "CTHD";
@@ -67,26 +67,27 @@ namespace RestaurantManagement
             else MessageBox.Show("false");
             return false;
         }
-        public string InsertHoaDon(string TRIGIA, string TIME)
+        public string InsertHoaDon(string TRIGIA, string TIME,int GiamGia,int type)
         {
             string table = "HD";
             //try
             //{
                 int trigia = Int32.Parse(TRIGIA);
-                MessageBox.Show(trigia.ToString());
                 string id = "";
-                String sqlQuery = "insert into " + table + "(TRIGIA,TIME) VALUES (@TRIGIA,@TIME)";
+                String sqlQuery = "insert into " + table + "(TRIGIA,TIME,GIAMGIA,type) VALUES (@TRIGIA,@TIME,@GIAMGIA,@TYPE)";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@TRIGIA", trigia);
                 command.Parameters.AddWithValue("@TIME", TIME);
-                MessageBox.Show(TIME);
+                command.Parameters.AddWithValue("@GIAMGIA", GiamGia);
+                command.Parameters.AddWithValue("@TYPE", type);
                 int rs = command.ExecuteNonQuery();
-
                 sqlQuery = "select ID from " + table + " WHERE TRIGIA = @TRIGIAA AND @TIMEE = TIME";
                 command = new SqlCommand(sqlQuery, connection);
                  command.Parameters.AddWithValue("@TRIGIAA", trigia);
                 command.Parameters.AddWithValue("@TIMEE", TIME);
-                SqlDataReader reader = command.ExecuteReader();
+                command.Parameters.AddWithValue("@GIAMGIA", GiamGia);
+                command.Parameters.AddWithValue("@TYPE", type);
+            SqlDataReader reader = command.ExecuteReader();
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;

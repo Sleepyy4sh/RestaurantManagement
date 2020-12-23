@@ -18,12 +18,24 @@ namespace RestaurantManagement
         protected PictureBox pFood = new PictureBox();
         protected Label lName = new Label();
         protected Label lPrice = new Label();
+
+        public int isFood;
         public void Set(Byte[] url, string name, string price)
         {
             this.name = name;
             pFood.Image = ByteToImg(url);
             lName.Text = name;
             lPrice.Text = price + "000 VNĐ";
+            init();
+            //this.pFood.DoubleClick += new System.EventHandler(OnPicter_DClick);
+        }
+        public void Set(Byte[] url, string name, string price,int isf)
+        {
+            this.name = name;
+            pFood.Image = ByteToImg(url);
+            lName.Text = name;
+            lPrice.Text = price + "000 VNĐ";
+            isFood =isf;
             init();
             //this.pFood.DoubleClick += new System.EventHandler(OnPicter_DClick);
         }

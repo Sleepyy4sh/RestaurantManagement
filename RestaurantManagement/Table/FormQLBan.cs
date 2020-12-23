@@ -151,10 +151,11 @@ namespace RestaurantManagement
         Menu_Select menu_Select;
         private void btOrder_Click(object sender, EventArgs e)
         {
-            menu_Select = new Menu_Select(this);
-            menu_Select.Size = fpTables.Size;
-            menu_Select.ShowDialog();
-            menu_Select.Location = fpTables.Location;
+            menu_Select = new Menu_Select(this, fpTables.Size);
+            this.fpTables.Hide();
+            this.pageQLBan.Controls.Add(menu_Select);
+            menu_Select.Location = new Point(0, 0);
+              menu_Select.Show();
         }
         public bool InList(string name)
         {
@@ -227,7 +228,7 @@ namespace RestaurantManagement
         DataBill dataBill = new DataBill();
         string[] foods ;
         int[] indexs;
-        public void SaveBill(string Total)
+        public void SaveBill(string Total,int giamgia,int type)
         {
             foods = new string[listFoodInList.Count];
             indexs = new int[listFoodInList.Count];
@@ -236,7 +237,36 @@ namespace RestaurantManagement
                 foods[i] = listFoodInList[i].name;
                 indexs[i] =Int32.Parse(listFoodInList[i].index);
             }
-            dataBill.InsertCTHD(foods,indexs, Total, DateTime.Now.ToString("MM/dd/yyyy HH:mm"));
+            dataBill.InsertCTHD(foods,indexs, Total, DateTime.Now.ToString("MM/dd/yyyy HH:mm"),giamgia,type);
+        }
+        public bool ExchangeTable(Table table,string nameTable)
+        {
+            bool Exist=false;
+            Table table1 = new Table(this);
+            for (int i=0;i<listTable.Count;i++)
+            {
+                if (nameTable==listTable[i].Name)
+                {
+                    table1 = listTable[i];
+                    Exist = true;
+                }
+            }
+            if (!Exist)
+            {
+                MessageBox.Show("Bàn không tồn tại");
+                return false;
+            } else
+            {
+                dataTable.ExchangeNameTable(table.Name, table1.Name);
+                bool tg = table.isEmpty;
+                table.isEmpty = table1.isEmpty;
+                table1.isEmpty = tg;
+                UnSelectTable();
+                int g = table.cbStatus.SelectedIndex;
+                table.cbStatus.SelectedIndex = table1.cbStatus.SelectedIndex;
+                table1.cbStatus.SelectedIndex = g;
+            }    
+            return true;
         }
     }
 }

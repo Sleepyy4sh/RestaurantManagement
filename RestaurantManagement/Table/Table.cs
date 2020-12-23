@@ -21,6 +21,7 @@ namespace RestaurantManagement
         public  ComboBox cbStatus = new ComboBox();
         protected Button btOder = new Button();
         PictureBox btDelete = new PictureBox();
+        PictureBox btExchange = new PictureBox();
         public Table(FormMain formQL)
         {
             init();
@@ -93,6 +94,10 @@ namespace RestaurantManagement
             btDelete.SizeMode = PictureBoxSizeMode.Zoom;
             btDelete.Click += new EventHandler(btDelete_Click);
 
+            btExchange.Image = Image.FromFile("images/exchange.png");
+            btExchange.SizeMode = PictureBoxSizeMode.Zoom;
+            btExchange.Click += new EventHandler(btExchange_Click);
+
 
             cbStatus.Items.Add("Đang sửa");
             cbStatus.Items.Add("Đã đặt");
@@ -108,7 +113,7 @@ namespace RestaurantManagement
         {
             GetImageTable();
             FormQLBan.SaveStatus(Name, cbStatus.SelectedItem.ToString());
-                CheckEmpty();
+            CheckEmpty();
         }
         void GetImageTable()
         {
@@ -136,10 +141,12 @@ namespace RestaurantManagement
                 //pTable.Image = Image.FromFile("images/table_Using.png");
             }
             else
-            if (cbStatus.SelectedIndex == 2) 
             {
-                cbStatus.SelectedIndex = 3;
-               // pTable.Image = Image.FromFile("images/table_Free.png");
+                if (cbStatus.SelectedIndex == 2)
+                {
+                    cbStatus.SelectedIndex = 3;
+                    // pTable.Image = Image.FromFile("images/table_Free.png");
+                }
             }
             GetImageTable();
         }
@@ -151,20 +158,24 @@ namespace RestaurantManagement
 
             // tỉ lệ 5:7
             //////////////////
+            ///
+            //kích thước
+            pTable.Size = new Size(sizeX, sizeX);
+            lbName.Size = new Size(sizeX, sizeY / 7);
+            cbStatus.Size = new Size(sizeX / 5 * 3, sizeY / 7);
+            btOder.Size = new Size(sizeX / 5 * 2, sizeY / 7);
+            btOder.Text = "Gọi món";
+            btDelete.Size = new Size(this.Size.Width / 6, this.Size.Width / 6);
+            btExchange.Size = new Size(this.Size.Width / 6, this.Size.Width / 6);
+
             //vị trí
             pTable.Location = new Point(posX, posY);
             lbName.Location = new Point(posX, posY + (int)(5f * (sizeY / 7)));
             cbStatus.Location = new Point(0, posY + (int)(6f * (sizeY / 7)));
             btOder.Location = new Point(posX + (int)(sizeX / 3.2f), posY + (int)(5f * (sizeY / 7)));
             btDelete.Location = new Point(this.Size.Width -this.Size.Height/8, 0);
+            btExchange.Location = new Point(this.Size.Width -this.Size.Height/8 -btExchange.Width, 0);
 
-            //kích thước
-            pTable.Size = new Size(sizeX, sizeX);
-            lbName.Size = new Size(sizeX , sizeY / 7);
-            cbStatus.Size = new Size(sizeX / 5 * 3, sizeY / 7);
-            btOder.Size = new Size(sizeX / 5 * 2, sizeY / 7);
-            btOder.Text = "Gọi món";
-            btDelete.Size = new Size(this.Size.Width/6,this.Size.Width/6);
 
             //Font
             lbName.Font = new Font("Times New Roman", sizeY / 7 / 3.5f);
@@ -172,6 +183,7 @@ namespace RestaurantManagement
 
             //thêm vào nhóm
             this.Controls.Add(btDelete);
+            this.Controls.Add(btExchange);
             this.Controls.Add(pTable);
             this.Controls.Add(lbName);
             this.Controls.Add(cbStatus);
@@ -180,6 +192,11 @@ namespace RestaurantManagement
         void btDelete_Click(object sender,EventArgs args)
         {
             FormQLBan.DeleteTable(this);
+        }
+        void btExchange_Click(object sender, EventArgs args)
+        {
+            ExchangeTable exchange = new ExchangeTable(FormQLBan, this);
+            exchange.ShowDialog();
         }
     }
 }

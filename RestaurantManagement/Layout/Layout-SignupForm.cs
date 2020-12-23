@@ -22,6 +22,7 @@ namespace RestaurantManagement
             Size sScreen = new Size(sWidth, sHeight);
             //sScreen = new Size(600, 330);
 
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 1.345f));
 
             float heightFont = sScreen.Height / 48f;
@@ -64,7 +65,7 @@ namespace RestaurantManagement
 
             btExit.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btExit.Size = new Size(tbRepassword.Width / 3, (int)(tbRepassword.Height * 1.3f));
-            btExit.Location = new Point(tbRepassword.Location.X + btExit.Width / 4, tbRepassword.Location.Y + tbRepassword.Height);
+            btExit.Location = new Point(tbRepassword.Location.X + btExit.Width / 4, tbRepassword.Location.Y + tbRepassword.Height +btExit.Height/10);
 
             btSignup.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSignup.Size = btExit.Size;

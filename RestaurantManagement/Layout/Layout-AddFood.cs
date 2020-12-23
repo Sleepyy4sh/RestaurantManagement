@@ -20,6 +20,7 @@ namespace RestaurantManagement
             Size sScreen = new Size(sWidth, sHeight);
             //sScreen = new Size(600, 330);
 
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 7.5f * 5));
             float heightFont = sScreen.Height / 48;
 
@@ -54,6 +55,15 @@ namespace RestaurantManagement
             bAdd.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.2f);
             bAdd.Size = new Size(pictureBox1.Width / 4 * 3, pictureBox1.Width / 4 * 3 / 5 * 3);
             bAdd.Location = new Point(pictureBox1.Location.X + pictureBox1.Width / 2 - bAdd.Width / 2, bBrowser.Location.Y + bBrowser.Height *2);
+
+            btExit.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.2f);
+            btExit.Size = new Size(pictureBox1.Width / 4 * 3, pictureBox1.Width / 4 * 3 / 5 * 3);
+            btExit.Location = new Point(lbName.Location.X, bBrowser.Location.Y + bBrowser.Height * 2);
+
+            cbIsFood.Font = new Font("Times New Roman", heightFont / 1.5f);
+            cbIsFood.Size = bBrowser.Size;
+            cbIsFood.Location = new Point(tbName.Location.X, tbName.Location.Y - tbName.Height / 2 * 3 );
+            cbIsFood.SelectedIndex = 0;
         }
     }
 }

@@ -35,6 +35,7 @@
             this.tbValue = new System.Windows.Forms.TextBox();
             this.lbTotal = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbDiscount = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // fpFoods
@@ -71,7 +72,7 @@
             "%",
             "VND"});
             this.cbType.Location = new System.Drawing.Point(243, 480);
-            this.cbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(92, 21);
             this.cbType.TabIndex = 3;
@@ -80,7 +81,7 @@
             // tbValue
             // 
             this.tbValue.Location = new System.Drawing.Point(136, 480);
-            this.tbValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbValue.Margin = new System.Windows.Forms.Padding(2);
             this.tbValue.MaxLength = 8;
             this.tbValue.Name = "tbValue";
             this.tbValue.Size = new System.Drawing.Size(103, 20);
@@ -99,12 +100,21 @@
             // lbDiscount
             // 
             this.lbDiscount.Location = new System.Drawing.Point(50, 475);
-            this.lbDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.lbDiscount.Name = "lbDiscount";
             this.lbDiscount.Size = new System.Drawing.Size(82, 23);
             this.lbDiscount.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscount.TabIndex = 7;
             this.lbDiscount.Values.Text = "Giảm giá:";
+            // 
+            // btCancel
+            // 
+            this.btCancel.Location = new System.Drawing.Point(12, 541);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(90, 25);
+            this.btCancel.TabIndex = 8;
+            this.btCancel.Values.Text = "Hủy";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // Bill
             // 
@@ -112,6 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(383, 605);
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.lbDiscount);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.tbValue);
@@ -137,5 +148,6 @@
         private System.Windows.Forms.TextBox tbValue;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbTotal;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbDiscount;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btCancel;
     }
 }

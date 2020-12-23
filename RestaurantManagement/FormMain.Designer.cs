@@ -42,12 +42,17 @@
             this.fpTables = new System.Windows.Forms.FlowLayoutPanel();
             this.btAddTable = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pageQLMenu = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.cbIsFood = new System.Windows.Forms.ComboBox();
             this.btSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tbSearch = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btFix = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btAddFood = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.fpFoods = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpDrinks = new System.Windows.Forms.FlowLayoutPanel();
             this.pageThongKe = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbRBDDiscount = new System.Windows.Forms.Label();
+            this.lbRBDetail = new System.Windows.Forms.Label();
             this.fpRBDetail = new System.Windows.Forms.FlowLayoutPanel();
             this.fpRlbName = new System.Windows.Forms.Label();
             this.fpRlbCnt = new System.Windows.Forms.Label();
@@ -96,9 +101,7 @@
             this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbRBDetail = new System.Windows.Forms.Label();
-            this.lbRBDDiscount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btReFresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Navigator)).BeginInit();
             this.Navigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageQLBan)).BeginInit();
@@ -118,6 +121,7 @@
             this.pageTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btReFresh)).BeginInit();
             this.SuspendLayout();
             // 
             // Navigator
@@ -130,7 +134,7 @@
             this.Navigator.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
             this.Navigator.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.Navigator.Location = new System.Drawing.Point(0, 98);
-            this.Navigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Navigator.Margin = new System.Windows.Forms.Padding(2);
             this.Navigator.Name = "Navigator";
             this.Navigator.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageQLBan,
@@ -138,7 +142,7 @@
             this.pageThongKe,
             this.pageQLNV,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 3;
+            this.Navigator.SelectedIndex = 1;
             this.Navigator.Size = new System.Drawing.Size(2026, 897);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -153,10 +157,10 @@
             this.pageQLBan.Flags = 65534;
             this.pageQLBan.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageQLBan.ImageSmall")));
             this.pageQLBan.LastVisibleSet = true;
-            this.pageQLBan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageQLBan.Margin = new System.Windows.Forms.Padding(2);
             this.pageQLBan.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageQLBan.Name = "pageQLBan";
-            this.pageQLBan.Size = new System.Drawing.Size(1518, 681);
+            this.pageQLBan.Size = new System.Drawing.Size(2024, 838);
             this.pageQLBan.Text = " Quản Lý Bàn";
             this.pageQLBan.ToolTipTitle = "Page ToolTip";
             this.pageQLBan.UniqueName = "E2368B99859C40256FBCE8BBB86E65E9";
@@ -222,22 +226,39 @@
             // pageQLMenu
             // 
             this.pageQLMenu.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.pageQLMenu.Controls.Add(this.btReFresh);
+            this.pageQLMenu.Controls.Add(this.cbIsFood);
             this.pageQLMenu.Controls.Add(this.btSearch);
             this.pageQLMenu.Controls.Add(this.tbSearch);
             this.pageQLMenu.Controls.Add(this.btFix);
             this.pageQLMenu.Controls.Add(this.btAddFood);
             this.pageQLMenu.Controls.Add(this.fpFoods);
+            this.pageQLMenu.Controls.Add(this.fpDrinks);
             this.pageQLMenu.Flags = 65534;
             this.pageQLMenu.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageQLMenu.ImageSmall")));
             this.pageQLMenu.LastVisibleSet = true;
-            this.pageQLMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageQLMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pageQLMenu.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageQLMenu.Name = "pageQLMenu";
             this.pageQLMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pageQLMenu.Size = new System.Drawing.Size(1518, 681);
+            this.pageQLMenu.Size = new System.Drawing.Size(2024, 838);
+            this.pageQLMenu.StateNormal.BorderEdge.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pageQLMenu.StateNormal.BorderEdge.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pageQLMenu.Text = "Quản Lý Menu";
             this.pageQLMenu.ToolTipTitle = "Page ToolTip";
             this.pageQLMenu.UniqueName = "D18C1773B43348FFCBAEE6F5BA9BEFC7";
+            // 
+            // cbIsFood
+            // 
+            this.cbIsFood.FormattingEnabled = true;
+            this.cbIsFood.Items.AddRange(new object[] {
+            "Thức ăn",
+            "Đồ uống"});
+            this.cbIsFood.Location = new System.Drawing.Point(670, 20);
+            this.cbIsFood.Name = "cbIsFood";
+            this.cbIsFood.Size = new System.Drawing.Size(121, 21);
+            this.cbIsFood.TabIndex = 47;
+            this.cbIsFood.SelectedIndexChanged += new System.EventHandler(this.cbIsFood_SelectedIndexChanged);
             // 
             // btSearch
             // 
@@ -263,7 +284,7 @@
             // btFix
             // 
             this.btFix.Location = new System.Drawing.Point(1346, 574);
-            this.btFix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btFix.Margin = new System.Windows.Forms.Padding(2);
             this.btFix.Name = "btFix";
             this.btFix.Size = new System.Drawing.Size(126, 57);
             this.btFix.TabIndex = 2;
@@ -274,7 +295,7 @@
             // btAddFood
             // 
             this.btAddFood.Location = new System.Drawing.Point(1346, 502);
-            this.btAddFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAddFood.Margin = new System.Windows.Forms.Padding(2);
             this.btAddFood.Name = "btAddFood";
             this.btAddFood.Size = new System.Drawing.Size(126, 56);
             this.btAddFood.TabIndex = 1;
@@ -287,10 +308,20 @@
             this.fpFoods.AutoScroll = true;
             this.fpFoods.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.fpFoods.Location = new System.Drawing.Point(3, 3);
-            this.fpFoods.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fpFoods.Margin = new System.Windows.Forms.Padding(2);
             this.fpFoods.Name = "fpFoods";
-            this.fpFoods.Size = new System.Drawing.Size(122, 654);
+            this.fpFoods.Size = new System.Drawing.Size(662, 100);
             this.fpFoods.TabIndex = 0;
+            // 
+            // fpDrinks
+            // 
+            this.fpDrinks.AutoScroll = true;
+            this.fpDrinks.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.fpDrinks.Location = new System.Drawing.Point(3, 3);
+            this.fpDrinks.Margin = new System.Windows.Forms.Padding(2);
+            this.fpDrinks.Name = "fpDrinks";
+            this.fpDrinks.Size = new System.Drawing.Size(662, 100);
+            this.fpDrinks.TabIndex = 0;
             // 
             // pageThongKe
             // 
@@ -315,13 +346,46 @@
             this.pageThongKe.Flags = 65534;
             this.pageThongKe.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageThongKe.ImageSmall")));
             this.pageThongKe.LastVisibleSet = true;
-            this.pageThongKe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.pageThongKe.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageThongKe.Name = "pageThongKe";
             this.pageThongKe.Size = new System.Drawing.Size(2024, 838);
             this.pageThongKe.Text = "Thống Kê";
             this.pageThongKe.ToolTipTitle = "Page ToolTip";
             this.pageThongKe.UniqueName = "CC90403B1D8642C7A2909E6A147096A4";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1210, 555);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Thành tiền:";
+            // 
+            // lbRBDDiscount
+            // 
+            this.lbRBDDiscount.AutoSize = true;
+            this.lbRBDDiscount.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbRBDDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRBDDiscount.Location = new System.Drawing.Point(1210, 526);
+            this.lbRBDDiscount.Name = "lbRBDDiscount";
+            this.lbRBDDiscount.Size = new System.Drawing.Size(68, 16);
+            this.lbRBDDiscount.TabIndex = 27;
+            this.lbRBDDiscount.Text = "Giảm giá: ";
+            // 
+            // lbRBDetail
+            // 
+            this.lbRBDetail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbRBDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRBDetail.Location = new System.Drawing.Point(1069, 57);
+            this.lbRBDetail.Name = "lbRBDetail";
+            this.lbRBDetail.Size = new System.Drawing.Size(257, 50);
+            this.lbRBDetail.TabIndex = 26;
+            this.lbRBDetail.Text = "Chi tiết hóa đơn";
+            this.lbRBDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fpRBDetail
             // 
@@ -331,7 +395,7 @@
             this.fpRBDetail.Controls.Add(this.fpRlbName);
             this.fpRBDetail.Controls.Add(this.fpRlbCnt);
             this.fpRBDetail.Location = new System.Drawing.Point(1017, 149);
-            this.fpRBDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fpRBDetail.Margin = new System.Windows.Forms.Padding(2);
             this.fpRBDetail.Name = "fpRBDetail";
             this.fpRBDetail.Size = new System.Drawing.Size(355, 365);
             this.fpRBDetail.TabIndex = 24;
@@ -390,7 +454,7 @@
             // btRUpdate
             // 
             this.btRUpdate.Location = new System.Drawing.Point(23, 641);
-            this.btRUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btRUpdate.Name = "btRUpdate";
             this.btRUpdate.Size = new System.Drawing.Size(110, 32);
             this.btRUpdate.TabIndex = 21;
@@ -418,7 +482,7 @@
             this.dgRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgRevenue.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgRevenue.Location = new System.Drawing.Point(0, 146);
-            this.dgRevenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.dgRevenue.MultiSelect = false;
             this.dgRevenue.Name = "dgRevenue";
             this.dgRevenue.ReadOnly = true;
@@ -439,7 +503,7 @@
             this.cbRYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRYear.FormattingEnabled = true;
             this.cbRYear.Location = new System.Drawing.Point(220, 42);
-            this.cbRYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRYear.Margin = new System.Windows.Forms.Padding(2);
             this.cbRYear.Name = "cbRYear";
             this.cbRYear.Size = new System.Drawing.Size(59, 21);
             this.cbRYear.TabIndex = 8;
@@ -448,7 +512,7 @@
             // lbRMonth
             // 
             this.lbRMonth.Location = new System.Drawing.Point(286, 42);
-            this.lbRMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbRMonth.Margin = new System.Windows.Forms.Padding(2);
             this.lbRMonth.Name = "lbRMonth";
             this.lbRMonth.Size = new System.Drawing.Size(45, 20);
             this.lbRMonth.TabIndex = 7;
@@ -458,7 +522,7 @@
             // lbRYear
             // 
             this.lbRYear.Location = new System.Drawing.Point(183, 42);
-            this.lbRYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbRYear.Margin = new System.Windows.Forms.Padding(2);
             this.lbRYear.Name = "lbRYear";
             this.lbRYear.Size = new System.Drawing.Size(37, 20);
             this.lbRYear.TabIndex = 6;
@@ -483,7 +547,7 @@
             "11",
             "12"});
             this.cbRMonth.Location = new System.Drawing.Point(342, 42);
-            this.cbRMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRMonth.Margin = new System.Windows.Forms.Padding(2);
             this.cbRMonth.Name = "cbRMonth";
             this.cbRMonth.Size = new System.Drawing.Size(59, 21);
             this.cbRMonth.TabIndex = 5;
@@ -492,7 +556,7 @@
             // btRWBill
             // 
             this.btRWBill.Location = new System.Drawing.Point(142, 99);
-            this.btRWBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRWBill.Margin = new System.Windows.Forms.Padding(2);
             this.btRWBill.Name = "btRWBill";
             this.btRWBill.Size = new System.Drawing.Size(99, 35);
             this.btRWBill.TabIndex = 3;
@@ -502,7 +566,7 @@
             // kryptonLabel1
             // 
             this.kryptonLabel1.Location = new System.Drawing.Point(20, 42);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(95, 20);
             this.kryptonLabel1.TabIndex = 2;
@@ -517,7 +581,7 @@
             "Tháng",
             "Năm"});
             this.cbRType.Location = new System.Drawing.Point(120, 42);
-            this.cbRType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRType.Margin = new System.Windows.Forms.Padding(2);
             this.cbRType.Name = "cbRType";
             this.cbRType.Size = new System.Drawing.Size(59, 21);
             this.cbRType.TabIndex = 1;
@@ -526,7 +590,7 @@
             // btRWRenevue
             // 
             this.btRWRenevue.Location = new System.Drawing.Point(23, 99);
-            this.btRWRenevue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRWRenevue.Margin = new System.Windows.Forms.Padding(2);
             this.btRWRenevue.Name = "btRWRenevue";
             this.btRWRenevue.Size = new System.Drawing.Size(99, 35);
             this.btRWRenevue.TabIndex = 0;
@@ -558,7 +622,7 @@
             this.pageQLNV.Flags = 65534;
             this.pageQLNV.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageQLNV.ImageSmall")));
             this.pageQLNV.LastVisibleSet = true;
-            this.pageQLNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageQLNV.Margin = new System.Windows.Forms.Padding(2);
             this.pageQLNV.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageQLNV.Name = "pageQLNV";
             this.pageQLNV.Size = new System.Drawing.Size(2024, 838);
@@ -571,7 +635,7 @@
             this.tbSUsername.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbSUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSUsername.Location = new System.Drawing.Point(1094, 84);
-            this.tbSUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSUsername.Margin = new System.Windows.Forms.Padding(2);
             this.tbSUsername.Name = "tbSUsername";
             this.tbSUsername.ReadOnly = true;
             this.tbSUsername.Size = new System.Drawing.Size(153, 13);
@@ -605,7 +669,7 @@
             this.dgSEmail});
             this.dgStaff.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgStaff.Location = new System.Drawing.Point(0, 67);
-            this.dgStaff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgStaff.Margin = new System.Windows.Forms.Padding(2);
             this.dgStaff.MultiSelect = false;
             this.dgStaff.Name = "dgStaff";
             this.dgStaff.ReadOnly = true;
@@ -687,7 +751,7 @@
             // btSDelete
             // 
             this.btSDelete.Location = new System.Drawing.Point(1208, 510);
-            this.btSDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btSDelete.Name = "btSDelete";
             this.btSDelete.Size = new System.Drawing.Size(102, 32);
             this.btSDelete.TabIndex = 18;
@@ -697,7 +761,7 @@
             // btSUpdate
             // 
             this.btSUpdate.Location = new System.Drawing.Point(1088, 510);
-            this.btSUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btSUpdate.Name = "btSUpdate";
             this.btSUpdate.Size = new System.Drawing.Size(103, 32);
             this.btSUpdate.TabIndex = 17;
@@ -707,7 +771,7 @@
             // btSReg
             // 
             this.btSReg.Location = new System.Drawing.Point(955, 510);
-            this.btSReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSReg.Margin = new System.Windows.Forms.Padding(2);
             this.btSReg.Name = "btSReg";
             this.btSReg.Size = new System.Drawing.Size(112, 32);
             this.btSReg.TabIndex = 16;
@@ -717,7 +781,7 @@
             // tbSEmail
             // 
             this.tbSEmail.Location = new System.Drawing.Point(1094, 325);
-            this.tbSEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSEmail.Margin = new System.Windows.Forms.Padding(2);
             this.tbSEmail.Name = "tbSEmail";
             this.tbSEmail.Size = new System.Drawing.Size(152, 23);
             this.tbSEmail.TabIndex = 15;
@@ -725,7 +789,7 @@
             // tbSICnumber
             // 
             this.tbSICnumber.Location = new System.Drawing.Point(1094, 284);
-            this.tbSICnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSICnumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbSICnumber.Name = "tbSICnumber";
             this.tbSICnumber.ShortcutsEnabled = false;
             this.tbSICnumber.Size = new System.Drawing.Size(152, 23);
@@ -735,7 +799,7 @@
             // tbSDoB
             // 
             this.tbSDoB.Location = new System.Drawing.Point(1094, 245);
-            this.tbSDoB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSDoB.Margin = new System.Windows.Forms.Padding(2);
             this.tbSDoB.Name = "tbSDoB";
             this.tbSDoB.Size = new System.Drawing.Size(152, 23);
             this.tbSDoB.TabIndex = 13;
@@ -743,7 +807,7 @@
             // tbSAddress
             // 
             this.tbSAddress.Location = new System.Drawing.Point(1094, 203);
-            this.tbSAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSAddress.Margin = new System.Windows.Forms.Padding(2);
             this.tbSAddress.Name = "tbSAddress";
             this.tbSAddress.Size = new System.Drawing.Size(152, 23);
             this.tbSAddress.TabIndex = 12;
@@ -751,7 +815,7 @@
             // tbSPnumber
             // 
             this.tbSPnumber.Location = new System.Drawing.Point(1094, 162);
-            this.tbSPnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSPnumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbSPnumber.Name = "tbSPnumber";
             this.tbSPnumber.ShortcutsEnabled = false;
             this.tbSPnumber.Size = new System.Drawing.Size(152, 23);
@@ -761,7 +825,7 @@
             // tbSFname
             // 
             this.tbSFname.Location = new System.Drawing.Point(1094, 122);
-            this.tbSFname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSFname.Margin = new System.Windows.Forms.Padding(2);
             this.tbSFname.Name = "tbSFname";
             this.tbSFname.Size = new System.Drawing.Size(152, 23);
             this.tbSFname.TabIndex = 10;
@@ -769,7 +833,7 @@
             // lbSEmail
             // 
             this.lbSEmail.Location = new System.Drawing.Point(974, 325);
-            this.lbSEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSEmail.Margin = new System.Windows.Forms.Padding(2);
             this.lbSEmail.Name = "lbSEmail";
             this.lbSEmail.Size = new System.Drawing.Size(42, 20);
             this.lbSEmail.TabIndex = 8;
@@ -778,7 +842,7 @@
             // lbSICnumber
             // 
             this.lbSICnumber.Location = new System.Drawing.Point(974, 284);
-            this.lbSICnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSICnumber.Margin = new System.Windows.Forms.Padding(2);
             this.lbSICnumber.Name = "lbSICnumber";
             this.lbSICnumber.Size = new System.Drawing.Size(86, 20);
             this.lbSICnumber.TabIndex = 7;
@@ -787,7 +851,7 @@
             // lbSDoB
             // 
             this.lbSDoB.Location = new System.Drawing.Point(974, 244);
-            this.lbSDoB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSDoB.Margin = new System.Windows.Forms.Padding(2);
             this.lbSDoB.Name = "lbSDoB";
             this.lbSDoB.Size = new System.Drawing.Size(69, 20);
             this.lbSDoB.TabIndex = 6;
@@ -796,7 +860,7 @@
             // lbSAddress
             // 
             this.lbSAddress.Location = new System.Drawing.Point(974, 203);
-            this.lbSAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSAddress.Margin = new System.Windows.Forms.Padding(2);
             this.lbSAddress.Name = "lbSAddress";
             this.lbSAddress.Size = new System.Drawing.Size(52, 20);
             this.lbSAddress.TabIndex = 5;
@@ -805,7 +869,7 @@
             // lbSPnumber
             // 
             this.lbSPnumber.Location = new System.Drawing.Point(974, 162);
-            this.lbSPnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSPnumber.Margin = new System.Windows.Forms.Padding(2);
             this.lbSPnumber.Name = "lbSPnumber";
             this.lbSPnumber.Size = new System.Drawing.Size(89, 20);
             this.lbSPnumber.TabIndex = 4;
@@ -814,7 +878,7 @@
             // lbSFname
             // 
             this.lbSFname.Location = new System.Drawing.Point(974, 122);
-            this.lbSFname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSFname.Margin = new System.Windows.Forms.Padding(2);
             this.lbSFname.Name = "lbSFname";
             this.lbSFname.Size = new System.Drawing.Size(70, 20);
             this.lbSFname.TabIndex = 3;
@@ -823,7 +887,7 @@
             // lbSUser
             // 
             this.lbSUser.Location = new System.Drawing.Point(974, 81);
-            this.lbSUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSUser.Margin = new System.Windows.Forms.Padding(2);
             this.lbSUser.Name = "lbSUser";
             this.lbSUser.Size = new System.Drawing.Size(90, 20);
             this.lbSUser.TabIndex = 2;
@@ -849,7 +913,7 @@
             this.pageTaiKhoan.Flags = 65534;
             this.pageTaiKhoan.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageTaiKhoan.ImageSmall")));
             this.pageTaiKhoan.LastVisibleSet = true;
-            this.pageTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.pageTaiKhoan.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageTaiKhoan.Name = "pageTaiKhoan";
             this.pageTaiKhoan.Size = new System.Drawing.Size(1517, 681);
@@ -860,7 +924,7 @@
             // btSignout
             // 
             this.btSignout.Location = new System.Drawing.Point(12, 464);
-            this.btSignout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSignout.Margin = new System.Windows.Forms.Padding(2);
             this.btSignout.Name = "btSignout";
             this.btSignout.Size = new System.Drawing.Size(242, 58);
             this.btSignout.TabIndex = 1;
@@ -870,7 +934,7 @@
             // btMasterSignout
             // 
             this.btMasterSignout.Location = new System.Drawing.Point(12, 557);
-            this.btMasterSignout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btMasterSignout.Margin = new System.Windows.Forms.Padding(2);
             this.btMasterSignout.Name = "btMasterSignout";
             this.btMasterSignout.Size = new System.Drawing.Size(242, 58);
             this.btMasterSignout.TabIndex = 0;
@@ -894,45 +958,20 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1538, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // lbRBDetail
+            // btReFresh
             // 
-            this.lbRBDetail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbRBDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRBDetail.Location = new System.Drawing.Point(1069, 57);
-            this.lbRBDetail.Name = "lbRBDetail";
-            this.lbRBDetail.Size = new System.Drawing.Size(257, 50);
-            this.lbRBDetail.TabIndex = 26;
-            this.lbRBDetail.Text = "Chi tiết hóa đơn";
-            this.lbRBDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbRBDDiscount
-            // 
-            this.lbRBDDiscount.AutoSize = true;
-            this.lbRBDDiscount.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbRBDDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRBDDiscount.Location = new System.Drawing.Point(1210, 526);
-            this.lbRBDDiscount.Name = "lbRBDDiscount";
-            this.lbRBDDiscount.Size = new System.Drawing.Size(68, 16);
-            this.lbRBDDiscount.TabIndex = 27;
-            this.lbRBDDiscount.Text = "Giảm giá: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1210, 555);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Thành tiền:";
+            this.btReFresh.Location = new System.Drawing.Point(1163, 47);
+            this.btReFresh.Name = "btReFresh";
+            this.btReFresh.Size = new System.Drawing.Size(65, 60);
+            this.btReFresh.TabIndex = 48;
+            this.btReFresh.TabStop = false;
             // 
             // FormMain
             // 
@@ -941,12 +980,12 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1409, 797);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Navigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurant Management";
@@ -974,6 +1013,7 @@
             this.pageTaiKhoan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btReFresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -989,6 +1029,7 @@
         private ComponentFactory.Krypton.Navigator.KryptonPage cainaykhongdung;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageQLBan;
         private System.Windows.Forms.FlowLayoutPanel fpFoods;
+        private System.Windows.Forms.FlowLayoutPanel fpDrinks;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btAddFood;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btFix;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btMasterSignout;
@@ -1047,5 +1088,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbRBDDiscount;
         private System.Windows.Forms.Label lbRBDetail;
+        private System.Windows.Forms.ComboBox cbIsFood;
+        private System.Windows.Forms.PictureBox btReFresh;
     }
 }

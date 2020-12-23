@@ -61,7 +61,7 @@ namespace RestaurantManagement
             command.Parameters.AddWithValue("@ad", 1);
             command.ExecuteNonQuery();
 
-            sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
+            sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image,ISFood TINYINT)";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
@@ -71,7 +71,7 @@ namespace RestaurantManagement
             reader = command.ExecuteReader();
             reader.Close();
 
-            sqlQuery = "CREATE TABLE HD(ID UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID() NOT NULL, TRIGIA INT,TIME SMALLDATETIME)";
+            sqlQuery = "CREATE TABLE HD(ID UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID() NOT NULL, TRIGIA INT,TIME SMALLDATETIME,GIAMGIA int,TYPE int)";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();

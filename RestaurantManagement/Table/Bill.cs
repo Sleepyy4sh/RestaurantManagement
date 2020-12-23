@@ -42,9 +42,20 @@ namespace RestaurantManagement
 
         private void btComfirm_Click(object sender, EventArgs e)
         {
-            formMain.SaveBill(value.ToString());
-            formMain.ClearAllFood(tableSelected);
-            this.Hide();
+            if ((cbType.SelectedIndex == 0) &&(tbValue.Text!="")&& (Int32.Parse(tbValue.Text) >= 100))
+                MessageBox.Show("% Phải nhỏ hơn hoặc bằng 100%");
+            else
+            {
+                int giamgia = 0;
+                if (tbValue.Text != "")
+                    giamgia = Int32.Parse(tbValue.Text);
+                int type = cbType.SelectedIndex;
+
+
+                formMain.SaveBill(value.ToString(),giamgia,type);
+                formMain.ClearAllFood(tableSelected);
+                this.Close();
+            }
         }
         private void tbValue_TextChanged(object sender, EventArgs e)
         {
@@ -86,8 +97,10 @@ namespace RestaurantManagement
             {
                 if (cbType.SelectedIndex == 0)
                 {
-                   value = Sum * 1000 - Sum * 1000 * Int32.Parse(tbValue.Text) / 100;
-                    lbTotal.Text = " Thành tiền = " + value.ToString() + " VNĐ";
+                    {
+                        value = Sum * 1000 - Sum * 1000 * Int32.Parse(tbValue.Text) / 100;
+                        lbTotal.Text = " Thành tiền = " + value.ToString() + " VNĐ";
+                    }
                 }
                 else
                 if (cbType.SelectedIndex == 1)
@@ -100,6 +113,11 @@ namespace RestaurantManagement
             {
                 lbTotal.Text = "Thành tiền = " + Sum.ToString() + "000 VNĐ";
             }
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace RestaurantManagement
             Size sScreen = new Size(sWidth, sHeight);
             //sScreen = new Size(600, 330);
 
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 1.345f));
 
             // Pannel tiêu đề
@@ -61,7 +62,7 @@ namespace RestaurantManagement
 
             btSignup.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSignup.Size = new Size(tbPassword.Width / 3, (int)(tbPassword.Height * 1.3f));
-            btSignup.Location = new Point(tbPassword.Location.X + btSignup.Width / 4, tbPassword.Location.Y + tbPassword.Height );
+            btSignup.Location = new Point(tbPassword.Location.X + btSignup.Width / 4, tbPassword.Location.Y + tbPassword.Height + btSignup.Height / 10) ;
 
             btLogin.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btLogin.Size = btSignup.Size;

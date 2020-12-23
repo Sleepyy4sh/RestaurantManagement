@@ -97,10 +97,16 @@
     <Compile Include="Layout\Layout-LoginMasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Layout\Layout-MenuSelected.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Layout\Layout-SignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Layout\Layout-SignupMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout_ExchangeTable.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -127,6 +133,12 @@
     </Compile>
     <Compile Include="Food\FixFood.Designer.cs">
       <DependentUpon>FixFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\ExchangeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\ExchangeTable.Designer.cs">
+      <DependentUpon>ExchangeTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Table\FoodInBill.cs">
       <SubType>Component</SubType>
@@ -188,7 +200,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table\Menu_Select.cs">
-      <SubType>Form</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table\Menu_Select.Designer.cs">
       <DependentUpon>Menu_Select.cs</DependentUpon>
@@ -221,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account\SignupMasterForm.resx">
       <DependentUpon>SignupMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\ExchangeTable.resx">
+      <DependentUpon>ExchangeTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Table\Menu_Select.resx">
       <DependentUpon>Menu_Select.cs</DependentUpon>

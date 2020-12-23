@@ -41,6 +41,8 @@
             this.lbPrice = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tbPrice = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.cbIsFood = new System.Windows.Forms.ComboBox();
+            this.btExit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +106,7 @@
             // bAdd
             // 
             this.bAdd.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bAdd.Location = new System.Drawing.Point(337, 330);
+            this.bAdd.Location = new System.Drawing.Point(459, 330);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(111, 46);
             this.bAdd.TabIndex = 39;
@@ -132,7 +134,7 @@
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(268, 52);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(237, 28);
             this.tbName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -146,7 +148,7 @@
             // tbPrice
             // 
             this.tbPrice.Location = new System.Drawing.Point(268, 96);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(237, 28);
             this.tbPrice.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -157,12 +159,35 @@
             this.tbPrice.TabIndex = 45;
             this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
             // 
+            // cbIsFood
+            // 
+            this.cbIsFood.FormattingEnabled = true;
+            this.cbIsFood.Items.AddRange(new object[] {
+            "Thức ăn",
+            "Đồ uống"});
+            this.cbIsFood.Location = new System.Drawing.Point(268, 12);
+            this.cbIsFood.Name = "cbIsFood";
+            this.cbIsFood.Size = new System.Drawing.Size(121, 21);
+            this.cbIsFood.TabIndex = 46;
+            // 
+            // btExit
+            // 
+            this.btExit.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btExit.Location = new System.Drawing.Point(176, 330);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(111, 46);
+            this.btExit.TabIndex = 47;
+            this.btExit.Values.Text = "Thoát";
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
             // AddFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(656, 464);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.cbIsFood);
             this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.lbPrice);
@@ -199,5 +224,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbPrice;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbName;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbPrice;
+        private System.Windows.Forms.ComboBox cbIsFood;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btExit;
     }
 }

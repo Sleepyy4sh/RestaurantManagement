@@ -241,5 +241,35 @@ namespace RestaurantManagement
                 }
             return i;
         }
+        public bool ExchangeNameTable(string name1,string name2)
+        {
+            string tmp = name1.Remove(name1.Length - 1, 1) + '/';
+            FixName(name1, tmp);
+            string tmp2 = name2;
+            FixName(name2, name1);
+            FixName(tmp, tmp2);
+            return true;
+        }
+        public bool FixName(string nametemp, string name)
+        {
+                string table = "listtable";
+                try
+                {
+                MessageBox.Show(nametemp+" thành "+ name);
+                    String sqlQuery = "update " + table + " set name = " + "'" + name +"'"+" where name =" + "'" + nametemp + "'";
+                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+                    int rs = command.ExecuteNonQuery();
+                    if (rs != 1)
+                    {
+                        throw new Exception("Failed Query");
+                    }
+                    return true;
+                }
+                catch
+                {
+                   // MessageBox.Show("Sửa thất bại", "Lỗi");
+                    return false;
+                }
+        }
     }
 }

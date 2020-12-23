@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace RestaurantManagement
 {
-    public partial class AddTable : Form
+    public partial class ExchangeTable : Form
     {
         void ReSize()
         {
@@ -26,11 +26,11 @@ namespace RestaurantManagement
             lbName.Location = new Point(this.Width / 2 - lbName.Width / 2, this.Height / 3 - lbName.Height);
 
             tbName.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.3f);
-            tbName.Size = new Size(this.Width / 2, 0) ;
-            tbName.Location = new Point(this.Width / 2 - tbName.Width / 2, this.Height / 2 - tbName.Height );
+            tbName.Size = new Size(this.Width / 2, 0);
+            tbName.Location = new Point(this.Width / 2 - tbName.Width / 2, this.Height / 2 - tbName.Height);
 
             btAdd.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.3f);
-            btAdd.Size = new Size(this.Width / 7, this.Width / 7 / 5*2);
+            btAdd.Size = new Size(this.Width / 7, this.Width / 7 / 5 * 2);
             btAdd.Location = new Point(this.Width / 2 - btAdd.Width / 2, tbName.Location.Y + tbName.Height);
         }
     }

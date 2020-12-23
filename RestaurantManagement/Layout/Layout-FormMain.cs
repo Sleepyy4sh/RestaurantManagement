@@ -23,6 +23,8 @@ namespace RestaurantManagement
             float heightFont = sScreen.Height / 48f;
 
             this.Size = sScreen;
+            //this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.MaximumSize = this.MinimumSize = sScreen;
             this.WindowState = FormWindowState.Maximized;
 
@@ -45,7 +47,6 @@ namespace RestaurantManagement
             // Quản lí bàn
             pageQLBan.Size = new Size(this.Size.Width, this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height);
             //pageQLBan.ImageLarge = pageQLBan.ImageLarge = pageQLBan.ImageMedium;
-
             fpTables.Size = new Size(this.Size.Width / 4 * 3, (int)((this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height) * 0.95f));
 
 
@@ -56,8 +57,8 @@ namespace RestaurantManagement
             fpListFood.Location = new Point(fpTables.Size.Width +1, fpTables.Location.Y);
 
             btOrder.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
-            btOrder.Size = new Size(fpListFood.Size.Width / 3, fpTables.Size.Height - fpListFood.Size.Height);
-            btOrder.Location = new Point(fpListFood.Location.X, fpListFood.Location.Y + fpListFood.Size.Height + 0);
+            btOrder.Size = new Size(fpListFood.Size.Width / 3, (int)((fpTables.Size.Height - fpListFood.Size.Height) * 0.9f));
+            btOrder.Location = new Point(fpListFood.Location.X, fpListFood.Location.Y + fpListFood.Size.Height + btOrder.Height/10);
 
             btPay.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btPay.Size = btOrder.Size;
@@ -86,7 +87,24 @@ namespace RestaurantManagement
 
             btAddFood.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btAddFood.Size = btFix.Size;
-            btAddFood.Location = new Point(btFix.Location.X, btFix.Location.Y - btFix.Size.Height );
+            btAddFood.Location = new Point(btFix.Location.X, btFix.Location.Y - btFix.Size.Height - btAddFood.Height / 10) ;
+
+            cbIsFood.SelectedIndex = 0;
+            cbIsFood.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbIsFood.Size = btSearch.Size;
+            new Font("Times New Roman", heightFont / 1.5f); 
+            cbIsFood.Location = new Point(fpFoods.Location.X + fpFoods.Width, 0);
+
+            fpFoods.Show();
+            fpDrinks.Hide();
+            fpDrinks.Size = fpFoods.Size;
+            fpDrinks.Location = fpFoods.Location;
+
+            btReFresh.Image = Image.FromFile("images/refresh.jpg");
+            btReFresh.SizeMode = PictureBoxSizeMode.Zoom;
+            btReFresh.Size = new Size(tbSearch.Height, tbSearch.Height);
+            btReFresh.Location = new Point(cbIsFood.Location.X, cbIsFood.Location.Y + btReFresh.Height);
+            btReFresh.Click += new EventHandler(btReFresh_Click);
         }
     }
 }

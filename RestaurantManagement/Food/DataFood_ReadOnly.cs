@@ -44,7 +44,7 @@ namespace RestaurantManagement
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                parent.Add(reader.GetString(0), reader.GetString(1), (Byte[])reader[2]);
+                parent.Add(reader.GetString(0), reader.GetString(1), (Byte[])reader[2], (int)reader.GetByte(3));
             }
             reader.Close();
         }

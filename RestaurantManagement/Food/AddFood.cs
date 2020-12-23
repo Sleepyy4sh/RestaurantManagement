@@ -19,6 +19,7 @@ namespace RestaurantManagement
             Fix = fix;
             InitializeComponent();
             ReSize();
+            cbIsFood.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         string path = "";
         private void bBrowser_Click(object sender, EventArgs e)
@@ -59,7 +60,8 @@ namespace RestaurantManagement
             }
             else
             {
-                if (Fix.InsertData(ChuanHoa(tbName.Text), RemoveSpace(tbPrice.Text), converImgToByte(path)))
+                int isfood = cbIsFood.SelectedIndex;
+                if (Fix.InsertData(ChuanHoa(tbName.Text), RemoveSpace(tbPrice.Text), converImgToByte(path),isfood))
                 {
                     MessageBox.Show("Thêm món " + ChuanHoa(tbName.Text) + " thành công");
                     tbName.Text = "";
@@ -166,5 +168,9 @@ namespace RestaurantManagement
             tbPrice.SelectionStart = pos;
         }
 
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

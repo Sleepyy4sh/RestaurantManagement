@@ -72,7 +72,7 @@ namespace RestaurantManagement
                     cbRMonth.Visible = true;
                     break;
             }
-        }
+        }   
 
         private void btRWRenevue_Click(object sender, EventArgs e)
         {
