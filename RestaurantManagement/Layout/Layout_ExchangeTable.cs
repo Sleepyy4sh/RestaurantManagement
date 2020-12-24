@@ -18,7 +18,7 @@ namespace RestaurantManagement
             int sHeight = SystemInformation.VirtualScreen.Height;
             Size sScreen = new Size(sWidth, sHeight);
 
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             float heightFont = sScreen.Height / 48;
             this.Size = new Size(sScreen.Width / 7 * 3, (int)(sScreen.Height / 3f));
 

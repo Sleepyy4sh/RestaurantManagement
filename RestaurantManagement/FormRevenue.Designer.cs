@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagement
 {
-    partial class FormRevenue
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.

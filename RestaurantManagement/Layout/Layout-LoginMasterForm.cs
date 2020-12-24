@@ -22,7 +22,6 @@ namespace RestaurantManagement
             Size sScreen = new Size(sWidth, sHeight);
             //sScreen = new Size(600, 330);
 
-            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 1.345f));
 
             // Pannel tiêu đề
@@ -54,7 +53,7 @@ namespace RestaurantManagement
             tbUsername.Location = new Point(lbUser.Location.X, lbUser.Location.Y + lbUser.Height );
 
             lbPass.Font = new Font("Times New Roman", heightFont / 1.51f);
-            lbPass.Location = new Point(tbUsername.Location.X, tbUsername.Location.Y + tbUsername.Height + lbUser.Height );
+            lbPass.Location = new Point(tbUsername.Location.X, tbUsername.Location.Y + tbUsername.Height + lbUser.Height *3);
 
             tbPassword.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.0f);
             tbPassword.Size = new Size(pnInfor.Width / 5 * 3, pnInfor.Height / 10);

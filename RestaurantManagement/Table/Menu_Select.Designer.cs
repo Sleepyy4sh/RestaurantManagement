@@ -33,7 +33,8 @@
             this.fpDrinkSelected = new System.Windows.Forms.FlowLayoutPanel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btFinished = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.cbIsFood = new System.Windows.Forms.ComboBox();
+            this.btDrink = new System.Windows.Forms.Button();
+            this.btFood = new System.Windows.Forms.Button();
             this.btSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tbSearch = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.SuspendLayout();
@@ -67,17 +68,26 @@
             this.btFinished.Values.Text = "Xong";
             this.btFinished.Click += new System.EventHandler(this.btFinished_Click);
             // 
-            // cbIsFood
+            // btDrink
             // 
-            this.cbIsFood.FormattingEnabled = true;
-            this.cbIsFood.Items.AddRange(new object[] {
-            "Thức ăn",
-            "Đồ uống"});
-            this.cbIsFood.Location = new System.Drawing.Point(670, 20);
-            this.cbIsFood.Name = "cbIsFood";
-            this.cbIsFood.Size = new System.Drawing.Size(121, 21);
-            this.cbIsFood.TabIndex = 47;
-            this.cbIsFood.SelectedIndexChanged += new System.EventHandler(this.cbIsFood_SelectedIndexChanged);
+            this.btDrink.Location = new System.Drawing.Point(670, 42);
+            this.btDrink.Name = "btDrink";
+            this.btDrink.Size = new System.Drawing.Size(75, 23);
+            this.btDrink.TabIndex = 50;
+            this.btDrink.Text = "Thức uống";
+            this.btDrink.UseVisualStyleBackColor = true;
+            this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
+            // 
+            // btFood
+            // 
+            this.btFood.Location = new System.Drawing.Point(670, 3);
+            this.btFood.Name = "btFood";
+            this.btFood.Size = new System.Drawing.Size(75, 23);
+            this.btFood.TabIndex = 49;
+            this.btFood.Text = "Đồ ăn";
+            this.btFood.UseVisualStyleBackColor = true;
+            this.btFood.Click += new System.EventHandler(this.btFood_Click);
+            // 
             // 
             // btSearch
             // 
@@ -117,7 +127,8 @@
         private System.Windows.Forms.FlowLayoutPanel fpDrinkSelected;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btFinished;
-        private System.Windows.Forms.ComboBox cbIsFood;
+        private System.Windows.Forms.Button btFood;
+        private System.Windows.Forms.Button btDrink;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btSearch;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbSearch;
     }

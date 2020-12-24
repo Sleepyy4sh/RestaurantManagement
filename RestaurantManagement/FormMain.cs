@@ -252,22 +252,6 @@ namespace RestaurantManagement
                 }
             }
         }
-
-        private void cbIsFood_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (cbIsFood.SelectedIndex)
-            {
-                case 0:
-                    fpFoods.Show();
-                    fpDrinks.Hide();
-                    break;
-                case 1:
-                    fpDrinks.Show();
-                    fpFoods.Hide();
-                    break;
-            }    
-        }
-
         bool IsChild(string child, string parent)
         {
             if (parent.Length >= child.Length)
@@ -280,6 +264,24 @@ namespace RestaurantManagement
                 }
             return false;
         }
+
+        private void btFood_Click(object sender, EventArgs e)
+        {
+            fpFoods.Show();
+            fpDrinks.Hide();
+        }
+
+        private void btDrink_Click(object sender, EventArgs e)
+        {
+            fpFoods.Hide();
+            fpDrinks.Show();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         string ChuanHoa(string S)
         {
             while (S.Length > 0 && S[0] == ' ')

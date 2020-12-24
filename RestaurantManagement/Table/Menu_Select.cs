@@ -79,20 +79,18 @@ namespace RestaurantManagement
             this.Hide();
             formQLMenu.fpTables.Show();
         }
-        private void cbIsFood_SelectedIndexChanged(object sender, EventArgs e)
+        private void btFood_Click(object sender, EventArgs e)
         {
-            switch (cbIsFood.SelectedIndex)
-            {
-                case 0:
-                   fpFoodSelected.Show();
-                   fpDrinkSelected.Hide();
-                    break;
-                case 1:
-                   fpDrinkSelected.Show();
-                   fpFoodSelected.Hide();
-                    break;
-            }
+            fpFoodSelected.Show();
+            fpDrinkSelected.Hide();
         }
+
+        private void btDrink_Click(object sender, EventArgs e)
+        {
+            fpFoodSelected.Hide();
+            fpDrinkSelected.Show();
+        }
+
         private void btSearch_Click(object sender, EventArgs e)
         {
             CheckSearch();

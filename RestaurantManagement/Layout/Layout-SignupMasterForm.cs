@@ -23,7 +23,6 @@ namespace RestaurantManagement
 
             //sScreen = new Size(700, 330);
 
-            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 1.345f));
 
             float heightFont = sScreen.Height / 48f;

@@ -24,9 +24,12 @@ namespace RestaurantManagement
 
             this.Size = sScreen;
             //this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
             this.MaximumSize = this.MinimumSize = sScreen;
             this.WindowState = FormWindowState.Maximized;
+            //  this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
 
             this.Location = new Point(this.Width / 2, this.Height / 2);
 
@@ -35,6 +38,7 @@ namespace RestaurantManagement
 
             Navigator.Location = new Point(0, pictureBox1.Size.Height - 5);
             Navigator.StateCommon.Tab.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
+         
             // MessageBox.Show(Navigator.Font.Size.ToString());
             //MessageBox.Show(Navigator.StateCommon.Tab.Content.ShortText.Font.Size.ToString());
             Navigator.AutoSize = false;
@@ -47,7 +51,7 @@ namespace RestaurantManagement
             // Quản lí bàn
             pageQLBan.Size = new Size(this.Size.Width, this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height);
             //pageQLBan.ImageLarge = pageQLBan.ImageLarge = pageQLBan.ImageMedium;
-            fpTables.Size = new Size(this.Size.Width / 4 * 3, (int)((this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height) * 0.95f));
+            fpTables.Size = new Size(this.Size.Width / 4 * 3, (int)((this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height) * 1f));
 
 
             fpTables.Location = new Point(0, 0);
@@ -75,7 +79,7 @@ namespace RestaurantManagement
 
             tbSearch.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.0f);
             tbSearch.Size = new Size(sizeOptions.Width / 2, sizeOptions.Width / 3 / 3);
-            tbSearch.Location = new Point(fpFoods.Location.X + fpFoods.Size.Width + sizeOptions.Width / 2 - tbSearch.Size.Width / 2, tbSearch.Height);
+            tbSearch.Location = new Point(fpFoods.Location.X + fpFoods.Size.Width + sizeOptions.Width / 2 - tbSearch.Size.Width / 2, tbSearch.Height*3);
 
             btSearch.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSearch.Size = new Size(sizeOptions.Width / 3, sizeOptions.Width / 3 / 3);
@@ -89,11 +93,14 @@ namespace RestaurantManagement
             btAddFood.Size = btFix.Size;
             btAddFood.Location = new Point(btFix.Location.X, btFix.Location.Y - btFix.Size.Height - btAddFood.Height / 10) ;
 
-            cbIsFood.SelectedIndex = 0;
-            cbIsFood.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbIsFood.Size = btSearch.Size;
+
+            btFood.Size = btSearch.Size;
             new Font("Times New Roman", heightFont / 1.5f); 
-            cbIsFood.Location = new Point(fpFoods.Location.X + fpFoods.Width, 0);
+            btFood.Location = new Point(fpFoods.Location.X + fpFoods.Width, 0);
+
+            btDrink.Size = btSearch.Size;
+            new Font("Times New Roman", heightFont / 1.5f);
+            btDrink.Location = new Point(fpFoods.Location.X + fpFoods.Width, btFood.Height);
 
             fpFoods.Show();
             fpDrinks.Hide();
@@ -103,8 +110,12 @@ namespace RestaurantManagement
             btReFresh.Image = Image.FromFile("images/refresh.jpg");
             btReFresh.SizeMode = PictureBoxSizeMode.Zoom;
             btReFresh.Size = new Size(tbSearch.Height, tbSearch.Height);
-            btReFresh.Location = new Point(cbIsFood.Location.X, cbIsFood.Location.Y + btReFresh.Height);
+            btReFresh.Location = new Point(btFood.Location.X, btDrink.Location.Y+btDrink.Height);
             btReFresh.Click += new EventHandler(btReFresh_Click);
+
+            btExit.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btExit.Size = new Size(pictureBox1.Height,pictureBox1.Height);
+            btExit.Location = new Point(this.Width-btExit.Width, 0);
         }
     }
 }

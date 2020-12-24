@@ -255,7 +255,6 @@ namespace RestaurantManagement
                 string table = "listtable";
                 try
                 {
-                MessageBox.Show(nametemp+" thành "+ name);
                     String sqlQuery = "update " + table + " set name = " + "'" + name +"'"+" where name =" + "'" + nametemp + "'";
                     SqlCommand command = new SqlCommand(sqlQuery, connection);
                     int rs = command.ExecuteNonQuery();

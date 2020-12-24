@@ -22,7 +22,6 @@ namespace RestaurantManagement
             Size sScreen = new Size(sWidth, sHeight);
             //sScreen = new Size(600, 330);
 
-            this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 1.345f));
 
             float heightFont = sScreen.Height / 48f;
@@ -50,14 +49,14 @@ namespace RestaurantManagement
             tbUsername.Location = new Point(lbUser.Location.X, lbUser.Location.Y + lbUser.Height);
 
             lbPass.Font = new Font("Times New Roman", heightFont / 1.51f);
-            lbPass.Location = new Point(tbUsername.Location.X, tbUsername.Location.Y + tbUsername.Height + lbUser.Height);
+            lbPass.Location = new Point(tbUsername.Location.X, tbUsername.Location.Y + tbUsername.Height + lbUser.Height*2);
 
             tbPassword.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.0f);
             tbPassword.Size = new Size(pnInfor.Width / 5 * 3, pnInfor.Height / 10);
             tbPassword.Location = new Point(lbPass.Location.X, lbPass.Location.Y + lbPass.Height );
 
             lbRePass.Font = new Font("Times New Roman", heightFont / 1.51f);
-            lbRePass.Location = new Point(tbPassword.Location.X, tbPassword.Location.Y + tbPassword.Height + lbRePass.Height);
+            lbRePass.Location = new Point(tbPassword.Location.X, tbPassword.Location.Y + tbPassword.Height + lbRePass.Height*2);
 
             tbRepassword.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.0f);
             tbRepassword.Size = new Size(pnInfor.Width / 5 * 3, pnInfor.Height / 10);

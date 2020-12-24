@@ -13,11 +13,11 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            //if (disposing && (components != null))
+            //{
+            //    components.Dispose();
+            //}
+            //base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Navigator = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageQLBan = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.btPay = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -42,7 +42,9 @@
             this.fpTables = new System.Windows.Forms.FlowLayoutPanel();
             this.btAddTable = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pageQLMenu = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.cbIsFood = new System.Windows.Forms.ComboBox();
+            this.btDrink = new System.Windows.Forms.Button();
+            this.btFood = new System.Windows.Forms.Button();
+            this.btReFresh = new System.Windows.Forms.PictureBox();
             this.btSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tbSearch = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btFix = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -101,7 +103,7 @@
             this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btReFresh = new System.Windows.Forms.PictureBox();
+            this.btExit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.Navigator)).BeginInit();
             this.Navigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageQLBan)).BeginInit();
@@ -110,6 +112,7 @@
             this.fpTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageQLMenu)).BeginInit();
             this.pageQLMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btReFresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageThongKe)).BeginInit();
             this.pageThongKe.SuspendLayout();
             this.fpRBDetail.SuspendLayout();
@@ -121,7 +124,6 @@
             this.pageTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btReFresh)).BeginInit();
             this.SuspendLayout();
             // 
             // Navigator
@@ -226,8 +228,9 @@
             // pageQLMenu
             // 
             this.pageQLMenu.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.pageQLMenu.Controls.Add(this.btDrink);
+            this.pageQLMenu.Controls.Add(this.btFood);
             this.pageQLMenu.Controls.Add(this.btReFresh);
-            this.pageQLMenu.Controls.Add(this.cbIsFood);
             this.pageQLMenu.Controls.Add(this.btSearch);
             this.pageQLMenu.Controls.Add(this.tbSearch);
             this.pageQLMenu.Controls.Add(this.btFix);
@@ -248,17 +251,33 @@
             this.pageQLMenu.ToolTipTitle = "Page ToolTip";
             this.pageQLMenu.UniqueName = "D18C1773B43348FFCBAEE6F5BA9BEFC7";
             // 
-            // cbIsFood
+            // btDrink
             // 
-            this.cbIsFood.FormattingEnabled = true;
-            this.cbIsFood.Items.AddRange(new object[] {
-            "Thức ăn",
-            "Đồ uống"});
-            this.cbIsFood.Location = new System.Drawing.Point(670, 20);
-            this.cbIsFood.Name = "cbIsFood";
-            this.cbIsFood.Size = new System.Drawing.Size(121, 21);
-            this.cbIsFood.TabIndex = 47;
-            this.cbIsFood.SelectedIndexChanged += new System.EventHandler(this.cbIsFood_SelectedIndexChanged);
+            this.btDrink.Location = new System.Drawing.Point(670, 42);
+            this.btDrink.Name = "btDrink";
+            this.btDrink.Size = new System.Drawing.Size(75, 23);
+            this.btDrink.TabIndex = 50;
+            this.btDrink.Text = "Thức uống";
+            this.btDrink.UseVisualStyleBackColor = true;
+            this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
+            // 
+            // btFood
+            // 
+            this.btFood.Location = new System.Drawing.Point(670, 3);
+            this.btFood.Name = "btFood";
+            this.btFood.Size = new System.Drawing.Size(75, 23);
+            this.btFood.TabIndex = 49;
+            this.btFood.Text = "Đồ ăn";
+            this.btFood.UseVisualStyleBackColor = true;
+            this.btFood.Click += new System.EventHandler(this.btFood_Click);
+            // 
+            // btReFresh
+            // 
+            this.btReFresh.Location = new System.Drawing.Point(1163, 47);
+            this.btReFresh.Name = "btReFresh";
+            this.btReFresh.Size = new System.Drawing.Size(65, 60);
+            this.btReFresh.TabIndex = 48;
+            this.btReFresh.TabStop = false;
             // 
             // btSearch
             // 
@@ -470,14 +489,14 @@
             this.dgRevenue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRevenue.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgRevenue.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRevenue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRevenue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgRevenue.ColumnHeadersHeight = 40;
             this.dgRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgRevenue.GridColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -489,8 +508,8 @@
             this.dgRevenue.RowHeadersVisible = false;
             this.dgRevenue.RowHeadersWidth = 51;
             this.dgRevenue.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgRevenue.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgRevenue.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgRevenue.RowTemplate.Height = 24;
             this.dgRevenue.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgRevenue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -649,14 +668,14 @@
             this.dgStaff.AllowUserToResizeRows = false;
             this.dgStaff.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dgStaff.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgStaff.ColumnHeadersHeight = 40;
             this.dgStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -676,8 +695,8 @@
             this.dgStaff.RowHeadersVisible = false;
             this.dgStaff.RowHeadersWidth = 51;
             this.dgStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgStaff.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgStaff.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgStaff.RowTemplate.Height = 24;
             this.dgStaff.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -965,13 +984,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btReFresh
+            // btExit
             // 
-            this.btReFresh.Location = new System.Drawing.Point(1163, 47);
-            this.btReFresh.Name = "btReFresh";
-            this.btReFresh.Size = new System.Drawing.Size(65, 60);
-            this.btReFresh.TabIndex = 48;
-            this.btReFresh.TabStop = false;
+            this.btExit.Location = new System.Drawing.Point(1299, 23);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(70, 33);
+            this.btExit.TabIndex = 51;
+            this.btExit.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
+            this.btExit.Values.Text = "Thoát";
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // FormMain
             // 
@@ -981,6 +1002,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.btExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Navigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1000,6 +1022,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageQLMenu)).EndInit();
             this.pageQLMenu.ResumeLayout(false);
             this.pageQLMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btReFresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageThongKe)).EndInit();
             this.pageThongKe.ResumeLayout(false);
             this.pageThongKe.PerformLayout();
@@ -1013,7 +1036,6 @@
             this.pageTaiKhoan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btReFresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1088,7 +1110,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbRBDDiscount;
         private System.Windows.Forms.Label lbRBDetail;
-        private System.Windows.Forms.ComboBox cbIsFood;
         private System.Windows.Forms.PictureBox btReFresh;
+        private System.Windows.Forms.Button btDrink;
+        private System.Windows.Forms.Button btFood;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btExit;
     }
 }

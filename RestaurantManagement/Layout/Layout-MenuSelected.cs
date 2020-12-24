@@ -29,15 +29,17 @@ namespace RestaurantManagement
             btFinished.Font = new Font("Times New Roman", heightFont / 1.5f);
             btFinished.Location = new Point(this.Width / 2 - btFinished.Size.Width / 2, this.Height / 10 * 9);
 
-            cbIsFood.Font = new Font("Times New Roman", heightFont / 1.5f);
-            cbIsFood.Size = btFinished.Size;
-            cbIsFood.Location = new Point(0, btFinished.Location.Y);
-            cbIsFood.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbIsFood.SelectedIndex = 0;
+            btFood.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btFood.Size = new Size(btFinished.Width , btFinished.Height / 2);
+            btFood.Location = new Point(0, btFinished.Location.Y);
 
-            tbSearch.Size = new Size(cbIsFood.Size.Width/2*3,cbIsFood.Height);
+            btDrink.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btDrink.Size = new Size(btFinished.Width , btFinished.Height / 2);
+            btDrink.Location = new Point(0, btFinished.Location.Y + btFood.Height);
+
+            tbSearch.Size = new Size(btFood.Size.Width/2*3,btFood.Height);
             tbSearch.Font = new Font("Times New Roman", heightFont / 1.9f);
-            tbSearch.Location = new Point(cbIsFood.Width / 2 * 3, btFinished.Location.Y + btFinished.Height / 2 - tbSearch.Height / 2);
+            tbSearch.Location = new Point(btFood.Width / 2 * 3, btFinished.Location.Y + btFinished.Height / 2 - tbSearch.Height / 2);
 
             btSearch.Size = btFinished.Size;
             btSearch.Font = new Font("Times New Roman", heightFont / 1.5f);
@@ -47,10 +49,11 @@ namespace RestaurantManagement
             btReFresh.Image = Image.FromFile("images/refresh.jpg");
             btReFresh.SizeMode = PictureBoxSizeMode.Zoom;
             btReFresh.Size = new Size(tbSearch.Height, tbSearch.Height);
-            btReFresh.Location = new Point(cbIsFood.Location.X, cbIsFood.Location.Y + btReFresh.Height);
+            btReFresh.Location = new Point(btFood.Location.X+btFood.Width, btFood.Location.Y + btReFresh.Height -btReFresh.Height/2);
             btReFresh.Click += new EventHandler(btReFresh_Click);
 
-            this.Controls.Add(cbIsFood);
+            this.Controls.Add(btFood);
+            this.Controls.Add(btDrink);
             this.Controls.Add(tbSearch);
             this.Controls.Add(btSearch);
             this.Controls.Add(btReFresh);
