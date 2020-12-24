@@ -10,12 +10,12 @@ using System.IO;
 
 namespace RestaurantManagement
 {
-    class DataTable
+    class DataSQLTable
     {
         String connString;
         SqlConnection connection;
         FormMain parent;
-        public DataTable(FormMain parentf, string database = "User")
+        public DataSQLTable(FormMain parentf, string database = "User")
         {
             initIn4Server();
             string nameDB;

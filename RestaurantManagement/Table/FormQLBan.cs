@@ -13,13 +13,13 @@ namespace RestaurantManagement
 {
     public partial class FormMain : Form
     {
-        DataTable dataTable;
+        DataSQLTable DataSQLTable;
         Table tableSelected;
         public List<FoodInList> listFoodInList;
         private void InitTable()
         {
-            dataTable = new DataTable(this);
-            dataTable.ReadListTable();
+            DataSQLTable = new DataSQLTable(this);
+            DataSQLTable.ReadListTable();
             btAddTable.Hide();
             fpTables.Controls.Add(btAddTable);
             btAddTable.Show();
@@ -95,7 +95,7 @@ namespace RestaurantManagement
             {
                 while (i<listFoodInList.Count && listFoodInList[i].name == name )
                 {
-                    dataTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
+                    DataSQLTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
                     listFoodInList[i].Hide();
                     listFoodInList.RemoveAt(i);
                     //if (menu_Select != null) menu_Select.UnTick(name);
@@ -111,9 +111,9 @@ namespace RestaurantManagement
             {
                 for (int i = 0; i < listFoodInList.Count; i++)
                 {
-                    if (!dataTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].index))
+                    if (!DataSQLTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].index))
                     {
-                        dataTable.FixData(tableSelected.Name, tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].name, listFoodInList[i].index);
+                        DataSQLTable.FixData(tableSelected.Name, tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].name, listFoodInList[i].index);
                     };
                 }
                 tableSelected.CheckEmpty();
@@ -121,11 +121,11 @@ namespace RestaurantManagement
         }
         public void SaveStatus(string name,string status)
         {
-             dataTable.FixStatus(name,status);
+             DataSQLTable.FixStatus(name,status);
         }
         public void InitFoodInlist(Table table)
         {
-            dataTable.ReadListFood(table.Name);
+            DataSQLTable.ReadListFood(table.Name);
         }
         public void Add_FoodINLIST(string name,string index)
         {
@@ -138,7 +138,7 @@ namespace RestaurantManagement
         }
         public void InSertTable(string nameTable,string status,string food,string index)
         {
-            dataTable.InSertData(nameTable, status, food, index);
+            DataSQLTable.InSertData(nameTable, status, food, index);
         }
         private void btAddTable_Click(object sender, EventArgs e)
         {
@@ -176,7 +176,7 @@ namespace RestaurantManagement
             if (!tableSelected.isEmpty)
             {
                 bill = new Bill(tableSelected, this);
-                dataTable.ReadToBILL(tableSelected.Name);
+                DataSQLTable.ReadToBILL(tableSelected.Name);
                 bill.ShowDialog();
             } else
             {
@@ -187,7 +187,7 @@ namespace RestaurantManagement
         {
             for (int i = 0; i < listFoodInList.Count; i++)
             {
-                dataTable.DeleteData(table.Name, listFoodInList[i].name);
+                DataSQLTable.DeleteData(table.Name, listFoodInList[i].name);
                 listFoodInList[i].Hide();
                 //listFoodInList.RemoveAt(i,1);
             }
@@ -202,7 +202,7 @@ namespace RestaurantManagement
             if ( table.cbStatus.SelectedIndex == 0 || table.cbStatus.SelectedIndex == 3)
             {
                 table.Hide();
-                dataTable.DeleteTable(table.Name);
+                DataSQLTable.DeleteTable(table.Name);
                 for (int i = 0; i < listTable.Count; i++)
                 {
                     if (listTable[i].Name == table.Name)
@@ -221,15 +221,16 @@ namespace RestaurantManagement
         }
         public bool TableEmpty(Table table)
         {
-            if (dataTable.CountFoodTable(table.Name) == 1)
+            if (DataSQLTable.CountFoodTable(table.Name) == 1)
                 return true;
             return false;
         }
-        DataBill dataBill = new DataBill();
+        DataBill dataBill;
         string[] foods ;
         int[] indexs;
         public void SaveBill(string Total,int giamgia,int type)
         {
+            dataBill = new DataBill(this);
             foods = new string[listFoodInList.Count];
             indexs = new int[listFoodInList.Count];
             for (int i=0;i<listFoodInList.Count; i++)
@@ -257,7 +258,7 @@ namespace RestaurantManagement
                 return false;
             } else
             {
-                dataTable.ExchangeNameTable(table.Name, table1.Name);
+                DataSQLTable.ExchangeNameTable(table.Name, table1.Name);
                 bool tg = table.isEmpty;
                 table.isEmpty = table1.isEmpty;
                 table1.isEmpty = tg;
@@ -267,6 +268,19 @@ namespace RestaurantManagement
                 table1.cbStatus.SelectedIndex = g;
             }    
             return true;
+        }
+        public void SetMSHD(string ID)
+        {
+            if (bill != null)
+            {
+                bill.PDF(ID);
+            }
+        }
+        public void Reset()
+        {
+            if (menu_Select != null)
+                menu_Select.Hide();
+            fpTables.Show();
         }
     }
 }
