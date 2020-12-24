@@ -155,7 +155,8 @@ namespace RestaurantManagement
 
         private void btSReg_Click(object sender, EventArgs e)
         {
-
+            Form signupForm = new SignupForm();
+            signupForm.ShowDialog();
         }
 
         private void OnlyNumber_KeyDown(object sender, KeyPressEventArgs e)

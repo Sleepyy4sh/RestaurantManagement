@@ -107,7 +107,7 @@ namespace RestaurantManagement
         private void btSignup_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form signupForm = new SignupForm(this);
+            Form signupForm = new SignupForm();
             signupForm.ShowDialog();
         }
     }

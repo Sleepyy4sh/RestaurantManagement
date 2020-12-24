@@ -15,12 +15,9 @@ namespace RestaurantManagement
 {
     public partial class SignupForm : Form
     {
-        private Form formLogin;
-        bool loginSucessful = false;
-        public SignupForm(Form f)
+        public SignupForm()
         {
             initIn4Server();
-            this.formLogin = f;
             InitializeComponent();
             this.tbRepassword.KeyDown += new KeyEventHandler(Enter_Event);
             ReSize();
@@ -108,10 +105,8 @@ namespace RestaurantManagement
                             command.Parameters.AddWithValue("@ad", 0);
                             command.ExecuteNonQuery();
                             connection.Close();
-                            loginSucessful = true;
-                            this.Hide();
-                            Form FormQLMenu = new FormMain(false);
-                            FormQLMenu.ShowDialog();
+                            MessageBox.Show("Thêm tài khoản thành công");
+                            this.Close();
                         }
                         catch
                         {
@@ -127,12 +122,5 @@ namespace RestaurantManagement
             this.Close();
         }
 
-        private void SignupForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (loginSucessful)
-                formLogin.Close();
-            else
-                formLogin.Show();
-        }
     }
 }

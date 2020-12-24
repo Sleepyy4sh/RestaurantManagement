@@ -282,6 +282,7 @@ namespace RestaurantManagement
             this.Close();
         }
 
+
         string ChuanHoa(string S)
         {
             while (S.Length > 0 && S[0] == ' ')
