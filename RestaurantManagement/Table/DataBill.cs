@@ -36,7 +36,7 @@ namespace RestaurantManagement
             ID = in4[1];
             Svpassword = in4[2];
         }
-        public bool InsertCTHD(string[] foods, int[] indexs, string TRIGIA, string TIME, int GiamGia, int type)
+        public bool InsertCTHD(string[] foods,string[] price, int[] indexs, string TRIGIA, string TIME, int GiamGia, int type)
         {
             string id = InsertHoaDon(TRIGIA, TIME, GiamGia, type);
             if (id != "")
@@ -47,10 +47,11 @@ namespace RestaurantManagement
                 //{
                 for (int i = 0; i < foods.Length; i++)
                 {
-                    String sqlQuery = "insert into " + table + "( ID,NAMEFOOD,SOLUONG ) VALUES (@ID,@NAMEFOOD,@index)";
+                    String sqlQuery = "insert into " + table + "( ID,NAMEFOOD,PRICEFOOD,SOLUONG ) VALUES (@ID,@NAMEFOOD,@PRICEFOOD,@index)";
                     SqlCommand command = new SqlCommand(sqlQuery, connection);
                     command.Parameters.AddWithValue("@ID", id);
                     command.Parameters.AddWithValue("@NAMEFOOD", foods[i]);
+                    command.Parameters.AddWithValue("@PRICEFOOD", price[i]);
                     command.Parameters.AddWithValue("@index", indexs[i]);
                     int rs = command.ExecuteNonQuery();
                     if (rs != 1)

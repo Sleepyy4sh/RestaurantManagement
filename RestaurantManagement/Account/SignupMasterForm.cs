@@ -66,7 +66,7 @@ namespace RestaurantManagement
             reader = command.ExecuteReader();
             reader.Close();
 
-            sqlQuery = "CREATE TABLE ListTable(NAME NVARCHAR(30) NOT NULL, FOOD NVARCHAR(255) NOT NULL, STATUS NVARCHAR(100), INDEXFOOD VARCHAR(100), CONSTRAINT PK_FOOD PRIMARY KEY (NAME,FOOD))";
+            sqlQuery = "CREATE TABLE ListTable(NAME NVARCHAR(30) NOT NULL, FOOD NVARCHAR(255) NOT NULL,Price NVARCHAR(255) NOT NULL, STATUS NVARCHAR(100), INDEXFOOD VARCHAR(100), CONSTRAINT PK_FOOD PRIMARY KEY (NAME,FOOD))";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
@@ -76,7 +76,7 @@ namespace RestaurantManagement
             reader = command.ExecuteReader();
             reader.Close();
 
-            sqlQuery = "CREATE TABLE CTHD(ID UNIQUEIDENTIFIER NOT NULL, NAMEFOOD NVARCHAR(50) NOT NULL,SOLUONG INT, CONSTRAINT PK_CTHD PRIMARY KEY(ID, NAMEFOOD))";
+            sqlQuery = "CREATE TABLE CTHD(ID UNIQUEIDENTIFIER NOT NULL, NAMEFOOD NVARCHAR(50) NOT NULL,PRICEFOOD NVARCHAR(50) NOT NULL,SOLUONG INT, CONSTRAINT PK_CTHD PRIMARY KEY(ID, NAMEFOOD))";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();

@@ -48,7 +48,7 @@ namespace RestaurantManagement
                 if (reader.Read() == false) break;
                 if (reader.GetString(0) != tmp)
                 {
-                    parent.Add_Table(reader.GetString(0), reader.GetString(2));
+                    parent.Add_Table(reader.GetString(0), reader.GetString(3));
                     tmp = reader.GetString(0);
                 }
                 else parent.SetTableNotEmpty(reader.GetString(0));
@@ -57,16 +57,24 @@ namespace RestaurantManagement
         }  
         public void ReadListFood(string nameTable,string table = "Listtable")
         {
-            String sqlQuery = "select * from " + table;
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
-                if (reader.GetString(0) == nameTable && reader.GetString(1) != "")
-                    parent.Add_FoodINLIST(reader.GetString(1), reader.GetString(3));
+                String sqlQuery = "select * from " + table;
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    if (reader.GetString(0) == nameTable && reader.GetString(1) != "")
+                        parent.Add_FoodINLIST(reader.GetString(1), reader.GetString(2), reader.GetString(4));
+                }
+                reader.Close();
             }
-            reader.Close();
+            catch
+            {
+                MessageBox.Show("Lỗi đọc dữ liệu");
+            }
+
         }
         public void ReadToBILL(string nameTable, string table = "Listtable")
         {
@@ -76,23 +84,26 @@ namespace RestaurantManagement
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                    parent.AddToBill(reader.GetString(1), reader.GetString(3),reader.GetString(5));
+                    parent.AddToBill(reader.GetString(1), reader.GetString(4),reader.GetString(6));
                 //MessageBox.Show("d" + reader.GetString(3));
                 //parent.Add_Table(reader.GetString(0), reader.GetString(2));
             }
             reader.Close();
         }
-        public bool InSertData(string name,string status, string Food, string index)
+        public bool InSertData(string name,string status, string Food, string price, string index)
         {
             string table = "ListTable";
             try
             {
-                String sqlQuery = "insert into " + table + "(NAME,STATUS,FOOD,INDEXFOOD) VALUES (@name,@status,@food,@index)";
+                String sqlQuery = "insert into " + table + "(NAME,STATUS,FOOD,price,INDEXFOOD) VALUES (@name,@status,@food,@price,@index)";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@status", status);
                 command.Parameters.AddWithValue("@food", Food);
+                command.Parameters.AddWithValue("@price", price);
+                //MessageBox.Show(price);
                 command.Parameters.AddWithValue("@index", index);
+            
                 int rs = command.ExecuteNonQuery();
                 if (rs != 1)
                 {
@@ -102,7 +113,7 @@ namespace RestaurantManagement
             }
             catch
             {
-                //MessageBox.Show("Thêm dữ liệu vào bàn thất bại", "Lỗi");
+               // MessageBox.Show("Thêm dữ liệu vào bàn thất bại", "Lỗi");
                 return false;
             }
         }

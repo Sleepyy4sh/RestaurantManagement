@@ -39,12 +39,6 @@ namespace RestaurantManagement
             btDrink.Size = new Size(btFinished.Width , btFinished.Height / 2);
             btDrink.Location = new Point(0, btFinished.Location.Y + btFood.Height);
 
-            tbSearch.Size = new Size(btFood.Size.Width/2*3,btFood.Height);
-            tbSearch.Font = new Font("Times New Roman", heightFont / 1.9f);
-            btSearch.Size = btFinished.Size;
-            btSearch.Font = new Font("Times New Roman", heightFont / 1.5f);
-            btSearch.Location = new Point(tbSearch.Location.X+tbSearch.Width, this.Height / 10 * 9);
-
             PictureBox btReFresh = new PictureBox(); 
             btReFresh.Image = Image.FromFile("images/refresh.jpg");
             btReFresh.SizeMode = PictureBoxSizeMode.Zoom;
@@ -52,6 +46,12 @@ namespace RestaurantManagement
             btReFresh.Location = new Point(btFood.Location.X+btFood.Width, btFood.Location.Y + btReFresh.Height -btReFresh.Height/2);
             btReFresh.Click += new EventHandler(btReFresh_Click);
 
+            tbSearch.Size = new Size(btFood.Size.Width / 2 * 3, btFood.Height);
+            tbSearch.Font = new Font("Times New Roman", heightFont / 1.9f);
+            tbSearch.Location = new Point(btReFresh.Location.X + btReFresh.Width, btReFresh.Location.Y);
+            btSearch.Size = btFinished.Size;
+            btSearch.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btSearch.Location = new Point(tbSearch.Location.X + tbSearch.Width, this.Height / 10 * 9);
             this.Controls.Add(btFood);
             this.Controls.Add(btDrink);
             this.Controls.Add(tbSearch);

@@ -231,7 +231,7 @@ namespace RestaurantManagement
                 ExportDataTableToPdf(dtbl, "bills//" + id + ".pdf", id);
                 {
                     //MessageBox.Show("bills//" + id + ".pdf");
-                    System.Diagnostics.Process.Start("./bills" + id + ".pdf");
+                    //System.Diagnostics.Process.Start("./bills" + id + ".pdf");
                     //this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
                 }
             }

@@ -111,7 +111,7 @@ namespace RestaurantManagement
             {
                 for (int i = 0; i < listFoodInList.Count; i++)
                 {
-                    if (!DataSQLTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].index))
+                    if (!DataSQLTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name,listFoodInList[i].price, listFoodInList[i].index))
                     {
                         DataSQLTable.FixData(tableSelected.Name, tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].name, listFoodInList[i].index);
                     };
@@ -127,18 +127,18 @@ namespace RestaurantManagement
         {
             DataSQLTable.ReadListFood(table.Name);
         }
-        public void Add_FoodINLIST(string name,string index)
+        public void Add_FoodINLIST(string name,string price, string index)
         {
             FoodInList food= new FoodInList(this);
-            food.Set(name, index);
+            food.Set(name,price, index);
             listFoodInList.Add(food);
             this.fpListFood.Controls.Add(food);
             tableSelected.isEmpty = false;
             tableSelected.CheckEmpty();
         }
-        public void InSertTable(string nameTable,string status,string food,string index)
+        public void InSertTable(string nameTable,string status,string food,string price,string index)
         {
-            DataSQLTable.InSertData(nameTable, status, food, index);
+            DataSQLTable.InSertData(nameTable, status, food,price, index);
         }
         private void btAddTable_Click(object sender, EventArgs e)
         {
@@ -227,18 +227,21 @@ namespace RestaurantManagement
         }
         DataBill dataBill;
         string[] foods ;
+        string[] price ;
         int[] indexs;
         public void SaveBill(string Total,int giamgia,int type)
         {
             dataBill = new DataBill(this);
             foods = new string[listFoodInList.Count];
+            price = new string[listFoodInList.Count];
             indexs = new int[listFoodInList.Count];
             for (int i=0;i<listFoodInList.Count; i++)
             {
                 foods[i] = listFoodInList[i].name;
+                price[i] = listFoodInList[i].price;
                 indexs[i] =Int32.Parse(listFoodInList[i].index);
             }
-            dataBill.InsertCTHD(foods,indexs, Total, DateTime.Now.ToString("MM/dd/yyyy HH:mm"),giamgia,type);
+            dataBill.InsertCTHD(foods,price,indexs, Total, DateTime.Now.ToString("MM/dd/yyyy HH:mm"),giamgia,type);
         }
         public bool ExchangeTable(Table table,string nameTable)
         {

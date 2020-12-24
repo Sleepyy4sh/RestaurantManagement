@@ -244,7 +244,7 @@ namespace RestaurantManagement
         {
             for (int i = 0; i < ListFood.Count(); i++)
             {
-                if (IsChild(child, ListFood[i].GetName()))
+                if ( IsChild(FixFormatString(child), FixFormatString(ListFood[i].GetName())))
                 {
                     if (ListFood[i].isFood == 0)
                         fpFoods.Controls.Add(ListFood[i]);
@@ -255,15 +255,70 @@ namespace RestaurantManagement
         }
         bool IsChild(string child, string parent)
         {
+            child = ChuanHoa(child);
+            child = FixFormatString(child);
+
+            string[] unitChild = new string[50];
+            int count = 0;
+            for (int i = 0; i < child.Length; i++)
+            {
+                if (child[i] == ' ')
+                    count++;
+                else
+                    unitChild[count] += child[i];
+            }
+            int d = 0;
             if (parent.Length >= child.Length)
-                for (int i = 0; i < parent.Count() - child.Length + 1; i++)
+            {
+                for (int j = 0; j <= count; j++)
                 {
-                    if (parent.Substring(i, child.Length) == child)
+                    for (int i = 0; i < parent.Length - unitChild[j].Length + 1; i++)
                     {
-                        return true;
+                     //   MessageBox.Show(unitChild[j]+"   "+ parent.Substring(i,unitChild[j].Length));
+                        if (parent.Substring(i, unitChild[j].Length) == unitChild[j])
+                        {
+                            d++;
+                            i = parent.Length - unitChild[j].Length + 1;
+                        }
                     }
                 }
+            }
+            if (d == count + 1 && d != 0)
+                return true;
             return false;
+        }
+        List<char> ListOfA = new List<char>() { 'a', 'á', 'à', 'ả', 'ã', 'ạ', 'ă', 'ắ', 'ằ', 'ẳ', 'ẵ', 'ặ', 'â', 'ấ', 'ầ', 'ẩ', 'ẫ', 'ậ' };
+        List<char> ListOfE = new List<char>() { 'e', 'é', 'è', 'ẻ', 'ẽ', 'ẹ', 'ê', 'ế', 'ề', 'ể', 'ễ', 'ệ' };
+        List<char> ListOfI = new List<char>() { 'i', 'í', 'ì', 'ỉ', 'ĩ', 'ị' };
+        List<char> ListOfO = new List<char>() { 'o', 'ó', 'ò', 'ỏ', 'õ', 'ọ', 'ô', 'ố', 'ồ', 'ổ', 'ỗ', 'ộ', 'ơ', 'ớ', 'ờ', 'ở', 'ỡ', 'ợ' };
+        List<char> ListOfU = new List<char>() { 'u', 'ú', 'ù', 'ủ', 'ũ', 'ụ', 'ư', 'ứ', 'ừ', 'ử', 'ữ', 'ự' };
+        List<char> ListOfY = new List<char>() { 'y', 'ý', 'ỳ', 'ỷ', 'ỹ', 'ỵ' };
+        string FixFormatString(string S)
+        {
+            S = ChuanHoa(S);
+            S = S.ToLower();
+            S = FixFormatChar(S, ListOfA);
+            S = FixFormatChar(S, ListOfE);
+            S = FixFormatChar(S, ListOfI);
+            S = FixFormatChar(S, ListOfO);
+            S = FixFormatChar(S, ListOfU);
+            S = FixFormatChar(S, ListOfY);
+            for (int i = 0; i < S.Length; i++)
+            {
+                while (S.Length > i + 1 && S[i] == S[i + 1])
+                {
+                    S = S.Remove(i, 1);
+                }
+            }
+            return S;
+        }
+        string FixFormatChar(string S, List<char> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                S = S.Replace(list[i], list[0]);
+            }
+            return S;
         }
 
         private void btFood_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace RestaurantManagement
             if (!Exist(lName.Text))
             {
                 //MessageBox.Show("Món " + lName.Text + " đã được chọn");
-                formQLBan.Add_FoodINLIST(lName.Text, "1");
+                formQLBan.Add_FoodINLIST(lName.Text,lPrice.Text, "1");
                 formQLBan.SaveListFood();
                 //parent.CheckSelected(pSelected);
                 Tick();
