@@ -70,11 +70,11 @@ namespace RestaurantManagement
             tbSDoB.Location = new Point(this.Width - this.Width / 3 * 2, lbSDoB.Location.Y);
 
             lbSICnumber.Font = new Font("Times New Roman", heightFont / 1.51f);
-            lbSICnumber.Location = new Point(lbSFname.Location.X, lbSAddress.Location.Y + tbSFname.Height / 6 * 8);
+            lbSICnumber.Location = new Point(lbSFname.Location.X, lbSDoB.Location.Y + tbSFname.Height / 6 * 8);
 
             tbSICnumber.Font = new Font("Times New Roman", heightFont / 1.51f);
             tbSICnumber.Size = tbSFname.Size;
-            tbSICnumber.Location = new Point(this.Width - this.Width / 3 * 2, lbSAddress.Location.Y);
+            tbSICnumber.Location = new Point(this.Width - this.Width / 3 * 2, lbSICnumber.Location.Y);
 
             lbSEmail.Font = new Font("Times New Roman", heightFont / 1.51f);
             lbSEmail.Location = new Point(lbSFname.Location.X, lbSICnumber.Location.Y + tbSFname.Height / 6 * 8);
@@ -111,6 +111,10 @@ namespace RestaurantManagement
             btSignup.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSignup.Size = new Size(tbPassword.Width / 3, (int)(tbPassword.Height * 1.3f));
             btSignup.Location = new Point(btExit.Location.X + btExit.Width + btExit.Width / 2, btExit.Location.Y);
+
+            ckboxType.Size = lbSICnumber.Size;
+            ckboxType.Font = tbPassword.Font;
+            ckboxType.Location = new Point(lbSFname.Location.X, btSignup.Location.Y);
         }
     }
     }

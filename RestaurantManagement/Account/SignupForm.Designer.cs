@@ -34,6 +34,10 @@
             this.tbUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tbPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pnInfor = new System.Windows.Forms.Panel();
+            this.tbSICnumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbSAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbSEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbSDoB = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.ckboxType = new System.Windows.Forms.CheckBox();
             this.lbSEmail = new System.Windows.Forms.Label();
             this.lbSICnumber = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@
             this.lbPass = new System.Windows.Forms.Label();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.pnTitle = new System.Windows.Forms.Panel();
-            this.tbSDoB = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbSEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbSAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbSICnumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonContextMenu1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenu();
             this.pnInfor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
@@ -67,13 +67,13 @@
             this.lbTitle.ForeColor = System.Drawing.Color.Transparent;
             this.lbTitle.Location = new System.Drawing.Point(294, 58);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(276, 63);
+            this.lbTitle.Size = new System.Drawing.Size(222, 51);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "ĐĂNG KÝ";
             // 
             // btSignup
             // 
-            this.btSignup.Location = new System.Drawing.Point(374, 597);
+            this.btSignup.Location = new System.Drawing.Point(374, 576);
             this.btSignup.Name = "btSignup";
             this.btSignup.Size = new System.Drawing.Size(143, 48);
             this.btSignup.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.tbUsername.Location = new System.Drawing.Point(227, 378);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(374, 47);
+            this.tbUsername.Size = new System.Drawing.Size(374, 41);
             this.tbUsername.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -98,7 +98,7 @@
             this.tbPassword.Location = new System.Drawing.Point(227, 455);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '●';
-            this.tbPassword.Size = new System.Drawing.Size(374, 47);
+            this.tbPassword.Size = new System.Drawing.Size(374, 41);
             this.tbPassword.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -136,6 +136,57 @@
             this.pnInfor.Size = new System.Drawing.Size(713, 648);
             this.pnInfor.TabIndex = 9;
             // 
+            // tbSICnumber
+            // 
+            this.tbSICnumber.Location = new System.Drawing.Point(227, 229);
+            this.tbSICnumber.Name = "tbSICnumber";
+            this.tbSICnumber.Size = new System.Drawing.Size(374, 41);
+            this.tbSICnumber.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSICnumber.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.tbSICnumber.StateCommon.Border.Rounding = 9;
+            this.tbSICnumber.TabIndex = 30;
+            // 
+            // tbSAddress
+            // 
+            this.tbSAddress.Location = new System.Drawing.Point(227, 111);
+            this.tbSAddress.Name = "tbSAddress";
+            this.tbSAddress.Size = new System.Drawing.Size(374, 41);
+            this.tbSAddress.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSAddress.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.tbSAddress.StateCommon.Border.Rounding = 9;
+            this.tbSAddress.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSAddress.TabIndex = 29;
+            // 
+            // tbSEmail
+            // 
+            this.tbSEmail.Location = new System.Drawing.Point(227, 282);
+            this.tbSEmail.Name = "tbSEmail";
+            this.tbSEmail.Size = new System.Drawing.Size(374, 41);
+            this.tbSEmail.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSEmail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.tbSEmail.StateCommon.Border.Rounding = 9;
+            this.tbSEmail.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSEmail.TabIndex = 25;
+            // 
+            // tbSDoB
+            // 
+            this.tbSDoB.Location = new System.Drawing.Point(227, 164);
+            this.tbSDoB.Name = "tbSDoB";
+            this.tbSDoB.Size = new System.Drawing.Size(374, 41);
+            this.tbSDoB.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSDoB.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.tbSDoB.StateCommon.Border.Rounding = 9;
+            this.tbSDoB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSDoB.TabIndex = 23;
+            // 
             // ckboxType
             // 
             this.ckboxType.AutoSize = true;
@@ -143,7 +194,7 @@
             this.ckboxType.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckboxType.Location = new System.Drawing.Point(97, 591);
             this.ckboxType.Name = "ckboxType";
-            this.ckboxType.Size = new System.Drawing.Size(303, 40);
+            this.ckboxType.Size = new System.Drawing.Size(243, 33);
             this.ckboxType.TabIndex = 21;
             this.ckboxType.Text = "Không tạo tài khoản";
             this.ckboxType.UseVisualStyleBackColor = true;
@@ -154,7 +205,7 @@
             this.lbSEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSEmail.Location = new System.Drawing.Point(49, 305);
             this.lbSEmail.Name = "lbSEmail";
-            this.lbSEmail.Size = new System.Drawing.Size(66, 24);
+            this.lbSEmail.Size = new System.Drawing.Size(51, 18);
             this.lbSEmail.TabIndex = 20;
             this.lbSEmail.Text = "EMAIL";
             // 
@@ -164,7 +215,7 @@
             this.lbSICnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSICnumber.Location = new System.Drawing.Point(49, 250);
             this.lbSICnumber.Name = "lbSICnumber";
-            this.lbSICnumber.Size = new System.Drawing.Size(123, 24);
+            this.lbSICnumber.Size = new System.Drawing.Size(102, 18);
             this.lbSICnumber.TabIndex = 19;
             this.lbSICnumber.Text = "CMND/CCCD";
             // 
@@ -174,7 +225,7 @@
             this.lbSDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSDoB.Location = new System.Drawing.Point(63, 164);
             this.lbSDoB.Name = "lbSDoB";
-            this.lbSDoB.Size = new System.Drawing.Size(112, 24);
+            this.lbSDoB.Size = new System.Drawing.Size(88, 18);
             this.lbSDoB.TabIndex = 18;
             this.lbSDoB.Text = "NGÀY SINH";
             // 
@@ -184,7 +235,7 @@
             this.lbSAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSAddress.Location = new System.Drawing.Point(63, 121);
             this.lbSAddress.Name = "lbSAddress";
-            this.lbSAddress.Size = new System.Drawing.Size(76, 24);
+            this.lbSAddress.Size = new System.Drawing.Size(60, 18);
             this.lbSAddress.TabIndex = 17;
             this.lbSAddress.Text = "ĐỊA CHỈ";
             // 
@@ -194,7 +245,7 @@
             this.lbSPnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSPnumber.Location = new System.Drawing.Point(35, 68);
             this.lbSPnumber.Name = "lbSPnumber";
-            this.lbSPnumber.Size = new System.Drawing.Size(149, 24);
+            this.lbSPnumber.Size = new System.Drawing.Size(117, 18);
             this.lbSPnumber.TabIndex = 16;
             this.lbSPnumber.Text = "SỐ ĐIỆN THOẠI";
             // 
@@ -204,7 +255,7 @@
             this.lbSFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSFname.Location = new System.Drawing.Point(49, 13);
             this.lbSFname.Name = "lbSFname";
-            this.lbSFname.Size = new System.Drawing.Size(114, 24);
+            this.lbSFname.Size = new System.Drawing.Size(87, 18);
             this.lbSFname.TabIndex = 15;
             this.lbSFname.Text = "HỌ VÀ TÊN";
             // 
@@ -212,7 +263,7 @@
             // 
             this.tbSPnumber.Location = new System.Drawing.Point(227, 58);
             this.tbSPnumber.Name = "tbSPnumber";
-            this.tbSPnumber.Size = new System.Drawing.Size(374, 47);
+            this.tbSPnumber.Size = new System.Drawing.Size(374, 41);
             this.tbSPnumber.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSPnumber.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -225,7 +276,7 @@
             // 
             this.tbSFname.Location = new System.Drawing.Point(227, 11);
             this.tbSFname.Name = "tbSFname";
-            this.tbSFname.Size = new System.Drawing.Size(374, 47);
+            this.tbSFname.Size = new System.Drawing.Size(374, 41);
             this.tbSFname.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSFname.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -240,7 +291,7 @@
             this.lbRePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.Location = new System.Drawing.Point(3, 544);
             this.lbRePass.Name = "lbRePass";
-            this.lbRePass.Size = new System.Drawing.Size(203, 24);
+            this.lbRePass.Size = new System.Drawing.Size(157, 18);
             this.lbRePass.TabIndex = 8;
             this.lbRePass.Text = "NHẬP LẠI MẬT KHẨU:";
             // 
@@ -249,7 +300,7 @@
             this.tbRepassword.Location = new System.Drawing.Point(227, 521);
             this.tbRepassword.Name = "tbRepassword";
             this.tbRepassword.PasswordChar = '●';
-            this.tbRepassword.Size = new System.Drawing.Size(374, 47);
+            this.tbRepassword.Size = new System.Drawing.Size(374, 41);
             this.tbRepassword.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRepassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -265,7 +316,7 @@
             this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.Location = new System.Drawing.Point(22, 401);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(117, 24);
+            this.lbUser.Size = new System.Drawing.Size(90, 18);
             this.lbUser.TabIndex = 5;
             this.lbUser.Text = "TÀI KHOẢN:";
             // 
@@ -284,7 +335,7 @@
             this.lbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.Location = new System.Drawing.Point(35, 455);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(113, 24);
+            this.lbPass.Size = new System.Drawing.Size(88, 18);
             this.lbPass.TabIndex = 6;
             this.lbPass.Text = "MẬT KHẨU:";
             // 
@@ -309,60 +360,9 @@
             this.pnTitle.Size = new System.Drawing.Size(713, 137);
             this.pnTitle.TabIndex = 8;
             // 
-            // tbSDoB
-            // 
-            this.tbSDoB.Location = new System.Drawing.Point(227, 164);
-            this.tbSDoB.Name = "tbSDoB";
-            this.tbSDoB.Size = new System.Drawing.Size(374, 47);
-            this.tbSDoB.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSDoB.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.tbSDoB.StateCommon.Border.Rounding = 9;
-            this.tbSDoB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSDoB.TabIndex = 23;
-            // 
-            // tbSEmail
-            // 
-            this.tbSEmail.Location = new System.Drawing.Point(227, 282);
-            this.tbSEmail.Name = "tbSEmail";
-            this.tbSEmail.Size = new System.Drawing.Size(374, 47);
-            this.tbSEmail.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSEmail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.tbSEmail.StateCommon.Border.Rounding = 9;
-            this.tbSEmail.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSEmail.TabIndex = 25;
-            // 
-            // tbSAddress
-            // 
-            this.tbSAddress.Location = new System.Drawing.Point(227, 111);
-            this.tbSAddress.Name = "tbSAddress";
-            this.tbSAddress.Size = new System.Drawing.Size(374, 47);
-            this.tbSAddress.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSAddress.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.tbSAddress.StateCommon.Border.Rounding = 9;
-            this.tbSAddress.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSAddress.TabIndex = 29;
-            // 
-            // tbSICnumber
-            // 
-            this.tbSICnumber.Location = new System.Drawing.Point(227, 229);
-            this.tbSICnumber.Name = "tbSICnumber";
-            this.tbSICnumber.Size = new System.Drawing.Size(374, 47);
-            this.tbSICnumber.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSICnumber.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.tbSICnumber.StateCommon.Border.Rounding = 9;
-            this.tbSICnumber.TabIndex = 30;
-            // 
             // SignupForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 749);
             this.Controls.Add(this.pnInfor);
