@@ -8,6 +8,20 @@ namespace RestaurantManagement
 {
     public partial class FormMain : Form
     {
+        private void InitStaff()
+        {
+            initIn4Server();
+            LoadDG();
+            InitDG();
+        }
+
+        private void InitDG()
+        {
+            this.dgStaff.ClearSelection();
+            this.dgStaff.CurrentCell = null;
+            this.dgStaff.EnableHeadersVisualStyles = false;
+        }
+
         private void LoadDG()
         {
             try
@@ -22,7 +36,7 @@ namespace RestaurantManagement
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    this.dgStaff.Rows.Add(reader.GetString(0), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5).ToString("MM/dd/yyyy"), reader.GetString(6), reader.GetString(7));
+                    this.dgStaff.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetDateTime(8).ToString("MM/dd/yyyy"), reader.GetString(9), reader.GetString(10));
                 }
                 reader.Close();
             }
@@ -36,8 +50,9 @@ namespace RestaurantManagement
             }
         }
 
-        private void UpdateTbStaff(string s1 ="", string s2 ="", string s3="", string s4 ="", string s5 ="", string s6 ="", string s7 ="")
+        private void UpdateTbStaff(string s0 ="",  string s1 ="", string s2 ="", string s3="", string s4 ="", string s5 ="", string s6 ="", string s7 ="")
         {
+            tbSType.Text = s0;
             tbSUsername.Text = s1;
             tbSFname.Text = s2;
             tbSPnumber.Text = s3;
@@ -45,13 +60,6 @@ namespace RestaurantManagement
             tbSDoB.Text = s5;
             tbSICnumber.Text = s6;
             tbSEmail.Text = s7;
-        }
-
-        private void InitDG()
-        {
-            this.dgStaff.ClearSelection();
-            this.dgStaff.CurrentCell = null;
-            this.dgStaff.EnableHeadersVisualStyles = false;
         }
 
         private void dgStaff_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -62,48 +70,46 @@ namespace RestaurantManagement
                 (
                     this.dgStaff.CurrentRow.Cells[0].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[1].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[2].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[3].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[4].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[5].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[6].Value.ToString()
+                    this.dgStaff.CurrentRow.Cells[6].Value.ToString(),
+                    this.dgStaff.CurrentRow.Cells[6].Value.ToString(),
+                    this.dgStaff.CurrentRow.Cells[7].Value.ToString(),
+                    this.dgStaff.CurrentRow.Cells[8].Value.ToString()
                 );
             }
-        }
-
-        private void InitStaff()
-        {
-            initIn4Server();
-            LoadDG();
-            InitDG();
         }
 
         private void btSDelete_Click(object sender, EventArgs e)
         {
             if (this.dgStaff.SelectedRows.Count > 0)
             {
-                //DeleteAccount
-                try
+                DialogResult ConfirmDelete = MessageBox.Show("Xác nhận xóa tài khoản ?", "", MessageBoxButtons.OKCancel);
+                if (ConfirmDelete == DialogResult.OK)
                 {
-                    connection = new SqlConnection(connString);
-                    connection.Open();
-                    sqlQuery = "delete from NV where USERNAME = @Username";
-                    SqlCommand command = new SqlCommand(sqlQuery, connection);
-                    command.Parameters.AddWithValue("@Username", tbSUsername.Text);
-                    command.ExecuteNonQuery();
-                    //Refresh
-                    dgStaff.Rows.RemoveAt(dgStaff.SelectedRows[0].Index);
-                    this.dgStaff.ClearSelection();
-                    this.dgStaff.CurrentCell = null;
-                    UpdateTbStaff();
-                }
-                catch
-                {
-                    MessageBox.Show("Lỗi kết nối");
-                }
-                finally
-                {
-                    connection.Close();
+                    //DeleteAccount
+                    try
+                    {
+                        connection = new SqlConnection(connString);
+                        connection.Open();
+                        sqlQuery = "delete from NV where USERNAME = @Username";
+                        SqlCommand command = new SqlCommand(sqlQuery, connection);
+                        command.Parameters.AddWithValue("@Username", tbSUsername.Text);
+                        command.ExecuteNonQuery();
+                        //Refresh
+                        dgStaff.Rows.RemoveAt(dgStaff.SelectedRows[0].Index);
+                        this.dgStaff.ClearSelection();
+                        this.dgStaff.CurrentCell = null;
+                        UpdateTbStaff();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Lỗi kết nối");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
             else
@@ -121,8 +127,9 @@ namespace RestaurantManagement
                     {
                         connection = new SqlConnection(connString);
                         connection.Open();
-                        sqlQuery = "update NV set FULLNAME = @Fname, PHONENUMBER = @Pnumber, ADDRESS = @Address, DOB = @DoB, ICNUMBER = @ICnumber, EMAIL = @Email where USERNAME = @Username";
+                        sqlQuery = "update NV set TYPE = @Type, FULLNAME = @Fname, PHONENUMBER = @Pnumber, ADDRESS = @Address, DOB = @DoB, ICNUMBER = @ICnumber, EMAIL = @Email where USERNAME = @Username";
                         SqlCommand command = new SqlCommand(sqlQuery, connection);
+                        command.Parameters.AddWithValue("@Type", tbSType.Text);
                         command.Parameters.AddWithValue("@Username", tbSUsername.Text);
                         command.Parameters.AddWithValue("@Fname", tbSFname.Text);
                         command.Parameters.AddWithValue("@Pnumber", tbSPnumber.Text);

@@ -81,7 +81,7 @@ namespace RestaurantManagement
             reader = command.ExecuteReader();
             reader.Close();
 
-            sqlQuery = "CREATE TABLE NV(USERNAME CHAR(30) PRIMARY KEY, PASSWORD CHAR(100), FULLNAME NVARCHAR(50), PHONENUMBER CHAR(15) UNIQUE, ADDRESS NVARCHAR(100), DOB SMALLDATETIME, ICNUMBER CHAR(15) UNIQUE, EMAIL CHAR(50) UNIQUE)";
+            sqlQuery = "CREATE TABLE NV(TYPE NVARCHAR(20), USERNAME NVARCHAR(30) PRIMARY KEY, PASSWORD NVARCHAR(100), AD CHAR(1), STATUS NVARCHAR(10),  FULLNAME NVARCHAR(50), PHONENUMBER NVARCHAR(15) UNIQUE, ADDRESS NVARCHAR(100), DOB SMALLDATETIME, ICNUMBER NVARCHAR(15) UNIQUE, EMAIL NVARCHAR(50) UNIQUE)";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();

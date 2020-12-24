@@ -166,3 +166,7 @@ G:\Nam 2\TrucQuan\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\Res
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Crypto.dll
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Crypto.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.ExchangeTable.resources
