@@ -22,8 +22,6 @@ namespace RestaurantManagement
             float heightFont = sScreen.Height / 48;
             this.Size = new Size((int)(sScreen.Width / 4f), (int)(sScreen.Height / 10 *8));
 
-            tableLayoutPanel1.Size = new Size(this.Width, this.Height / 10 * 9);
-            tableLayoutPanel1.Location = new Point(0, 0);
 
             fpFoods.Size = new Size(this.Width, this.Width);
             fpFoods.Location = new Point(0, this.Height / 18);

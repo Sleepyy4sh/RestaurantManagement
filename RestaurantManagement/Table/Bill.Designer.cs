@@ -36,22 +36,20 @@
             this.lbTotal = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbDiscount = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // fpFoods
             // 
             this.fpFoods.AutoScroll = true;
             this.fpFoods.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fpFoods.Location = new System.Drawing.Point(3, 3);
+            this.fpFoods.Location = new System.Drawing.Point(0, 30);
             this.fpFoods.Name = "fpFoods";
-            this.fpFoods.Size = new System.Drawing.Size(356, 313);
+            this.fpFoods.Size = new System.Drawing.Size(374, 363);
             this.fpFoods.TabIndex = 0;
             // 
             // lbSumAll
             // 
-            this.lbSumAll.Location = new System.Drawing.Point(3, 351);
+            this.lbSumAll.Location = new System.Drawing.Point(98, 399);
             this.lbSumAll.Name = "lbSumAll";
             this.lbSumAll.Size = new System.Drawing.Size(63, 23);
             this.lbSumAll.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,7 +71,7 @@
             this.cbType.Items.AddRange(new object[] {
             "%",
             "VND"});
-            this.cbType.Location = new System.Drawing.Point(2, 443);
+            this.cbType.Location = new System.Drawing.Point(243, 480);
             this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(92, 21);
@@ -82,7 +80,7 @@
             // 
             // tbValue
             // 
-            this.tbValue.Location = new System.Drawing.Point(2, 415);
+            this.tbValue.Location = new System.Drawing.Point(136, 480);
             this.tbValue.Margin = new System.Windows.Forms.Padding(2);
             this.tbValue.MaxLength = 8;
             this.tbValue.Name = "tbValue";
@@ -92,7 +90,7 @@
             // 
             // lbTotal
             // 
-            this.lbTotal.Location = new System.Drawing.Point(3, 481);
+            this.lbTotal.Location = new System.Drawing.Point(60, 543);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(104, 23);
             this.lbTotal.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,7 +99,7 @@
             // 
             // lbDiscount
             // 
-            this.lbDiscount.Location = new System.Drawing.Point(2, 384);
+            this.lbDiscount.Location = new System.Drawing.Point(50, 475);
             this.lbDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.lbDiscount.Name = "lbDiscount";
             this.lbDiscount.Size = new System.Drawing.Size(82, 23);
@@ -118,44 +116,26 @@
             this.btCancel.Values.Text = "Hủy";
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.fpFoods, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbSumAll, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbDiscount, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbValue, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbTotal, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cbType, 0, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(362, 511);
-            this.tableLayoutPanel1.TabIndex = 9;
-            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(383, 605);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.lbDiscount);
+            this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.tbValue);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.btComfirm);
+            this.Controls.Add(this.lbSumAll);
+            this.Controls.Add(this.fpFoods);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,6 +149,5 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbTotal;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbDiscount;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btCancel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

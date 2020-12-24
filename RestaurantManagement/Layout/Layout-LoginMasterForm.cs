@@ -53,7 +53,7 @@ namespace RestaurantManagement
             tbUsername.Location = new Point(lbUser.Location.X, lbUser.Location.Y + lbUser.Height );
 
             lbPass.Font = new Font("Times New Roman", heightFont / 1.51f);
-            lbPass.Location = new Point(tbUsername.Location.X, tbUsername.Location.Y + tbUsername.Height + lbUser.Height *3);
+            lbPass.Location = new Point(tbUsername.Location.X, tbUsername.Location.Y + tbUsername.Height + lbUser.Height *2);
 
             tbPassword.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.0f);
             tbPassword.Size = new Size(pnInfor.Width / 5 * 3, pnInfor.Height / 10);
@@ -61,7 +61,7 @@ namespace RestaurantManagement
 
             btSignup.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSignup.Size = new Size(tbPassword.Width / 3, (int)(tbPassword.Height * 1.3f));
-            btSignup.Location = new Point(tbPassword.Location.X + btSignup.Width / 4, tbPassword.Location.Y + tbPassword.Height + btSignup.Height / 10) ;
+            btSignup.Location = new Point(tbPassword.Location.X + btSignup.Width / 4, tbPassword.Location.Y + tbPassword.Height + btSignup.Height / 2) ;
 
             btLogin.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btLogin.Size = btSignup.Size;
