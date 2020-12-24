@@ -8,6 +8,8 @@ namespace RestaurantManagement
 {
     public partial class FormMain : Form
     {
+        string OldICnumber;
+
         private void InitStaff()
         {
             initIn4Server();
@@ -50,9 +52,8 @@ namespace RestaurantManagement
             }
         }
 
-        private void UpdateTbStaff(string s0 ="",  string s1 ="", string s2 ="", string s3="", string s4 ="", string s5 ="", string s6 ="", string s7 ="")
+        private void UpdateTbStaff(string s1 = "", string s2 = "", string s3 = "", string s4 = "", string s5 = "", string s6 = "", string s7 = "")
         {
-            tbSType.Text = s0;
             tbSUsername.Text = s1;
             tbSFname.Text = s2;
             tbSPnumber.Text = s3;
@@ -70,12 +71,11 @@ namespace RestaurantManagement
                 (
                     this.dgStaff.CurrentRow.Cells[0].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[1].Value.ToString(),
+                    this.dgStaff.CurrentRow.Cells[2].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[3].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[4].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[6].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[6].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[7].Value.ToString(),
-                    this.dgStaff.CurrentRow.Cells[8].Value.ToString()
+                    this.dgStaff.CurrentRow.Cells[5].Value.ToString(),
+                    this.dgStaff.CurrentRow.Cells[6].Value.ToString()
                 );
             }
         }
@@ -127,10 +127,9 @@ namespace RestaurantManagement
                     {
                         connection = new SqlConnection(connString);
                         connection.Open();
-                        sqlQuery = "update NV set TYPE = @Type, FULLNAME = @Fname, PHONENUMBER = @Pnumber, ADDRESS = @Address, DOB = @DoB, ICNUMBER = @ICnumber, EMAIL = @Email where USERNAME = @Username";
+                        sqlQuery = "update NV set FULLNAME = @Fname, PHONENUMBER = @Pnumber, ADDRESS = @Address, DOB = @DoB, ICNUMBER = @ICnumber, EMAIL = @Email where ICNUMBER = @OldICnumber";
                         SqlCommand command = new SqlCommand(sqlQuery, connection);
-                        command.Parameters.AddWithValue("@Type", tbSType.Text);
-                        command.Parameters.AddWithValue("@Username", tbSUsername.Text);
+                        command.Parameters.AddWithValue("@OldICnumber", OldICnumber);
                         command.Parameters.AddWithValue("@Fname", tbSFname.Text);
                         command.Parameters.AddWithValue("@Pnumber", tbSPnumber.Text);
                         command.Parameters.AddWithValue("@Address", tbSAddress.Text);
@@ -139,7 +138,7 @@ namespace RestaurantManagement
                         command.Parameters.AddWithValue("@Email", tbSEmail.Text);
                         command.ExecuteNonQuery();
                         //UpdateOffline
-                        this.dgStaff.CurrentRow.Cells[1].Value = tbSFname.Text;
+                        this.dgStaff.CurrentRow.Cells[0].Value = tbSFname.Text;
                         this.dgStaff.CurrentRow.Cells[2].Value = tbSPnumber.Text;
                         this.dgStaff.CurrentRow.Cells[3].Value = tbSAddress.Text;
                         this.dgStaff.CurrentRow.Cells[4].Value = tbSDoB.Text;
@@ -164,6 +163,7 @@ namespace RestaurantManagement
         {
             Form signupForm = new SignupForm();
             signupForm.ShowDialog();
+            InitStaff();
         }
 
         private void OnlyNumber_KeyDown(object sender, KeyPressEventArgs e)
@@ -173,7 +173,7 @@ namespace RestaurantManagement
                 e.Handled = true;
             }
         }
-        
+
         private bool CheckFormat()
         {
             DateTime dt;
