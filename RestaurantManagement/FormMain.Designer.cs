@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Navigator = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageQLBan = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.btPay = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -58,6 +59,9 @@
             this.cbRDay = new System.Windows.Forms.ComboBox();
             this.lbRDay = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbRBDTotal = new System.Windows.Forms.Label();
+            this.fplbcCnt = new System.Windows.Forms.Label();
+            this.fplbcName = new System.Windows.Forms.Label();
+            this.fplbcP = new System.Windows.Forms.Label();
             this.lbRBDDiscount = new System.Windows.Forms.Label();
             this.lbRBDetail = new System.Windows.Forms.Label();
             this.fpRBDetail = new System.Windows.Forms.FlowLayoutPanel();
@@ -65,9 +69,6 @@
             this.fpRlbName = new System.Windows.Forms.Label();
             this.fpRlbCnt = new System.Windows.Forms.Label();
             this.fpRlbPrice = new System.Windows.Forms.Label();
-            this.fplbcName = new System.Windows.Forms.Label();
-            this.fplbcCnt = new System.Windows.Forms.Label();
-            this.fplbcP = new System.Windows.Forms.Label();
             this.btRUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dgRevenue = new System.Windows.Forms.DataGridView();
             this.cbRYear = new System.Windows.Forms.ComboBox();
@@ -79,14 +80,14 @@
             this.cbRType = new System.Windows.Forms.ComboBox();
             this.btRWRenevue = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pageQLNV = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.tbSType = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lbSType = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btSSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.cbSType = new System.Windows.Forms.ComboBox();
+            this.lbSDetail = new System.Windows.Forms.Label();
+            this.tbSSearch = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tbSUsername = new System.Windows.Forms.TextBox();
             this.dgStaff = new System.Windows.Forms.DataGridView();
             this.dgSFname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgSUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgSStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgSPnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgSAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgSDoB = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,6 +111,22 @@
             this.lbSUser = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbStaff = new System.Windows.Forms.Label();
             this.pageTaiKhoan = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.tbAEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbAPnumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbAAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbAICnumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbADoB = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbAFname = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.tbAUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lbAEmail = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbAPnumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbAAddress = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbAICnumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbADoB = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbAUsername = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbAFname = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btACPassword = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lbADetail = new System.Windows.Forms.Label();
             this.btSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -155,7 +172,7 @@
             this.pageThongKe,
             this.pageQLNV,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 3;
+            this.Navigator.SelectedIndex = 2;
             this.Navigator.Size = new System.Drawing.Size(2026, 897);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -371,10 +388,12 @@
             this.pageThongKe.Controls.Add(this.cbRDay);
             this.pageThongKe.Controls.Add(this.lbRDay);
             this.pageThongKe.Controls.Add(this.lbRBDTotal);
+            this.pageThongKe.Controls.Add(this.fplbcCnt);
+            this.pageThongKe.Controls.Add(this.fplbcName);
+            this.pageThongKe.Controls.Add(this.fplbcP);
             this.pageThongKe.Controls.Add(this.lbRBDDiscount);
             this.pageThongKe.Controls.Add(this.lbRBDetail);
             this.pageThongKe.Controls.Add(this.fpRBDetail);
-            this.pageThongKe.Controls.Add(this.fplbcP);
             this.pageThongKe.Controls.Add(this.btRUpdate);
             this.pageThongKe.Controls.Add(this.dgRevenue);
             this.pageThongKe.Controls.Add(this.cbRYear);
@@ -406,6 +425,7 @@
             this.lbRBDCost.Size = new System.Drawing.Size(51, 20);
             this.lbRBDCost.TabIndex = 31;
             this.lbRBDCost.Text = "Tổng:";
+            this.lbRBDCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbRDay
             // 
@@ -437,6 +457,33 @@
             this.lbRBDTotal.Size = new System.Drawing.Size(92, 20);
             this.lbRBDTotal.TabIndex = 28;
             this.lbRBDTotal.Text = "Thành tiền:";
+            this.lbRBDTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // fplbcCnt
+            // 
+            this.fplbcCnt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fplbcCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fplbcCnt.Location = new System.Drawing.Point(1219, 236);
+            this.fplbcCnt.Name = "fplbcCnt";
+            this.fplbcCnt.Size = new System.Drawing.Size(144, 41);
+            this.fplbcCnt.TabIndex = 25;
+            // 
+            // fplbcName
+            // 
+            this.fplbcName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fplbcName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fplbcName.Location = new System.Drawing.Point(1184, 70);
+            this.fplbcName.Name = "fplbcName";
+            this.fplbcName.Size = new System.Drawing.Size(179, 41);
+            this.fplbcName.TabIndex = 2;
+            // 
+            // fplbcP
+            // 
+            this.fplbcP.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fplbcP.Location = new System.Drawing.Point(1232, 156);
+            this.fplbcP.Name = "fplbcP";
+            this.fplbcP.Size = new System.Drawing.Size(131, 41);
+            this.fplbcP.TabIndex = 25;
             // 
             // lbRBDDiscount
             // 
@@ -449,6 +496,7 @@
             this.lbRBDDiscount.Size = new System.Drawing.Size(86, 20);
             this.lbRBDDiscount.TabIndex = 27;
             this.lbRBDDiscount.Text = "Giảm giá: ";
+            this.lbRBDDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbRBDetail
             // 
@@ -471,8 +519,6 @@
             this.fpRBDetail.Controls.Add(this.fpRlbName);
             this.fpRBDetail.Controls.Add(this.fpRlbCnt);
             this.fpRBDetail.Controls.Add(this.fpRlbPrice);
-            this.fpRBDetail.Controls.Add(this.fplbcName);
-            this.fpRBDetail.Controls.Add(this.fplbcCnt);
             this.fpRBDetail.Location = new System.Drawing.Point(1430, 180);
             this.fpRBDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fpRBDetail.Name = "fpRBDetail";
@@ -519,32 +565,6 @@
             this.fpRlbPrice.Text = "Đơn giá";
             this.fpRlbPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // fplbcName
-            // 
-            this.fplbcName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fplbcName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fplbcName.Location = new System.Drawing.Point(3, 124);
-            this.fplbcName.Name = "fplbcName";
-            this.fplbcName.Size = new System.Drawing.Size(228, 41);
-            this.fplbcName.TabIndex = 2;
-            // 
-            // fplbcCnt
-            // 
-            this.fplbcCnt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fplbcCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fplbcCnt.Location = new System.Drawing.Point(237, 124);
-            this.fplbcCnt.Name = "fplbcCnt";
-            this.fplbcCnt.Size = new System.Drawing.Size(131, 41);
-            this.fplbcCnt.TabIndex = 25;
-            // 
-            // fplbcP
-            // 
-            this.fplbcP.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fplbcP.Location = new System.Drawing.Point(1245, 135);
-            this.fplbcP.Name = "fplbcP";
-            this.fplbcP.Size = new System.Drawing.Size(48, 41);
-            this.fplbcP.TabIndex = 25;
-            // 
             // btRUpdate
             // 
             this.btRUpdate.Location = new System.Drawing.Point(31, 789);
@@ -563,6 +583,7 @@
             this.dgRevenue.AllowUserToResizeRows = false;
             this.dgRevenue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRevenue.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgRevenue.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgRevenue.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -576,7 +597,7 @@
             this.dgRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -699,8 +720,10 @@
             // pageQLNV
             // 
             this.pageQLNV.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.pageQLNV.Controls.Add(this.tbSType);
-            this.pageQLNV.Controls.Add(this.lbSType);
+            this.pageQLNV.Controls.Add(this.btSSearch);
+            this.pageQLNV.Controls.Add(this.cbSType);
+            this.pageQLNV.Controls.Add(this.lbSDetail);
+            this.pageQLNV.Controls.Add(this.tbSSearch);
             this.pageQLNV.Controls.Add(this.tbSUsername);
             this.pageQLNV.Controls.Add(this.dgStaff);
             this.pageQLNV.Controls.Add(this.btSDelete);
@@ -731,26 +754,51 @@
             this.pageQLNV.ToolTipTitle = "Page ToolTip";
             this.pageQLNV.UniqueName = "CCD8607AF223457A388AA6AB594772DA";
             // 
-            // tbSType
+            // btSSearch
             // 
-            this.tbSType.Location = new System.Drawing.Point(1459, 105);
-            this.tbSType.Name = "tbSType";
-            this.tbSType.Size = new System.Drawing.Size(203, 27);
-            this.tbSType.TabIndex = 22;
+            this.btSSearch.Location = new System.Drawing.Point(282, 788);
+            this.btSSearch.Name = "btSSearch";
+            this.btSSearch.Size = new System.Drawing.Size(96, 28);
+            this.btSSearch.TabIndex = 24;
+            this.btSSearch.Values.Text = "Tìm Kiếm";
             // 
-            // lbSType
+            // cbSType
             // 
-            this.lbSType.Location = new System.Drawing.Point(1299, 108);
-            this.lbSType.Name = "lbSType";
-            this.lbSType.Size = new System.Drawing.Size(86, 24);
-            this.lbSType.TabIndex = 21;
-            this.lbSType.Values.Text = "Nhân Viên:";
+            this.cbSType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSType.FormattingEnabled = true;
+            this.cbSType.Items.AddRange(new object[] {
+            "Họ Và Tên",
+            "Số Điện Thoại",
+            "CMND/CCCD",
+            "Email"});
+            this.cbSType.Location = new System.Drawing.Point(8, 789);
+            this.cbSType.Name = "cbSType";
+            this.cbSType.Size = new System.Drawing.Size(124, 24);
+            this.cbSType.TabIndex = 23;
+            // 
+            // lbSDetail
+            // 
+            this.lbSDetail.AutoSize = true;
+            this.lbSDetail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbSDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSDetail.Location = new System.Drawing.Point(1446, 29);
+            this.lbSDetail.Name = "lbSDetail";
+            this.lbSDetail.Size = new System.Drawing.Size(218, 25);
+            this.lbSDetail.TabIndex = 22;
+            this.lbSDetail.Text = "Thông Tin Nhân Viên";
+            // 
+            // tbSSearch
+            // 
+            this.tbSSearch.Location = new System.Drawing.Point(148, 789);
+            this.tbSSearch.Name = "tbSSearch";
+            this.tbSSearch.Size = new System.Drawing.Size(112, 27);
+            this.tbSSearch.TabIndex = 21;
             // 
             // tbSUsername
             // 
             this.tbSUsername.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbSUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSUsername.Location = new System.Drawing.Point(1458, 79);
+            this.tbSUsername.Location = new System.Drawing.Point(1474, 112);
             this.tbSUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSUsername.Name = "tbSUsername";
             this.tbSUsername.ReadOnly = true;
@@ -763,11 +811,14 @@
             this.dgStaff.AllowUserToDeleteRows = false;
             this.dgStaff.AllowUserToResizeColumns = false;
             this.dgStaff.AllowUserToResizeRows = false;
+            this.dgStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgStaff.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgStaff.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dgStaff.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgStaff.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -777,14 +828,20 @@
             this.dgStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgSFname,
-            this.dgsType,
             this.dgSUsername,
-            this.dgSStatus,
             this.dgSPnumber,
             this.dgSAddress,
             this.dgSDoB,
             this.dgSICnumber,
             this.dgSEmail});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgStaff.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgStaff.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgStaff.Location = new System.Drawing.Point(0, 82);
             this.dgStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -794,12 +851,12 @@
             this.dgStaff.RowHeadersVisible = false;
             this.dgStaff.RowHeadersWidth = 51;
             this.dgStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgStaff.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgStaff.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgStaff.RowTemplate.Height = 24;
             this.dgStaff.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgStaff.Size = new System.Drawing.Size(1151, 629);
+            this.dgStaff.Size = new System.Drawing.Size(1151, 585);
             this.dgStaff.TabIndex = 19;
             this.dgStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStaff_CellClick);
             // 
@@ -812,14 +869,6 @@
             this.dgSFname.Name = "dgSFname";
             this.dgSFname.ReadOnly = true;
             // 
-            // dgsType
-            // 
-            this.dgsType.HeaderText = "Nhân Viên";
-            this.dgsType.MinimumWidth = 6;
-            this.dgsType.Name = "dgsType";
-            this.dgsType.ReadOnly = true;
-            this.dgsType.Width = 125;
-            // 
             // dgSUsername
             // 
             this.dgSUsername.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -828,14 +877,6 @@
             this.dgSUsername.MinimumWidth = 6;
             this.dgSUsername.Name = "dgSUsername";
             this.dgSUsername.ReadOnly = true;
-            // 
-            // dgSStatus
-            // 
-            this.dgSStatus.HeaderText = "Trạng Thái";
-            this.dgSStatus.MinimumWidth = 6;
-            this.dgSStatus.Name = "dgSStatus";
-            this.dgSStatus.ReadOnly = true;
-            this.dgSStatus.Width = 125;
             // 
             // dgSPnumber
             // 
@@ -889,7 +930,7 @@
             this.btSDelete.Name = "btSDelete";
             this.btSDelete.Size = new System.Drawing.Size(136, 39);
             this.btSDelete.TabIndex = 18;
-            this.btSDelete.Values.Text = "Xóa Tài Khoản";
+            this.btSDelete.Values.Text = "Xóa Nhân Viên";
             this.btSDelete.Click += new System.EventHandler(this.btSDelete_Click);
             // 
             // btSUpdate
@@ -909,12 +950,12 @@
             this.btSReg.Name = "btSReg";
             this.btSReg.Size = new System.Drawing.Size(149, 39);
             this.btSReg.TabIndex = 16;
-            this.btSReg.Values.Text = "Tạo Tài Khoản";
+            this.btSReg.Values.Text = "Thêm Nhân Viên";
             this.btSReg.Click += new System.EventHandler(this.btSReg_Click);
             // 
             // tbSEmail
             // 
-            this.tbSEmail.Location = new System.Drawing.Point(1459, 400);
+            this.tbSEmail.Location = new System.Drawing.Point(1475, 400);
             this.tbSEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSEmail.Name = "tbSEmail";
             this.tbSEmail.Size = new System.Drawing.Size(203, 27);
@@ -922,7 +963,7 @@
             // 
             // tbSICnumber
             // 
-            this.tbSICnumber.Location = new System.Drawing.Point(1459, 350);
+            this.tbSICnumber.Location = new System.Drawing.Point(1475, 350);
             this.tbSICnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSICnumber.Name = "tbSICnumber";
             this.tbSICnumber.ShortcutsEnabled = false;
@@ -932,7 +973,7 @@
             // 
             // tbSDoB
             // 
-            this.tbSDoB.Location = new System.Drawing.Point(1459, 302);
+            this.tbSDoB.Location = new System.Drawing.Point(1475, 299);
             this.tbSDoB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSDoB.Name = "tbSDoB";
             this.tbSDoB.Size = new System.Drawing.Size(203, 27);
@@ -940,7 +981,7 @@
             // 
             // tbSAddress
             // 
-            this.tbSAddress.Location = new System.Drawing.Point(1459, 250);
+            this.tbSAddress.Location = new System.Drawing.Point(1475, 250);
             this.tbSAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSAddress.Name = "tbSAddress";
             this.tbSAddress.Size = new System.Drawing.Size(203, 27);
@@ -948,7 +989,7 @@
             // 
             // tbSPnumber
             // 
-            this.tbSPnumber.Location = new System.Drawing.Point(1459, 199);
+            this.tbSPnumber.Location = new System.Drawing.Point(1475, 199);
             this.tbSPnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSPnumber.Name = "tbSPnumber";
             this.tbSPnumber.ShortcutsEnabled = false;
@@ -958,7 +999,7 @@
             // 
             // tbSFname
             // 
-            this.tbSFname.Location = new System.Drawing.Point(1459, 150);
+            this.tbSFname.Location = new System.Drawing.Point(1475, 150);
             this.tbSFname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSFname.Name = "tbSFname";
             this.tbSFname.Size = new System.Drawing.Size(203, 27);
@@ -984,12 +1025,12 @@
             // 
             // lbSDoB
             // 
-            this.lbSDoB.Location = new System.Drawing.Point(1299, 300);
+            this.lbSDoB.Location = new System.Drawing.Point(1305, 302);
             this.lbSDoB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbSDoB.Name = "lbSDoB";
-            this.lbSDoB.Size = new System.Drawing.Size(85, 24);
+            this.lbSDoB.Size = new System.Drawing.Size(163, 24);
             this.lbSDoB.TabIndex = 6;
-            this.lbSDoB.Values.Text = "Ngày Sinh:";
+            this.lbSDoB.Values.Text = "Ngày Sinh: (M/d/yyyy)";
             // 
             // lbSAddress
             // 
@@ -1020,7 +1061,7 @@
             // 
             // lbSUser
             // 
-            this.lbSUser.Location = new System.Drawing.Point(1299, 70);
+            this.lbSUser.Location = new System.Drawing.Point(1299, 103);
             this.lbSUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbSUser.Name = "lbSUser";
             this.lbSUser.Size = new System.Drawing.Size(111, 24);
@@ -1041,6 +1082,22 @@
             // pageTaiKhoan
             // 
             this.pageTaiKhoan.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.pageTaiKhoan.Controls.Add(this.tbAEmail);
+            this.pageTaiKhoan.Controls.Add(this.tbAPnumber);
+            this.pageTaiKhoan.Controls.Add(this.tbAAddress);
+            this.pageTaiKhoan.Controls.Add(this.tbAICnumber);
+            this.pageTaiKhoan.Controls.Add(this.tbADoB);
+            this.pageTaiKhoan.Controls.Add(this.tbAFname);
+            this.pageTaiKhoan.Controls.Add(this.tbAUsername);
+            this.pageTaiKhoan.Controls.Add(this.lbAEmail);
+            this.pageTaiKhoan.Controls.Add(this.lbAPnumber);
+            this.pageTaiKhoan.Controls.Add(this.lbAAddress);
+            this.pageTaiKhoan.Controls.Add(this.lbAICnumber);
+            this.pageTaiKhoan.Controls.Add(this.lbADoB);
+            this.pageTaiKhoan.Controls.Add(this.lbAUsername);
+            this.pageTaiKhoan.Controls.Add(this.lbAFname);
+            this.pageTaiKhoan.Controls.Add(this.btACPassword);
+            this.pageTaiKhoan.Controls.Add(this.lbADetail);
             this.pageTaiKhoan.Controls.Add(this.btSignout);
             this.pageTaiKhoan.Controls.Add(this.btMasterSignout);
             this.pageTaiKhoan.Flags = 65534;
@@ -1053,6 +1110,133 @@
             this.pageTaiKhoan.Text = "Tải Khoản";
             this.pageTaiKhoan.ToolTipTitle = "Page ToolTip";
             this.pageTaiKhoan.UniqueName = "72EE1F9F8D394B17F5BE0583764C6EB4";
+            // 
+            // tbAEmail
+            // 
+            this.tbAEmail.Location = new System.Drawing.Point(844, 359);
+            this.tbAEmail.Name = "tbAEmail";
+            this.tbAEmail.Size = new System.Drawing.Size(160, 27);
+            this.tbAEmail.TabIndex = 17;
+            // 
+            // tbAPnumber
+            // 
+            this.tbAPnumber.Location = new System.Drawing.Point(844, 326);
+            this.tbAPnumber.Name = "tbAPnumber";
+            this.tbAPnumber.Size = new System.Drawing.Size(158, 27);
+            this.tbAPnumber.TabIndex = 16;
+            // 
+            // tbAAddress
+            // 
+            this.tbAAddress.Location = new System.Drawing.Point(844, 290);
+            this.tbAAddress.Name = "tbAAddress";
+            this.tbAAddress.Size = new System.Drawing.Size(155, 27);
+            this.tbAAddress.TabIndex = 15;
+            // 
+            // tbAICnumber
+            // 
+            this.tbAICnumber.Location = new System.Drawing.Point(844, 250);
+            this.tbAICnumber.Name = "tbAICnumber";
+            this.tbAICnumber.ReadOnly = true;
+            this.tbAICnumber.Size = new System.Drawing.Size(155, 27);
+            this.tbAICnumber.TabIndex = 14;
+            // 
+            // tbADoB
+            // 
+            this.tbADoB.Location = new System.Drawing.Point(844, 211);
+            this.tbADoB.Name = "tbADoB";
+            this.tbADoB.ReadOnly = true;
+            this.tbADoB.Size = new System.Drawing.Size(155, 27);
+            this.tbADoB.TabIndex = 13;
+            // 
+            // tbAFname
+            // 
+            this.tbAFname.Location = new System.Drawing.Point(844, 174);
+            this.tbAFname.Name = "tbAFname";
+            this.tbAFname.Size = new System.Drawing.Size(155, 27);
+            this.tbAFname.TabIndex = 12;
+            // 
+            // tbAUsername
+            // 
+            this.tbAUsername.Location = new System.Drawing.Point(844, 132);
+            this.tbAUsername.Name = "tbAUsername";
+            this.tbAUsername.ReadOnly = true;
+            this.tbAUsername.Size = new System.Drawing.Size(158, 27);
+            this.tbAUsername.TabIndex = 11;
+            // 
+            // lbAEmail
+            // 
+            this.lbAEmail.Location = new System.Drawing.Point(665, 362);
+            this.lbAEmail.Name = "lbAEmail";
+            this.lbAEmail.Size = new System.Drawing.Size(51, 24);
+            this.lbAEmail.TabIndex = 10;
+            this.lbAEmail.Values.Text = "Email:";
+            // 
+            // lbAPnumber
+            // 
+            this.lbAPnumber.Location = new System.Drawing.Point(665, 326);
+            this.lbAPnumber.Name = "lbAPnumber";
+            this.lbAPnumber.Size = new System.Drawing.Size(109, 24);
+            this.lbAPnumber.TabIndex = 9;
+            this.lbAPnumber.Values.Text = "Số Điện Thoại:";
+            // 
+            // lbAAddress
+            // 
+            this.lbAAddress.Location = new System.Drawing.Point(665, 293);
+            this.lbAAddress.Name = "lbAAddress";
+            this.lbAAddress.Size = new System.Drawing.Size(64, 24);
+            this.lbAAddress.TabIndex = 8;
+            this.lbAAddress.Values.Text = "Địa Chỉ:";
+            // 
+            // lbAICnumber
+            // 
+            this.lbAICnumber.Location = new System.Drawing.Point(663, 250);
+            this.lbAICnumber.Name = "lbAICnumber";
+            this.lbAICnumber.Size = new System.Drawing.Size(106, 24);
+            this.lbAICnumber.TabIndex = 7;
+            this.lbAICnumber.Values.Text = "CMND/CCCD:";
+            // 
+            // lbADoB
+            // 
+            this.lbADoB.Location = new System.Drawing.Point(663, 211);
+            this.lbADoB.Name = "lbADoB";
+            this.lbADoB.Size = new System.Drawing.Size(163, 24);
+            this.lbADoB.TabIndex = 6;
+            this.lbADoB.Values.Text = "Ngày Sinh: (M/d/yyyy)";
+            // 
+            // lbAUsername
+            // 
+            this.lbAUsername.Location = new System.Drawing.Point(663, 132);
+            this.lbAUsername.Name = "lbAUsername";
+            this.lbAUsername.Size = new System.Drawing.Size(111, 24);
+            this.lbAUsername.TabIndex = 5;
+            this.lbAUsername.Values.Text = "Tên Tài Khoản:";
+            // 
+            // lbAFname
+            // 
+            this.lbAFname.Location = new System.Drawing.Point(663, 174);
+            this.lbAFname.Name = "lbAFname";
+            this.lbAFname.Size = new System.Drawing.Size(86, 24);
+            this.lbAFname.TabIndex = 4;
+            this.lbAFname.Values.Text = "Họ Và Tên:";
+            // 
+            // btACPassword
+            // 
+            this.btACPassword.Location = new System.Drawing.Point(16, 453);
+            this.btACPassword.Name = "btACPassword";
+            this.btACPassword.Size = new System.Drawing.Size(323, 83);
+            this.btACPassword.TabIndex = 3;
+            this.btACPassword.Values.Text = "Đổi mật khẩu";
+            // 
+            // lbADetail
+            // 
+            this.lbADetail.AutoSize = true;
+            this.lbADetail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbADetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbADetail.Location = new System.Drawing.Point(753, 75);
+            this.lbADetail.Name = "lbADetail";
+            this.lbADetail.Size = new System.Drawing.Size(240, 29);
+            this.lbADetail.TabIndex = 2;
+            this.lbADetail.Text = "Thông Tin Tài Khoản";
             // 
             // btSignout
             // 
@@ -1148,6 +1332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgStaff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageTaiKhoan)).EndInit();
             this.pageTaiKhoan.ResumeLayout(false);
+            this.pageTaiKhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1221,21 +1406,37 @@
         private System.Windows.Forms.Button btDrink;
         private System.Windows.Forms.Button btFood;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btExit;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbSType;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbSType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSFname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgsType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSUsername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSPnumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSDoB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSICnumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgSEmail;
         private System.Windows.Forms.ComboBox cbRDay;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbRDay;
         private System.Windows.Forms.Label lbRBDCost;
         private System.Windows.Forms.Label fpRlbPrice;
         private System.Windows.Forms.Label lbRBDId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSFname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSPnumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSDoB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSICnumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgSEmail;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btSSearch;
+        private System.Windows.Forms.ComboBox cbSType;
+        private System.Windows.Forms.Label lbSDetail;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbSSearch;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAEmail;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAPnumber;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAAddress;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAICnumber;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbADoB;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAFname;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAUsername;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAEmail;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAPnumber;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAAddress;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAICnumber;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbADoB;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAUsername;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAFname;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btACPassword;
+        private System.Windows.Forms.Label lbADetail;
     }
 }

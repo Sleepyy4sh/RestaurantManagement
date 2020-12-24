@@ -184,7 +184,7 @@ namespace RestaurantManagement
                         while (reader.HasRows)
                         {
                             if (reader.Read() == false) break;
-                            dgRevenue.Rows.Add(reader.GetInt32(0).ToString(), reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString());
+                            dgRevenue.Rows.Add(reader.GetInt32(0).ToString(), reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString() + "000VND");
                         }
                         this.dgRevenue.ClearSelection();
                         this.dgRevenue.CurrentCell = null;
@@ -226,7 +226,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString());
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString() + "000VND");
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -278,7 +278,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString());
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString() + "000VND");
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -488,7 +488,7 @@ namespace RestaurantManagement
                     connection = new SqlConnection(connString);
                     connection.Open();
 
-                    sqlQuery = "select NAMEFOOD, SOLUONG from CTHD where ID = @Id";
+                    sqlQuery = "select NAMEFOOD, SOLUONG, PRICEFOOD from CTHD where ID = @Id";
                     SqlCommand command = new SqlCommand(sqlQuery, connection);
                     command.Parameters.AddWithValue("@Id", lbRBDId.Text);
                     SqlDataReader reader = command.ExecuteReader();
@@ -515,9 +515,10 @@ namespace RestaurantManagement
                         if (reader.Read() == false) break;
                         RNameInBill = reader.GetString(0);
                         RCountInBill = reader.GetInt32(1).ToString();
-                        RPriceInBill = "Giá";
+                        RPriceInBill = reader.GetString(2);
                         n.Text = RNameInBill; 
                         c.Text = RCountInBill;
+                        p.Text = RPriceInBill;
                         fpRBDetail.Controls.Add(n);
                         fpRBDetail.Controls.Add(p);
                         fpRBDetail.Controls.Add(c);
@@ -532,9 +533,9 @@ namespace RestaurantManagement
                 {
                     connection.Close();
                 }
-                lbRBDCost.Text =     "Tổng:       " + dgRevenue.CurrentRow.Cells[1].Value.ToString() + "000VND";
+                lbRBDCost.Text =     "Tổng:       " + dgRevenue.CurrentRow.Cells[1].Value.ToString() + "VND";
                 lbRBDDiscount.Text = "Giảm Giá:   " + dgRevenue.CurrentRow.Cells[2].Value.ToString();
-                lbRBDTotal.Text =    "Thành Tiền: " + dgRevenue.CurrentRow.Cells[3].Value.ToString() + "000VND";
+                lbRBDTotal.Text =    "Thành Tiền: " + dgRevenue.CurrentRow.Cells[3].Value.ToString() + "VND";
 
             }
         }

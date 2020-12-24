@@ -21,13 +21,15 @@ namespace RestaurantManagement
         {
             initIn4Server();
             InitializeComponent();
+            tbUsername.Enabled = false;
+            tbPassword.Enabled = false;
+            tbRepassword.Enabled = false;
             this.tbRepassword.KeyDown += new KeyEventHandler(Enter_Event);
             ReSize();
         }
         private void Enter_Event(object sender, KeyEventArgs args)
         {
-            if (args.KeyCode == Keys.Enter)
-                btSignup_Click(sender, args);
+
         }
 
         bool whitespaceContain(string s)
@@ -62,9 +64,17 @@ namespace RestaurantManagement
             Svpassword = in4[2];
         }
 
-        private void OnlyNumber_KeyDown(object sender, KeyPressEventArgs e)
+        private void OnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void OnlyNumberForDoB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar.ToString() != "/")
             {
                 e.Handled = true;
             }
@@ -90,7 +100,7 @@ namespace RestaurantManagement
                 MessageBox.Show("Địa chỉ không hợp lệ" + tbSAddress.Text + "1");
                 return false;
             }
-            if (tbSDoB.Text == "" || (!DateTime.TryParseExact(tbSDoB.Text, "M/dd/yyyy", enUS, DateTimeStyles.None, out dt)))
+            if (tbSDoB.Text == "" || (!DateTime.TryParseExact(tbSDoB.Text, "M/d/yyyy", enUS, DateTimeStyles.None, out dt)))
             {
                 MessageBox.Show("Ngày sinh không hợp lệ");
                 return false;
@@ -107,78 +117,114 @@ namespace RestaurantManagement
             }
             return true;
         }
-        private void btSignup_Click(object sender, EventArgs e)
+
+        private void ckboxType_CheckedChanged(object sender, EventArgs e)
         {
-           // MessageBox.Show(tbSFname.Text.ToString());
-            //MessageBox.Show(tbSPnumber.Text.ToString());
-           // MessageBox.Show(tbSAddress.Text.ToString());
-           // MessageBox.Show(tbSICnumber.Text.ToString());
-           // MessageBox.Show(tbSEmail.Text.ToString());
-           // MessageBox.Show(tbUsername.Text.ToString());
-          //  MessageBox.Show(tbPassword.Text.ToString());
-           // MessageBox.Show(tbRepassword.Text.ToString());
-           // MessageBox.Show(tbSDoB.Text.ToString());
             if (!ckboxType.Checked)
             {
-                if (tbUsername.Text == "")
-                {
-                    MessageBox.Show("Hãy nhập tài khoản");
-                }
-                else
-                if (whitespaceContain(tbUsername.Text))
-                {
-                    MessageBox.Show("Tài khản không được có khoảng trắng");
-                }
-                else
-                {
-                    if (tbPassword.Text == "")
-                    {
-                        MessageBox.Show("Hãy nhập mật khẩu");
-                    }
-                    else
-                    {
-                        if (tbPassword.Text != tbRepassword.Text)
-                        {
-                            MessageBox.Show("Mật khẩu không khớp");
-                        }
-                        else
-                            try
-                            {
-                                string nameDB;
-                                using (StreamReader sr = new StreamReader("database.txt"))
-                                {
-                                    nameDB = sr.ReadLine();
-                                }
-
-                                string password = EncodePass(tbPassword.Text);
-
-                                String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
-
-                                connection = new SqlConnection(connString);
-                                connection.Open();
-                                String sqlQuery = "insert into USERS(USERNAME, PASS, AD) values(@username, @pass, @ad)";
-                                SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-                                command.Parameters.AddWithValue("@username", tbUsername.Text);
-                                command.Parameters.AddWithValue("@pass", password);
-                                command.Parameters.AddWithValue("@ad", 0);
-                                command.ExecuteNonQuery();
-                                connection.Close();
-                                MessageBox.Show("Thêm tài khoản thành công");
-                                this.Close();
-                            }
-                            catch
-                            {
-                                MessageBox.Show("Tài khoản đã tồn tại");
-                            }
-                    }
-                }
+                tbUsername.Enabled = false;
+                tbPassword.Enabled = false;
+                tbRepassword.Enabled = false;
             }
             else
             {
-                if (CheckFormat())
-                {
+                tbUsername.Enabled = true;
+                tbPassword.Enabled = true;
+                tbRepassword.Enabled = true;
+            }
 
+        }
+
+        private void btSignup_Click(object sender, EventArgs e)
+        {
+            if (CheckFormat())
+            {
+                if (ckboxType.Checked)
+                {
+                    if (tbUsername.Text == "")
+                    {
+                        MessageBox.Show("Hãy nhập tài khoản");
+                    }
+                    else
+                    if (whitespaceContain(tbUsername.Text))
+                    {
+                        MessageBox.Show("Tài khản không được có khoảng trắng");
+                    }
+                    else
+                    {
+                        if (tbPassword.Text == "")
+                        {
+                            MessageBox.Show("Hãy nhập mật khẩu");
+                        }
+                        else
+                        {
+                            if (tbPassword.Text != tbRepassword.Text)
+                            {
+                                MessageBox.Show("Mật khẩu không khớp");
+                            }
+                            else
+                                try
+                                {
+                                    string nameDB;
+                                    using (StreamReader sr = new StreamReader("database.txt"))
+                                    {
+                                        nameDB = sr.ReadLine();
+                                    }
+                                    String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+                                    connection = new SqlConnection(connString);
+                                    connection.Open();
+
+                                    //CheckAccount
+                                    String sqlQuery = "select * from USERS where USERNAME =  @Username";
+                                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+                                    command.Parameters.AddWithValue("@Username", tbUsername.Text);
+                                    SqlDataReader reader = command.ExecuteReader();
+                                    while (reader.HasRows)
+                                    {
+                                        if (reader.Read() == false) break;
+                                        MessageBox.Show("Tài khoản đã tồn tại");
+                                        reader.Close();
+                                        return;
+                                    }
+                                    reader.Close();
+                                    //AddNV
+                                    connection = new SqlConnection(connString);
+                                    connection.Open();
+                                    sqlQuery = "insert into NV(FULLNAME, USERNAME, PHONENUMBER , ADDRESS , DOB , ICNUMBER , EMAIL) values (@Fname, @Username, @Pnumber, @Address, @DoB, @ICnumber, @Email)";
+                                    command = new SqlCommand(sqlQuery, connection);
+                                    command.Parameters.AddWithValue("@Fname", tbSFname.Text);
+                                    command.Parameters.AddWithValue("@Username", tbUsername.Text);
+                                    command.Parameters.AddWithValue("@Pnumber", tbSPnumber.Text);
+                                    command.Parameters.AddWithValue("@Address", tbSAddress.Text);
+                                    command.Parameters.AddWithValue("@DoB", tbSDoB.Text);
+                                    command.Parameters.AddWithValue("@ICnumber", tbSICnumber.Text);
+                                    command.Parameters.AddWithValue("@Email", tbSEmail.Text);
+                                    command.ExecuteNonQuery();
+
+                                    //AddAccount
+                                    string password = EncodePass(tbPassword.Text);
+                                    sqlQuery = "insert into USERS(USERNAME, PASS, AD) values(@username, @pass, @ad)";
+                                    command = new SqlCommand(sqlQuery, connection);
+                                    command.Parameters.AddWithValue("@username", tbUsername.Text);
+                                    command.Parameters.AddWithValue("@pass", password);
+                                    command.Parameters.AddWithValue("@ad", 0);
+                                    command.ExecuteNonQuery();
+                                    MessageBox.Show("Thêm nhân viên thành công");
+                                    this.Close();
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Lỗi kết nối hoặc thông tin bị trùng, sai định dạng");
+                                }
+                                finally
+                                {
+                                    connection.Close();
+                                }
+                        }
+                    }
+                }
+                else
+                {
                     try
                     {
                         string nameDB;
@@ -190,7 +236,7 @@ namespace RestaurantManagement
                         connection = new SqlConnection(connString);
                         connection.Open();
 
-                        string sqlQuery = "insert into NV(FULLNAME, PHONENUMBER , ADDRESS , DOB , ICNUMBER , EMAIL) values (@Fname, @Pnumber, @Address, @DoB, @ICnumber, @Email";
+                        string sqlQuery = "insert into NV(FULLNAME, PHONENUMBER , ADDRESS , DOB , ICNUMBER , EMAIL) values (@Fname, @Pnumber, @Address, @DoB, @ICnumber, @Email)";
                         SqlCommand command = new SqlCommand(sqlQuery, connection);
                         command.Parameters.AddWithValue("@Fname", tbSFname.Text);
                         command.Parameters.AddWithValue("@Pnumber", tbSPnumber.Text);
@@ -199,6 +245,8 @@ namespace RestaurantManagement
                         command.Parameters.AddWithValue("@ICnumber", tbSICnumber.Text);
                         command.Parameters.AddWithValue("@Email", tbSEmail.Text);
                         command.ExecuteNonQuery();
+                        MessageBox.Show("Thêm nhân viên thành công");
+                        this.Close();
 
                     }
                     catch

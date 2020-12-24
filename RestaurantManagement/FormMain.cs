@@ -32,7 +32,10 @@ namespace RestaurantManagement
             InitFood();
             InitTable();
             InitRevenue();
-            InitStaff();
+            if (AD)
+                InitStaff();
+            else
+                this.pageQLNV.Visible = false;
             UnSelectTable();
             InitAccount();
             btAddTable.Size = new Size(fpTables.Size.Width / 5 - 6, fpTables.Size.Width / 5 / 5 * 7);

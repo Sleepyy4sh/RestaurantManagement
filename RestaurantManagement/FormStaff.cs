@@ -9,19 +9,21 @@ namespace RestaurantManagement
     public partial class FormMain : Form
     {
         string OldICnumber;
+        int StaffCount;
 
         private void InitStaff()
         {
-            initIn4Server();
             LoadDG();
             InitDG();
         }
 
         private void InitDG()
         {
+            StaffCount = 0;
             this.dgStaff.ClearSelection();
             this.dgStaff.CurrentCell = null;
             this.dgStaff.EnableHeadersVisualStyles = false;
+            this.dgStaff.ScrollBars = ScrollBars.Vertical;
         }
 
         private void LoadDG()
@@ -38,7 +40,12 @@ namespace RestaurantManagement
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    this.dgStaff.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetDateTime(8).ToString("MM/dd/yyyy"), reader.GetString(9), reader.GetString(10));
+                    string  Username ="";
+                    StaffCount++;
+                    if (!reader.IsDBNull(1))
+                        Username = reader.GetString(1);
+                    this.dgStaff.Rows.Add(reader.GetString(0), Username, reader.GetString(2), reader.GetString(3), reader.GetDateTime(4).ToString("MM/dd/yyyy"), reader.GetString(5), reader.GetString(6));
+
                 }
                 reader.Close();
             }
@@ -54,8 +61,8 @@ namespace RestaurantManagement
 
         private void UpdateTbStaff(string s1 = "", string s2 = "", string s3 = "", string s4 = "", string s5 = "", string s6 = "", string s7 = "")
         {
-            tbSUsername.Text = s1;
-            tbSFname.Text = s2;
+            tbSFname.Text = s1;
+            tbSUsername.Text = s2;
             tbSPnumber.Text = s3;
             tbSAddress.Text = s4;
             tbSDoB.Text = s5;
@@ -77,6 +84,7 @@ namespace RestaurantManagement
                     this.dgStaff.CurrentRow.Cells[5].Value.ToString(),
                     this.dgStaff.CurrentRow.Cells[6].Value.ToString()
                 );
+                OldICnumber = tbSICnumber.Text;
             }
         }
 
@@ -92,11 +100,19 @@ namespace RestaurantManagement
                     {
                         connection = new SqlConnection(connString);
                         connection.Open();
-                        sqlQuery = "delete from NV where USERNAME = @Username";
+                        sqlQuery = "delete from NV where ICNUMBER = @ICnumber";
                         SqlCommand command = new SqlCommand(sqlQuery, connection);
-                        command.Parameters.AddWithValue("@Username", tbSUsername.Text);
+                        command.Parameters.AddWithValue("@ICnumber", tbSICnumber.Text);
                         command.ExecuteNonQuery();
+                        if (tbSUsername.Text != "")
+                        {
+                            sqlQuery = "delete from USERS where USERNAME = @Username";
+                            command = new SqlCommand(sqlQuery, connection);
+                            command.Parameters.AddWithValue("@Username", tbSUsername.Text);
+                            command.ExecuteNonQuery();
+                        }
                         //Refresh
+                        StaffCount--;
                         dgStaff.Rows.RemoveAt(dgStaff.SelectedRows[0].Index);
                         this.dgStaff.ClearSelection();
                         this.dgStaff.CurrentCell = null;
@@ -147,7 +163,7 @@ namespace RestaurantManagement
                     }
                     catch
                     {
-                        MessageBox.Show("Lỗi kết nối hoặc dữ liệu bị trùng");
+                        MessageBox.Show("Lỗi kết nối hoặc dữ liệu bị trùng, sai định dạng");
                     }
                     finally
                     {
@@ -163,6 +179,7 @@ namespace RestaurantManagement
         {
             Form signupForm = new SignupForm();
             signupForm.ShowDialog();
+            dgStaff.Rows.Clear();
             InitStaff();
         }
 
@@ -194,7 +211,7 @@ namespace RestaurantManagement
                 MessageBox.Show("Địa chỉ không hợp lệ");
                 return false;
             }
-            if (tbSDoB.Text == "" || (!DateTime.TryParseExact(tbSDoB.Text, "M/dd/yyyy", enUS, DateTimeStyles.None, out dt)))
+            if (tbSDoB.Text == "" || (!DateTime.TryParseExact(tbSDoB.Text, "M/d/yyyy", enUS, DateTimeStyles.None, out dt)))
             {
                 MessageBox.Show("Ngày sinh không hợp lệ");
                 return false;
@@ -211,5 +228,7 @@ namespace RestaurantManagement
             }
             return true;
         }
+
+
     }
 }
