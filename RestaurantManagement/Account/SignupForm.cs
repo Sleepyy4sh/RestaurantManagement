@@ -109,6 +109,15 @@ namespace RestaurantManagement
         }
         private void btSignup_Click(object sender, EventArgs e)
         {
+           // MessageBox.Show(tbSFname.Text.ToString());
+            //MessageBox.Show(tbSPnumber.Text.ToString());
+           // MessageBox.Show(tbSAddress.Text.ToString());
+           // MessageBox.Show(tbSICnumber.Text.ToString());
+           // MessageBox.Show(tbSEmail.Text.ToString());
+           // MessageBox.Show(tbUsername.Text.ToString());
+          //  MessageBox.Show(tbPassword.Text.ToString());
+           // MessageBox.Show(tbRepassword.Text.ToString());
+           // MessageBox.Show(tbSDoB.Text.ToString());
             if (!ckboxType.Checked)
             {
                 if (tbUsername.Text == "")

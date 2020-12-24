@@ -170,3 +170,10 @@ E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Cryp
 E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
 E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
 E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.ExchangeTable.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Crypto.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
+G:\Nam 2\TrucQuan\Clone\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.ExchangeTable.resources
