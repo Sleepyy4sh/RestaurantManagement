@@ -30,17 +30,17 @@ namespace RestaurantManagement
             btFinished.Location = new Point(this.Width / 2 - btFinished.Size.Width / 2, this.Height / 10 * 9);
 
             btFood.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btFood.ForeColor = Color.Black;
             btFood.Size = new Size(btFinished.Width , btFinished.Height / 2);
             btFood.Location = new Point(0, btFinished.Location.Y);
 
             btDrink.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btDrink.ForeColor = Color.Black;
             btDrink.Size = new Size(btFinished.Width , btFinished.Height / 2);
             btDrink.Location = new Point(0, btFinished.Location.Y + btFood.Height);
 
             tbSearch.Size = new Size(btFood.Size.Width/2*3,btFood.Height);
             tbSearch.Font = new Font("Times New Roman", heightFont / 1.9f);
-            tbSearch.Location = new Point(btFood.Width / 2 * 3, btFinished.Location.Y + btFinished.Height / 2 - tbSearch.Height / 2);
-
             btSearch.Size = btFinished.Size;
             btSearch.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSearch.Location = new Point(tbSearch.Location.X+tbSearch.Width, this.Height / 10 * 9);

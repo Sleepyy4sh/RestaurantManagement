@@ -56,13 +56,13 @@ namespace RestaurantManagement
             tbPassword.Size = new Size(pnInfor.Width / 5 * 3, pnInfor.Height / 10);
             tbPassword.Location = new Point(lbPass.Location.X, lbPass.Location.Y + lbPass.Height );
 
-           // btSignup.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
-           // btSignup.Size = new Size(tbPassword.Width / 3, (int)(tbPassword.Height * 1.3f));
-           // btSignup.Location = new Point(tbPassword.Location.X + btSignup.Width / 4, tbPassword.Location.Y + tbPassword.Height +btSignup.Height/2);
+            // btSignup.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
+            // btSignup.Size = 
+            // btSignup.Location = 
 
-            //btLogin.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
-           // btLogin.Size = btSignup.Size;
-            //btLogin.Location = new Point(btSignup.Location.X + btSignup.Width + btSignup.Width / 2, btSignup.Location.Y);
+            btLogin.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btLogin.Size = new Size(tbPassword.Width / 3, (int)(tbPassword.Height * 1.3f));
+            btLogin.Location = new Point(pnInfor.Width/2-btLogin.Width/2, tbPassword.Location.Y + tbPassword.Height + btLogin.Height / 2);
         }
     }
 }

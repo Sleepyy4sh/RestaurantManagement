@@ -219,6 +219,7 @@ namespace RestaurantManagement
         void CheckSearch()
         {
             fpFoods.Controls.Clear();
+            fpListFood.Controls.Clear();
             //Xóa mấy dấu cách nhập thừa
             tbSearch.Text = ChuanHoa(tbSearch.Text);
             // Không nhập gì thì hiện hết
