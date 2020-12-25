@@ -56,7 +56,7 @@ namespace RestaurantManagement
         {
             for (int i=0;i<foods.Count;i++)
             {
-                if (foods[i].name == name) ;
+                if (foods[i].name == name) 
                     foods[i].UnTick();
             }    
         }

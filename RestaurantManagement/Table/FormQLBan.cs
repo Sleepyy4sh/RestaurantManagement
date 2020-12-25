@@ -98,7 +98,7 @@ namespace RestaurantManagement
                     DataSQLTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
                     listFoodInList[i].Hide();
                     listFoodInList.RemoveAt(i);
-                    //if (menu_Select != null) menu_Select.UnTick(name);
+                    if (menu_Select != null) menu_Select.UnTick(name);
                 }
             }
             if (listFoodInList.Count == 0)

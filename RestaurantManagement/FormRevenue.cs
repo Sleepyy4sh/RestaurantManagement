@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace RestaurantManagement
 {
@@ -16,9 +17,12 @@ namespace RestaurantManagement
     {
         bool isBill = false;
         string RCountInBill, RNameInBill, RPriceInBill;
-        int TotalBill;
+        long TotalBill;
         private void InitRevenue()
         {
+            lbRBDCost.Text = "";
+            lbRBDDiscount.Text = "";
+            lbRBDTotal.Text = "";
             try
             {
                 connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
@@ -171,20 +175,20 @@ namespace RestaurantManagement
                         connection = new SqlConnection(connString);
                         connection.Open();
 
-                        sqlQuery = "select YEAR(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year group by YEAR(TIME)";
+                        sqlQuery = "select MONTH(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year group by MONTH(TIME)";
                         SqlCommand command = new SqlCommand(sqlQuery, connection);
                         command.Parameters.AddWithValue("@Year", cbRYear.Text);
                         SqlDataReader reader = command.ExecuteReader();
                         this.dgRevenue.EnableHeadersVisualStyles = false;
                         dgRevenue.Rows.Clear();
                         dgRevenue.Columns.Clear();
-                        dgRevenue.Columns.Add("dgRYear", "Năm");
+                        dgRevenue.Columns.Add("dgRYear", "Tháng");
                         dgRevenue.Columns.Add("dgRBill", "Tổng Số Hóa Đơn");
                         dgRevenue.Columns.Add("dgRIncome", "Doanh Thu");
                         while (reader.HasRows)
                         {
                             if (reader.Read() == false) break;
-                            dgRevenue.Rows.Add(reader.GetInt32(0).ToString(), reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString() + "000VND");
+                            dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" +cbRYear.Text, reader.GetInt32(1).ToString(), CurrencyFormat(reader.GetInt64(2) * 1000) + " VND");
                         }
                         this.dgRevenue.ClearSelection();
                         this.dgRevenue.CurrentCell = null;
@@ -212,7 +216,7 @@ namespace RestaurantManagement
                             connection = new SqlConnection(connString);
                             connection.Open();
 
-                            sqlQuery = "select DISTINCT MONTH(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month group by MONTH(TIME)";
+                            sqlQuery = "select DAY(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month group by DAY(TIME)";
                             SqlCommand command = new SqlCommand(sqlQuery, connection);
                             command.Parameters.AddWithValue("@Year", cbRYear.Text);
                             command.Parameters.AddWithValue("@Month", cbRMonth.Text);
@@ -220,13 +224,13 @@ namespace RestaurantManagement
                             this.dgRevenue.EnableHeadersVisualStyles = false;
                             dgRevenue.Rows.Clear();
                             dgRevenue.Columns.Clear();
-                            dgRevenue.Columns.Add("dgRYear", "Tháng");
+                            dgRevenue.Columns.Add("dgRYear", "Ngày");
                             dgRevenue.Columns.Add("dgRBill", "Tổng Số Hóa Đơn");
                             dgRevenue.Columns.Add("dgRIncome", "Doanh Thu");
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString() + "000VND");
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CurrencyFormat(reader.GetInt64(2) * 1000) + " VND");
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -278,7 +282,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), reader.GetInt32(2).ToString() + "000VND");
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CurrencyFormat(reader.GetInt64(2) * 1000) + " VND");
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -303,8 +307,15 @@ namespace RestaurantManagement
             InitRevenue();
         }
 
-        private string GetBillInfo(int cost, int discount, int type)
+        private string CurrencyFormat(long c)
         {
+            return string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", c);
+        }
+
+        private string GetBillInfo(long cost, int discount, int type)
+        {
+            cost *= 1000;
+
             if (discount == 0)
             {
                 TotalBill = cost;
@@ -318,7 +329,7 @@ namespace RestaurantManagement
             else
             {
                 TotalBill = cost - discount;
-                return discount.ToString() + "VND";
+                return CurrencyFormat(discount) + " VND";
             }
         }
 
@@ -356,7 +367,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetGuid(0).ToString(), reader.GetInt32(1).ToString(), GetBillInfo(reader.GetInt32(1), reader.GetInt32(3), reader.GetInt32(4)), TotalBill.ToString(), reader.GetDateTime(2).ToString("dd/MM/yyyy HH:mm"));
+                                dgRevenue.Rows.Add(reader.GetGuid(0).ToString(), CurrencyFormat(reader.GetInt64(1) * 1000) + " VND", GetBillInfo(reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4)), CurrencyFormat(TotalBill) + " VND", reader.GetDateTime(2).ToString("dd/MM/yyyy HH:mm"));
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -404,7 +415,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetGuid(0).ToString(), reader.GetInt32(1).ToString(), GetBillInfo(reader.GetInt32(1), reader.GetInt32(3), reader.GetInt32(4)), TotalBill.ToString(), reader.GetDateTime(2).ToString("dd/MM/yyyy HH:mm"));
+                                dgRevenue.Rows.Add(reader.GetGuid(0).ToString(), CurrencyFormat(reader.GetInt64(1) * 1000) + " VND", GetBillInfo(reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4)), CurrencyFormat(TotalBill) + " VND", reader.GetDateTime(2).ToString("dd/MM/yyyy HH:mm"));
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -458,7 +469,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetGuid(0).ToString(), reader.GetInt32(1).ToString(), GetBillInfo(reader.GetInt32(1), reader.GetInt32(3), reader.GetInt32(4)), TotalBill.ToString(), reader.GetDateTime(2).ToString("dd/MM/yyyy HH:mm"));
+                                dgRevenue.Rows.Add(reader.GetGuid(0).ToString(), CurrencyFormat(reader.GetInt64(1) * 1000) + " VND", GetBillInfo(reader.GetInt64(1), reader.GetInt32(3), reader.GetInt32(4)), CurrencyFormat(TotalBill) + " VND", reader.GetDateTime(2).ToString("dd/MM/yyyy HH:mm"));
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -479,7 +490,9 @@ namespace RestaurantManagement
 
         private void dgRevenue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && isBill)
+            if (!(e.RowIndex >= 0))
+                return;
+            if (isBill)
             {
                 lbRBDId.Text = dgRevenue.CurrentRow.Cells[0].Value.ToString();
                 try
@@ -533,10 +546,206 @@ namespace RestaurantManagement
                 {
                     connection.Close();
                 }
-                lbRBDCost.Text =     "Tổng:       " + dgRevenue.CurrentRow.Cells[1].Value.ToString() + "VND";
-                lbRBDDiscount.Text = "Giảm Giá:   " + dgRevenue.CurrentRow.Cells[2].Value.ToString();
-                lbRBDTotal.Text =    "Thành Tiền: " + dgRevenue.CurrentRow.Cells[3].Value.ToString() + "VND";
+                lbRBDCost.Text = dgRevenue.CurrentRow.Cells[1].Value.ToString();
+                lbRBDDiscount.Text = dgRevenue.CurrentRow.Cells[2].Value.ToString();
+                lbRBDTotal.Text = dgRevenue.CurrentRow.Cells[3].Value.ToString();
+            }
+            else
+            {
+                switch(cbRType.Text)
+                {
+                    case "Năm":
+                        try
+                        {
+                            connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+                            connection = new SqlConnection(connString);
+                            connection.Open();
 
+                            sqlQuery = "SELECT NAMEFOOD, SUM(SOLUONG), PRICEFOOD  from CTHD join HD on CTHD.ID = HD.ID  where YEAR(TIME) = @Year AND MONTH(TIME) = @Month group by namefood, PRICEFOOD";
+                            SqlCommand command = new SqlCommand(sqlQuery, connection);
+                            command.Parameters.AddWithValue("@Year", cbRYear.Text);
+                            string tmp = dgRevenue.CurrentRow.Cells[0].Value.ToString();
+                            if (tmp[1] != '/')
+                                tmp = tmp.Remove(2);
+                            else
+                                tmp = tmp.Remove(1);
+                            command.Parameters.AddWithValue("@Month", tmp);
+                            SqlDataReader reader = command.ExecuteReader();
+                            RCountInBill = "";
+                            RNameInBill = "";
+                            fpRBDetail.Controls.Clear();
+                            fpRBDetail.Controls.Add(fpRlbName);
+                            fpRBDetail.Controls.Add(fpRlbCnt);
+                            while (reader.HasRows)
+                            {
+                                Label n = new Label();
+                                Label p = new Label();
+                                Label c = new Label();
+                                n.AutoSize = false;
+                                c.AutoSize = false;
+                                p.Size = fplbcP.Size;
+                                n.Size = fplbcName.Size;
+                                c.Size = fplbcCnt.Size;
+                                p.Size = fplbcP.Size;
+                                n.Font = new Font("Microsoft Sans Serif", 10);
+                                c.Font = new Font("Microsoft Sans Serif", 10);
+                                c.TextAlign = ContentAlignment.TopCenter;
+                                p.TextAlign = ContentAlignment.TopCenter;
+                                if (reader.Read() == false) break;
+                                RNameInBill = reader.GetString(0);
+                                RCountInBill = reader.GetInt32(1).ToString();
+                                RPriceInBill = reader.GetString(2);
+                                n.Text = RNameInBill;
+                                c.Text = RCountInBill;
+                                p.Text = RPriceInBill;
+                                fpRBDetail.Controls.Add(n);
+                                fpRBDetail.Controls.Add(p);
+                                fpRBDetail.Controls.Add(c);
+                            }
+                            reader.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Dữ liệu lỗi, vui lòng khởi động lại chương trình");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                        break;
+                    case "Tháng":
+                        try
+                        {
+                            connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+                            connection = new SqlConnection(connString);
+                            connection.Open();
+
+                            sqlQuery = "SELECT NAMEFOOD, SUM(SOLUONG), PRICEFOOD  from CTHD join HD on CTHD.ID = HD.ID  where YEAR(TIME) = @Year AND MONTH(TIME) = @Month and DAY(TIME) = @Day group by namefood, PRICEFOOD";
+                            SqlCommand command = new SqlCommand(sqlQuery, connection);
+                            command.Parameters.AddWithValue("@Year", cbRYear.Text);
+                            string tmpd = dgRevenue.CurrentRow.Cells[0].Value.ToString();
+                            if (tmpd[1] != '/')
+                                tmpd = tmpd.Remove(2);
+                            else
+                                tmpd = tmpd.Remove(1);
+                            string tmp = dgRevenue.CurrentRow.Cells[0].Value.ToString();
+                            tmp = tmp.Remove(0, tmpd.Length + 1);
+                            if (tmp[1] != '/')
+                                tmp = tmp.Remove(2);
+                            else
+                                tmp = tmp.Remove(1);
+                            command.Parameters.AddWithValue("@Month", tmp);
+                            command.Parameters.AddWithValue("@Day", tmpd);
+                            SqlDataReader reader = command.ExecuteReader();
+                            RCountInBill = "";
+                            RNameInBill = "";
+                            fpRBDetail.Controls.Clear();
+                            fpRBDetail.Controls.Add(fpRlbName);
+                            fpRBDetail.Controls.Add(fpRlbCnt);
+                            while (reader.HasRows)
+                            {
+                                Label n = new Label();
+                                Label p = new Label();
+                                Label c = new Label();
+                                n.AutoSize = false;
+                                c.AutoSize = false;
+                                p.Size = fplbcP.Size;
+                                n.Size = fplbcName.Size;
+                                c.Size = fplbcCnt.Size;
+                                p.Size = fplbcP.Size;
+                                n.Font = new Font("Microsoft Sans Serif", 10);
+                                c.Font = new Font("Microsoft Sans Serif", 10);
+                                c.TextAlign = ContentAlignment.TopCenter;
+                                p.TextAlign = ContentAlignment.TopCenter;
+                                if (reader.Read() == false) break;
+                                RNameInBill = reader.GetString(0);
+                                RCountInBill = reader.GetInt32(1).ToString();
+                                RPriceInBill = reader.GetString(2);
+                                n.Text = RNameInBill;
+                                c.Text = RCountInBill;
+                                p.Text = RPriceInBill;
+                                fpRBDetail.Controls.Add(n);
+                                fpRBDetail.Controls.Add(p);
+                                fpRBDetail.Controls.Add(c);
+                            }
+                            reader.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Dữ liệu lỗi, vui lòng khởi động lại chương trình");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                        break;
+                    case "Ngày":
+                        try
+                        {
+                            connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+                            connection = new SqlConnection(connString);
+                            connection.Open();
+
+                            sqlQuery = "SELECT NAMEFOOD, SUM(SOLUONG), PRICEFOOD  from CTHD join HD on CTHD.ID = HD.ID  where YEAR(TIME) = @Year AND MONTH(TIME) = @Month and DAY(TIME) = @Day group by namefood, PRICEFOOD";
+                            SqlCommand command = new SqlCommand(sqlQuery, connection);
+                            command.Parameters.AddWithValue("@Year", cbRYear.Text);
+                            string tmpd = dgRevenue.CurrentRow.Cells[0].Value.ToString();
+                            if (tmpd[1] != '/')
+                                tmpd = tmpd.Remove(2);
+                            else
+                                tmpd = tmpd.Remove(1);
+                            string tmp = dgRevenue.CurrentRow.Cells[0].Value.ToString();
+                            tmp = tmp.Remove(0, tmpd.Length + 1);
+                            if (tmp[1] != '/')
+                                tmp = tmp.Remove(2);
+                            else
+                                tmp = tmp.Remove(1);
+                            command.Parameters.AddWithValue("@Month", tmp);
+                            command.Parameters.AddWithValue("@Day", tmpd);
+                            SqlDataReader reader = command.ExecuteReader();
+                            RCountInBill = "";
+                            RNameInBill = "";
+                            fpRBDetail.Controls.Clear();
+                            fpRBDetail.Controls.Add(fpRlbName);
+                            fpRBDetail.Controls.Add(fpRlbCnt);
+                            while (reader.HasRows)
+                            {
+                                Label n = new Label();
+                                Label p = new Label();
+                                Label c = new Label();
+                                n.AutoSize = false;
+                                c.AutoSize = false;
+                                p.Size = fplbcP.Size;
+                                n.Size = fplbcName.Size;
+                                c.Size = fplbcCnt.Size;
+                                p.Size = fplbcP.Size;
+                                n.Font = new Font("Microsoft Sans Serif", 10);
+                                c.Font = new Font("Microsoft Sans Serif", 10);
+                                c.TextAlign = ContentAlignment.TopCenter;
+                                p.TextAlign = ContentAlignment.TopCenter;
+                                if (reader.Read() == false) break;
+                                RNameInBill = reader.GetString(0);
+                                RCountInBill = reader.GetInt32(1).ToString();
+                                RPriceInBill = reader.GetString(2);
+                                n.Text = RNameInBill;
+                                c.Text = RCountInBill;
+                                p.Text = RPriceInBill;
+                                fpRBDetail.Controls.Add(n);
+                                fpRBDetail.Controls.Add(p);
+                                fpRBDetail.Controls.Add(c);
+                            }
+                            reader.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Dữ liệu lỗi, vui lòng khởi động lại chương trình");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                        break;
+                }
             }
         }
 
