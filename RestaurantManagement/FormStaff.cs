@@ -13,6 +13,7 @@ namespace RestaurantManagement
 
         private void InitStaff()
         {
+            dgStaff.Rows.Clear();
             LoadDG();
             InitDG();
         }
@@ -40,7 +41,7 @@ namespace RestaurantManagement
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    string  Username ="";
+                    string Username = "";
                     StaffCount++;
                     if (!reader.IsDBNull(1))
                         Username = reader.GetString(1);
@@ -62,7 +63,7 @@ namespace RestaurantManagement
         private void UpdateTbStaff(string s1 = "", string s2 = "", string s3 = "", string s4 = "", string s5 = "", string s6 = "", string s7 = "")
         {
             tbSFname.Text = s1;
-            tbSUsername.Text = s2;
+            tbSUser.Text = s2;
             tbSPnumber.Text = s3;
             tbSAddress.Text = s4;
             tbSDoB.Text = s5;
@@ -104,11 +105,11 @@ namespace RestaurantManagement
                         SqlCommand command = new SqlCommand(sqlQuery, connection);
                         command.Parameters.AddWithValue("@ICnumber", tbSICnumber.Text);
                         command.ExecuteNonQuery();
-                        if (tbSUsername.Text != "")
+                        if (tbSUser.Text != "")
                         {
                             sqlQuery = "delete from USERS where USERNAME = @Username";
                             command = new SqlCommand(sqlQuery, connection);
-                            command.Parameters.AddWithValue("@Username", tbSUsername.Text);
+                            command.Parameters.AddWithValue("@Username", tbSUser.Text);
                             command.ExecuteNonQuery();
                         }
                         //Refresh
@@ -179,8 +180,66 @@ namespace RestaurantManagement
         {
             Form signupForm = new SignupForm();
             signupForm.ShowDialog();
-            dgStaff.Rows.Clear();
             InitStaff();
+        }
+
+        private void btSSearch_Click(object sender, EventArgs e)
+        {
+            int IofS = -1;
+            switch (cbSType.Text)
+            {
+                case "Họ Và Tên":
+                    IofS = 0;
+                    break;
+                case "Số Điện Thoại":
+                    IofS = 2;
+                    break;
+                case "CMND/CCCD":
+                    IofS = 5;
+                    break;
+                case "Email":
+                    IofS = 6;
+                    break;
+                case "":
+                    MessageBox.Show("Chưa chọn loại tìm kiếm");
+                    return;
+                    break;
+            }
+            dgStaff.Rows.Clear();
+            try
+            {
+                connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+                connection = new SqlConnection(connString);
+                connection.Open();
+
+                sqlQuery = "select * from NV";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    string tmp = reader.GetString(IofS);
+                    if (tmp.Contains(tbSSearch.Text))
+                    {
+                        string Username = "";
+                        StaffCount++;
+                        if (!reader.IsDBNull(1))
+                            Username = reader.GetString(1);
+                        this.dgStaff.Rows.Add(reader.GetString(0), Username, reader.GetString(2), reader.GetString(3), reader.GetDateTime(4).ToString("MM/dd/yyyy"), reader.GetString(5), reader.GetString(6));
+                    }
+
+                }
+                reader.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu lỗi, vui lòng khởi động lại chương trình");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            InitDG();
         }
 
         private void OnlyNumber_KeyDown(object sender, KeyPressEventArgs e)

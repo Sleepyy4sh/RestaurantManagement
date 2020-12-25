@@ -18,7 +18,7 @@ namespace RestaurantManagement
             int sWidth = SystemInformation.VirtualScreen.Width;
             int sHeight = SystemInformation.VirtualScreen.Height;
             Size sScreen = new Size(sWidth, sHeight);
-           // sScreen = new Size(600, 330);
+            // sScreen = new Size(600, 330);
 
             float heightFont = sScreen.Height / 48f;
 
@@ -38,13 +38,13 @@ namespace RestaurantManagement
 
             Navigator.Location = new Point(0, pictureBox1.Size.Height - 5);
             Navigator.StateCommon.Tab.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
-         
+
             // MessageBox.Show(Navigator.Font.Size.ToString());
             //MessageBox.Show(Navigator.StateCommon.Tab.Content.ShortText.Font.Size.ToString());
             Navigator.AutoSize = false;
             Navigator.Size = new Size(this.Size.Width - 0, this.Size.Height);
             Navigator.Bar.ItemMaximumSize = new Size(9999, 9999);
-             Navigator.Bar.ItemMinimumSize = new Size(Navigator.Size.Width / 5, this.Height / 15);
+            Navigator.Bar.ItemMinimumSize = new Size(Navigator.Size.Width / 5, this.Height / 15);
             Navigator.Bar.ItemMaximumSize = Navigator.Bar.ItemMinimumSize;
             Navigator.Bar.ResetBarMapImage();
 
@@ -58,11 +58,11 @@ namespace RestaurantManagement
 
             lbListFood.Font = new Font("Times New Roman", heightFont / 1f);
             fpListFood.Size = new Size((int)((this.Size.Width - fpTables.Size.Width) * 0.98f), (int)(fpTables.Size.Height / 10 * 9.5f));
-            fpListFood.Location = new Point(fpTables.Size.Width +1, fpTables.Location.Y);
+            fpListFood.Location = new Point(fpTables.Size.Width + 1, fpTables.Location.Y);
 
             btOrder.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btOrder.Size = new Size(fpListFood.Size.Width / 3, (int)((fpTables.Size.Height - fpListFood.Size.Height) * 0.9f));
-            btOrder.Location = new Point(fpListFood.Location.X, fpListFood.Location.Y + fpListFood.Size.Height + btOrder.Height/10);
+            btOrder.Location = new Point(fpListFood.Location.X, fpListFood.Location.Y + fpListFood.Size.Height + btOrder.Height / 10);
 
             btPay.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btPay.Size = btOrder.Size;
@@ -79,11 +79,11 @@ namespace RestaurantManagement
 
             tbSearch.StateActive.Content.Font = new Font("Times New Roman", heightFont / 1.0f);
             tbSearch.Size = new Size(sizeOptions.Width / 2, sizeOptions.Width / 3 / 3);
-            tbSearch.Location = new Point(fpFoods.Location.X + fpFoods.Size.Width + sizeOptions.Width / 2 - tbSearch.Size.Width / 2, tbSearch.Height*3);
+            tbSearch.Location = new Point(fpFoods.Location.X + fpFoods.Size.Width + sizeOptions.Width / 2 - tbSearch.Size.Width / 2, tbSearch.Height * 3);
 
             btSearch.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btSearch.Size = new Size(sizeOptions.Width / 3, sizeOptions.Width / 3 / 3);
-            btSearch.Location = new Point(fpFoods.Location.X + fpFoods.Size.Width + sizeOptions.Width / 2 - btSearch.Size.Width / 2 ,tbSearch.Location.Y + tbSearch.Size.Height );
+            btSearch.Location = new Point(fpFoods.Location.X + fpFoods.Size.Width + sizeOptions.Width / 2 - btSearch.Size.Width / 2, tbSearch.Location.Y + tbSearch.Size.Height);
 
             btFix.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btFix.Size = new Size(sizeOptions.Width / 2, sizeOptions.Width / 2 / 3);
@@ -91,11 +91,11 @@ namespace RestaurantManagement
 
             btAddFood.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btAddFood.Size = btFix.Size;
-            btAddFood.Location = new Point(btFix.Location.X, btFix.Location.Y - btFix.Size.Height - btAddFood.Height / 10) ;
+            btAddFood.Location = new Point(btFix.Location.X, btFix.Location.Y - btFix.Size.Height - btAddFood.Height / 10);
 
 
             btFood.Size = btSearch.Size;
-            new Font("Times New Roman", heightFont / 1.5f); 
+            new Font("Times New Roman", heightFont / 1.5f);
             btFood.Location = new Point(fpFoods.Location.X + fpFoods.Width, 0);
 
             btDrink.Size = btSearch.Size;
@@ -110,12 +110,81 @@ namespace RestaurantManagement
             btReFresh.Image = Image.FromFile("images/refresh.jpg");
             btReFresh.SizeMode = PictureBoxSizeMode.Zoom;
             btReFresh.Size = new Size(tbSearch.Height, tbSearch.Height);
-            btReFresh.Location = new Point(btFood.Location.X, btDrink.Location.Y+btDrink.Height);
+            btReFresh.Location = new Point(btFood.Location.X, btDrink.Location.Y + btDrink.Height);
             btReFresh.Click += new EventHandler(btReFresh_Click);
 
             btExit.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
-            btExit.Size = new Size(pictureBox1.Height,pictureBox1.Height);
-            btExit.Location = new Point(this.Width-btExit.Width, 0);
+            btExit.Size = new Size(pictureBox1.Height, pictureBox1.Height);
+            btExit.Location = new Point(this.Width - btExit.Width, 0);
+
+            //PageQLNV
+            pageQLNV.Size = new Size(this.Size.Width, this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height);
+            float h = pageQLNV.Size.Height / 100;
+            float w = pageQLNV.Size.Width / 100;
+
+            cbSType.Font = new Font("Microsoft Sans Serif", heightFont / 1.6f);
+            cbSType.Size = new Size((int)w * 8, 0);
+            cbSType.Location = new Point((int)w / 6, (int)h / 4);
+
+            tbSSearch.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
+            tbSSearch.Size = cbSType.Size;
+            tbSSearch.Location = new Point(cbSType.Location.X, cbSType.Location.Y + cbSType.Size.Height + (int)h / 4);
+
+            btSSearch.Font = cbSType.Font;
+            btSSearch.Size = new Size(cbSType.Size.Width / 5 * 3, 0);
+            btSSearch.Location = new Point(tbSSearch.Location.X + tbSSearch.Size.Width - btSSearch.Size.Width, tbSSearch.Location.Y + tbSSearch.Size.Height + (int)h / 3);
+
+            dgStaff.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f);
+            dgStaff.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            dgStaff.Size = new Size((int)w * 70, pageQLNV.Size.Height - btSSearch.Location.Y - (int)h * 2);
+            dgStaff.Location = new Point(-1, btSSearch.Location.Y + btSSearch.Size.Height + (int)h * 2);
+
+            lbStaff.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
+            lbStaff.Size = new Size((int)w * 15, 0);
+            lbStaff.Location = new Point((int)w * 27, (int)h * 5);
+
+            lbSDetail.Font = new Font("Microsoft Sans Serif", heightFont / 1.3f, FontStyle.Bold);
+            lbSDetail.Size = new Size((int)w * 10, 0);
+            lbSDetail.Location = new Point((int)w * 81, (int)h * 4);
+
+            //////
+            int tw = (int)w * 85;
+            int lw = (int)w * 73;
+            int th = (int)h * 8 / 3;
+            int lh = (int)h * 7 / 3;
+
+            lbSUser.Location = new Point(lw, (int)h * 23);
+
+            lbSFname.Font = lbSUser.Font = lbSPnumber.Font = lbSAddress.Font = lbSDoB.Font = lbSICnumber.Font = lbSEmail.Font = new Font("Microsoft Sans Serif", heightFont / 2.2f);
+            lbSFname.Size = lbSUser.Size = lbSPnumber.Size = lbSAddress.Size = lbSDoB.Size = lbSICnumber.Size = lbSEmail.Size = new Size((int)w * 1, 0);
+
+            lbSFname.Location = new Point(lw, lbSUser.Location.Y + lbSUser.Size.Height + lh);
+            lbSPnumber.Location = new Point(lw, lbSFname.Location.Y + lbSUser.Size.Height + lh);
+            lbSAddress.Location = new Point(lw, lbSPnumber.Location.Y + lbSUser.Size.Height + lh);
+            lbSDoB.Location = new Point(lw, lbSAddress.Location.Y + lbSUser.Size.Height + lh);
+            lbSICnumber.Location = new Point(lw, lbSDoB.Location.Y + lbSUser.Size.Height + lh);
+            lbSEmail.Location = new Point(lw, lbSICnumber.Location.Y + lbSUser.Size.Height + lh);
+
+            //
+            tbSUser.Location = new Point(tw, (int)h * 23);
+
+            tbSFname.StateCommon.Content.Font = tbSUser.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.Font = tbSEmail.StateCommon.Content.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            tbSFname.Size = tbSUser.Size = tbSPnumber.Size = tbSAddress.Size = tbSDoB.Size = tbSICnumber.Size = tbSEmail.Size = new Size((int)w * 15, (int)h * 55);
+            tbSFname.Location = new Point(tw, tbSUser.Location.Y + tbSUser.Size.Height + th);
+            tbSPnumber.Location = new Point(tw, tbSFname.Location.Y + tbSUser.Size.Height + th);
+            tbSAddress.Location = new Point(tw, tbSPnumber.Location.Y + tbSUser.Size.Height + th);
+            tbSDoB.Location = new Point(tw, tbSAddress.Location.Y + tbSUser.Size.Height + th);
+            tbSICnumber.Location = new Point(tw, tbSDoB.Location.Y + tbSUser.Size.Height + th);
+            tbSEmail.Location = new Point(tw, tbSICnumber.Location.Y + tbSUser.Size.Height + th);
+
+            btSReg.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            btSDelete.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+
+            btSReg.Location = new Point((int)w * 75, (int)h * 70);
+            btSUpdate.Location = new Point(btSReg.Location.X + btSReg.Size.Width + (int)w, (int)h * 70);
+            btSDelete.Location = new Point(btSUpdate.Location.X + btSUpdate.Size.Width + (int)w, (int)h * 70);
+
         }
     }
 }

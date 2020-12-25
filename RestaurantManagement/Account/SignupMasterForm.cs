@@ -71,7 +71,7 @@ namespace RestaurantManagement
             reader = command.ExecuteReader();
             reader.Close();
 
-            sqlQuery = "CREATE TABLE HD(ID UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID() NOT NULL, TRIGIA INT,TIME SMALLDATETIME,GIAMGIA int,TYPE int)";
+            sqlQuery = "CREATE TABLE HD(ID UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID() NOT NULL, TRIGIA BIGINT,TIME SMALLDATETIME,GIAMGIA int,TYPE int)";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
