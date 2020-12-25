@@ -87,7 +87,7 @@ namespace RestaurantManagement
                             }
 
                             this.Hide();
-                            Form FormQLMenu = new FormMain(true);
+                            Form FormQLMenu = new FormMain(true, tbUsername.Text);
                             FormQLMenu.ShowDialog();
                             this.Close();
                         }

@@ -170,7 +170,7 @@ namespace RestaurantManagement
 
                             loginSucessful = true;
                             this.Hide();
-                            Form formQLMenu = new FormMain(true);
+                            Form formQLMenu = new FormMain(true, tbUsername.Text);
                             formQLMenu.ShowDialog();
                         }
                       catch

@@ -7,26 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
-using System.IO;
 using System.Data.SqlClient;
+using System.IO;
+using System.Security.Cryptography;
 
 namespace RestaurantManagement
 {
-    public partial class LoginForm : Form
+    public partial class FormChangePass : Form
     {
-        public LoginForm()
+        string username;
+        string server, ID, Svpassword;
+        public FormChangePass(string usrname)
         {
+            this.username = usrname;
             InitializeComponent();
-            this.tbPassword.KeyDown += new KeyEventHandler(Enter_Event);
             initIn4Server();
-            ReSize();
-        }
-        private void Enter_Event(object sender, KeyEventArgs args)
+        }        
+        void initIn4Server()
         {
-            if (args.KeyCode == Keys.Enter)
-                btLogin_Click(sender, args);
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
         }
+
         string EncodePass(string str)
         {
             MD5 mh = MD5.Create();
@@ -37,24 +41,26 @@ namespace RestaurantManagement
                 sb.Append(hash[i].ToString("x2"));
             return sb.ToString();
         }
-        string server, ID, Svpassword;
-        void initIn4Server()
+        private void btExit_Click(object sender, EventArgs e)
         {
-            string[] in4 = File.ReadAllLines("inforServer.txt");
-            server = in4[0];
-            ID = in4[1];
-            Svpassword = in4[2];
-            //MessageBox.Show(server + ID + Svpassword);
+            this.Close();
         }
-        private void btLogin_Click(object sender, EventArgs e)
+
+        private void btChangePass_Click(object sender, EventArgs e)
         {
-            if (tbUsername.Text == "" || tbPassword.Text == "")
+            if (tbCurPass.Text == "" || tbNewPass.Text == "" || tbRePassword.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu");
-            }
-            else
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            } else
             {
-                string password = EncodePass(tbPassword.Text);
+                if (tbNewPass.Text != tbRePassword.Text)
+                {
+                    MessageBox.Show("Mật khẩu không khớp");
+                    return;
+                }
+
+                string curPass = EncodePass(tbCurPass.Text);
+                string newPass = EncodePass(tbNewPass.Text);
 
                 string nameDB;
                 using (StreamReader sr = new StreamReader("database.txt"))
@@ -71,24 +77,27 @@ namespace RestaurantManagement
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                bool flag = false;
 
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    if (reader.GetString(0) == tbUsername.Text)
+                    if (reader.GetString(0) == username)
                     {
-                        flag = true;
-                        if (reader.GetString(1) == password)
+                        if (reader.GetString(1) == curPass)
                         {
-                            int temp = reader.GetInt32(2);
-                            bool AD;
-                            if (temp == 1) AD = true; else AD = false;
+                            reader.Close();
+                            sqlQuery = "USE " + nameDB;
+                            command = new SqlCommand(sqlQuery, connection);
+                            reader = command.ExecuteReader();
+                            reader.Close();
 
-                            this.Hide();
-                            Form FormQLMenu = new FormMain(AD, tbUsername.Text);
-                            FormQLMenu.ShowDialog();
+                            sqlQuery = "UPDATE USERS SET PASS = '" + newPass + "' WHERE USERNAME='" + username + "'";
+                            command = new SqlCommand(sqlQuery, connection);
+                            reader = command.ExecuteReader();
+                            reader.Close();
+                            MessageBox.Show("Đổi mật khẩu thành công");
                             this.Close();
+                            break;
                         }
                         else
                         {
@@ -97,18 +106,7 @@ namespace RestaurantManagement
                     }
                 }
                 connection.Close();
-                if (!flag)
-                {
-                    MessageBox.Show("Không tìm thấy tài khoản");
-                }
             }
-        }
-
-        private void btSignup_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form signupForm = new SignupForm();
-            signupForm.ShowDialog();
         }
     }
 }

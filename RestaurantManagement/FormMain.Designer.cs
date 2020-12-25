@@ -172,7 +172,7 @@
             this.pageThongKe,
             this.pageQLNV,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 2;
+            this.Navigator.SelectedIndex = 4;
             this.Navigator.Size = new System.Drawing.Size(2026, 897);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -1226,6 +1226,7 @@
             this.btACPassword.Size = new System.Drawing.Size(323, 83);
             this.btACPassword.TabIndex = 3;
             this.btACPassword.Values.Text = "Đổi mật khẩu";
+            this.btACPassword.Click += new System.EventHandler(this.btACPassword_Click);
             // 
             // lbADetail
             // 

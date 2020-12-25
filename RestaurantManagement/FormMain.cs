@@ -11,10 +11,11 @@ using System.IO;
 using System.Data.SqlClient;
 
 namespace RestaurantManagement
-{
+{ 
     public partial class FormMain : Form
     {
         bool AD;
+        string username;
         bool ableDelete = false;
         public DataFood_Fix dataFood;
         string server, ID, Svpassword, nameDB;
@@ -23,9 +24,10 @@ namespace RestaurantManagement
         List<Food_Fix> ListFood = new List<Food_Fix>();
 
 
-        public FormMain(bool AD)
+        public FormMain(bool AD, string usrname)
         {
             this.AD = AD;
+            this.username = usrname; 
             InitializeComponent();
             ReSize();
             initIn4Server();
@@ -340,7 +342,6 @@ namespace RestaurantManagement
         {
             this.Close();
         }
-
 
         string ChuanHoa(string S)
         {

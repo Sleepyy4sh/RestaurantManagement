@@ -14,7 +14,8 @@ namespace RestaurantManagement
     {
         private void btACPassword_Click(object sender, EventArgs e)
         {
-
+            Form formChangePass = new FormChangePass(username);
+            formChangePass.ShowDialog();
         }
     }
 }
