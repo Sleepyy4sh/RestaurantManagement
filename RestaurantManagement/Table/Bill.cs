@@ -67,7 +67,7 @@ namespace RestaurantManagement
                 int type = cbType.SelectedIndex;
 
 
-                formMain.SaveBill(value.ToString(), giamgia, type);
+                formMain.SaveBill(Sum.ToString(), giamgia, type);
                 formMain.ClearAllFood(tableSelected);
                 formMain.Reset();
                 this.Close();
