@@ -70,16 +70,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormChangePass.cs">
+    <Compile Include="Account\FormChangeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChangePass.Designer.cs">
+    <Compile Include="Account\FormChangeInfo.Designer.cs">
+      <DependentUpon>FormChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FormChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FormChangePass.Designer.cs">
       <DependentUpon>FormChangePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAccount.cs">
+    <Compile Include="Account\FormAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAccount.Designer.cs">
+    <Compile Include="Account\FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStaff.cs">
@@ -225,7 +231,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormChangePass.resx">
+    <EmbeddedResource Include="Account\FormChangeInfo.resx">
+      <DependentUpon>FormChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FormChangePass.resx">
       <DependentUpon>FormChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Table\AddTable.resx">

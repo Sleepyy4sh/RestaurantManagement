@@ -207,6 +207,27 @@ namespace RestaurantManagement
         void InitAccount()
         {
             btMasterSignout.Enabled = AD;
+            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+            SqlConnection connection = new SqlConnection(connString);
+            connection.Open();
+
+            String sqlQuery = "SELECT * FROM NV WHERE USERNAME='" +username +"'";
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            lbUsername.Text = username;
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                lbFname.Text = reader.GetString(0);
+                lbDoB.Text = reader.GetDateTime(4).ToShortDateString();
+                lbAddress.Text = reader.GetString(3);
+                lbPnumber.Text = reader.GetString(2);
+                lbICnumber.Text = reader.GetString(5);
+                lbEmail.Text = reader.GetString(6);
+            }
         }
 
         private void btSignout_Click(object sender, EventArgs e)
@@ -341,6 +362,23 @@ namespace RestaurantManagement
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btChangeInfo_Click(object sender, EventArgs e)
+        {
+            Form formChangeInfor = 
+            new FormChangeInfo(lbFname.Text,
+                lbDoB.Text,
+                lbAddress.Text,
+                lbPnumber.Text,
+                lbICnumber.Text,
+                lbEmail.Text);
+            formChangeInfor.ShowDialog();
+        }
+
+        private void btUpdateAccount_Click(object sender, EventArgs e)
+        {
+            InitAccount();
         }
 
         string ChuanHoa(string S)

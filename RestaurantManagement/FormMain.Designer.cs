@@ -111,24 +111,27 @@
             this.lbSUser = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbStaff = new System.Windows.Forms.Label();
             this.pageTaiKhoan = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.tbAEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbAPnumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbAAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbAICnumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbADoB = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbAFname = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tbAUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lbAEmail = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbAPnumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbAAddress = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbAICnumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbADoB = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbAUsername = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbAFname = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btACPassword = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lbADetail = new System.Windows.Forms.Label();
-            this.btSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btUpdateAccount = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btChangeInfo = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lbAUsername = new System.Windows.Forms.Panel();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbICnumber = new System.Windows.Forms.Label();
+            this.lbPnumber = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
+            this.lbDoB = new System.Windows.Forms.Label();
+            this.lbFname = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btMasterSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btACPassword = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btSignout = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lbADetail = new System.Windows.Forms.Label();
             this.cainaykhongdung = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btExit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -150,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageTaiKhoan)).BeginInit();
             this.pageTaiKhoan.SuspendLayout();
+            this.lbAUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -1082,24 +1086,13 @@
             // pageTaiKhoan
             // 
             this.pageTaiKhoan.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.pageTaiKhoan.Controls.Add(this.tbAEmail);
-            this.pageTaiKhoan.Controls.Add(this.tbAPnumber);
-            this.pageTaiKhoan.Controls.Add(this.tbAAddress);
-            this.pageTaiKhoan.Controls.Add(this.tbAICnumber);
-            this.pageTaiKhoan.Controls.Add(this.tbADoB);
-            this.pageTaiKhoan.Controls.Add(this.tbAFname);
-            this.pageTaiKhoan.Controls.Add(this.tbAUsername);
-            this.pageTaiKhoan.Controls.Add(this.lbAEmail);
-            this.pageTaiKhoan.Controls.Add(this.lbAPnumber);
-            this.pageTaiKhoan.Controls.Add(this.lbAAddress);
-            this.pageTaiKhoan.Controls.Add(this.lbAICnumber);
-            this.pageTaiKhoan.Controls.Add(this.lbADoB);
+            this.pageTaiKhoan.Controls.Add(this.btUpdateAccount);
+            this.pageTaiKhoan.Controls.Add(this.btChangeInfo);
             this.pageTaiKhoan.Controls.Add(this.lbAUsername);
-            this.pageTaiKhoan.Controls.Add(this.lbAFname);
-            this.pageTaiKhoan.Controls.Add(this.btACPassword);
-            this.pageTaiKhoan.Controls.Add(this.lbADetail);
-            this.pageTaiKhoan.Controls.Add(this.btSignout);
             this.pageTaiKhoan.Controls.Add(this.btMasterSignout);
+            this.pageTaiKhoan.Controls.Add(this.btACPassword);
+            this.pageTaiKhoan.Controls.Add(this.btSignout);
+            this.pageTaiKhoan.Controls.Add(this.lbADetail);
             this.pageTaiKhoan.Flags = 65534;
             this.pageTaiKhoan.ImageSmall = ((System.Drawing.Image)(resources.GetObject("pageTaiKhoan.ImageSmall")));
             this.pageTaiKhoan.LastVisibleSet = true;
@@ -1111,137 +1104,214 @@
             this.pageTaiKhoan.ToolTipTitle = "Page ToolTip";
             this.pageTaiKhoan.UniqueName = "72EE1F9F8D394B17F5BE0583764C6EB4";
             // 
-            // tbAEmail
+            // btUpdateAccount
             // 
-            this.tbAEmail.Location = new System.Drawing.Point(844, 359);
-            this.tbAEmail.Name = "tbAEmail";
-            this.tbAEmail.Size = new System.Drawing.Size(160, 27);
-            this.tbAEmail.TabIndex = 17;
+            this.btUpdateAccount.Location = new System.Drawing.Point(1437, 187);
+            this.btUpdateAccount.Name = "btUpdateAccount";
+            this.btUpdateAccount.Size = new System.Drawing.Size(323, 81);
+            this.btUpdateAccount.TabIndex = 14;
+            this.btUpdateAccount.Values.Text = "Cập nhật";
+            this.btUpdateAccount.Click += new System.EventHandler(this.btUpdateAccount_Click);
             // 
-            // tbAPnumber
+            // btChangeInfo
             // 
-            this.tbAPnumber.Location = new System.Drawing.Point(844, 326);
-            this.tbAPnumber.Name = "tbAPnumber";
-            this.tbAPnumber.Size = new System.Drawing.Size(158, 27);
-            this.tbAPnumber.TabIndex = 16;
-            // 
-            // tbAAddress
-            // 
-            this.tbAAddress.Location = new System.Drawing.Point(844, 290);
-            this.tbAAddress.Name = "tbAAddress";
-            this.tbAAddress.Size = new System.Drawing.Size(155, 27);
-            this.tbAAddress.TabIndex = 15;
-            // 
-            // tbAICnumber
-            // 
-            this.tbAICnumber.Location = new System.Drawing.Point(844, 250);
-            this.tbAICnumber.Name = "tbAICnumber";
-            this.tbAICnumber.ReadOnly = true;
-            this.tbAICnumber.Size = new System.Drawing.Size(155, 27);
-            this.tbAICnumber.TabIndex = 14;
-            // 
-            // tbADoB
-            // 
-            this.tbADoB.Location = new System.Drawing.Point(844, 211);
-            this.tbADoB.Name = "tbADoB";
-            this.tbADoB.ReadOnly = true;
-            this.tbADoB.Size = new System.Drawing.Size(155, 27);
-            this.tbADoB.TabIndex = 13;
-            // 
-            // tbAFname
-            // 
-            this.tbAFname.Location = new System.Drawing.Point(844, 174);
-            this.tbAFname.Name = "tbAFname";
-            this.tbAFname.Size = new System.Drawing.Size(155, 27);
-            this.tbAFname.TabIndex = 12;
-            // 
-            // tbAUsername
-            // 
-            this.tbAUsername.Location = new System.Drawing.Point(844, 132);
-            this.tbAUsername.Name = "tbAUsername";
-            this.tbAUsername.ReadOnly = true;
-            this.tbAUsername.Size = new System.Drawing.Size(158, 27);
-            this.tbAUsername.TabIndex = 11;
-            // 
-            // lbAEmail
-            // 
-            this.lbAEmail.Location = new System.Drawing.Point(665, 362);
-            this.lbAEmail.Name = "lbAEmail";
-            this.lbAEmail.Size = new System.Drawing.Size(51, 24);
-            this.lbAEmail.TabIndex = 10;
-            this.lbAEmail.Values.Text = "Email:";
-            // 
-            // lbAPnumber
-            // 
-            this.lbAPnumber.Location = new System.Drawing.Point(665, 326);
-            this.lbAPnumber.Name = "lbAPnumber";
-            this.lbAPnumber.Size = new System.Drawing.Size(109, 24);
-            this.lbAPnumber.TabIndex = 9;
-            this.lbAPnumber.Values.Text = "Số Điện Thoại:";
-            // 
-            // lbAAddress
-            // 
-            this.lbAAddress.Location = new System.Drawing.Point(665, 293);
-            this.lbAAddress.Name = "lbAAddress";
-            this.lbAAddress.Size = new System.Drawing.Size(64, 24);
-            this.lbAAddress.TabIndex = 8;
-            this.lbAAddress.Values.Text = "Địa Chỉ:";
-            // 
-            // lbAICnumber
-            // 
-            this.lbAICnumber.Location = new System.Drawing.Point(663, 250);
-            this.lbAICnumber.Name = "lbAICnumber";
-            this.lbAICnumber.Size = new System.Drawing.Size(106, 24);
-            this.lbAICnumber.TabIndex = 7;
-            this.lbAICnumber.Values.Text = "CMND/CCCD:";
-            // 
-            // lbADoB
-            // 
-            this.lbADoB.Location = new System.Drawing.Point(663, 211);
-            this.lbADoB.Name = "lbADoB";
-            this.lbADoB.Size = new System.Drawing.Size(163, 24);
-            this.lbADoB.TabIndex = 6;
-            this.lbADoB.Values.Text = "Ngày Sinh: (M/d/yyyy)";
+            this.btChangeInfo.Location = new System.Drawing.Point(1439, 331);
+            this.btChangeInfo.Name = "btChangeInfo";
+            this.btChangeInfo.Size = new System.Drawing.Size(321, 83);
+            this.btChangeInfo.TabIndex = 13;
+            this.btChangeInfo.Values.Text = "Sửa thông tin";
+            this.btChangeInfo.Click += new System.EventHandler(this.btChangeInfo_Click);
             // 
             // lbAUsername
             // 
-            this.lbAUsername.Location = new System.Drawing.Point(663, 132);
+            this.lbAUsername.Controls.Add(this.lbEmail);
+            this.lbAUsername.Controls.Add(this.lbICnumber);
+            this.lbAUsername.Controls.Add(this.lbPnumber);
+            this.lbAUsername.Controls.Add(this.lbAddress);
+            this.lbAUsername.Controls.Add(this.lbDoB);
+            this.lbAUsername.Controls.Add(this.lbFname);
+            this.lbAUsername.Controls.Add(this.lbUsername);
+            this.lbAUsername.Controls.Add(this.label7);
+            this.lbAUsername.Controls.Add(this.label6);
+            this.lbAUsername.Controls.Add(this.label5);
+            this.lbAUsername.Controls.Add(this.label4);
+            this.lbAUsername.Controls.Add(this.label3);
+            this.lbAUsername.Controls.Add(this.label2);
+            this.lbAUsername.Controls.Add(this.label1);
+            this.lbAUsername.Location = new System.Drawing.Point(148, 122);
             this.lbAUsername.Name = "lbAUsername";
-            this.lbAUsername.Size = new System.Drawing.Size(111, 24);
-            this.lbAUsername.TabIndex = 5;
-            this.lbAUsername.Values.Text = "Tên Tài Khoản:";
+            this.lbAUsername.Size = new System.Drawing.Size(1224, 691);
+            this.lbAUsername.TabIndex = 12;
             // 
-            // lbAFname
+            // lbEmail
             // 
-            this.lbAFname.Location = new System.Drawing.Point(663, 174);
-            this.lbAFname.Name = "lbAFname";
-            this.lbAFname.Size = new System.Drawing.Size(86, 24);
-            this.lbAFname.TabIndex = 4;
-            this.lbAFname.Values.Text = "Họ Và Tên:";
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbEmail.Location = new System.Drawing.Point(485, 564);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(0, 42);
+            this.lbEmail.TabIndex = 24;
+            // 
+            // lbICnumber
+            // 
+            this.lbICnumber.AutoSize = true;
+            this.lbICnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbICnumber.Location = new System.Drawing.Point(485, 478);
+            this.lbICnumber.Name = "lbICnumber";
+            this.lbICnumber.Size = new System.Drawing.Size(0, 42);
+            this.lbICnumber.TabIndex = 23;
+            // 
+            // lbPnumber
+            // 
+            this.lbPnumber.AutoSize = true;
+            this.lbPnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbPnumber.Location = new System.Drawing.Point(485, 389);
+            this.lbPnumber.Name = "lbPnumber";
+            this.lbPnumber.Size = new System.Drawing.Size(0, 42);
+            this.lbPnumber.TabIndex = 22;
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbAddress.Location = new System.Drawing.Point(485, 310);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(0, 42);
+            this.lbAddress.TabIndex = 21;
+            // 
+            // lbDoB
+            // 
+            this.lbDoB.AutoSize = true;
+            this.lbDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbDoB.Location = new System.Drawing.Point(485, 228);
+            this.lbDoB.Name = "lbDoB";
+            this.lbDoB.Size = new System.Drawing.Size(0, 42);
+            this.lbDoB.TabIndex = 20;
+            // 
+            // lbFname
+            // 
+            this.lbFname.AutoSize = true;
+            this.lbFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbFname.Location = new System.Drawing.Point(485, 141);
+            this.lbFname.Name = "lbFname";
+            this.lbFname.Size = new System.Drawing.Size(0, 42);
+            this.lbFname.TabIndex = 19;
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lbUsername.Location = new System.Drawing.Point(485, 58);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(0, 42);
+            this.lbUsername.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(57, 564);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 42);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Email:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(55, 478);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(314, 42);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Số CMND/CCCD:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(55, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(195, 42);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Ngày sinh:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(57, 389);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(236, 42);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Số điện thoại";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(55, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 42);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Địa chỉ:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(55, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 42);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Họ tên:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(57, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 42);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Tài khoản:";
+            // 
+            // btMasterSignout
+            // 
+            this.btMasterSignout.Location = new System.Drawing.Point(1437, 739);
+            this.btMasterSignout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btMasterSignout.Name = "btMasterSignout";
+            this.btMasterSignout.Size = new System.Drawing.Size(323, 71);
+            this.btMasterSignout.TabIndex = 0;
+            this.btMasterSignout.Values.Text = "Đăng xuất tài khoản nhà hàng";
+            this.btMasterSignout.Click += new System.EventHandler(this.btMasterSignout_Click);
             // 
             // btACPassword
             // 
-            this.btACPassword.Location = new System.Drawing.Point(16, 453);
+            this.btACPassword.Location = new System.Drawing.Point(1437, 470);
             this.btACPassword.Name = "btACPassword";
             this.btACPassword.Size = new System.Drawing.Size(323, 83);
             this.btACPassword.TabIndex = 3;
             this.btACPassword.Values.Text = "Đổi mật khẩu";
             this.btACPassword.Click += new System.EventHandler(this.btACPassword_Click);
             // 
-            // lbADetail
-            // 
-            this.lbADetail.AutoSize = true;
-            this.lbADetail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbADetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbADetail.Location = new System.Drawing.Point(753, 75);
-            this.lbADetail.Name = "lbADetail";
-            this.lbADetail.Size = new System.Drawing.Size(240, 29);
-            this.lbADetail.TabIndex = 2;
-            this.lbADetail.Text = "Thông Tin Tài Khoản";
-            // 
             // btSignout
             // 
-            this.btSignout.Location = new System.Drawing.Point(16, 571);
+            this.btSignout.Location = new System.Drawing.Point(1437, 609);
             this.btSignout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSignout.Name = "btSignout";
             this.btSignout.Size = new System.Drawing.Size(323, 71);
@@ -1249,15 +1319,16 @@
             this.btSignout.Values.Text = "Đăng xuất";
             this.btSignout.Click += new System.EventHandler(this.btSignout_Click);
             // 
-            // btMasterSignout
+            // lbADetail
             // 
-            this.btMasterSignout.Location = new System.Drawing.Point(16, 686);
-            this.btMasterSignout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btMasterSignout.Name = "btMasterSignout";
-            this.btMasterSignout.Size = new System.Drawing.Size(323, 71);
-            this.btMasterSignout.TabIndex = 0;
-            this.btMasterSignout.Values.Text = "Đăng xuất tài khoản nhà hàng";
-            this.btMasterSignout.Click += new System.EventHandler(this.btMasterSignout_Click);
+            this.lbADetail.AutoSize = true;
+            this.lbADetail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbADetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.lbADetail.Location = new System.Drawing.Point(523, 58);
+            this.lbADetail.Name = "lbADetail";
+            this.lbADetail.Size = new System.Drawing.Size(457, 54);
+            this.lbADetail.TabIndex = 2;
+            this.lbADetail.Text = "Thông Tin Tài Khoản";
             // 
             // cainaykhongdung
             // 
@@ -1334,6 +1405,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageTaiKhoan)).EndInit();
             this.pageTaiKhoan.ResumeLayout(false);
             this.pageTaiKhoan.PerformLayout();
+            this.lbAUsername.ResumeLayout(false);
+            this.lbAUsername.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cainaykhongdung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1423,21 +1496,24 @@
         private System.Windows.Forms.ComboBox cbSType;
         private System.Windows.Forms.Label lbSDetail;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbSSearch;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAEmail;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAPnumber;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAAddress;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAICnumber;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbADoB;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAFname;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbAUsername;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAEmail;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAPnumber;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAAddress;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAICnumber;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbADoB;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAUsername;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbAFname;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btACPassword;
         private System.Windows.Forms.Label lbADetail;
+        private System.Windows.Forms.Panel lbAUsername;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbDoB;
+        private System.Windows.Forms.Label lbFname;
+        private System.Windows.Forms.Label lbUsername;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbICnumber;
+        private System.Windows.Forms.Label lbPnumber;
+        private System.Windows.Forms.Label lbAddress;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btChangeInfo;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btUpdateAccount;
     }
 }

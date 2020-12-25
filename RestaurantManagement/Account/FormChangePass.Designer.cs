@@ -142,6 +142,7 @@
             this.Controls.Add(this.tbRePassword);
             this.Controls.Add(this.tbNewPass);
             this.Controls.Add(this.tbCurPass);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormChangePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
