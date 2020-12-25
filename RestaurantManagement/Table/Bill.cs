@@ -28,8 +28,11 @@ namespace RestaurantManagement
         int Sum = 0;
         Table tableSelected;
         FormMain formMain;
-        public Bill(Table table, FormMain form)
+        string nameStaff;
+        public Bill(Table table, FormMain form,string nameStaff)
         {
+            this.nameStaff = nameStaff;
+            if (nameStaff == "") this.nameStaff = "Admin";
             this.formMain = form;
             tableSelected = table;
             InitializeComponent();
@@ -160,7 +163,7 @@ namespace RestaurantManagement
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
-            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            document.SetPageSize(iTextSharp.text.PageSize.A6);
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
             document.Open();
 
@@ -177,7 +180,7 @@ namespace RestaurantManagement
             BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             iTextSharp.text.Font fntAuthor = new iTextSharp.text.Font(btnAuthor, 10, 2, BaseColor.GRAY);
             prgAuthor.Alignment = Element.ALIGN_LEFT;
-            prgAuthor.Add(new Chunk("NHAN VIEN: ", fntAuthor));
+            prgAuthor.Add(new Chunk("NHAN VIEN: "+FixFormatString(nameStaff).ToUpper(), fntAuthor));
             prgAuthor.Add(new Chunk("\n NGAY HOA DON : " + DateTime.Now.ToShortDateString(), fntAuthor));
             document.Add(prgAuthor);
 
@@ -241,5 +244,59 @@ namespace RestaurantManagement
             }
         }
         #endregion
+        List<char> ListOfA = new List<char>() { 'a', 'á', 'à', 'ả', 'ã', 'ạ', 'ă', 'ắ', 'ằ', 'ẳ', 'ẵ', 'ặ', 'â', 'ấ', 'ầ', 'ẩ', 'ẫ', 'ậ' };
+        List<char> ListOfE = new List<char>() { 'e', 'é', 'è', 'ẻ', 'ẽ', 'ẹ', 'ê', 'ế', 'ề', 'ể', 'ễ', 'ệ' };
+        List<char> ListOfI = new List<char>() { 'i', 'í', 'ì', 'ỉ', 'ĩ', 'ị' };
+        List<char> ListOfO = new List<char>() { 'o', 'ó', 'ò', 'ỏ', 'õ', 'ọ', 'ô', 'ố', 'ồ', 'ổ', 'ỗ', 'ộ', 'ơ', 'ớ', 'ờ', 'ở', 'ỡ', 'ợ' };
+        List<char> ListOfU = new List<char>() { 'u', 'ú', 'ù', 'ủ', 'ũ', 'ụ', 'ư', 'ứ', 'ừ', 'ử', 'ữ', 'ự' };
+        List<char> ListOfY = new List<char>() { 'y', 'ý', 'ỳ', 'ỷ', 'ỹ', 'ỵ' };
+        string FixFormatString(string S)
+        {
+            S = ChuanHoa(S);
+            S = S.ToLower();
+            S = FixFormatChar(S, ListOfA);
+            S = FixFormatChar(S, ListOfE);
+            S = FixFormatChar(S, ListOfI);
+            S = FixFormatChar(S, ListOfO);
+            S = FixFormatChar(S, ListOfU);
+            S = FixFormatChar(S, ListOfY);
+            for (int i = 0; i < S.Length; i++)
+            {
+                while (S.Length > i + 1 && S[i] == S[i + 1])
+                {
+                    S = S.Remove(i, 1);
+                }
+            }
+            return S;
+        }
+        string FixFormatChar(string S, List<char> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                S = S.Replace(list[i], list[0]);
+            }
+            return S;
+        }
+        string ChuanHoa(string S)
+        {
+            while (S.Length > 0 && S[0] == ' ')
+            {
+                Console.WriteLine(S);
+                S = S.Remove(0, 1);
+            };
+            while (S.Length > 0 && S[S.Length - 1] == ' ')
+            {
+                S = S.Remove(S.Length - 1, 1);
+            };
+            for (int i = 0; i < S.Length - 1; i++)
+            {
+                while (S[i] == S[i + 1] & S[i + 1] == ' ')
+                {
+                    S = S.Remove(i + 1, 1);
+                }
+            }
+            return S;
+        }
     }
+
 }

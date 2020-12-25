@@ -183,3 +183,5 @@ G:\Nam 2\TrucQuan\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ite
 G:\Nam 2\TrucQuan\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
 G:\Nam 2\TrucQuan\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangePass.resources
 G:\Nam 2\TrucQuan\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangeInfo.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangeInfo.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangePass.resources

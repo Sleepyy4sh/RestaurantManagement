@@ -175,7 +175,7 @@ namespace RestaurantManagement
         {
             if (!tableSelected.isEmpty)
             {
-                bill = new Bill(tableSelected, this);
+                bill = new Bill(tableSelected, this,lbFname.Text);
                 DataSQLTable.ReadToBILL(tableSelected.Name);
                 bill.ShowDialog();
             } else
