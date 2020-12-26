@@ -189,6 +189,76 @@ namespace RestaurantManagement
             btSUpdate.Location = new Point(btSReg.Location.X + btSReg.Size.Width + (int)w, (int)h * 80);
             btSDelete.Location = new Point(btSUpdate.Location.X + btSUpdate.Size.Width + (int)w, (int)h * 80);
 
+            // Page thông tin tài khoản
+            pageTaiKhoan.Size = pageQLBan.Size;
+
+            lbADetail.Font = new Font("Times New Roman", heightFont / 0.5f);
+            lbADetail.Location = new Point(pageTaiKhoan.Width / 2 - lbADetail.Width + pageTaiKhoan.Width/20, lbADetail.Height);
+
+            lbAUsername.Size = new Size(pageTaiKhoan.Width / 6 * 4, pageTaiKhoan.Height / 6 * 5);
+            lbAUsername.Location = new Point(lbADetail.Location.X + lbADetail.Width / 2 - lbAUsername.Width / 2, lbADetail.Location.Y + lbADetail.Height);
+
+            btUpdateAccount.Size = new Size(Navigator.Bar.ItemMaximumSize.Width /6 *5, Navigator.Bar.ItemMaximumSize.Height /2*3);
+            btUpdateAccount.Location = new Point(lbAUsername.Location.X + lbAUsername.Width + btUpdateAccount.Width / 4, lbAUsername.Location.Y);
+
+
+            btChangeInfo.Size = btUpdateAccount.Size;
+            btChangeInfo.Location = new Point(btUpdateAccount.Location.X, btUpdateAccount.Location.Y + btUpdateAccount.Height + btUpdateAccount.Height / 2);
+
+            btACPassword.Size = btUpdateAccount.Size;
+            btACPassword.Location = new Point(btChangeInfo.Location.X, btChangeInfo.Location.Y + btUpdateAccount.Height + btUpdateAccount.Height / 2);
+
+            btSignout.Size = btUpdateAccount.Size;
+            btSignout.Location = new Point(btACPassword.Location.X, btACPassword.Location.Y + btUpdateAccount.Height + btUpdateAccount.Height / 2);
+
+            btMasterSignout.Size = btUpdateAccount.Size;
+            btMasterSignout.Location = new Point(btSignout.Location.X, btSignout.Location.Y + btUpdateAccount.Height + btUpdateAccount.Height / 2);
+
+            label1.Font = new Font("Times New Roman", heightFont / 0.8f);
+            label1.Location = new Point(lbAUsername.Width / 20, lbAUsername.Height / 9);
+
+            label2.Font = label1.Font;
+            label2.Location = new Point(label1.Location.X, label1.Location.Y + label1.Height * 2);
+            
+
+
+            label3.Font = label1.Font;
+            label3.Location = new Point(label2.Location.X, label2.Location.Y + label1.Height * 2);
+
+            label4.Font = label1.Font;
+            label4.Location = new Point(label3.Location.X, label3.Location.Y + label1.Height * 2);
+
+            label5.Font = label1.Font;
+            label5.Location = new Point(label4.Location.X, label4.Location.Y + label1.Height * 2);
+
+            label6.Font = label1.Font;
+            label6.Location = new Point(label5.Location.X, label5.Location.Y + label1.Height * 2);
+
+            label7.Font = label1.Font;
+            label7.Location = new Point(label6.Location.X, label6.Location.Y + label1.Height * 2);
+
+
+            lbUsername.Font = label1.Font;
+            lbUsername.Location = new Point(lbAUsername.Width / 7*3, label1.Location.Y);
+
+            lbFname.Font = label1.Font;
+            lbFname.Location = new Point(lbAUsername.Width / 7*3, label2.Location.Y);
+
+            lbDoB.Font = label1.Font;
+            lbDoB.Location = new Point(lbAUsername.Width / 7*3, label3.Location.Y);
+
+            lbAddress.Font = label1.Font;
+            lbAddress.Location = new Point(lbAUsername.Width / 7*3, label4.Location.Y);
+
+            lbPnumber.Font = label1.Font;
+            lbPnumber.Location = new Point(lbAUsername.Width / 7*3, label5.Location.Y);
+
+            lbICnumber.Font = label1.Font;
+            lbICnumber.Location = new Point(lbAUsername.Width / 7*3, label6.Location.Y);
+
+            lbEmail.Font = label1.Font;
+            lbEmail.Location = new Point(lbAUsername.Width / 7*3, label7.Location.Y);
+
         }
     }
 }

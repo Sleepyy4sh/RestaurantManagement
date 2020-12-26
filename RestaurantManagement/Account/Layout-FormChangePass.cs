@@ -51,9 +51,11 @@ namespace RestaurantManagement
             btExit.Size = new Size(tbRePassword.Width / 3, (int)(tbRePassword.Height * 1.3f));
             btExit.Location = new Point(tbRePassword.Location.X + btExit.Width / 4, tbRePassword.Location.Y + tbRePassword.Height + btExit.Height / 2);
 
-           btChangePass.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
-           btChangePass.Size = new Size(tbRePassword.Width / 3, (int)(tbRePassword.Height * 1.3f));
-           btChangePass.Location = new Point(btExit.Location.X + btExit.Width + btExit.Width / 2, btExit.Location.Y);
+            btChangePass.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
+            btChangePass.Size = new Size(tbRePassword.Width / 3, (int)(tbRePassword.Height * 1.3f));
+            btChangePass.Location = new Point(btExit.Location.X + btExit.Width + btExit.Width / 2, btExit.Location.Y);
+
+           
         }
     }
 }
