@@ -143,9 +143,9 @@ namespace RestaurantManagement
             lbStaff.Size = new Size((int)w * 15, 0);
             lbStaff.Location = new Point((int)w * 27, (int)h * 5);
 
-            lbSDetail.Font = new Font("Microsoft Sans Serif", heightFont / 1.3f, FontStyle.Bold);
-            lbSDetail.Size = new Size((int)w * 10, 0);
-            lbSDetail.Location = new Point((int)w * 81, (int)h * 4);
+            lbSDetail.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
+            lbSDetail.Size = new Size((int)w * 15, 0);
+            lbSDetail.Location = new Point((int)w * 79, (int)h * 15);
 
             //////
             int tw = (int)w * 85;
@@ -153,11 +153,12 @@ namespace RestaurantManagement
             int th = (int)h * 8 / 3;
             int lh = (int)h * 7 / 3;
 
-            lbSUser.Location = new Point(lw, (int)h * 23);
+            //Label
 
-            lbSFname.Font = lbSUser.Font = lbSPnumber.Font = lbSAddress.Font = lbSDoB.Font = lbSICnumber.Font = lbSEmail.Font = new Font("Microsoft Sans Serif", heightFont / 2.2f);
-            lbSFname.Size = lbSUser.Size = lbSPnumber.Size = lbSAddress.Size = lbSDoB.Size = lbSICnumber.Size = lbSEmail.Size = new Size((int)w * 1, 0);
+            lbSUser.StateCommon.ShortText.Font = lbSFname.StateCommon.ShortText.Font =  lbSPnumber.StateCommon.ShortText.Font = lbSAddress.StateCommon.ShortText.Font = lbSDoB.StateCommon.ShortText.Font = lbSICnumber.StateCommon.ShortText.Font = lbSEmail.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
+            lbSUser.Size = lbSFname.Size =  lbSPnumber.Size = lbSAddress.Size = lbSDoB.Size = lbSICnumber.Size = lbSEmail.Size = new Size((int)w * 1, 0);
 
+            lbSUser.Location = new Point(lw, (int)h * 28);
             lbSFname.Location = new Point(lw, lbSUser.Location.Y + lbSUser.Size.Height + lh);
             lbSPnumber.Location = new Point(lw, lbSFname.Location.Y + lbSUser.Size.Height + lh);
             lbSAddress.Location = new Point(lw, lbSPnumber.Location.Y + lbSUser.Size.Height + lh);
@@ -165,11 +166,12 @@ namespace RestaurantManagement
             lbSICnumber.Location = new Point(lw, lbSDoB.Location.Y + lbSUser.Size.Height + lh);
             lbSEmail.Location = new Point(lw, lbSICnumber.Location.Y + lbSUser.Size.Height + lh);
 
-            //
-            tbSUser.Location = new Point(tw, (int)h * 23);
+            //Textbox
 
-            tbSFname.StateCommon.Content.Font = tbSUser.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.Font = tbSEmail.StateCommon.Content.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            tbSFname.Size = tbSUser.Size = tbSPnumber.Size = tbSAddress.Size = tbSDoB.Size = tbSICnumber.Size = tbSEmail.Size = new Size((int)w * 15, (int)h * 55);
+            //tbSEmail.StateCommon.Content.Font = tbSUser.StateCommon.Content.Font = tbSFname.StateCommon.Content.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.font;  //new Font("Microsoft Sans Serif", heightFont / 2.4f);
+            tbSUser.Size = tbSFname.Size = tbSPnumber.Size = tbSAddress.Size = tbSDoB.Size = tbSICnumber.Size = tbSEmail.Size = new Size((int)w * 17, (int)h);
+            
+            tbSUser.Location = new Point(tw, (int)h * 28);
             tbSFname.Location = new Point(tw, tbSUser.Location.Y + tbSUser.Size.Height + th);
             tbSPnumber.Location = new Point(tw, tbSFname.Location.Y + tbSUser.Size.Height + th);
             tbSAddress.Location = new Point(tw, tbSPnumber.Location.Y + tbSUser.Size.Height + th);
@@ -177,13 +179,15 @@ namespace RestaurantManagement
             tbSICnumber.Location = new Point(tw, tbSDoB.Location.Y + tbSUser.Size.Height + th);
             tbSEmail.Location = new Point(tw, tbSICnumber.Location.Y + tbSUser.Size.Height + th);
 
-            btSReg.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            btSDelete.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            btSReg.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btSDelete.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
 
-            btSReg.Location = new Point((int)w * 75, (int)h * 70);
-            btSUpdate.Location = new Point(btSReg.Location.X + btSReg.Size.Width + (int)w, (int)h * 70);
-            btSDelete.Location = new Point(btSUpdate.Location.X + btSUpdate.Size.Width + (int)w, (int)h * 70);
+            btSReg.Size = btSUpdate.Size = btSDelete.Size = new Size((int)w * 8, (int)h * 6); 
+
+            btSReg.Location = new Point((int)w * 75, (int)h * 80);
+            btSUpdate.Location = new Point(btSReg.Location.X + btSReg.Size.Width + (int)w, (int)h * 80);
+            btSDelete.Location = new Point(btSUpdate.Location.X + btSUpdate.Size.Width + (int)w, (int)h * 80);
 
         }
     }

@@ -381,7 +381,6 @@ namespace RestaurantManagement
             InitAccount();
         }
 
-
         string ChuanHoa(string S)
         {
             while (S.Length > 0 && S[0] == ' ')
