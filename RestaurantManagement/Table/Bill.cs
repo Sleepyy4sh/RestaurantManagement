@@ -25,7 +25,7 @@ namespace RestaurantManagement
 {
     public partial class Bill : Form
     {
-        int Sum = 0;
+       long Sum = 0;
         Table tableSelected;
         FormMain formMain;
         string nameStaff;
@@ -48,7 +48,7 @@ namespace RestaurantManagement
                 ADDROW(dtbl, name, index, price + "000 VNĐ");
                 FoodInBill foodInBill = new FoodInBill(this);
                 foodInBill.Set(name, index, price);
-                int temp = Int32.Parse(index) * Int32.Parse(price);
+               long temp = Int64.Parse(index) * Int64.Parse(price);
                 value = Sum += temp;
                 this.fpFoods.Controls.Add(foodInBill);
                 lbSumAll.Text = "Tổng = " + Sum.ToString() + "000 VNĐ";
@@ -60,14 +60,17 @@ namespace RestaurantManagement
 
         private void btComfirm_Click(object sender, EventArgs e)
         {
-            if ((cbType.SelectedIndex == 0) && (tbValue.Text != "") && (Int32.Parse(tbValue.Text) >= 100))
+            if ((cbType.SelectedIndex == 0) && (tbValue.Text != "") && (Int64.Parse(tbValue.Text) >= 100))
                 MessageBox.Show("% Phải nhỏ hơn hoặc bằng 100%");
             else
+            if (Int64.Parse(tbValue.Text) > Sum * 1000)
+                MessageBox.Show("Tiền giảm giá phải nhỏ hơn hoặc bằng tổng tiền");
+            else
             {
-                int giamgia = 0;
+               long giamgia = 0;
                 if (tbValue.Text != "")
-                    giamgia = Int32.Parse(tbValue.Text);
-                int type = cbType.SelectedIndex;
+                    giamgia = Int64.Parse(tbValue.Text);
+               int type = cbType.SelectedIndex;
 
 
                 formMain.SaveBill(Sum.ToString(), giamgia, type);
@@ -78,8 +81,9 @@ namespace RestaurantManagement
         }
         private void tbValue_TextChanged(object sender, EventArgs e)
         {
+            //tbValue.Enabled = false;
             String S = tbValue.Text;
-            int pos = S.Length;
+           int pos = S.Length;
             for (int i = 0; i < S.Length; i++)
             {
                 if (!(S[i] >= '0' && S[i] <= '9'))
@@ -95,13 +99,13 @@ namespace RestaurantManagement
             {
                 if (cbType.SelectedIndex == 0)
                 {
-                    value = Sum * 1000 - Sum * 1000 * Int32.Parse(S) / 100;
+                    value = Sum * 1000 - Sum * 1000 * Int64.Parse(S) / 100;
                     lbTotal.Text = " Thành tiền = " + value.ToString() + " VNĐ";
                 }
                 else
                 if (cbType.SelectedIndex == 1)
                 {
-                    value = Sum * 1000 - Int32.Parse(S);
+                    value = Sum * 1000 - Int64.Parse(S);
                     lbTotal.Text = " Thành tiền = " + value.ToString() + " VNĐ";
                 }
             }
@@ -110,7 +114,7 @@ namespace RestaurantManagement
                 lbTotal.Text = "Thành tiền = " + Sum.ToString() + "000 VNĐ";
             }
         }
-        int value = 0;
+       long value = 0;
         private void cbType_TextChanged(object sender, EventArgs e)
         {
             if (tbValue.Text != "")
@@ -118,14 +122,14 @@ namespace RestaurantManagement
                 if (cbType.SelectedIndex == 0)
                 {
                     {
-                        value = Sum * 1000 - Sum * 1000 * Int32.Parse(tbValue.Text) / 100;
+                        value = Sum * 1000 - Sum * 1000 * Int64.Parse(tbValue.Text) / 100;
                         lbTotal.Text = " Thành tiền = " + value.ToString() + " VNĐ";
                     }
                 }
                 else
                 if (cbType.SelectedIndex == 1)
                 {
-                    value = Sum * 1000 - Int32.Parse(tbValue.Text);
+                    value = Sum * 1000 - Int64.Parse(tbValue.Text);
                     lbTotal.Text = " Thành tiền = " + value.ToString() + " VNĐ";
                 }
             }

@@ -23,6 +23,7 @@ namespace RestaurantManagement
             //this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(sScreen.Width / 2, (int)(sScreen.Height / 7.5f * 5));
             float heightFont = sScreen.Height / 48;
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             pictureBox2.Size = new Size(this.Height / 5, this.Height / 5);
             lbName.StateCommon.ShortText.Font = new Font("Times New Roman", heightFont / 1.2f);

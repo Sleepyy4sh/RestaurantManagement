@@ -36,7 +36,7 @@ namespace RestaurantManagement
             ID = in4[1];
             Svpassword = in4[2];
         }
-        public bool InsertCTHD(string[] foods,string[] price, int[] indexs, string TRIGIA, string TIME, int GiamGia, int type)
+        public bool InsertCTHD(string[] foods,string[] price, int[] indexs, string TRIGIA, string TIME, long GiamGia, int type)
         {
             string id = InsertHoaDon(TRIGIA, TIME, GiamGia, type);
             if (id != "")
@@ -69,7 +69,7 @@ namespace RestaurantManagement
             else MessageBox.Show("false");
             return false;
         }
-        public string InsertHoaDon(string TRIGIA, string TIME, int GiamGia, int type)
+        public string InsertHoaDon(string TRIGIA, string TIME, long GiamGia, int type)
         {
             string table = "HD";
             //try

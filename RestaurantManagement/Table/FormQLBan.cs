@@ -246,7 +246,7 @@ namespace RestaurantManagement
         string[] foods ;
         string[] price ;
         int[] indexs;
-        public void SaveBill(string Total,int giamgia,int type)
+        public void SaveBill(string Total,long giamgia,int type)
         {
             dataBill = new DataBill(this);
             foods = new string[listFoodInList.Count];

@@ -60,6 +60,8 @@ namespace RestaurantManagement
             btExit.Size = new Size(pictureBox1.Width / 4 * 3, pictureBox1.Width / 4 * 3 / 5 * 3);
             btExit.Location = new Point(lbName.Location.X, bBrowser.Location.Y + bBrowser.Height * 2);
 
+            btExit.Hide();
+
             cbIsFood.Font = new Font("Times New Roman", heightFont / 1.5f);
             cbIsFood.Size = bBrowser.Size;
             cbIsFood.Location = new Point(tbName.Location.X, tbName.Location.Y - tbName.Height / 2 * 3 );
