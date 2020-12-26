@@ -30,12 +30,13 @@ namespace RestaurantManagement
             InitializeComponent();
             initIn4Server();
 
-            tbFname.Text = fname;
-            tbDoB.Text = dob;
-            tbAddress.Text = address;
-            tbPnumber.Text = pnumber;
-            tbICnumber.Text = icnumber;
-            tbEmail.Text = email;
+            tbSFname.Text = fname;
+            tbSDoB.Text = dob;
+            tbSAddress.Text = address;
+            tbSPnumber.Text = pnumber;
+            tbSICnumber.Text = icnumber;
+            tbSEmail.Text = email;
+            ReSize();
         }
 
         void initIn4Server()
@@ -51,32 +52,32 @@ namespace RestaurantManagement
             DateTime dt;
             CultureInfo enUS = new CultureInfo("en-US");
 
-            if (tbFname.Text == "" || tbFname.Text[0] == ' ' || tbFname.Text.Contains("  "))
+            if (tbSFname.Text == "" || tbSFname.Text[0] == ' ' || tbSFname.Text.Contains("  "))
             {
                 MessageBox.Show("Tên không hợp lệ");
                 return false;
             }
-            if (tbPnumber.Text == "" || tbPnumber.Text.Contains(" "))
+            if (tbSPnumber.Text == "" || tbSPnumber.Text.Contains(" "))
             {
                 MessageBox.Show("Số điện thoại không hợp lệ");
                 return false;
             }
-            if (tbAddress.Text == "" || tbAddress.Text.Contains("  "))
+            if (tbSAddress.Text == "" || tbSAddress.Text.Contains("  "))
             {
                 MessageBox.Show("Địa chỉ không hợp lệ");
                 return false;
             }
-            if (tbDoB.Text == "" || (!DateTime.TryParseExact(tbDoB.Text, "M/d/yyyy", enUS, DateTimeStyles.None, out dt)))
+            if (tbSDoB.Text == "" || (!DateTime.TryParseExact(tbSDoB.Text, "M/d/yyyy", enUS, DateTimeStyles.None, out dt)))
             {
                 MessageBox.Show("Ngày sinh không hợp lệ");
                 return false;
             }
-            if (tbICnumber.Text == "" || tbICnumber.Text.Contains("  "))
+            if (tbSICnumber.Text == "" || tbSICnumber.Text.Contains("  "))
             {
                 MessageBox.Show("CMND/CCCD không hợp lệ");
                 return false;
             }
-            if (tbEmail.Text == "" || tbEmail.Text.Contains("  ") || !tbEmail.Text.Contains("@") || !tbEmail.Text.Contains("."))
+            if (tbSEmail.Text == "" || tbSEmail.Text.Contains("  ") || !tbSEmail.Text.Contains("@") || !tbSEmail.Text.Contains("."))
             {
                 MessageBox.Show("Email không hợp lệ");
                 return false;
@@ -103,12 +104,12 @@ namespace RestaurantManagement
                 connection.Open();
 
                 String sqlQuery = "UPDATE NV SET " +
-                    "FULLNAME = '" + tbFname.Text + "', " +
-                    "DOB = '" + tbDoB.Text + "', " +
-                    "ADDRESS = '" + tbAddress.Text + "', " +
-                    "PHONENUMBER = '" + tbPnumber.Text + "', " +
-                    "ICNUMBER = '" + tbICnumber.Text + "', " +
-                    "EMAIL = '" + tbEmail.Text + "' " +
+                    "FULLNAME = '" + tbSFname.Text + "', " +
+                    "DOB = '" + tbSDoB.Text + "', " +
+                    "ADDRESS = '" + tbSAddress.Text + "', " +
+                    "PHONENUMBER = '" + tbSPnumber.Text + "', " +
+                    "ICNUMBER = '" + tbSICnumber.Text + "', " +
+                    "EMAIL = '" + tbSEmail.Text + "' " +
                     "WHERE PHONENUMBER = '" + pnumber + "'";
 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);

@@ -34,16 +34,17 @@
             this.btChangePass = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lbCurPass = new System.Windows.Forms.Label();
             this.lbNewPass = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbRePass = new System.Windows.Forms.Label();
             this.btExit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // tbCurPass
             // 
-            this.tbCurPass.Location = new System.Drawing.Point(190, 105);
+            this.tbCurPass.Location = new System.Drawing.Point(142, 85);
+            this.tbCurPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCurPass.Name = "tbCurPass";
             this.tbCurPass.PasswordChar = '●';
-            this.tbCurPass.Size = new System.Drawing.Size(408, 47);
+            this.tbCurPass.Size = new System.Drawing.Size(306, 41);
             this.tbCurPass.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCurPass.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -54,10 +55,11 @@
             // 
             // tbNewPass
             // 
-            this.tbNewPass.Location = new System.Drawing.Point(190, 213);
+            this.tbNewPass.Location = new System.Drawing.Point(142, 173);
+            this.tbNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNewPass.Name = "tbNewPass";
             this.tbNewPass.PasswordChar = '●';
-            this.tbNewPass.Size = new System.Drawing.Size(408, 47);
+            this.tbNewPass.Size = new System.Drawing.Size(306, 41);
             this.tbNewPass.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNewPass.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -68,10 +70,11 @@
             // 
             // tbRePassword
             // 
-            this.tbRePassword.Location = new System.Drawing.Point(190, 324);
+            this.tbRePassword.Location = new System.Drawing.Point(142, 263);
+            this.tbRePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbRePassword.Name = "tbRePassword";
             this.tbRePassword.PasswordChar = '●';
-            this.tbRePassword.Size = new System.Drawing.Size(408, 47);
+            this.tbRePassword.Size = new System.Drawing.Size(306, 41);
             this.tbRePassword.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRePassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -82,9 +85,10 @@
             // 
             // btChangePass
             // 
-            this.btChangePass.Location = new System.Drawing.Point(299, 394);
+            this.btChangePass.Location = new System.Drawing.Point(224, 320);
+            this.btChangePass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btChangePass.Name = "btChangePass";
-            this.btChangePass.Size = new System.Drawing.Size(156, 56);
+            this.btChangePass.Size = new System.Drawing.Size(117, 46);
             this.btChangePass.TabIndex = 3;
             this.btChangePass.Values.Text = "Đổi mật khẩu";
             this.btChangePass.Click += new System.EventHandler(this.btChangePass_Click);
@@ -93,9 +97,10 @@
             // 
             this.lbCurPass.AutoSize = true;
             this.lbCurPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lbCurPass.Location = new System.Drawing.Point(185, 73);
+            this.lbCurPass.Location = new System.Drawing.Point(139, 59);
+            this.lbCurPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCurPass.Name = "lbCurPass";
-            this.lbCurPass.Size = new System.Drawing.Size(198, 29);
+            this.lbCurPass.Size = new System.Drawing.Size(156, 24);
             this.lbCurPass.TabIndex = 4;
             this.lbCurPass.Text = "Mật khẩu hiện tại:";
             // 
@@ -103,39 +108,42 @@
             // 
             this.lbNewPass.AutoSize = true;
             this.lbNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lbNewPass.Location = new System.Drawing.Point(185, 181);
+            this.lbNewPass.Location = new System.Drawing.Point(139, 147);
+            this.lbNewPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNewPass.Name = "lbNewPass";
-            this.lbNewPass.Size = new System.Drawing.Size(161, 29);
+            this.lbNewPass.Size = new System.Drawing.Size(127, 24);
             this.lbNewPass.TabIndex = 5;
             this.lbNewPass.Text = "Mật khẩu mới:";
             // 
-            // label1
+            // lbRePass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(185, 292);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nhập lại mật khẩu mới:";
+            this.lbRePass.AutoSize = true;
+            this.lbRePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbRePass.Location = new System.Drawing.Point(139, 237);
+            this.lbRePass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRePass.Name = "lbRePass";
+            this.lbRePass.Size = new System.Drawing.Size(201, 24);
+            this.lbRePass.TabIndex = 6;
+            this.lbRePass.Text = "Nhập lại mật khẩu mới:";
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(597, 489);
+            this.btExit.Location = new System.Drawing.Point(448, 397);
+            this.btExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(130, 46);
+            this.btExit.Size = new System.Drawing.Size(98, 37);
             this.btExit.TabIndex = 7;
             this.btExit.Values.Text = "Thoát";
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // FormChangePass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(750, 548);
+            this.ClientSize = new System.Drawing.Size(562, 445);
             this.Controls.Add(this.btExit);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbRePass);
             this.Controls.Add(this.lbNewPass);
             this.Controls.Add(this.lbCurPass);
             this.Controls.Add(this.btChangePass);
@@ -143,6 +151,7 @@
             this.Controls.Add(this.tbNewPass);
             this.Controls.Add(this.tbCurPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormChangePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
@@ -159,7 +168,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btChangePass;
         private System.Windows.Forms.Label lbCurPass;
         private System.Windows.Forms.Label lbNewPass;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbRePass;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btExit;
     }
 }

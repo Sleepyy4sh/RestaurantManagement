@@ -22,6 +22,7 @@ namespace RestaurantManagement
             this.username = usrname;
             InitializeComponent();
             initIn4Server();
+            ReSize();
         }        
         void initIn4Server()
         {

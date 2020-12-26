@@ -88,6 +88,9 @@
     <Compile Include="Account\FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Account\Layout-FormChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +102,9 @@
     </Compile>
     <Compile Include="FormRevenue.Designer.cs">
       <DependentUpon>FormRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout-FormChangeInfo.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Layout\Layout-AddFood.cs">
       <SubType>Form</SubType>
