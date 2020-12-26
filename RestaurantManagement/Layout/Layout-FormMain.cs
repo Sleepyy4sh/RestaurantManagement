@@ -116,79 +116,7 @@ namespace RestaurantManagement
             btExit.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.5f);
             btExit.Size = new Size(pictureBox1.Height, pictureBox1.Height);
             btExit.Location = new Point(this.Width - btExit.Width, 0);
-
-            //PageQLNV
-            pageQLNV.Size = new Size(this.Size.Width, this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height);
-            float h = pageQLNV.Size.Height / 100;
-            float w = pageQLNV.Size.Width / 100;
-
-            cbSType.Font = new Font("Microsoft Sans Serif", heightFont / 1.6f);
-            cbSType.Size = new Size((int)w * 8, 0);
-            cbSType.Location = new Point((int)w / 6, (int)h / 4);
-
-            tbSSearch.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
-            tbSSearch.Size = cbSType.Size;
-            tbSSearch.Location = new Point(cbSType.Location.X, cbSType.Location.Y + cbSType.Size.Height + (int)h / 4);
-
-            btSSearch.Font = cbSType.Font;
-            btSSearch.Size = new Size(cbSType.Size.Width / 5 * 3, 0);
-            btSSearch.Location = new Point(tbSSearch.Location.X + tbSSearch.Size.Width - btSSearch.Size.Width, tbSSearch.Location.Y + tbSSearch.Size.Height + (int)h / 3);
-
-            dgStaff.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f);
-            dgStaff.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            dgStaff.Size = new Size((int)w * 70, pageQLNV.Size.Height - btSSearch.Location.Y - (int)h * 2);
-            dgStaff.Location = new Point(-1, btSSearch.Location.Y + btSSearch.Size.Height + (int)h * 2);
-
-            lbStaff.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
-            lbStaff.Size = new Size((int)w * 15, 0);
-            lbStaff.Location = new Point((int)w * 27, (int)h * 5);
-
-            lbSDetail.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
-            lbSDetail.Size = new Size((int)w * 15, 0);
-            lbSDetail.Location = new Point((int)w * 79, (int)h * 15);
-
-            //////
-            int tw = (int)w * 85;
-            int lw = (int)w * 73;
-            int th = (int)h * 8 / 3;
-            int lh = (int)h * 7 / 3;
-
-            //Label
-
-            lbSUser.StateCommon.ShortText.Font = lbSFname.StateCommon.ShortText.Font =  lbSPnumber.StateCommon.ShortText.Font = lbSAddress.StateCommon.ShortText.Font = lbSDoB.StateCommon.ShortText.Font = lbSICnumber.StateCommon.ShortText.Font = lbSEmail.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
-            lbSUser.Size = lbSFname.Size =  lbSPnumber.Size = lbSAddress.Size = lbSDoB.Size = lbSICnumber.Size = lbSEmail.Size = new Size((int)w * 1, 0);
-
-            lbSUser.Location = new Point(lw, (int)h * 28);
-            lbSFname.Location = new Point(lw, lbSUser.Location.Y + lbSUser.Size.Height + lh);
-            lbSPnumber.Location = new Point(lw, lbSFname.Location.Y + lbSUser.Size.Height + lh);
-            lbSAddress.Location = new Point(lw, lbSPnumber.Location.Y + lbSUser.Size.Height + lh);
-            lbSDoB.Location = new Point(lw, lbSAddress.Location.Y + lbSUser.Size.Height + lh);
-            lbSICnumber.Location = new Point(lw, lbSDoB.Location.Y + lbSUser.Size.Height + lh);
-            lbSEmail.Location = new Point(lw, lbSICnumber.Location.Y + lbSUser.Size.Height + lh);
-
-            //Textbox
-
-            //tbSEmail.StateCommon.Content.Font = tbSUser.StateCommon.Content.Font = tbSFname.StateCommon.Content.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.font;  //new Font("Microsoft Sans Serif", heightFont / 2.4f);
-            tbSUser.Size = tbSFname.Size = tbSPnumber.Size = tbSAddress.Size = tbSDoB.Size = tbSICnumber.Size = tbSEmail.Size = new Size((int)w * 17, (int)h);
-            
-            tbSUser.Location = new Point(tw, (int)h * 28);
-            tbSFname.Location = new Point(tw, tbSUser.Location.Y + tbSUser.Size.Height + th);
-            tbSPnumber.Location = new Point(tw, tbSFname.Location.Y + tbSUser.Size.Height + th);
-            tbSAddress.Location = new Point(tw, tbSPnumber.Location.Y + tbSUser.Size.Height + th);
-            tbSDoB.Location = new Point(tw, tbSAddress.Location.Y + tbSUser.Size.Height + th);
-            tbSICnumber.Location = new Point(tw, tbSDoB.Location.Y + tbSUser.Size.Height + th);
-            tbSEmail.Location = new Point(tw, tbSICnumber.Location.Y + tbSUser.Size.Height + th);
-
-            btSReg.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-            btSDelete.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-
-            btSReg.Size = btSUpdate.Size = btSDelete.Size = new Size((int)w * 8, (int)h * 6); 
-
-            btSReg.Location = new Point((int)w * 75, (int)h * 80);
-            btSUpdate.Location = new Point(btSReg.Location.X + btSReg.Size.Width + (int)w, (int)h * 80);
-            btSDelete.Location = new Point(btSUpdate.Location.X + btSUpdate.Size.Width + (int)w, (int)h * 80);
-
+     
             // Page thông tin tài khoản
             pageTaiKhoan.Size = pageQLBan.Size;
 
@@ -258,6 +186,178 @@ namespace RestaurantManagement
 
             lbEmail.Font = label1.Font;
             lbEmail.Location = new Point(lbAUsername.Width / 7*3, label7.Location.Y);
+
+            //PageQLNV
+            pageQLNV.Size = new Size(this.Size.Width, this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height);
+            float h = pageQLNV.Size.Height / 100;
+            float w = pageQLNV.Size.Width / 100;
+
+            cbSType.Font = new Font("Microsoft Sans Serif", heightFont / 1.6f);
+            cbSType.Size = new Size((int)w * 8, 0);
+            cbSType.Location = new Point((int)w / 6, (int)h / 4);
+
+            tbSSearch.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
+            tbSSearch.Size = cbSType.Size;
+            tbSSearch.Location = new Point(cbSType.Location.X, cbSType.Location.Y + cbSType.Size.Height + (int)h / 4);
+
+            btSSearch.Font = cbSType.Font;
+            btSSearch.Size = new Size(cbSType.Size.Width / 5 * 3, 0);
+            btSSearch.Location = new Point(tbSSearch.Location.X + tbSSearch.Size.Width - btSSearch.Size.Width, tbSSearch.Location.Y + tbSSearch.Size.Height + (int)h / 3);
+
+            dgStaff.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f);
+            dgStaff.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            dgStaff.Size = new Size((int)w * 70, pageQLNV.Size.Height - btSSearch.Location.Y - (int)h * 2);
+            dgStaff.Location = new Point(-1, btSSearch.Location.Y + btSSearch.Size.Height + (int)h * 2);
+
+            lbStaff.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
+            lbStaff.Size = new Size((int)w * 15, 0);
+            lbStaff.Location = new Point((int)w * 27, (int)h * 5);
+
+            lbSDetail.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
+            lbSDetail.Size = new Size((int)w * 15, 0);
+            lbSDetail.Location = new Point((int)w * 79, (int)h * 15);
+
+            //////
+            int tw = (int)w * 85;
+            int lw = (int)w * 73;
+            int th = (int)h * 8 / 3;
+            int lh = (int)h * 7 / 3;
+
+            //Label
+
+            lbSUser.StateCommon.ShortText.Font = lbSFname.StateCommon.ShortText.Font = lbSPnumber.StateCommon.ShortText.Font = lbSAddress.StateCommon.ShortText.Font = lbSDoB.StateCommon.ShortText.Font = lbSICnumber.StateCommon.ShortText.Font = lbSEmail.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
+            lbSUser.Size = lbSFname.Size = lbSPnumber.Size = lbSAddress.Size = lbSDoB.Size = lbSICnumber.Size = lbSEmail.Size = new Size((int)w * 1, 0);
+
+            lbSUser.Location = new Point(lw, (int)h * 28);
+            lbSFname.Location = new Point(lw, lbSUser.Location.Y + lbSUser.Size.Height + lh);
+            lbSPnumber.Location = new Point(lw, lbSFname.Location.Y + lbSUser.Size.Height + lh);
+            lbSAddress.Location = new Point(lw, lbSPnumber.Location.Y + lbSUser.Size.Height + lh);
+            lbSDoB.Location = new Point(lw, lbSAddress.Location.Y + lbSUser.Size.Height + lh);
+            lbSICnumber.Location = new Point(lw, lbSDoB.Location.Y + lbSUser.Size.Height + lh);
+            lbSEmail.Location = new Point(lw, lbSICnumber.Location.Y + lbSUser.Size.Height + lh);
+
+            //Textbox
+
+            //tbSEmail.StateCommon.Content.Font = tbSUser.StateCommon.Content.Font = tbSFname.StateCommon.Content.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.font;  //new Font("Microsoft Sans Serif", heightFont / 2.4f);
+            tbSUser.Size = tbSFname.Size = tbSPnumber.Size = tbSAddress.Size = tbSDoB.Size = tbSICnumber.Size = tbSEmail.Size = new Size((int)w * 17, (int)h);
+
+            tbSUser.Location = new Point(tw, (int)h * 28);
+            tbSFname.Location = new Point(tw, tbSUser.Location.Y + tbSUser.Size.Height + th);
+            tbSPnumber.Location = new Point(tw, tbSFname.Location.Y + tbSUser.Size.Height + th);
+            tbSAddress.Location = new Point(tw, tbSPnumber.Location.Y + tbSUser.Size.Height + th);
+            tbSDoB.Location = new Point(tw, tbSAddress.Location.Y + tbSUser.Size.Height + th);
+            tbSICnumber.Location = new Point(tw, tbSDoB.Location.Y + tbSUser.Size.Height + th);
+            tbSEmail.Location = new Point(tw, tbSICnumber.Location.Y + tbSUser.Size.Height + th);
+
+            btSReg.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btSDelete.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+
+            btSReg.Size = btSUpdate.Size = btSDelete.Size = new Size((int)w * 8, (int)h * 6);
+
+            btSReg.Location = new Point((int)w * 75, (int)h * 80);
+            btSUpdate.Location = new Point(btSReg.Location.X + btSReg.Size.Width + (int)w, (int)h * 80);
+            btSDelete.Location = new Point(btSUpdate.Location.X + btSUpdate.Size.Width + (int)w, (int)h * 80);
+
+
+            //PageThongKe
+
+            pageThongKe.Size = pageQLNV.Size;
+
+            w = pageThongKe.Size.Width / 100;
+            h = pageThongKe.Size.Height / 100;
+
+            lbRType.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            lbRType.Size = new Size((int)w * 6, 0);
+            lbRType.Location = new Point((int)w, (int)h * 2);
+
+            cbRType.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            cbRType.Size = new Size((int)w * 5, 0);
+            cbRType.Location = new Point(lbRType.Location.X + lbRType.Size.Width + (int)w / 3 , (int)h * 2);
+
+            lbRYear.StateCommon.ShortText.Font = lbRType.StateCommon.ShortText.Font;
+            lbRYear.Size = lbRType.Size;
+            lbRYear.Location = new Point(lbRType.Location.X, lbRType.Location.Y + lbRType.Size.Height + (int)h * 7 / 2);
+
+            cbRYear.Font = cbRType.Font;
+            cbRYear.Size = new Size((int)w * 4, 0);
+            cbRYear.Location = new Point(lbRYear.Location.X + lbRYear.Size.Width + (int)w / 2, lbRType.Location.Y + lbRType.Size.Height + (int)h * 3);
+
+
+            lbRMonth.StateCommon.ShortText.Font = lbRType.StateCommon.ShortText.Font;
+            lbRMonth.Size = lbRType.Size;
+            lbRMonth.Location = new Point(cbRYear.Location.X + cbRYear.Size.Width + (int)w / 2, lbRYear.Location.Y);
+
+            cbRMonth.Font = cbRYear.Font;
+            cbRMonth.Size = cbRType.Size;
+            cbRMonth.Location = new Point(lbRMonth.Location.X + lbRMonth.Size.Width + (int)w /2, cbRYear.Location.Y);
+
+            lbRDay.StateCommon.ShortText.Font = lbRType.StateCommon.ShortText.Font;
+            lbRDay.Size = lbRType.Size;
+            lbRDay.Location = new Point(cbRMonth.Location.X + cbRMonth.Size.Width + (int)w / 2, lbRYear.Location.Y);
+
+            cbRDay.Font = cbRYear.Font;
+            cbRDay.Size = cbRType.Size;
+            cbRDay.Location = new Point(lbRDay.Location.X + lbRDay.Size.Width + (int)w / 2, cbRYear.Location.Y);
+
+            btRWRevenue.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btRWBill.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btRUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+
+            btRWRevenue.Size = btRUpdate.Size = btRWBill.Size = new Size((int)w * 8, (int)h * 4);
+
+            btRWRevenue.Location = new Point((int)w * 3 / 2, cbRDay.Location.Y + cbRDay.Size.Height + (int)h * 2);
+            btRWBill.Location = new Point(btRWRevenue.Location.X + btRWRevenue.Size.Width + (int)w , btRWRevenue.Location.Y);
+            btRUpdate.Location = new Point(btRWBill.Location.X + btRWBill.Size.Width + (int)w , btRWRevenue.Location.Y);
+
+            dgRevenue.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.2f);
+            dgRevenue.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            dgRevenue.Size = new Size((int)w * 65, pageThongKe.Size.Height - btRWRevenue.Location.Y - btRWRevenue.Size.Height - (int)h);
+            dgRevenue.Location = new Point(-1, btRWRevenue.Location.Y + btRWRevenue.Size.Height + (int)h * 2);
+
+            lbRBDetail.Font = new Font("Microsoft Sans Serif", heightFont / 0.9f);
+            lbRBDetail.Size = new Size((int)w * 20, (int)h * 6);
+            lbRBDetail.Location = new Point((int)w * 75, (int)h * 8);
+
+            fpRBDetail.Size = new Size((int)w * 28, (int)h * 68);
+            fpRBDetail.Location = new Point((int)w * 70, lbRBDetail.Location.Y + lbRBDetail.Size.Height + (int)h * 2);
+
+            fpRBDTotal.Size = new Size((int)w * 20, pageThongKe.Size.Height - fpRBDetail.Location.Y - fpRBDetail.Size.Height);
+            fpRBDTotal.Location = new Point(fpRBDetail.Location.X + fpRBDetail.Size.Width - fpRBDTotal.Size.Width, fpRBDetail.Location.Y + fpRBDetail.Size.Height);
+
+            lbRBDCost.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            lbRBDCost.Size = new Size(fpRBDTotal.Size.Width, (int)h * 4);
+
+            lbRBDTotal.Font = lbRBDDiscount.Font = lbRBDCost.Font;
+            lbRBDTotal.Size = lbRBDDiscount.Size = lbRBDCost.Size;
+
+            fpRDBTlb.Size = new Size((int)w * 8, pageThongKe.Size.Height - fpRBDetail.Location.Y - fpRBDetail.Size.Height);
+            fpRDBTlb.Location = new Point(fpRBDetail.Location.X, fpRBDetail.Location.Y + fpRBDetail.Size.Height);
+
+            lbRBDClb.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            lbRBDClb.Size = new Size(fpRBDTotal.Size.Width, (int)h * 4);
+
+            lbRBDDlb.Font = lbRBDTlb.Font = lbRBDClb.Font;
+            lbRBDDlb.Size = lbRBDTlb.Size = lbRBDClb.Size;
+
+            fpRlbName.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f, FontStyle.Bold);
+            fpRlbName.Size = new Size((int)w * 15, (int)h * 10);
+
+            fpRlbCnt.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f, FontStyle.Bold);
+            fpRlbCnt.Size = new Size((int)w * 5, (int)h * 10);
+            
+            fpRlbPrice.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f, FontStyle.Bold);
+            fpRlbPrice.Size = new Size((int)w * 7, (int)h * 10);
+
+            fpRlbN.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            fpRlbN.Size = new Size((int)w * 15, (int)h * 4);
+
+            fpRlbC.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            fpRlbC.Size = new Size((int)w * 4, (int)h * 4);
+
+            fpRlbP.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            fpRlbP.Size = new Size((int)w * 7, (int)h * 4);
+
 
         }
     }

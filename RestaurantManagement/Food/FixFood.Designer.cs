@@ -46,42 +46,49 @@
             // 
             // lbPrice
             // 
-            this.lbPrice.Location = new System.Drawing.Point(149, 89);
+            this.lbPrice.Location = new System.Drawing.Point(199, 110);
+            this.lbPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(28, 20);
+            this.lbPrice.Size = new System.Drawing.Size(34, 24);
             this.lbPrice.TabIndex = 54;
             this.lbPrice.Values.Text = "Giá";
             // 
             // lbName
             // 
-            this.lbName.Location = new System.Drawing.Point(149, 53);
+            this.lbName.Location = new System.Drawing.Point(199, 65);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(59, 20);
+            this.lbName.Size = new System.Drawing.Size(72, 24);
             this.lbName.TabIndex = 53;
             this.lbName.Values.Text = "Tên món";
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(223, 89);
+            this.tbPrice.Location = new System.Drawing.Point(297, 110);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPrice.MaxLength = 8;
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(203, 23);
+            this.tbPrice.Size = new System.Drawing.Size(271, 27);
             this.tbPrice.TabIndex = 52;
             this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(223, 53);
+            this.tbName.Location = new System.Drawing.Point(297, 65);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbName.MaxLength = 30;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(203, 23);
+            this.tbName.Size = new System.Drawing.Size(271, 27);
             this.tbName.TabIndex = 51;
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // bAdd
             // 
             this.bAdd.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bAdd.Location = new System.Drawing.Point(262, 276);
+            this.bAdd.Location = new System.Drawing.Point(349, 340);
+            this.bAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(110, 42);
+            this.bAdd.Size = new System.Drawing.Size(147, 52);
             this.bAdd.TabIndex = 50;
             this.bAdd.Values.Text = "Sửa";
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
@@ -89,24 +96,27 @@
             // bBrowser
             // 
             this.bBrowser.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bBrowser.Location = new System.Drawing.Point(269, 228);
+            this.bBrowser.Location = new System.Drawing.Point(359, 281);
+            this.bBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bBrowser.Name = "bBrowser";
-            this.bBrowser.Size = new System.Drawing.Size(90, 25);
+            this.bBrowser.Size = new System.Drawing.Size(120, 31);
             this.bBrowser.TabIndex = 49;
             this.bBrowser.Values.Text = "Duyệt";
             this.bBrowser.Click += new System.EventHandler(this.bBrowser_Click);
             // 
             // lbImage
             // 
-            this.lbImage.Location = new System.Drawing.Point(148, 163);
+            this.lbImage.Location = new System.Drawing.Point(197, 201);
+            this.lbImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbImage.Name = "lbImage";
-            this.lbImage.Size = new System.Drawing.Size(60, 20);
+            this.lbImage.Size = new System.Drawing.Size(73, 24);
             this.lbImage.TabIndex = 48;
             this.lbImage.Values.Text = "Hình ảnh";
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(148, 92);
+            this.kryptonLabel2.Location = new System.Drawing.Point(197, 113);
+            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(6, 2);
             this.kryptonLabel2.TabIndex = 47;
@@ -114,18 +124,20 @@
             // 
             // lVND
             // 
-            this.lVND.Location = new System.Drawing.Point(432, 92);
+            this.lVND.Location = new System.Drawing.Point(576, 113);
+            this.lVND.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lVND.Name = "lVND";
-            this.lVND.Size = new System.Drawing.Size(59, 20);
+            this.lVND.Size = new System.Drawing.Size(73, 24);
             this.lVND.TabIndex = 46;
             this.lVND.Values.Text = "000 VNĐ";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 96);
+            this.pictureBox2.Size = new System.Drawing.Size(141, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 45;
             this.pictureBox2.TabStop = false;
@@ -134,19 +146,20 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(250, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 151);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 99);
+            this.pictureBox1.Size = new System.Drawing.Size(171, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
             // FixFood
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(591, 375);
+            this.ClientSize = new System.Drawing.Size(788, 462);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.tbPrice);
@@ -159,6 +172,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FixFood";
             this.Text = "FixFood";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

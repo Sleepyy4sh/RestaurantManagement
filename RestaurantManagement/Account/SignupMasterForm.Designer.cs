@@ -53,7 +53,7 @@
             this.lbTitle.ForeColor = System.Drawing.Color.Transparent;
             this.lbTitle.Location = new System.Drawing.Point(244, 74);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(400, 36);
+            this.lbTitle.Size = new System.Drawing.Size(498, 44);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "ĐĂNG KÝ NHÀ HÀNG MỚI";
             // 
@@ -69,8 +69,9 @@
             // tbUsername
             // 
             this.tbUsername.Location = new System.Drawing.Point(206, 87);
+            this.tbUsername.MaxLength = 30;
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(385, 41);
+            this.tbUsername.Size = new System.Drawing.Size(385, 47);
             this.tbUsername.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -84,7 +85,7 @@
             this.tbPassword.Location = new System.Drawing.Point(206, 184);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '●';
-            this.tbPassword.Size = new System.Drawing.Size(385, 41);
+            this.tbPassword.Size = new System.Drawing.Size(385, 47);
             this.tbPassword.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -115,7 +116,7 @@
             this.lbRePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.Location = new System.Drawing.Point(202, 261);
             this.lbRePass.Name = "lbRePass";
-            this.lbRePass.Size = new System.Drawing.Size(157, 18);
+            this.lbRePass.Size = new System.Drawing.Size(203, 24);
             this.lbRePass.TabIndex = 8;
             this.lbRePass.Text = "NHẬP LẠI MẬT KHẨU:";
             // 
@@ -124,7 +125,7 @@
             this.tbRepassword.Location = new System.Drawing.Point(206, 288);
             this.tbRepassword.Name = "tbRepassword";
             this.tbRepassword.PasswordChar = '●';
-            this.tbRepassword.Size = new System.Drawing.Size(385, 41);
+            this.tbRepassword.Size = new System.Drawing.Size(385, 47);
             this.tbRepassword.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRepassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -140,7 +141,7 @@
             this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.Location = new System.Drawing.Point(202, 60);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(90, 18);
+            this.lbUser.Size = new System.Drawing.Size(117, 24);
             this.lbUser.TabIndex = 5;
             this.lbUser.Text = "TÀI KHOẢN:";
             // 
@@ -159,7 +160,7 @@
             this.lbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.Location = new System.Drawing.Point(202, 157);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(88, 18);
+            this.lbPass.Size = new System.Drawing.Size(113, 24);
             this.lbPass.TabIndex = 6;
             this.lbPass.Text = "MẬT KHẨU:";
             // 
@@ -186,7 +187,7 @@
             // 
             // SignupMasterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 614);
             this.Controls.Add(this.pnInfor);

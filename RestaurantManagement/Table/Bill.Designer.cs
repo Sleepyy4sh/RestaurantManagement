@@ -42,25 +42,28 @@
             // 
             this.fpFoods.AutoScroll = true;
             this.fpFoods.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fpFoods.Location = new System.Drawing.Point(0, 30);
+            this.fpFoods.Location = new System.Drawing.Point(0, 37);
+            this.fpFoods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fpFoods.Name = "fpFoods";
-            this.fpFoods.Size = new System.Drawing.Size(374, 363);
+            this.fpFoods.Size = new System.Drawing.Size(498, 446);
             this.fpFoods.TabIndex = 0;
             // 
             // lbSumAll
             // 
-            this.lbSumAll.Location = new System.Drawing.Point(98, 399);
+            this.lbSumAll.Location = new System.Drawing.Point(131, 491);
+            this.lbSumAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSumAll.Name = "lbSumAll";
-            this.lbSumAll.Size = new System.Drawing.Size(63, 23);
+            this.lbSumAll.Size = new System.Drawing.Size(78, 28);
             this.lbSumAll.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSumAll.TabIndex = 1;
             this.lbSumAll.Values.Text = "Tổng = ";
             // 
             // btComfirm
             // 
-            this.btComfirm.Location = new System.Drawing.Point(136, 572);
+            this.btComfirm.Location = new System.Drawing.Point(181, 704);
+            this.btComfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btComfirm.Name = "btComfirm";
-            this.btComfirm.Size = new System.Drawing.Size(90, 25);
+            this.btComfirm.Size = new System.Drawing.Size(120, 31);
             this.btComfirm.TabIndex = 2;
             this.btComfirm.Values.Text = "Xác nhận";
             this.btComfirm.Click += new System.EventHandler(this.btComfirm_Click);
@@ -71,57 +74,59 @@
             this.cbType.Items.AddRange(new object[] {
             "%",
             "VND"});
-            this.cbType.Location = new System.Drawing.Point(243, 480);
-            this.cbType.Margin = new System.Windows.Forms.Padding(2);
+            this.cbType.Location = new System.Drawing.Point(324, 591);
+            this.cbType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(92, 21);
+            this.cbType.Size = new System.Drawing.Size(121, 24);
             this.cbType.TabIndex = 3;
             this.cbType.TextChanged += new System.EventHandler(this.cbType_TextChanged);
             // 
             // tbValue
             // 
-            this.tbValue.Location = new System.Drawing.Point(136, 480);
-            this.tbValue.Margin = new System.Windows.Forms.Padding(2);
-            this.tbValue.MaxLength = 8;
+            this.tbValue.Location = new System.Drawing.Point(181, 591);
+            this.tbValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbValue.MaxLength = 10;
             this.tbValue.Name = "tbValue";
-            this.tbValue.Size = new System.Drawing.Size(103, 20);
+            this.tbValue.Size = new System.Drawing.Size(136, 22);
             this.tbValue.TabIndex = 4;
             this.tbValue.TextChanged += new System.EventHandler(this.tbValue_TextChanged);
             // 
             // lbTotal
             // 
-            this.lbTotal.Location = new System.Drawing.Point(60, 543);
+            this.lbTotal.Location = new System.Drawing.Point(80, 668);
+            this.lbTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(104, 23);
+            this.lbTotal.Size = new System.Drawing.Size(128, 28);
             this.lbTotal.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.TabIndex = 6;
             this.lbTotal.Values.Text = "Thành tiền =";
             // 
             // lbDiscount
             // 
-            this.lbDiscount.Location = new System.Drawing.Point(50, 475);
-            this.lbDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.lbDiscount.Location = new System.Drawing.Point(67, 585);
+            this.lbDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbDiscount.Name = "lbDiscount";
-            this.lbDiscount.Size = new System.Drawing.Size(82, 23);
+            this.lbDiscount.Size = new System.Drawing.Size(101, 28);
             this.lbDiscount.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscount.TabIndex = 7;
             this.lbDiscount.Values.Text = "Giảm giá:";
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(12, 541);
+            this.btCancel.Location = new System.Drawing.Point(16, 666);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(90, 25);
+            this.btCancel.Size = new System.Drawing.Size(120, 31);
             this.btCancel.TabIndex = 8;
             this.btCancel.Values.Text = "Hủy";
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // Bill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(383, 605);
+            this.ClientSize = new System.Drawing.Size(511, 745);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.lbDiscount);
             this.Controls.Add(this.lbTotal);
@@ -131,6 +136,7 @@
             this.Controls.Add(this.lbSumAll);
             this.Controls.Add(this.fpFoods);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";

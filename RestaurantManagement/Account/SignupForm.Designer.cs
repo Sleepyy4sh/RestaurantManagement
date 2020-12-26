@@ -83,6 +83,7 @@
             // tbUsername
             // 
             this.tbUsername.Location = new System.Drawing.Point(227, 378);
+            this.tbUsername.MaxLength = 30;
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(374, 47);
             this.tbUsername.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +140,7 @@
             // tbSICnumber
             // 
             this.tbSICnumber.Location = new System.Drawing.Point(227, 229);
+            this.tbSICnumber.MaxLength = 15;
             this.tbSICnumber.Name = "tbSICnumber";
             this.tbSICnumber.ShortcutsEnabled = false;
             this.tbSICnumber.Size = new System.Drawing.Size(374, 47);
@@ -153,6 +155,7 @@
             // tbSAddress
             // 
             this.tbSAddress.Location = new System.Drawing.Point(227, 111);
+            this.tbSAddress.MaxLength = 50;
             this.tbSAddress.Name = "tbSAddress";
             this.tbSAddress.Size = new System.Drawing.Size(374, 47);
             this.tbSAddress.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,6 +169,7 @@
             // tbSEmail
             // 
             this.tbSEmail.Location = new System.Drawing.Point(227, 282);
+            this.tbSEmail.MaxLength = 50;
             this.tbSEmail.Name = "tbSEmail";
             this.tbSEmail.Size = new System.Drawing.Size(374, 47);
             this.tbSEmail.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +183,7 @@
             // tbSDoB
             // 
             this.tbSDoB.Location = new System.Drawing.Point(227, 164);
+            this.tbSDoB.MaxLength = 10;
             this.tbSDoB.Name = "tbSDoB";
             this.tbSDoB.ShortcutsEnabled = false;
             this.tbSDoB.Size = new System.Drawing.Size(374, 47);
@@ -265,6 +270,7 @@
             // tbSPnumber
             // 
             this.tbSPnumber.Location = new System.Drawing.Point(227, 58);
+            this.tbSPnumber.MaxLength = 15;
             this.tbSPnumber.Name = "tbSPnumber";
             this.tbSPnumber.ShortcutsEnabled = false;
             this.tbSPnumber.Size = new System.Drawing.Size(374, 47);
@@ -280,6 +286,7 @@
             // tbSFname
             // 
             this.tbSFname.Location = new System.Drawing.Point(227, 11);
+            this.tbSFname.MaxLength = 30;
             this.tbSFname.Name = "tbSFname";
             this.tbSFname.Size = new System.Drawing.Size(374, 47);
             this.tbSFname.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -495,9 +495,9 @@ namespace RestaurantManagement
             if (isBill)
             {
                 lbRBDetail.Text = "Chi tiết hóa đơn";
-                lb1.Text = "Tổng:";
-                lb2.Text = "Giảm giá:";
-                lb3.Text = "Thành tiền:";
+                lbRBDClb.Text = "Tổng:";
+                lbRBDDlb.Text = "Giảm giá:";
+                lbRBDTlb.Text = "Thành tiền:";
                 lbRBDId.Text = dgRevenue.CurrentRow.Cells[0].Value.ToString();
                 try
                 {
@@ -511,9 +511,11 @@ namespace RestaurantManagement
                     SqlDataReader reader = command.ExecuteReader();
                     RCountInBill = "";
                     RNameInBill = "";
+                    RPriceInBill = "";
                     fpRBDetail.Controls.Clear();
                     fpRBDetail.Controls.Add(fpRlbName);
                     fpRBDetail.Controls.Add(fpRlbCnt);
+                    fpRBDetail.Controls.Add(fpRlbPrice);
                     while (reader.HasRows)
                     {
                         Label n = new Label();
@@ -521,24 +523,27 @@ namespace RestaurantManagement
                         Label c = new Label();
                         n.AutoSize = false;
                         c.AutoSize = false;
-                        p.Size = fplbcP.Size;
-                        n.Size = fplbcName.Size;
-                        c.Size = fplbcCnt.Size;
-                        p.Size = fplbcP.Size;
-                        n.Font = new Font("Microsoft Sans Serif", 10);
-                        c.Font = new Font("Microsoft Sans Serif", 10);
-                        c.TextAlign = ContentAlignment.TopCenter;
-                        p.TextAlign = ContentAlignment.TopCenter;
+                        p.AutoSize = false;
+                        n.Size = fpRlbN.Size;
+                        c.Size = fpRlbC.Size;
+                        p.Size = fpRlbP.Size;
+                        n.Font = fpRlbN.Font;
+                        c.Font = fpRlbC.Font;
+                        p.Font = fpRlbP.Font;
+                        n.TextAlign = ContentAlignment.MiddleCenter;
+                        c.TextAlign = ContentAlignment.MiddleCenter;
+                        p.TextAlign = ContentAlignment.MiddleRight;
                         if (reader.Read() == false) break;
                         RNameInBill = reader.GetString(0);
-                        RCountInBill = reader.GetInt32(1).ToString();
+                        RCountInBill = CurrencyFormat(reader.GetInt32(1));
                         RPriceInBill = reader.GetString(2);
+                        RPriceInBill = CurrencyFormat(Convert.ToInt32(RPriceInBill.Remove(RPriceInBill.Length - 3))) + " VND";
                         n.Text = RNameInBill;
                         c.Text = RCountInBill;
                         p.Text = RPriceInBill;
                         fpRBDetail.Controls.Add(n);
-                        fpRBDetail.Controls.Add(p);
                         fpRBDetail.Controls.Add(c);
+                        fpRBDetail.Controls.Add(p);
                     }
                     reader.Close();
                 }
@@ -560,9 +565,9 @@ namespace RestaurantManagement
                 lbRBDCost.Text = "";
                 lbRBDDiscount.Text = "";
                 lbRBDTotal.Text = "";
-                lb1.Text = "";
-                lb2.Text = "";
-                lb3.Text = "";
+                lbRBDClb.Text = "";
+                lbRBDDlb.Text = "";
+                lbRBDTlb.Text = "";
                 switch (cbRType.Text)
                 {
                     case "Năm":
@@ -584,9 +589,11 @@ namespace RestaurantManagement
                             SqlDataReader reader = command.ExecuteReader();
                             RCountInBill = "";
                             RNameInBill = "";
+                            RPriceInBill = "";
                             fpRBDetail.Controls.Clear();
                             fpRBDetail.Controls.Add(fpRlbName);
                             fpRBDetail.Controls.Add(fpRlbCnt);
+                            fpRBDetail.Controls.Add(fpRlbPrice);
                             while (reader.HasRows)
                             {
                                 Label n = new Label();
@@ -594,24 +601,27 @@ namespace RestaurantManagement
                                 Label c = new Label();
                                 n.AutoSize = false;
                                 c.AutoSize = false;
-                                p.Size = fplbcP.Size;
-                                n.Size = fplbcName.Size;
-                                c.Size = fplbcCnt.Size;
-                                p.Size = fplbcP.Size;
-                                n.Font = new Font("Microsoft Sans Serif", 10);
-                                c.Font = new Font("Microsoft Sans Serif", 10);
-                                c.TextAlign = ContentAlignment.TopCenter;
-                                p.TextAlign = ContentAlignment.TopCenter;
+                                p.AutoSize = false;
+                                n.Size = fpRlbN.Size;
+                                c.Size = fpRlbC.Size;
+                                p.Size = fpRlbP.Size;
+                                n.Font = fpRlbN.Font;
+                                c.Font = fpRlbC.Font;
+                                p.Font = fpRlbP.Font;
+                                n.TextAlign = ContentAlignment.MiddleCenter;
+                                c.TextAlign = ContentAlignment.MiddleCenter;
+                                p.TextAlign = ContentAlignment.MiddleRight;
                                 if (reader.Read() == false) break;
                                 RNameInBill = reader.GetString(0);
-                                RCountInBill = reader.GetInt32(1).ToString();
+                                RCountInBill = CurrencyFormat(reader.GetInt32(1));
                                 RPriceInBill = reader.GetString(2);
+                                RPriceInBill = CurrencyFormat(Convert.ToInt32(RPriceInBill.Remove(RPriceInBill.Length - 3))) + " VND";
                                 n.Text = RNameInBill;
                                 c.Text = RCountInBill;
                                 p.Text = RPriceInBill;
                                 fpRBDetail.Controls.Add(n);
-                                fpRBDetail.Controls.Add(p);
                                 fpRBDetail.Controls.Add(c);
+                                fpRBDetail.Controls.Add(p);
                             }
                             reader.Close();
                         }
@@ -650,9 +660,11 @@ namespace RestaurantManagement
                             SqlDataReader reader = command.ExecuteReader();
                             RCountInBill = "";
                             RNameInBill = "";
+                            RPriceInBill = "";
                             fpRBDetail.Controls.Clear();
                             fpRBDetail.Controls.Add(fpRlbName);
                             fpRBDetail.Controls.Add(fpRlbCnt);
+                            fpRBDetail.Controls.Add(fpRlbPrice);
                             while (reader.HasRows)
                             {
                                 Label n = new Label();
@@ -660,24 +672,24 @@ namespace RestaurantManagement
                                 Label c = new Label();
                                 n.AutoSize = false;
                                 c.AutoSize = false;
-                                p.Size = fplbcP.Size;
-                                n.Size = fplbcName.Size;
-                                c.Size = fplbcCnt.Size;
-                                p.Size = fplbcP.Size;
-                                n.Font = new Font("Microsoft Sans Serif", 10);
-                                c.Font = new Font("Microsoft Sans Serif", 10);
-                                c.TextAlign = ContentAlignment.TopCenter;
-                                p.TextAlign = ContentAlignment.TopCenter;
+                                p.AutoSize = false;
+                                n.Size = fpRlbN.Size;
+                                c.Size = fpRlbC.Size;
+                                p.Size = fpRlbP.Size;
+                                n.TextAlign = ContentAlignment.MiddleCenter;
+                                c.TextAlign = ContentAlignment.MiddleCenter;
+                                p.TextAlign = ContentAlignment.MiddleRight;
                                 if (reader.Read() == false) break;
                                 RNameInBill = reader.GetString(0);
-                                RCountInBill = reader.GetInt32(1).ToString();
+                                RCountInBill = CurrencyFormat(reader.GetInt32(1));
                                 RPriceInBill = reader.GetString(2);
+                                RPriceInBill = CurrencyFormat(Convert.ToInt32(RPriceInBill.Remove(RPriceInBill.Length - 3))) + " VND";
                                 n.Text = RNameInBill;
                                 c.Text = RCountInBill;
                                 p.Text = RPriceInBill;
                                 fpRBDetail.Controls.Add(n);
-                                fpRBDetail.Controls.Add(p);
                                 fpRBDetail.Controls.Add(c);
+                                fpRBDetail.Controls.Add(p);
                             }
                             reader.Close();
                         }
@@ -716,9 +728,11 @@ namespace RestaurantManagement
                             SqlDataReader reader = command.ExecuteReader();
                             RCountInBill = "";
                             RNameInBill = "";
+                            RPriceInBill = "";
                             fpRBDetail.Controls.Clear();
                             fpRBDetail.Controls.Add(fpRlbName);
                             fpRBDetail.Controls.Add(fpRlbCnt);
+                            fpRBDetail.Controls.Add(fpRlbPrice);
                             while (reader.HasRows)
                             {
                                 Label n = new Label();
@@ -726,24 +740,24 @@ namespace RestaurantManagement
                                 Label c = new Label();
                                 n.AutoSize = false;
                                 c.AutoSize = false;
-                                p.Size = fplbcP.Size;
-                                n.Size = fplbcName.Size;
-                                c.Size = fplbcCnt.Size;
-                                p.Size = fplbcP.Size;
-                                n.Font = new Font("Microsoft Sans Serif", 10);
-                                c.Font = new Font("Microsoft Sans Serif", 10);
-                                c.TextAlign = ContentAlignment.TopCenter;
-                                p.TextAlign = ContentAlignment.TopCenter;
+                                p.AutoSize = false;
+                                n.Size = fpRlbN.Size;
+                                c.Size = fpRlbC.Size;
+                                p.Size = fpRlbP.Size;
+                                n.TextAlign = ContentAlignment.MiddleCenter;
+                                c.TextAlign = ContentAlignment.MiddleCenter;
+                                p.TextAlign = ContentAlignment.MiddleRight;
                                 if (reader.Read() == false) break;
                                 RNameInBill = reader.GetString(0);
-                                RCountInBill = reader.GetInt32(1).ToString();
+                                RCountInBill = CurrencyFormat(reader.GetInt32(1));
                                 RPriceInBill = reader.GetString(2);
+                                RPriceInBill = CurrencyFormat(Convert.ToInt32(RPriceInBill.Remove(RPriceInBill.Length - 3))) + " VND";
                                 n.Text = RNameInBill;
                                 c.Text = RCountInBill;
                                 p.Text = RPriceInBill;
                                 fpRBDetail.Controls.Add(n);
-                                fpRBDetail.Controls.Add(p);
                                 fpRBDetail.Controls.Add(c);
+                                fpRBDetail.Controls.Add(p);
                             }
                             reader.Close();
                         }

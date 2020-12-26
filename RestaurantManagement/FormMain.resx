@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btAddTable.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAALRJREFUSEvtlkEKwjAURP8l9EYluYcbL9aj2MaNtKdwYwh4Ac2E3y7sl5BPFJQM
-        vNVMM5s/UMqpO133xoXZuvB4xTg/28t9x1G97HA7SAUr0eeoXmbwR/FxBj5H9WolRfqdEuwAZ4iwyOh7
-        6fEF+JtvmHT+2NG7odUCgyXJqE0rKeJLJecwSUY1xjAR7vjjO8kphYXHF+BzVK9WUqT/KUlnKDy+En2O
-        6oU7T/9XUkEcWn4HRE8ulSPoIxLccwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="pageQLBan.ImageSmall" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1521,6 +1512,15 @@
         NLgJclJoy78GbnBO5iOYXXCDc6K9WDDH4QbnZD+C0dnZDc7JSQSjx8hucE50fAjmAdzgnGjfFcxDuME5
         uYJgbsINzomOzMEcgxuck30I5r/5QRyMt3AT5OAJeqBQcl6VQqvREe0u98BNVKfNKB19GK2M/iXJTZqS
         OimLUClq3azDWehJ1Te4N4tJz14eQ1uRVQi0mBqN37iWai3aybHgAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btAddTable.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAALRJREFUSEvtlkEKwjAURP8l9EYluYcbL9aj2MaNtKdwYwh4Ac2E3y7sl5BPFJQM
+        vNVMM5s/UMqpO133xoXZuvB4xTg/28t9x1G97HA7SAUr0eeoXmbwR/FxBj5H9WolRfqdEuwAZ4iwyOh7
+        6fEF+JtvmHT+2NG7odUCgyXJqE0rKeJLJecwSUY1xjAR7vjjO8kphYXHF+BzVK9WUqT/KUlnKDy+En2O
+        6oU7T/9XUkEcWn4HRE8ulSPoIxLccwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
