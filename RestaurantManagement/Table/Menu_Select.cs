@@ -39,7 +39,7 @@ namespace RestaurantManagement
             f.Set(url, name, price,isfood);
             f.SetParent(this);
             int scale = 5;
-            f.SetTransform(this.Width/scale -3, (this.Width/scale-3)/5*7, 0, 0);
+            f.SetTransform(this.Width/scale -10, (this.Width/scale-10)/5*7, 0, 0);
             if (f.isFood==0)
                 this.fpFoodSelected.Controls.Add(f);
             else
