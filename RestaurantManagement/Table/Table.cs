@@ -13,6 +13,7 @@ namespace RestaurantManagement
 {
     public class Table : Panel
     {
+        bool ad;
         public bool isEmpty = true;
         FormMain FormQLBan ;
         public string Name;
@@ -22,13 +23,20 @@ namespace RestaurantManagement
         protected Button btOder = new Button();
         PictureBox btDelete = new PictureBox();
         PictureBox btExchange = new PictureBox();
-        public Table(FormMain formQL)
+        public Table(FormMain formQL,bool AD)
         {
             init();
+            this.ad = AD;
             FormQLBan = formQL;
             this.pTable.Click += new EventHandler(Table_Click);
             //CheckEmpty();
             GetImageTable();
+            if (AD == false)
+            {
+                btExchange.Location = btDelete.Location;
+                btDelete.Enabled = false;
+                btDelete.Hide();
+            }
         }
         void Table_Click(object sender,EventArgs args)
         {
@@ -97,8 +105,12 @@ namespace RestaurantManagement
             btExchange.Image = Image.FromFile("images/exchange.png");
             btExchange.SizeMode = PictureBoxSizeMode.Zoom;
             btExchange.Click += new EventHandler(btExchange_Click);
-
-
+            if (ad == false)
+            {
+                btExchange.Location = btDelete.Location;
+                btDelete.Enabled = false;
+                btDelete.Hide();
+            }
             cbStatus.Items.Add("Đang sửa");
             cbStatus.Items.Add("Đã đặt");
             cbStatus.Items.Add("Đang dùng");
@@ -175,6 +187,12 @@ namespace RestaurantManagement
             btOder.Location = new Point(posX + (int)(sizeX / 3.2f), posY + (int)(5f * (sizeY / 7)));
             btDelete.Location = new Point(this.Size.Width -this.Size.Height/8, 0);
             btExchange.Location = new Point(this.Size.Width -this.Size.Height/8 -btExchange.Width, 0);
+            if (ad == false)
+            {
+                btExchange.Location = btDelete.Location;
+                btDelete.Enabled = false;
+                btDelete.Hide();
+            }
 
 
             //Font

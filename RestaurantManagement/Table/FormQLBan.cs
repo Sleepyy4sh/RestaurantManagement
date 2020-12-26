@@ -18,6 +18,8 @@ namespace RestaurantManagement
         public List<FoodInList> listFoodInList;
         private void InitTable()
         {
+            if (AD == false)
+                btAddTable.Enabled = false;
             DataSQLTable = new DataSQLTable(this);
             DataSQLTable.ReadListTable();
             btAddTable.Hide();
@@ -52,7 +54,7 @@ namespace RestaurantManagement
            
             if (!TableExist(name))
             {
-                Table table = new Table(this);
+                Table table = new Table(this,AD);
                 listTable.Add(table);
                 table.SetName(name, Status);
                 table.CheckEmpty();
@@ -261,7 +263,7 @@ namespace RestaurantManagement
         public bool ExchangeTable(Table table,string nameTable)
         {
             bool Exist=false;
-            Table table1 = new Table(this);
+            Table table1 = new Table(this,AD);
             for (int i=0;i<listTable.Count;i++)
             {
                 if (nameTable==listTable[i].Name)

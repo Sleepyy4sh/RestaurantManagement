@@ -64,42 +64,49 @@ namespace RestaurantManagement
 
                 String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                 SqlConnection connection = new SqlConnection(connString);
-                connection.Open();
-
-                String sqlQuery = "select * from USERS";
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                bool flag = false;
-
-                while (reader.HasRows)
+                try
                 {
-                    if (reader.Read() == false) break;
-                    if (reader.GetString(0) == tbUsername.Text)
-                    {
-                        flag = true;
-                        if (reader.GetString(1) == password)
-                        {
-                            int temp = reader.GetInt32(2);
-                            bool AD;
-                            if (temp == 1) AD = true; else AD = false;
+                    connection.Open();
 
-                            this.Hide();
-                            Form FormQLMenu = new FormMain(AD, tbUsername.Text);
-                            FormQLMenu.ShowDialog();
-                            this.Close();
-                        }
-                        else
+                    String sqlQuery = "select * from USERS";
+                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    bool flag = false;
+
+                    while (reader.HasRows)
+                    {
+                        if (reader.Read() == false) break;
+                        if (reader.GetString(0) == tbUsername.Text)
                         {
-                            MessageBox.Show("Sai mật khẩu");
+                            flag = true;
+                            if (reader.GetString(1) == password)
+                            {
+                                int temp = reader.GetInt32(2);
+                                bool AD;
+                                if (temp == 1) AD = true; else AD = false;
+
+                                this.Hide();
+                                Form FormQLMenu = new FormMain(AD, tbUsername.Text);
+                                FormQLMenu.ShowDialog();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sai mật khẩu");
+                            }
                         }
                     }
-                }
-                connection.Close();
+                    connection.Close();
                 if (!flag)
                 {
                     MessageBox.Show("Không tìm thấy tài khoản");
+                }
+                }
+                catch
+                {
+                    MessageBox.Show("Kết nối tới máy chủ bị lỗi");
                 }
             }
         }

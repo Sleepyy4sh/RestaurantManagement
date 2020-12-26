@@ -59,7 +59,14 @@ namespace RestaurantManagement
 
                 String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                 SqlConnection connection = new SqlConnection(connString);
-                connection.Open();
+                try
+                {
+                    connection.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("Kết nối tới máy chủ thất bại");
+                }
 
                 String sqlQuery = "select * from USERS";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);

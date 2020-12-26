@@ -181,6 +181,7 @@ namespace RestaurantManagement
             iTextSharp.text.Font fntAuthor = new iTextSharp.text.Font(btnAuthor, 10, 2, BaseColor.GRAY);
             prgAuthor.Alignment = Element.ALIGN_LEFT;
             prgAuthor.Add(new Chunk("NHAN VIEN: "+FixFormatString(nameStaff).ToUpper(), fntAuthor));
+            prgAuthor.Add(new Chunk("\n BAN: "+  tableSelected.Name , fntAuthor));
             prgAuthor.Add(new Chunk("\n NGAY HOA DON : " + DateTime.Now.ToShortDateString(), fntAuthor));
             document.Add(prgAuthor);
 

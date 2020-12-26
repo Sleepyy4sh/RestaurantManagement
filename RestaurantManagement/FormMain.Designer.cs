@@ -179,7 +179,7 @@
             this.pageThongKe,
             this.pageQLNV,
             this.pageTaiKhoan});
-            this.Navigator.SelectedIndex = 4;
+            this.Navigator.SelectedIndex = 0;
             this.Navigator.Size = new System.Drawing.Size(2026, 897);
             this.Navigator.TabIndex = 0;
             this.Navigator.Text = "Navigator";
@@ -197,7 +197,7 @@
             this.pageQLBan.Margin = new System.Windows.Forms.Padding(2);
             this.pageQLBan.MinimumSize = new System.Drawing.Size(38, 41);
             this.pageQLBan.Name = "pageQLBan";
-            this.pageQLBan.Size = new System.Drawing.Size(1518, 681);
+            this.pageQLBan.Size = new System.Drawing.Size(2024, 838);
             this.pageQLBan.Text = " Quản Lý Bàn";
             this.pageQLBan.ToolTipTitle = "Page ToolTip";
             this.pageQLBan.UniqueName = "E2368B99859C40256FBCE8BBB86E65E9";
