@@ -34,6 +34,7 @@ namespace RestaurantManagement
             btFood.Size = new Size(btFinished.Width , btFinished.Height / 2);
             btFood.Location = new Point(0, btFinished.Location.Y);
 
+            btDrink.Text = "Nước uống";
             btDrink.Font = new Font("Times New Roman", heightFont / 1.5f);
             btDrink.ForeColor = Color.Black;
             btDrink.Size = new Size(btFinished.Width , btFinished.Height / 2);
