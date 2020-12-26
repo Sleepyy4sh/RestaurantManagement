@@ -56,7 +56,7 @@ namespace RestaurantManagement
         {
             for (int i=0;i<foods.Count;i++)
             {
-                if (foods[i].name == name) ;
+                if (foods[i].name == name)
                     foods[i].UnTick();
             }    
         }
@@ -76,8 +76,9 @@ namespace RestaurantManagement
 
         private void btFinished_Click(object sender, EventArgs e)
         {
-            this.Hide();
             formQLMenu.fpTables.Show();
+            formQLMenu.ExitMenuSelected();
+            this.Hide();
         }
         private void btFood_Click(object sender, EventArgs e)
         {

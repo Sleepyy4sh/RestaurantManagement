@@ -98,7 +98,7 @@ namespace RestaurantManagement
                     DataSQLTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
                     listFoodInList[i].Hide();
                     listFoodInList.RemoveAt(i);
-                    //if (menu_Select != null) menu_Select.UnTick(name);
+                    if (menu_Select != null) menu_Select.UnTick(name);
                 }
             }
             if (listFoodInList.Count == 0)
@@ -149,9 +149,24 @@ namespace RestaurantManagement
             addTable.Hide();
         }
         Menu_Select menu_Select;
+        public void ExitMenuSelected()
+        {
+            pageQLMenu.Enabled = true;
+            pageQLNV.Enabled = true;
+            pageTaiKhoan.Enabled = true;
+            pageThongKe.Enabled = true;
+            btPay.Enabled = true;
+            btOrder.Enabled = true;
+        }
         private void btOrder_Click(object sender, EventArgs e)
         {
             menu_Select = new Menu_Select(this, fpTables.Size);
+            pageQLMenu.Enabled = false;
+            pageQLNV.Enabled = false;
+            pageTaiKhoan.Enabled = false;
+            pageThongKe.Enabled = false;
+            btPay.Enabled = false;
+            btOrder.Enabled = false;
             this.fpTables.Hide();
             this.pageQLBan.Controls.Add(menu_Select);
             menu_Select.Location = new Point(0, 0);
