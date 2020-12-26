@@ -20,6 +20,7 @@ namespace RestaurantManagement
         long TotalBill;
         private void InitRevenue()
         {
+            dgRevenue.Rows.Clear();
             lbRBDCost.Text = "";
             lbRBDDiscount.Text = "";
             lbRBDTotal.Text = "";
@@ -156,6 +157,68 @@ namespace RestaurantManagement
             }
         }
 
+        private string CalcInCome(string d, string m, string y)
+        {
+            long InCome = 0, cost;
+            int discount, type;
+            try
+            {
+                SqlCommand command;
+                connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+                connection = new SqlConnection(connString);
+                connection.Open();
+                if (d == "")
+                {
+                    sqlQuery = "select TRIGIA, GIAMGIA, TYPE from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month";
+                    command = new SqlCommand(sqlQuery, connection);
+                    command.Parameters.AddWithValue("@Year", y);
+                    command.Parameters.AddWithValue("@Month", m);
+                }
+                else
+                {
+                    sqlQuery = "select TRIGIA, GIAMGIA, TYPE from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month and DAY(TIME) = @Day";
+                    command = new SqlCommand(sqlQuery, connection);
+                    command.Parameters.AddWithValue("@Year", y);
+                    command.Parameters.AddWithValue("@Month", m);
+                    command.Parameters.AddWithValue("@Day", d);
+                }
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    cost = reader.GetInt64(0);
+                    discount = reader.GetInt32(1);
+                    type = reader.GetInt32(2);
+                    cost *= 1000;
+                    if (discount == 0)
+                    {
+                        InCome += cost;
+                    }
+                    else
+                    if (type == 0)
+                    {
+                        InCome += cost - cost * discount / 100;
+                    }
+                    else
+                    {
+                        InCome += cost - discount;
+                    }
+
+                }
+                reader.Close();
+                return CurrencyFormat(InCome) + " VND";
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu lỗi, vui lòng khởi động lại chương trình");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return "Lỗi";
+        }
+
         private void btRWRenevue_Click(object sender, EventArgs e)
         {
             switch (cbRType.Text)
@@ -175,7 +238,7 @@ namespace RestaurantManagement
                             connection = new SqlConnection(connString);
                             connection.Open();
 
-                            sqlQuery = "select MONTH(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year group by MONTH(TIME)";
+                            sqlQuery = "select MONTH(TIME), COUNT(ID) from HD where YEAR(TIME) = @Year group by MONTH(TIME)";
                             SqlCommand command = new SqlCommand(sqlQuery, connection);
                             command.Parameters.AddWithValue("@Year", cbRYear.Text);
                             SqlDataReader reader = command.ExecuteReader();
@@ -188,7 +251,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CurrencyFormat(reader.GetInt64(2) * 1000) + " VND");
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CalcInCome("", reader.GetInt32(0).ToString(), cbRYear.Text));
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -216,7 +279,7 @@ namespace RestaurantManagement
                             connection = new SqlConnection(connString);
                             connection.Open();
 
-                            sqlQuery = "select DAY(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month group by DAY(TIME)";
+                            sqlQuery = "select DAY(TIME), COUNT(ID) from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month group by DAY(TIME)";
                             SqlCommand command = new SqlCommand(sqlQuery, connection);
                             command.Parameters.AddWithValue("@Year", cbRYear.Text);
                             command.Parameters.AddWithValue("@Month", cbRMonth.Text);
@@ -230,7 +293,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CurrencyFormat(reader.GetInt64(2) * 1000) + " VND");
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CalcInCome(reader.GetInt32(0).ToString(), cbRMonth.Text, cbRYear.Text));
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
@@ -267,7 +330,7 @@ namespace RestaurantManagement
                             connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                             connection = new SqlConnection(connString);
                             connection.Open();
-                            sqlQuery = "select DAY(TIME), COUNT(ID), SUM(TRIGIA) from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month and DAY(TIME) = @Day group by DAY(TIME)";
+                            sqlQuery = "select DAY(TIME), COUNT(ID) from HD where YEAR(TIME) = @Year and MONTH(TIME) = @Month and DAY(TIME) = @Day group by DAY(TIME)";
                             SqlCommand command = new SqlCommand(sqlQuery, connection);
                             command.Parameters.AddWithValue("@Year", cbRYear.Text);
                             command.Parameters.AddWithValue("@Month", cbRMonth.Text);
@@ -282,7 +345,7 @@ namespace RestaurantManagement
                             while (reader.HasRows)
                             {
                                 if (reader.Read() == false) break;
-                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CurrencyFormat(reader.GetInt64(2) * 1000) + " VND");
+                                dgRevenue.Rows.Add(reader.GetInt32(0).ToString() + "/" + cbRMonth.Text + "/" + cbRYear.Text, reader.GetInt32(1).ToString(), CalcInCome(reader.GetInt32(0).ToString(), cbRMonth.Text, cbRYear.Text));
                             }
                             this.dgRevenue.ClearSelection();
                             this.dgRevenue.CurrentCell = null;
