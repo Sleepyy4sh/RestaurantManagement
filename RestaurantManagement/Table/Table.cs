@@ -13,7 +13,7 @@ namespace RestaurantManagement
 {
     public class Table : Panel
     {
-        bool ad;
+        bool ad = true;
         public bool isEmpty = true;
         FormMain FormQLBan ;
         public string Name;

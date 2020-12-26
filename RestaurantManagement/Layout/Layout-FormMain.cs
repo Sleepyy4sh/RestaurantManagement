@@ -56,6 +56,7 @@ namespace RestaurantManagement
 
             fpTables.Location = new Point(0, 0);
 
+            fpListFood.AutoScroll = fpFoods.AutoScroll = fpDrinks.AutoScroll = fpRBDetail.AutoScroll = fpRBDTotal.AutoScroll = fpRDBTlb.AutoScroll = fpTables.AutoScroll = true;
             lbListFood.Font = new Font("Times New Roman", heightFont / 1f);
             fpListFood.Size = new Size((int)((this.Size.Width - fpTables.Size.Width) * 0.98f), (int)(fpTables.Size.Height / 10 * 9.5f));
             fpListFood.Location = new Point(fpTables.Size.Width + 1, fpTables.Location.Y);

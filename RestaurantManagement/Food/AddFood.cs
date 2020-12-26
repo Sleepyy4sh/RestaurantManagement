@@ -67,6 +67,7 @@ namespace RestaurantManagement
                     tbName.Text = "";
                     tbPrice.Text = "";
                     pictureBox1.Image = null;
+                    path = "";
                     //this.Close();
                 }
             }

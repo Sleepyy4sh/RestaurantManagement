@@ -24,6 +24,9 @@ namespace RestaurantManagement
             fpDrinkSelected.Size = fpFoodSelected.Size = new Size(this.Width, this.Height / 10 * 9);
             fpDrinkSelected.Location = fpFoodSelected.Location = new Point(0, 0);
 
+            fpDrinkSelected.AutoScroll = true;
+            fpFoodSelected.AutoScroll = true;
+
 
             btFinished.Size = new Size(this.Width / 10, this.Height / 10);
             btFinished.Font = new Font("Times New Roman", heightFont / 1.5f);
