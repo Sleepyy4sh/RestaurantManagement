@@ -118,6 +118,7 @@ namespace RestaurantManagement
                         this.dgStaff.ClearSelection();
                         this.dgStaff.CurrentCell = null;
                         UpdateTbStaff();
+                        MessageBox.Show("Xóa nhân viên thành công");
                     }
                     catch
                     {
@@ -130,7 +131,7 @@ namespace RestaurantManagement
                 }
             }
             else
-                MessageBox.Show("Vui lòng chọn tài khoản cần xóa");
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa");
         }
 
         private void btSUpdate_Click(object sender, EventArgs e)
@@ -173,7 +174,7 @@ namespace RestaurantManagement
                 }
             }
             else
-                MessageBox.Show("Vui lòng chọn tài khoản cần cập nhật");
+                MessageBox.Show("Vui lòng chọn nhân viên cần cập nhật");
         }
 
         private void btSReg_Click(object sender, EventArgs e)

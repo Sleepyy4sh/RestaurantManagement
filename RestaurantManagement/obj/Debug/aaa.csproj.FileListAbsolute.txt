@@ -101,3 +101,11 @@ E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configurati
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.xml
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.xml
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.xml
