@@ -18,12 +18,24 @@ namespace RestaurantManagement
         protected PictureBox pFood = new PictureBox();
         protected Label lName = new Label();
         protected Label lPrice = new Label();
+
+        public int isFood;
         public void Set(Byte[] url, string name, string price)
         {
             this.name = name;
             pFood.Image = ByteToImg(url);
             lName.Text = name;
             lPrice.Text = price + "000 VNĐ";
+            init();
+            //this.pFood.DoubleClick += new System.EventHandler(OnPicter_DClick);
+        }
+        public void Set(Byte[] url, string name, string price,int isf)
+        {
+            this.name = name;
+            pFood.Image = ByteToImg(url);
+            lName.Text = name;
+            lPrice.Text = price + "000 VNĐ";
+            isFood =isf;
             init();
             //this.pFood.DoubleClick += new System.EventHandler(OnPicter_DClick);
         }
@@ -59,8 +71,8 @@ namespace RestaurantManagement
             //////////////////
             //vị trí
             pFood.Location = new Point(posX, posY);
-            lName.Location = new Point(posX, posY + (int)(5f * (sizeY / 7)));
-            lPrice.Location = new Point(posX, posY + (int)(6f * (sizeY / 7)));
+            lName.Location = new Point(posX, posY + (int)(5.2f * (sizeY / 7)));
+            lPrice.Location = new Point(posX, posY + (int)(6.2f * (sizeY / 7)));
 
             //kích thước
             pFood.Size = new Size(sizeX, sizeX);
@@ -75,6 +87,10 @@ namespace RestaurantManagement
             
             this.Controls.Add(pSelected);
             pSelected.Hide();
+
+            //Font
+            lName.Font = new Font("Times New Roman", sizeY / 7 / 3.5f);
+            lPrice.Font = new Font("Times New Roman", sizeY / 7 / 3.5f);
 
             //thêm vào nhóm
             this.Controls.Add(pFood);

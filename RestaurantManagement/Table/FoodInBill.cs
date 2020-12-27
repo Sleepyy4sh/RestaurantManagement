@@ -19,7 +19,7 @@ namespace RestaurantManagement
         public FoodInBill(Bill bill)
         {
             this.bill = bill;
-            this.Size = new Size(bill.FlowPanelFood.Size.Width-10,30);
+            this.Size = new Size(bill.fpFoods.Size.Width-10,30);
             init();
         }
 

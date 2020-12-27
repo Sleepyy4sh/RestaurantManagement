@@ -1,0 +1,111 @@
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Crypto.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Docking.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csprojAssemblyReference.cache
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangeInfo.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangePass.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginForm.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.ExchangeTable.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.GenerateResource.cache
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CoreCompileInputs.cache
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CopyComplete
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Crypto.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Docking.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangeInfo.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangePass.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginForm.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.ExchangeTable.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.GenerateResource.cache
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CoreCompileInputs.cache
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CopyComplete
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
+E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe.config
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.exe
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\RestaurantManagement.pdb
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\BouncyCastle.Crypto.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Design.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Docking.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csprojAssemblyReference.cache
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangeInfo.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangePass.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Bill.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FixFood.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddFood.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormMain.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.LoginMasterForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.SignupMasterForm.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.ExchangeTable.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Menu_Select.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Properties.Resources.resources
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.GenerateResource.cache
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CoreCompileInputs.cache
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CopyComplete
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
+G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.dll
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.xml
+E:\U\CS\DA\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.xml

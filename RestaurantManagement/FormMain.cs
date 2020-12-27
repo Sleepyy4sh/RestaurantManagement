@@ -8,35 +8,63 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RestaurantManagement
-{
+{ 
     public partial class FormMain : Form
     {
         bool AD;
+        string username;
         bool ableDelete = false;
         public DataFood_Fix dataFood;
-
+        string server, ID, Svpassword, nameDB;
+        String connString, sqlQuery;
+        SqlConnection connection;
         List<Food_Fix> ListFood = new List<Food_Fix>();
-        public FormMain(bool AD)
+
+
+        public FormMain(bool AD, string usrname)
         {
             this.AD = AD;
+            this.username = usrname; 
             InitializeComponent();
+            ReSize();
+            initIn4Server();
             InitFood();
             InitTable();
+            InitRevenue();
+            if (AD)
+                InitStaff();
+            else
+                this.pageQLNV.Visible = false;
             UnSelectTable();
             InitAccount();
-            btAddTable.Size = new Size(flowTable.Size.Width / 5 - 6, flowTable.Size.Width / 5 / 5 * 7);
+            btAddTable.Size = new Size(fpTables.Size.Width / 5 - 6, fpTables.Size.Width / 5 / 5 * 7);
         }
 
-        public void Add_Food(string name, string price, Byte[] byt)
+        private void initIn4Server()
+        {
+            string[] in4 = File.ReadAllLines("inforServer.txt");
+            server = in4[0];
+            ID = in4[1];
+            Svpassword = in4[2];
+            nameDB = System.Configuration.ConfigurationManager.AppSettings["database"];
+        }
+
+        public void AddFood(string name, string price, Byte[] byt,int isFood)
         {
             Food_Fix f = new Food_Fix();
             ListFood.Add(f);
-            f.Set(byt, name, price);
+            f.Set(byt, name, price,isFood);
             f.SetParent(this);
-            f.SetTransform(175, 245, 0, 0);
-            this.flowLayoutPanel1.Controls.Add(f);
+            int unitFood = 5;
+            f.SetTransform(fpFoods.Size.Width / unitFood - unitFood, (fpFoods.Size.Width / unitFood - unitFood) / 5 * 7, 0, 0);
+            if (isFood == 0) 
+                this.fpFoods.Controls.Add(f);
+            else
+                this.fpDrinks.Controls.Add(f);
         }
         void DeleteInList(string name)
         {
@@ -104,11 +132,11 @@ namespace RestaurantManagement
                 btFix.BackColor = Color.White;
             }
         }
-        public bool InsertData(string name, string price, Byte[] byt)
+        public bool InsertData(string name, string price, Byte[] byt,int isfood)
         {
-            if (dataFood.InSertData(name, price, byt))
+            if (dataFood.InSertData(name, price, byt,isfood))
             {
-                Add_Food(name, price, byt);
+                AddFood(name, price, byt,isfood);
                 return true;
             }
             return false;
@@ -135,6 +163,8 @@ namespace RestaurantManagement
         }
         private void InitFood()
         {
+            fpFoods.Controls.Clear();
+            fpDrinks.Controls.Clear();
             dataFood = new DataFood_Fix(this);
             CheckDelete();
             dataFood.ReadDATA();
@@ -162,19 +192,44 @@ namespace RestaurantManagement
             ableDelete = !ableDelete;
             CheckDelete();
         }
-
         private void btMasterSignout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            File.Delete("database.txt");
-            this.Close();
-            Form formLoginMaster = new LoginMasterForm();
-            formLoginMaster.ShowDialog();
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings.Remove("database");
+            config.Save(ConfigurationSaveMode.Full);
+            // MessageBox.Show("Đã đăng xuất tài nhà hàng: "+ ConfigurationManager.AppSettings["database"]);
+
+            //this.Close();
+            //Form formLoginMaster = new LoginMasterForm();
+            //formLoginMaster.ShowDialog();
+            Application.Exit();
         }
 
         void InitAccount()
         {
             btMasterSignout.Enabled = AD;
+            String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
+            SqlConnection connection = new SqlConnection(connString);
+            connection.Open();
+
+            String sqlQuery = "SELECT * FROM NV WHERE USERNAME='" +username +"'";
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            lbUsername.Text = username;
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                lbFname.Text = reader.GetString(0);
+                lbDoB.Text = reader.GetDateTime(4).ToString("M/d/yyyy");
+                lbAddress.Text = reader.GetString(3);
+                lbPnumber.Text = reader.GetString(2);
+                lbICnumber.Text = reader.GetString(5);
+                lbEmail.Text = reader.GetString(6);
+            }
         }
 
         private void btSignout_Click(object sender, EventArgs e)
@@ -191,7 +246,8 @@ namespace RestaurantManagement
         }
         void CheckSearch()
         {
-            flowLayoutPanel1.Controls.Clear();
+            fpFoods.Controls.Clear();
+            fpListFood.Controls.Clear();
             //Xóa mấy dấu cách nhập thừa
             tbSearch.Text = ChuanHoa(tbSearch.Text);
             // Không nhập gì thì hiện hết
@@ -206,31 +262,127 @@ namespace RestaurantManagement
         {
             for (int i = 0; i < ListFood.Count; i++)
             {
-                flowLayoutPanel1.Controls.Add(ListFood[i]);
+                if (ListFood[i].isFood==0)
+                    fpFoods.Controls.Add(ListFood[i]);
+                else
+                    fpDrinks.Controls.Add(ListFood[i]);
             }
         }
         void Search(string child)
         {
             for (int i = 0; i < ListFood.Count(); i++)
             {
-                if (IsChild(child, ListFood[i].GetName()))
+                if ( IsChild(FixFormatString(child), FixFormatString(ListFood[i].GetName())))
                 {
-                    flowLayoutPanel1.Controls.Add(ListFood[i]);
+                    if (ListFood[i].isFood == 0)
+                        fpFoods.Controls.Add(ListFood[i]);
+                    else
+                        fpDrinks.Controls.Add(ListFood[i]);
                 }
             }
         }
         bool IsChild(string child, string parent)
         {
+            child = ChuanHoa(child);
+            child = FixFormatString(child);
+
+            string[] unitChild = new string[50];
+            int count = 0;
+            for (int i = 0; i < child.Length; i++)
+            {
+                if (child[i] == ' ')
+                    count++;
+                else
+                    unitChild[count] += child[i];
+            }
+            int d = 0;
             if (parent.Length >= child.Length)
-                for (int i = 0; i < parent.Count() - child.Length + 1; i++)
+            {
+                for (int j = 0; j <= count; j++)
                 {
-                    if (parent.Substring(i, child.Length) == child)
+                    for (int i = 0; i < parent.Length - unitChild[j].Length + 1; i++)
                     {
-                        return true;
+                     //   MessageBox.Show(unitChild[j]+"   "+ parent.Substring(i,unitChild[j].Length));
+                        if (parent.Substring(i, unitChild[j].Length) == unitChild[j])
+                        {
+                            d++;
+                            i = parent.Length - unitChild[j].Length + 1;
+                        }
                     }
                 }
+            }
+            if (d == count + 1 && d != 0)
+                return true;
             return false;
         }
+        List<char> ListOfA = new List<char>() { 'a', 'á', 'à', 'ả', 'ã', 'ạ', 'ă', 'ắ', 'ằ', 'ẳ', 'ẵ', 'ặ', 'â', 'ấ', 'ầ', 'ẩ', 'ẫ', 'ậ' };
+        List<char> ListOfE = new List<char>() { 'e', 'é', 'è', 'ẻ', 'ẽ', 'ẹ', 'ê', 'ế', 'ề', 'ể', 'ễ', 'ệ' };
+        List<char> ListOfI = new List<char>() { 'i', 'í', 'ì', 'ỉ', 'ĩ', 'ị' };
+        List<char> ListOfO = new List<char>() { 'o', 'ó', 'ò', 'ỏ', 'õ', 'ọ', 'ô', 'ố', 'ồ', 'ổ', 'ỗ', 'ộ', 'ơ', 'ớ', 'ờ', 'ở', 'ỡ', 'ợ' };
+        List<char> ListOfU = new List<char>() { 'u', 'ú', 'ù', 'ủ', 'ũ', 'ụ', 'ư', 'ứ', 'ừ', 'ử', 'ữ', 'ự' };
+        List<char> ListOfY = new List<char>() { 'y', 'ý', 'ỳ', 'ỷ', 'ỹ', 'ỵ' };
+        string FixFormatString(string S)
+        {
+            S = ChuanHoa(S);
+            S = S.ToLower();
+            S = FixFormatChar(S, ListOfA);
+            S = FixFormatChar(S, ListOfE);
+            S = FixFormatChar(S, ListOfI);
+            S = FixFormatChar(S, ListOfO);
+            S = FixFormatChar(S, ListOfU);
+            S = FixFormatChar(S, ListOfY);
+            for (int i = 0; i < S.Length; i++)
+            {
+                while (S.Length > i + 1 && S[i] == S[i + 1])
+                {
+                    S = S.Remove(i, 1);
+                }
+            }
+            return S;
+        }
+        string FixFormatChar(string S, List<char> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                S = S.Replace(list[i], list[0]);
+            }
+            return S;
+        }
+
+        private void btFood_Click(object sender, EventArgs e)
+        {
+            fpFoods.Show();
+            fpDrinks.Hide();
+        }
+
+        private void btDrink_Click(object sender, EventArgs e)
+        {
+            fpFoods.Hide();
+            fpDrinks.Show();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btChangeInfo_Click(object sender, EventArgs e)
+        {
+            Form formChangeInfor = 
+            new FormChangeInfo(lbFname.Text,
+                lbDoB.Text,
+                lbAddress.Text,
+                lbPnumber.Text,
+                lbICnumber.Text,
+                lbEmail.Text);
+            formChangeInfor.ShowDialog();
+        }
+
+        private void btUpdateAccount_Click(object sender, EventArgs e)
+        {
+            InitAccount();
+        }
+
         string ChuanHoa(string S)
         {
             while (S.Length > 0 && S[0] == ' ')
@@ -276,10 +428,9 @@ namespace RestaurantManagement
                 CheckSearch();
             }
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void btReFresh_Click(object sender, EventArgs e)    
         {
-
+            InitFood();
         }
 
     }

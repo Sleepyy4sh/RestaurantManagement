@@ -16,6 +16,7 @@ namespace RestaurantManagement
         Button btSubtractIndexFood = new Button();
         Button btDelete = new Button();
         public string name;
+        public string price;
         public string index;
 
         FormMain formQLBan;
@@ -29,13 +30,16 @@ namespace RestaurantManagement
             this.Controls.Add(tbIndexFood);
             this.Controls.Add(btSubtractIndexFood);
             this.Controls.Add(btDelete);
+
+            tbIndexFood.MaxLength = 4;
         }
         public void SetSize(int x =254,int y=30)
         {
             this.Size = new Size(x, y);
         }
-        public void Set(string name, string index)
+        public void Set(string name,string price, string index)
         {
+            this.price = price;
             this.name = lbNameFood.Text = name;
             this.index =  tbIndexFood.Text = index;
         }

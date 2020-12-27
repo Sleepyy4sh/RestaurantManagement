@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.IO;
+using System.Configuration;
 
 namespace RestaurantManagement
 {
@@ -22,6 +23,7 @@ namespace RestaurantManagement
             this.formLoginMaster = f;
             initIn4Server();
             InitializeComponent();
+            ReSize();
         }
         string server, ID, Svpassword;
         void initIn4Server()
@@ -60,24 +62,38 @@ namespace RestaurantManagement
             command.Parameters.AddWithValue("@ad", 1);
             command.ExecuteNonQuery();
 
-            sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image)";
+            sqlQuery = "CREATE TABLE MENU(NAME NVARCHAR(30) PRIMARY KEY, PRICE VARCHAR(32), Image Image,ISFood TINYINT)";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
 
-            sqlQuery = "CREATE TABLE ListTable(NAME NVARCHAR(30) NOT NULL, FOOD NVARCHAR(255) NOT NULL, STATUS NVARCHAR(100), INDEXFOOD VARCHAR(100), CONSTRAINT PK_FOOD PRIMARY KEY (NAME,FOOD))";
+            sqlQuery = "CREATE TABLE ListTable(NAME NVARCHAR(30) NOT NULL, FOOD NVARCHAR(255) NOT NULL,Price NVARCHAR(255) NOT NULL, STATUS NVARCHAR(100), INDEXFOOD VARCHAR(100), CONSTRAINT PK_FOOD PRIMARY KEY (NAME,FOOD))";
             command = new SqlCommand(sqlQuery, connection);
             reader = command.ExecuteReader();
             reader.Close();
 
+            sqlQuery = "CREATE TABLE HD(ID UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID() NOT NULL, TRIGIA BIGINT,TIME SMALLDATETIME,GIAMGIA int,TYPE int)";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+
+            sqlQuery = "CREATE TABLE CTHD(ID UNIQUEIDENTIFIER NOT NULL, NAMEFOOD NVARCHAR(50) NOT NULL,PRICEFOOD NVARCHAR(50) NOT NULL,SOLUONG INT, CONSTRAINT PK_CTHD PRIMARY KEY(ID, NAMEFOOD))";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+
+            sqlQuery = "CREATE TABLE NV(FULLNAME NVARCHAR(30), USERNAME NVARCHAR(30),  PHONENUMBER NVARCHAR(15) UNIQUE, ADDRESS NVARCHAR(50), DOB SMALLDATETIME, ICNUMBER NVARCHAR(15) PRIMARY KEY, EMAIL NVARCHAR(50) UNIQUE)";
+            command = new SqlCommand(sqlQuery, connection);
+            reader = command.ExecuteReader();
+            reader.Close();
+      
             connection.Close();
 
-            var myFile = File.Create("database.txt");
-            myFile.Close();
-            using (StreamWriter sw = new StreamWriter("database.txt"))
-            {
-                sw.WriteLine(nameDB);
-            }
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings.Add("database", nameDB);
+            config.Save(ConfigurationSaveMode.Full);
+            Application.Exit();
+            MessageBox.Show("Vui lòng mở lại chương trình để xác nhận");
         }
 
         bool whitespaceContain(string s)
@@ -133,7 +149,7 @@ namespace RestaurantManagement
                         MessageBox.Show("Mật khẩu không khớp");
                     }
                     else
-                        try
+                      try
                         {
                             string nameDB = "MASTER_USER";
 
@@ -154,10 +170,10 @@ namespace RestaurantManagement
 
                             loginSucessful = true;
                             this.Hide();
-                            Form formQLMenu = new FormMain(true);
+                            Form formQLMenu = new FormMain(true, tbUsername.Text);
                             formQLMenu.ShowDialog();
                         }
-                        catch
+                      catch
                         {
                             MessageBox.Show("Tài khoản đã tồn tại");
                         }

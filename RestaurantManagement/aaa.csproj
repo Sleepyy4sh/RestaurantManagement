@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
@@ -51,8 +54,29 @@
     <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\KryptonWinFormControls.4.4.1.0\lib\net40\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,8 +86,78 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\FormChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FormChangeInfo.Designer.cs">
+      <DependentUpon>FormChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FormChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FormChangePass.Designer.cs">
+      <DependentUpon>FormChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FormAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\FormAccount.Designer.cs">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Layout-FormChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaff.Designer.cs">
+      <DependentUpon>FormStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRevenue.Designer.cs">
+      <DependentUpon>FormRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout-FormChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-AddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-FixFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-LoginMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-MenuSelected.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout-SignupMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Layout_ExchangeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,12 +176,18 @@
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="Table\DataBill.cs" />
-    <Compile Include="Table\DataTable.cs" />
+    <Compile Include="Table\DataSQLTable.cs" />
     <Compile Include="Food\FixFood.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Food\FixFood.Designer.cs">
       <DependentUpon>FixFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\ExchangeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\ExchangeTable.Designer.cs">
+      <DependentUpon>ExchangeTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Table\FoodInBill.cs">
       <SubType>Component</SubType>
@@ -136,7 +236,9 @@
     <Compile Include="Account\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Table\FormQLBan.cs" />
+    <Compile Include="Table\FormQLBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,13 +249,19 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table\Menu_Select.cs">
-      <SubType>Form</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table\Menu_Select.Designer.cs">
       <DependentUpon>Menu_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Account\FormChangeInfo.resx">
+      <DependentUpon>FormChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\FormChangePass.resx">
+      <DependentUpon>FormChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Table\AddTable.resx">
       <DependentUpon>AddTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account\SignupMasterForm.resx">
       <DependentUpon>SignupMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\ExchangeTable.resx">
+      <DependentUpon>ExchangeTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Table\Menu_Select.resx">
       <DependentUpon>Menu_Select.cs</DependentUpon>

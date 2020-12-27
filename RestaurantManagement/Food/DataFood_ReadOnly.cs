@@ -26,10 +26,7 @@ namespace RestaurantManagement
         {
             initIn4Server();
             string nameDB;
-            using (StreamReader sr = new StreamReader("database.txt"))
-            {
-                nameDB = sr.ReadLine();
-            }
+            nameDB = System.Configuration.ConfigurationManager.AppSettings["database"];
             database = nameDB;
             this.parent = parentf;
             connString = @"Server=" + server + ";Database=" + database + ";User Id=" + ID + ";Password=" + Svpassword + ";";
@@ -44,7 +41,7 @@ namespace RestaurantManagement
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                parent.Add(reader.GetString(0), reader.GetString(1), (Byte[])reader[2]);
+                parent.Add(reader.GetString(0), reader.GetString(1), (Byte[])reader[2], (int)reader.GetByte(3));
             }
             reader.Close();
         }

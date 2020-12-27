@@ -29,23 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Select));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpFoodSelected = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpDrinkSelected = new System.Windows.Forms.FlowLayoutPanel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btFinished = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btDrink = new System.Windows.Forms.Button();
+            this.btFood = new System.Windows.Forms.Button();
+            this.btSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.tbSearch = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // fpFoodSelected
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1136, 597);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.fpFoodSelected.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fpFoodSelected.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.fpFoodSelected.BackColor = System.Drawing.SystemColors.Control;
+            this.fpFoodSelected.Location = new System.Drawing.Point(0, 0);
+            this.fpFoodSelected.Name = "fpFoodSelected";
+            this.fpFoodSelected.Size = new System.Drawing.Size(1136, 597);
+            this.fpFoodSelected.TabIndex = 3;
+            // 
+            // fpDrinkSelected
+            // 
+            this.fpDrinkSelected.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fpDrinkSelected.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.fpDrinkSelected.BackColor = System.Drawing.SystemColors.Control;
+            this.fpDrinkSelected.Location = new System.Drawing.Point(0, 0);
+            this.fpDrinkSelected.Name = "fpDrinkSelected";
+            this.fpDrinkSelected.Size = new System.Drawing.Size(1136, 597);
+            this.fpDrinkSelected.TabIndex = 4;
             // 
             // btFinished
             // 
@@ -56,29 +68,68 @@
             this.btFinished.Values.Text = "Xong";
             this.btFinished.Click += new System.EventHandler(this.btFinished_Click);
             // 
+            // btDrink
+            // 
+            this.btDrink.Location = new System.Drawing.Point(670, 42);
+            this.btDrink.Name = "btDrink";
+            this.btDrink.Size = new System.Drawing.Size(75, 23);
+            this.btDrink.TabIndex = 50;
+            this.btDrink.Text = "Thức uống";
+            this.btDrink.UseVisualStyleBackColor = true;
+            this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
+            // 
+            // btFood
+            // 
+            this.btFood.Location = new System.Drawing.Point(670, 3);
+            this.btFood.Name = "btFood";
+            this.btFood.Size = new System.Drawing.Size(75, 23);
+            this.btFood.TabIndex = 49;
+            this.btFood.Text = "Đồ ăn";
+            this.btFood.UseVisualStyleBackColor = true;
+            this.btFood.Click += new System.EventHandler(this.btFood_Click);
+            // 
+            // 
+            // btSearch
+            // 
+            this.btSearch.Location = new System.Drawing.Point(1319, 152);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(163, 32);
+            this.btSearch.TabIndex = 4;
+            this.btSearch.Values.Image = ((System.Drawing.Image)(resources.GetObject("btSearch.Values.Image")));
+            this.btSearch.Values.Text = "Tìm kiếm";
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.AllowDrop = true;
+            this.tbSearch.Location = new System.Drawing.Point(1319, 110);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(163, 26);
+            this.tbSearch.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.TabIndex = 3;
+            // 
             // Menu_Select
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1138, 652);
             this.Controls.Add(this.btFinished);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.fpFoodSelected);
+            this.Controls.Add(this.fpDrinkSelected);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Menu_Select";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Size = new System.Drawing.Size(1138, 652);
             this.Text = "Menu";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_Select_FormClosed);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel fpFoodSelected;
+        private System.Windows.Forms.FlowLayoutPanel fpDrinkSelected;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btFinished;
+        private System.Windows.Forms.Button btFood;
+        private System.Windows.Forms.Button btDrink;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btSearch;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbSearch;
     }
 }

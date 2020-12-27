@@ -16,6 +16,7 @@ namespace RestaurantManagement
         public AddTable(FormMain formQLMenu)
         {
             InitializeComponent();
+            ReSize();
             this.FormQLBan = formQLMenu;
         }
 
@@ -27,9 +28,9 @@ namespace RestaurantManagement
                 if (FormQLBan.Add_Table(tbName.Text, ""))
                 {
                     FormQLBan.btAddTable.Hide();
-                    FormQLBan.flowTable.Controls.Add(FormQLBan.btAddTable);
+                    FormQLBan.fpTables.Controls.Add(FormQLBan.btAddTable);
                     FormQLBan.btAddTable.Show();
-                    FormQLBan.InSertTable(tbName.Text, "Bàn trống", "", "");
+                    FormQLBan.InSertTable(tbName.Text, "Bàn trống","", "", "");
                     tbName.Text = "";
                     this.Hide();
                 }

@@ -13,15 +13,17 @@ namespace RestaurantManagement
 {
     public partial class FormMain : Form
     {
-        DataTable dataTable;
+        DataSQLTable DataSQLTable;
         Table tableSelected;
         public List<FoodInList> listFoodInList;
         private void InitTable()
         {
-            dataTable = new DataTable(this);
-            dataTable.ReadListTable();
+            if (AD == false)
+                btAddTable.Enabled = false;
+            DataSQLTable = new DataSQLTable(this);
+            DataSQLTable.ReadListTable();
             btAddTable.Hide();
-            flowTable.Controls.Add(btAddTable);
+            fpTables.Controls.Add(btAddTable);
             btAddTable.Show();
         }
         public void UnSelectTable()
@@ -31,17 +33,17 @@ namespace RestaurantManagement
             lbListFood.Hide();
             btPay.Hide();
             btOrder.Hide();
-            flowListFood.Controls.Clear();
+            fpListFood.Controls.Clear();
         }
         public void SelectedTable(Table table)
         {
-            flowListFood.Controls.Clear();
+            fpListFood.Controls.Clear();
             tableSelected = null;
             listFoodInList = null;
             tableSelected = table;
             listFoodInList = new List<FoodInList>();
             lbListFood.Text = "Danh sách món bàn: " + table.Name;
-            flowListFood.Controls.Add(lbListFood);
+            fpListFood.Controls.Add(lbListFood);
             lbListFood.Show();
             btPay.Show();
             btOrder.Show();
@@ -52,14 +54,14 @@ namespace RestaurantManagement
            
             if (!TableExist(name))
             {
-                Table table = new Table(this);
+                Table table = new Table(this,AD);
                 listTable.Add(table);
                 table.SetName(name, Status);
                 table.CheckEmpty();
                 //f.SetParent(this);
                 int scale = 5;
-                table.SetTransform(flowTable.Size.Width / scale - 10, flowTable.Size.Width / scale / scale * 7, -1, -1);
-                this.flowTable.Controls.Add(table);
+                table.SetTransform(fpTables.Size.Width / scale - 10, fpTables.Size.Width / scale / scale * 7, -1, -1);
+                this.fpTables.Controls.Add(table);
                 return true;
             }
             else
@@ -95,10 +97,10 @@ namespace RestaurantManagement
             {
                 while (i<listFoodInList.Count && listFoodInList[i].name == name )
                 {
-                    dataTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
+                    DataSQLTable.DeleteData(tableSelected.Name,listFoodInList[i].name);
                     listFoodInList[i].Hide();
                     listFoodInList.RemoveAt(i);
-                    //if (menu_Select != null) menu_Select.UnTick(name);
+                    if (menu_Select != null) menu_Select.UnTick(name);
                 }
             }
             if (listFoodInList.Count == 0)
@@ -111,9 +113,9 @@ namespace RestaurantManagement
             {
                 for (int i = 0; i < listFoodInList.Count; i++)
                 {
-                    if (!dataTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].index))
+                    if (!DataSQLTable.InSertData(tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name,listFoodInList[i].price, listFoodInList[i].index))
                     {
-                        dataTable.FixData(tableSelected.Name, tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].name, listFoodInList[i].index);
+                        DataSQLTable.FixData(tableSelected.Name, tableSelected.Name, tableSelected.cbStatus.Text, listFoodInList[i].name, listFoodInList[i].name, listFoodInList[i].index);
                     };
                 }
                 tableSelected.CheckEmpty();
@@ -121,24 +123,24 @@ namespace RestaurantManagement
         }
         public void SaveStatus(string name,string status)
         {
-             dataTable.FixStatus(name,status);
+             DataSQLTable.FixStatus(name,status);
         }
         public void InitFoodInlist(Table table)
         {
-            dataTable.ReadListFood(table.Name);
+            DataSQLTable.ReadListFood(table.Name);
         }
-        public void Add_FoodINLIST(string name,string index)
+        public void Add_FoodINLIST(string name,string price, string index)
         {
             FoodInList food= new FoodInList(this);
-            food.Set(name, index);
+            food.Set(name,price, index);
             listFoodInList.Add(food);
-            this.flowListFood.Controls.Add(food);
+            this.fpListFood.Controls.Add(food);
             tableSelected.isEmpty = false;
             tableSelected.CheckEmpty();
         }
-        public void InSertTable(string nameTable,string status,string food,string index)
+        public void InSertTable(string nameTable,string status,string food,string price,string index)
         {
-            dataTable.InSertData(nameTable, status, food, index);
+            DataSQLTable.InSertData(nameTable, status, food,price, index);
         }
         private void btAddTable_Click(object sender, EventArgs e)
         {
@@ -149,12 +151,28 @@ namespace RestaurantManagement
             addTable.Hide();
         }
         Menu_Select menu_Select;
+        public void ExitMenuSelected()
+        {
+            pageQLMenu.Enabled = true;
+            pageQLNV.Enabled = true;
+            pageTaiKhoan.Enabled = true;
+            pageThongKe.Enabled = true;
+            btPay.Enabled = true;
+            btOrder.Enabled = true;
+        }
         private void btOrder_Click(object sender, EventArgs e)
         {
-            menu_Select = new Menu_Select(this);
-            menu_Select.Size = flowTable.Size;
-            menu_Select.ShowDialog();
-            menu_Select.Location = flowTable.Location;
+            menu_Select = new Menu_Select(this, fpTables.Size);
+            pageQLMenu.Enabled = false;
+            pageQLNV.Enabled = false;
+            pageTaiKhoan.Enabled = false;
+            pageThongKe.Enabled = false;
+            btPay.Enabled = false;
+            btOrder.Enabled = false;
+            this.fpTables.Hide();
+            this.pageQLBan.Controls.Add(menu_Select);
+            menu_Select.Location = new Point(0, 0);
+              menu_Select.Show();
         }
         public bool InList(string name)
         {
@@ -174,8 +192,8 @@ namespace RestaurantManagement
         {
             if (!tableSelected.isEmpty)
             {
-                bill = new Bill(tableSelected, this);
-                dataTable.ReadToBILL(tableSelected.Name);
+                bill = new Bill(tableSelected, this,lbFname.Text);
+                DataSQLTable.ReadToBILL(tableSelected.Name);
                 bill.ShowDialog();
             } else
             {
@@ -186,7 +204,7 @@ namespace RestaurantManagement
         {
             for (int i = 0; i < listFoodInList.Count; i++)
             {
-                dataTable.DeleteData(table.Name, listFoodInList[i].name);
+                DataSQLTable.DeleteData(table.Name, listFoodInList[i].name);
                 listFoodInList[i].Hide();
                 //listFoodInList.RemoveAt(i,1);
             }
@@ -201,7 +219,7 @@ namespace RestaurantManagement
             if ( table.cbStatus.SelectedIndex == 0 || table.cbStatus.SelectedIndex == 3)
             {
                 table.Hide();
-                dataTable.DeleteTable(table.Name);
+                DataSQLTable.DeleteTable(table.Name);
                 for (int i = 0; i < listTable.Count; i++)
                 {
                     if (listTable[i].Name == table.Name)
@@ -220,9 +238,69 @@ namespace RestaurantManagement
         }
         public bool TableEmpty(Table table)
         {
-            if (dataTable.CountFoodTable(table.Name) == 1)
+            if (DataSQLTable.CountFoodTable(table.Name) == 1)
                 return true;
             return false;
+        }
+        DataBill dataBill;
+        string[] foods ;
+        string[] price ;
+        int[] indexs;
+        public void SaveBill(string Total,long giamgia,int type)
+        {
+            dataBill = new DataBill(this);
+            foods = new string[listFoodInList.Count];
+            price = new string[listFoodInList.Count];
+            indexs = new int[listFoodInList.Count];
+            for (int i=0;i<listFoodInList.Count; i++)
+            {
+                foods[i] = listFoodInList[i].name;
+                price[i] = listFoodInList[i].price;
+                indexs[i] =Int32.Parse(listFoodInList[i].index);
+            }
+            dataBill.InsertCTHD(foods,price,indexs, Total, DateTime.Now.ToString("MM/dd/yyyy HH:mm"),giamgia,type);
+        }
+        public bool ExchangeTable(Table table,string nameTable)
+        {
+            bool Exist=false;
+            Table table1 = new Table(this,AD);
+            for (int i=0;i<listTable.Count;i++)
+            {
+                if (nameTable==listTable[i].Name)
+                {
+                    table1 = listTable[i];
+                    Exist = true;
+                }
+            }
+            if (!Exist)
+            {
+                MessageBox.Show("Bàn không tồn tại");
+                return false;
+            } else
+            {
+                DataSQLTable.ExchangeNameTable(table.Name, table1.Name);
+                bool tg = table.isEmpty;
+                table.isEmpty = table1.isEmpty;
+                table1.isEmpty = tg;
+                UnSelectTable();
+                int g = table.cbStatus.SelectedIndex;
+                table.cbStatus.SelectedIndex = table1.cbStatus.SelectedIndex;
+                table1.cbStatus.SelectedIndex = g;
+            }    
+            return true;
+        }
+        public void SetMSHD(string ID)
+        {
+            if (bill != null)
+            {
+                bill.PDF(ID);
+            }
+        }
+        public void Reset()
+        {
+            if (menu_Select != null)
+                menu_Select.Hide();
+            fpTables.Show();
         }
     }
 }

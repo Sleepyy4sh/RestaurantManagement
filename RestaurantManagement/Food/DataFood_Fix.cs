@@ -31,10 +31,7 @@ namespace RestaurantManagement
         {
             initIn4Server();
             string nameDB;
-            using (StreamReader sr = new StreamReader("database.txt"))
-            {
-                nameDB = sr.ReadLine();
-            }
+            nameDB = System.Configuration.ConfigurationManager.AppSettings["database"];
             database = nameDB;
             this.parent = parentf;
             connString = @"Server=" + server + ";Database=" + database + ";User Id="+ ID+";Password="+Svpassword+";";
@@ -50,19 +47,20 @@ namespace RestaurantManagement
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                parent.Add_Food(reader.GetString(0), reader.GetString(1), (Byte[])reader[2]);
+                parent.AddFood(reader.GetString(0), reader.GetString(1), (Byte[])reader[2],(int)reader.GetByte(3));
             }
             reader.Close();
         }
-        public bool InSertData(string name, string price, Byte[] bye)
+        public bool InSertData(string name, string price, Byte[] bye,int i)
         {
             string table = "Menu";
             try
             {
-                String sqlQuery = "insert into " + table + "(NAME,PRICE,IMAGE) VALUES (@name,@price,@Image)";
+                String sqlQuery = "insert into " + table + "(NAME,PRICE,IMAGE,isfood) VALUES (@name,@price,@Image,@ISFOOD)";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@price", price);
+                command.Parameters.AddWithValue("@ISFOOD", i);
                 SqlParameter parImage = new SqlParameter("@Image", SqlDbType.Image);
                 parImage.Value = bye;
                 command.Parameters.Add(parImage);
@@ -75,7 +73,7 @@ namespace RestaurantManagement
             }
             catch
             {
-                MessageBox.Show("Món ăn đã tồn tại", "Lổi trùng lặp");
+                MessageBox.Show("Món ăn đã tồn tại", "Lỗi trùng lặp");
                 return false;
             }
         }
@@ -101,7 +99,7 @@ namespace RestaurantManagement
                 }
                 catch
                 {
-                    MessageBox.Show("Sửa thất bại", "Lổi");
+                    MessageBox.Show("Sửa thất bại", "Lỗi");
                     return false;
                 }
             }
@@ -131,7 +129,7 @@ namespace RestaurantManagement
                 }
                 catch
                 {
-                    MessageBox.Show("Sửa thất bại", "Lổi");
+                    MessageBox.Show("Sửa thất bại", "Lỗi");
                     return false;
                 }
             }
