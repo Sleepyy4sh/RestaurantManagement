@@ -143,50 +143,50 @@ namespace RestaurantManagement
             btMasterSignout.Size = btUpdateAccount.Size;
             btMasterSignout.Location = new Point(btSignout.Location.X, btSignout.Location.Y + btUpdateAccount.Height + btUpdateAccount.Height / 2);
 
-            label1.Font = new Font("Times New Roman", heightFont / 0.8f);
-            label1.Location = new Point(lbAUsername.Width / 20, lbAUsername.Height / 9);
+            lbTaiKhoan.Font = new Font("Times New Roman", heightFont / 0.8f);
+            lbTaiKhoan.Location = new Point(lbAUsername.Width / 20, lbAUsername.Height / 9);
 
-            label2.Font = label1.Font;
-            label2.Location = new Point(label1.Location.X, label1.Location.Y + label1.Height * 2);
+            lbTen.Font = lbTaiKhoan.Font;
+            lbTen.Location = new Point(lbTaiKhoan.Location.X, lbTaiKhoan.Location.Y + lbTaiKhoan.Height * 2);
             
 
 
-            label3.Font = label1.Font;
-            label3.Location = new Point(label2.Location.X, label2.Location.Y + label1.Height * 2);
+            lbNgaysinh.Font = lbTaiKhoan.Font;
+            lbNgaysinh.Location = new Point(lbTen.Location.X, lbTen.Location.Y + lbTaiKhoan.Height * 2);
 
-            label4.Font = label1.Font;
-            label4.Location = new Point(label3.Location.X, label3.Location.Y + label1.Height * 2);
+            lbDiaCHi.Font = lbTaiKhoan.Font;
+            lbDiaCHi.Location = new Point(lbNgaysinh.Location.X, lbNgaysinh.Location.Y + lbTaiKhoan.Height * 2);
 
-            label5.Font = label1.Font;
-            label5.Location = new Point(label4.Location.X, label4.Location.Y + label1.Height * 2);
+            lbSdt.Font = lbTaiKhoan.Font;
+            lbSdt.Location = new Point(lbDiaCHi.Location.X, lbDiaCHi.Location.Y + lbTaiKhoan.Height * 2);
 
-            label6.Font = label1.Font;
-            label6.Location = new Point(label5.Location.X, label5.Location.Y + label1.Height * 2);
+            lbCMNd.Font = lbTaiKhoan.Font;
+            lbCMNd.Location = new Point(lbSdt.Location.X, lbSdt.Location.Y + lbTaiKhoan.Height * 2);
 
-            label7.Font = label1.Font;
-            label7.Location = new Point(label6.Location.X, label6.Location.Y + label1.Height * 2);
+            lbMail.Font = lbTaiKhoan.Font;
+            lbMail.Location = new Point(lbCMNd.Location.X, lbCMNd.Location.Y + lbTaiKhoan.Height * 2);
 
 
-            lbUsername.Font = label1.Font;
-            lbUsername.Location = new Point(lbAUsername.Width / 7*3, label1.Location.Y);
+            lbUsername.Font = lbTaiKhoan.Font;
+            lbUsername.Location = new Point(lbAUsername.Width / 7*3, lbTaiKhoan.Location.Y);
 
-            lbFname.Font = label1.Font;
-            lbFname.Location = new Point(lbAUsername.Width / 7*3, label2.Location.Y);
+            lbFname.Font = lbTaiKhoan.Font;
+            lbFname.Location = new Point(lbAUsername.Width / 7*3, lbTen.Location.Y);
 
-            lbDoB.Font = label1.Font;
-            lbDoB.Location = new Point(lbAUsername.Width / 7*3, label3.Location.Y);
+            lbDoB.Font = lbTaiKhoan.Font;
+            lbDoB.Location = new Point(lbAUsername.Width / 7*3, lbNgaysinh.Location.Y);
 
-            lbAddress.Font = label1.Font;
-            lbAddress.Location = new Point(lbAUsername.Width / 7*3, label4.Location.Y);
+            lbAddress.Font = lbTaiKhoan.Font;
+            lbAddress.Location = new Point(lbAUsername.Width / 7*3, lbDiaCHi.Location.Y);
 
-            lbPnumber.Font = label1.Font;
-            lbPnumber.Location = new Point(lbAUsername.Width / 7*3, label5.Location.Y);
+            lbPnumber.Font = lbTaiKhoan.Font;
+            lbPnumber.Location = new Point(lbAUsername.Width / 7*3, lbSdt .Location.Y);
 
-            lbICnumber.Font = label1.Font;
-            lbICnumber.Location = new Point(lbAUsername.Width / 7*3, label6.Location.Y);
+            lbICnumber.Font = lbTaiKhoan.Font;
+            lbICnumber.Location = new Point(lbAUsername.Width / 7*3, lbCMNd.Location.Y);
 
-            lbEmail.Font = label1.Font;
-            lbEmail.Location = new Point(lbAUsername.Width / 7*3, label7.Location.Y);
+            lbEmail.Font = lbTaiKhoan.Font;
+            lbEmail.Location = new Point(lbAUsername.Width / 7*3, lbMail.Location.Y);
 
             //PageQLNV
             pageQLNV.Size = new Size(this.Size.Width, this.Size.Height - pictureBox1.Height - Navigator.Bar.ItemMinimumSize.Height);

@@ -28,6 +28,7 @@ namespace RestaurantManagement
             this.email = s6;
 
             InitializeComponent();
+            tbSICnumber.Enabled = false;
             initIn4Server();
 
             tbSFname.Text = fname;
@@ -110,21 +111,20 @@ namespace RestaurantManagement
                     "PHONENUMBER = '" + tbSPnumber.Text + "', " +
                     "ICNUMBER = '" + tbSICnumber.Text + "', " +
                     "EMAIL = '" + tbSEmail.Text + "' " +
-                    "WHERE PHONENUMBER = '" + pnumber + "'";
+                    "WHERE ICNUMBER = '" + icnumber + "'";
 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Đã cập nhật thông tin");
                 this.Close();
             }
-            catch 
+            catch
             {
-                MessageBox.Show("Số điện thoại đã tồn tại");
+                MessageBox.Show("CMND/CCCD đã tồn tại");
             }
 
         }
 
-        
 
         private void btExit_Click(object sender, EventArgs e)
         {

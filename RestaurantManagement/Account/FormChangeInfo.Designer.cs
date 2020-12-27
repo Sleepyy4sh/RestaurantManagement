@@ -49,9 +49,10 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
-            this.lbTitle.Location = new System.Drawing.Point(311, 64);
+            this.lbTitle.Location = new System.Drawing.Point(233, 52);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(278, 52);
+            this.lbTitle.Size = new System.Drawing.Size(219, 39);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Sửa thông tin";
             // 
@@ -61,9 +62,10 @@
             this.lbSEmail.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbSEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbSEmail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbSEmail.Location = new System.Drawing.Point(45, 604);
+            this.lbSEmail.Location = new System.Drawing.Point(34, 491);
+            this.lbSEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSEmail.Name = "lbSEmail";
-            this.lbSEmail.Size = new System.Drawing.Size(89, 31);
+            this.lbSEmail.Size = new System.Drawing.Size(74, 26);
             this.lbSEmail.TabIndex = 23;
             this.lbSEmail.Text = "Email:";
             // 
@@ -73,9 +75,10 @@
             this.lbSICnumber.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbSICnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbSICnumber.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbSICnumber.Location = new System.Drawing.Point(43, 518);
+            this.lbSICnumber.Location = new System.Drawing.Point(32, 421);
+            this.lbSICnumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSICnumber.Name = "lbSICnumber";
-            this.lbSICnumber.Size = new System.Drawing.Size(232, 31);
+            this.lbSICnumber.Size = new System.Drawing.Size(187, 26);
             this.lbSICnumber.TabIndex = 22;
             this.lbSICnumber.Text = "Số CMND/CCCD:";
             // 
@@ -85,11 +88,12 @@
             this.lbSDoB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbSDoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbSDoB.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbSDoB.Location = new System.Drawing.Point(43, 268);
+            this.lbSDoB.Location = new System.Drawing.Point(32, 218);
+            this.lbSDoB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSDoB.Name = "lbSDoB";
-            this.lbSDoB.Size = new System.Drawing.Size(143, 31);
+            this.lbSDoB.Size = new System.Drawing.Size(221, 26);
             this.lbSDoB.TabIndex = 21;
-            this.lbSDoB.Text = "Ngày sinh:";
+            this.lbSDoB.Text = "Ngày sinh (M/d/yyyy):";
             // 
             // lbSPnumber
             // 
@@ -97,9 +101,10 @@
             this.lbSPnumber.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbSPnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbSPnumber.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbSPnumber.Location = new System.Drawing.Point(45, 430);
+            this.lbSPnumber.Location = new System.Drawing.Point(34, 349);
+            this.lbSPnumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSPnumber.Name = "lbSPnumber";
-            this.lbSPnumber.Size = new System.Drawing.Size(171, 31);
+            this.lbSPnumber.Size = new System.Drawing.Size(139, 26);
             this.lbSPnumber.TabIndex = 20;
             this.lbSPnumber.Text = "Số điện thoại";
             // 
@@ -109,9 +114,10 @@
             this.lbSAddress.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbSAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbSAddress.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbSAddress.Location = new System.Drawing.Point(43, 350);
+            this.lbSAddress.Location = new System.Drawing.Point(32, 284);
+            this.lbSAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSAddress.Name = "lbSAddress";
-            this.lbSAddress.Size = new System.Drawing.Size(105, 31);
+            this.lbSAddress.Size = new System.Drawing.Size(85, 26);
             this.lbSAddress.TabIndex = 19;
             this.lbSAddress.Text = "Địa chỉ:";
             // 
@@ -121,19 +127,20 @@
             this.lbSFname.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbSFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbSFname.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbSFname.Location = new System.Drawing.Point(43, 181);
+            this.lbSFname.Location = new System.Drawing.Point(32, 147);
+            this.lbSFname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSFname.Name = "lbSFname";
-            this.lbSFname.Size = new System.Drawing.Size(102, 31);
+            this.lbSFname.Size = new System.Drawing.Size(82, 26);
             this.lbSFname.TabIndex = 18;
             this.lbSFname.Text = "Họ tên:";
             // 
             // tbSFname
             // 
-            this.tbSFname.Location = new System.Drawing.Point(320, 181);
-            this.tbSFname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSFname.Location = new System.Drawing.Point(240, 147);
+            this.tbSFname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSFname.MaxLength = 30;
             this.tbSFname.Name = "tbSFname";
-            this.tbSFname.Size = new System.Drawing.Size(525, 38);
+            this.tbSFname.Size = new System.Drawing.Size(394, 32);
             this.tbSFname.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSFname.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -143,11 +150,11 @@
             // 
             // tbSDoB
             // 
-            this.tbSDoB.Location = new System.Drawing.Point(320, 268);
-            this.tbSDoB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSDoB.Location = new System.Drawing.Point(240, 218);
+            this.tbSDoB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSDoB.MaxLength = 10;
             this.tbSDoB.Name = "tbSDoB";
-            this.tbSDoB.Size = new System.Drawing.Size(525, 38);
+            this.tbSDoB.Size = new System.Drawing.Size(394, 32);
             this.tbSDoB.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSDoB.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -157,11 +164,11 @@
             // 
             // tbSAddress
             // 
-            this.tbSAddress.Location = new System.Drawing.Point(320, 343);
-            this.tbSAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSAddress.Location = new System.Drawing.Point(240, 279);
+            this.tbSAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSAddress.MaxLength = 50;
             this.tbSAddress.Name = "tbSAddress";
-            this.tbSAddress.Size = new System.Drawing.Size(525, 38);
+            this.tbSAddress.Size = new System.Drawing.Size(394, 32);
             this.tbSAddress.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSAddress.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -171,11 +178,11 @@
             // 
             // tbSPnumber
             // 
-            this.tbSPnumber.Location = new System.Drawing.Point(320, 422);
-            this.tbSPnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSPnumber.Location = new System.Drawing.Point(240, 343);
+            this.tbSPnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSPnumber.MaxLength = 15;
             this.tbSPnumber.Name = "tbSPnumber";
-            this.tbSPnumber.Size = new System.Drawing.Size(525, 38);
+            this.tbSPnumber.Size = new System.Drawing.Size(394, 32);
             this.tbSPnumber.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSPnumber.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -185,11 +192,11 @@
             // 
             // tbSICnumber
             // 
-            this.tbSICnumber.Location = new System.Drawing.Point(320, 511);
-            this.tbSICnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSICnumber.Location = new System.Drawing.Point(240, 415);
+            this.tbSICnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSICnumber.MaxLength = 15;
             this.tbSICnumber.Name = "tbSICnumber";
-            this.tbSICnumber.Size = new System.Drawing.Size(525, 38);
+            this.tbSICnumber.Size = new System.Drawing.Size(394, 32);
             this.tbSICnumber.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSICnumber.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -199,11 +206,11 @@
             // 
             // tbSEmail
             // 
-            this.tbSEmail.Location = new System.Drawing.Point(320, 597);
-            this.tbSEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSEmail.Location = new System.Drawing.Point(240, 485);
+            this.tbSEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSEmail.MaxLength = 50;
             this.tbSEmail.Name = "tbSEmail";
-            this.tbSEmail.Size = new System.Drawing.Size(525, 38);
+            this.tbSEmail.Size = new System.Drawing.Size(394, 32);
             this.tbSEmail.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSEmail.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -213,30 +220,30 @@
             // 
             // btSaveInfo
             // 
-            this.btSaveInfo.Location = new System.Drawing.Point(497, 658);
-            this.btSaveInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSaveInfo.Location = new System.Drawing.Point(373, 535);
+            this.btSaveInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btSaveInfo.Name = "btSaveInfo";
-            this.btSaveInfo.Size = new System.Drawing.Size(131, 54);
+            this.btSaveInfo.Size = new System.Drawing.Size(98, 44);
             this.btSaveInfo.TabIndex = 30;
             this.btSaveInfo.Values.Text = "Lưu";
             this.btSaveInfo.Click += new System.EventHandler(this.btSaveInfo_Click);
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(805, 735);
-            this.btExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btExit.Location = new System.Drawing.Point(604, 597);
+            this.btExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(117, 52);
+            this.btExit.Size = new System.Drawing.Size(88, 42);
             this.btExit.TabIndex = 31;
             this.btExit.Values.Text = "Thoát";
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // FormChangeInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(935, 750);
+            this.ClientSize = new System.Drawing.Size(701, 609);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btSaveInfo);
             this.Controls.Add(this.tbSEmail);
@@ -253,7 +260,7 @@
             this.Controls.Add(this.lbSFname);
             this.Controls.Add(this.lbTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormChangeInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa thông tin";

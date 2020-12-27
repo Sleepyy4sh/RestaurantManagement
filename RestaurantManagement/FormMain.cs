@@ -222,7 +222,7 @@ namespace RestaurantManagement
             {
                 if (reader.Read() == false) break;
                 lbFname.Text = reader.GetString(0);
-                lbDoB.Text = reader.GetDateTime(4).ToShortDateString();
+                lbDoB.Text = reader.GetDateTime(4).ToString("M/d/yyyy");
                 lbAddress.Text = reader.GetString(3);
                 lbPnumber.Text = reader.GetString(2);
                 lbICnumber.Text = reader.GetString(5);
