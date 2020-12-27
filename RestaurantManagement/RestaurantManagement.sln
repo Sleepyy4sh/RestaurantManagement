@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aaa", "aaa.csproj", "{7EB20996-4929-4DF7-A39A-B18346F52404}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup-RestaurantManagement", "..\Setup-RetaurantManagement\Setup-RetaurantManagement.vdproj", "{ED79BF20-BA40-45FE-88CC-8A6633D4DC20}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup-RestaurantManagement", "..\Setup-RestaurantManagement\Setup-RestaurantManagement.vdproj", "{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,12 @@ Global
 		{7EB20996-4929-4DF7-A39A-B18346F52404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB20996-4929-4DF7-A39A-B18346F52404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EB20996-4929-4DF7-A39A-B18346F52404}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED79BF20-BA40-45FE-88CC-8A6633D4DC20}.All|Any CPU.ActiveCfg = Debug
-		{ED79BF20-BA40-45FE-88CC-8A6633D4DC20}.Debug|Any CPU.ActiveCfg = Debug
-		{ED79BF20-BA40-45FE-88CC-8A6633D4DC20}.Release|Any CPU.ActiveCfg = Release
+		{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}.All|Any CPU.ActiveCfg = Debug
+		{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}.All|Any CPU.Build.0 = Debug
+		{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}.Debug|Any CPU.ActiveCfg = Debug
+		{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}.Debug|Any CPU.Build.0 = Debug
+		{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}.Release|Any CPU.ActiveCfg = Release
+		{3FC905D2-1F4F-4B32-9F5C-CB265555ACF0}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

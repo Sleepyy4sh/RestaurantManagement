@@ -193,11 +193,11 @@ namespace RestaurantManagement
             float h = pageQLNV.Size.Height / 100;
             float w = pageQLNV.Size.Width / 100;
 
-            cbSType.Font = new Font("Microsoft Sans Serif", heightFont / 1.6f);
+            cbSType.Font = new Font("Times New Roman", heightFont / 1.6f);
             cbSType.Size = new Size((int)w * 8, 0);
             cbSType.Location = new Point((int)w / 6, (int)h / 4);
 
-            tbSSearch.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
+            tbSSearch.Font = new Font("Times New Roman", heightFont / 1.4f);
             tbSSearch.Size = cbSType.Size;
             tbSSearch.Location = new Point(cbSType.Location.X, cbSType.Location.Y + cbSType.Size.Height + (int)h / 4);
 
@@ -205,16 +205,16 @@ namespace RestaurantManagement
             btSSearch.Size = new Size(cbSType.Size.Width / 5 * 3, 0);
             btSSearch.Location = new Point(tbSSearch.Location.X + tbSSearch.Size.Width - btSSearch.Size.Width, tbSSearch.Location.Y + tbSSearch.Size.Height + (int)h / 3);
 
-            dgStaff.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f);
-            dgStaff.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            dgStaff.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", heightFont / 1.5f);
+            dgStaff.DefaultCellStyle.Font = new Font("Times New Roman", heightFont / 2.0f);
             dgStaff.Size = new Size((int)w * 70, pageQLNV.Size.Height - btSSearch.Location.Y - (int)h * 2);
             dgStaff.Location = new Point(-1, btSSearch.Location.Y + btSSearch.Size.Height + (int)h * 2);
 
-            lbStaff.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
+            lbStaff.Font = new Font("Times New Roman", heightFont / 1.0f, FontStyle.Bold);
             lbStaff.Size = new Size((int)w * 15, 0);
             lbStaff.Location = new Point((int)w * 27, (int)h * 5);
 
-            lbSDetail.Font = new Font("Microsoft Sans Serif", heightFont / 1.0f, FontStyle.Bold);
+            lbSDetail.Font = new Font("Times New Roman", heightFont / 1.0f, FontStyle.Bold);
             lbSDetail.Size = new Size((int)w * 15, 0);
             lbSDetail.Location = new Point((int)w * 79, (int)h * 15);
 
@@ -226,7 +226,7 @@ namespace RestaurantManagement
 
             //Label
 
-            lbSUser.StateCommon.ShortText.Font = lbSFname.StateCommon.ShortText.Font = lbSPnumber.StateCommon.ShortText.Font = lbSAddress.StateCommon.ShortText.Font = lbSDoB.StateCommon.ShortText.Font = lbSICnumber.StateCommon.ShortText.Font = lbSEmail.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f);
+            lbSUser.StateCommon.ShortText.Font = lbSFname.StateCommon.ShortText.Font = lbSPnumber.StateCommon.ShortText.Font = lbSAddress.StateCommon.ShortText.Font = lbSDoB.StateCommon.ShortText.Font = lbSICnumber.StateCommon.ShortText.Font = lbSEmail.StateCommon.ShortText.Font = new Font("Times New Roman", heightFont / 1.4f);
             lbSUser.Size = lbSFname.Size = lbSPnumber.Size = lbSAddress.Size = lbSDoB.Size = lbSICnumber.Size = lbSEmail.Size = new Size((int)w * 1, 0);
 
             lbSUser.Location = new Point(lw, (int)h * 28);
@@ -239,7 +239,7 @@ namespace RestaurantManagement
 
             //Textbox
 
-            //tbSEmail.StateCommon.Content.Font = tbSUser.StateCommon.Content.Font = tbSFname.StateCommon.Content.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.font;  //new Font("Microsoft Sans Serif", heightFont / 2.4f);
+            //tbSEmail.StateCommon.Content.Font = tbSUser.StateCommon.Content.Font = tbSFname.StateCommon.Content.Font = tbSPnumber.StateCommon.Content.Font = tbSAddress.StateCommon.Content.Font = tbSDoB.StateCommon.Content.Font = tbSICnumber.StateCommon.Content.font;  //new Font("Times New Roman", heightFont / 2.4f);
             tbSUser.Size = tbSFname.Size = tbSPnumber.Size = tbSAddress.Size = tbSDoB.Size = tbSICnumber.Size = tbSEmail.Size = new Size((int)w * 17, (int)h);
 
             tbSUser.Location = new Point(tw, (int)h * 28);
@@ -250,9 +250,9 @@ namespace RestaurantManagement
             tbSICnumber.Location = new Point(tw, tbSDoB.Location.Y + tbSUser.Size.Height + th);
             tbSEmail.Location = new Point(tw, tbSICnumber.Location.Y + tbSUser.Size.Height + th);
 
-            btSReg.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-            btSDelete.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btSReg.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
+            btSDelete.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
+            btSUpdate.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
 
             btSReg.Size = btSUpdate.Size = btSDelete.Size = new Size((int)w * 8, (int)h * 6);
 
@@ -268,11 +268,11 @@ namespace RestaurantManagement
             w = pageThongKe.Size.Width / 100;
             h = pageThongKe.Size.Height / 100;
 
-            lbRType.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            lbRType.StateCommon.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
             lbRType.Size = new Size((int)w * 6, 0);
             lbRType.Location = new Point((int)w, (int)h * 2);
 
-            cbRType.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            cbRType.Font = new Font("Times New Roman", heightFont / 1.8f);
             cbRType.Size = new Size((int)w * 5, 0);
             cbRType.Location = new Point(lbRType.Location.X + lbRType.Size.Width + (int)w / 3 , (int)h * 2);
 
@@ -301,9 +301,9 @@ namespace RestaurantManagement
             cbRDay.Size = cbRType.Size;
             cbRDay.Location = new Point(lbRDay.Location.X + lbRDay.Size.Width + (int)w / 2, cbRYear.Location.Y);
 
-            btRWRevenue.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-            btRWBill.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
-            btRUpdate.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            btRWRevenue.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
+            btRWBill.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
+            btRUpdate.StateCommon.Content.ShortText.Font = new Font("Times New Roman", heightFont / 1.8f);
 
             btRWRevenue.Size = btRUpdate.Size = btRWBill.Size = new Size((int)w * 8, (int)h * 4);
 
@@ -311,12 +311,12 @@ namespace RestaurantManagement
             btRWBill.Location = new Point(btRWRevenue.Location.X + btRWRevenue.Size.Width + (int)w , btRWRevenue.Location.Y);
             btRUpdate.Location = new Point(btRWBill.Location.X + btRWBill.Size.Width + (int)w , btRWRevenue.Location.Y);
 
-            dgRevenue.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.2f);
-            dgRevenue.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            dgRevenue.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", heightFont / 1.2f);
+            dgRevenue.DefaultCellStyle.Font = new Font("Times New Roman", heightFont / 1.8f);
             dgRevenue.Size = new Size((int)w * 65, pageThongKe.Size.Height - btRWRevenue.Location.Y - btRWRevenue.Size.Height - (int)h);
             dgRevenue.Location = new Point(-1, btRWRevenue.Location.Y + btRWRevenue.Size.Height + (int)h * 2);
 
-            lbRBDetail.Font = new Font("Microsoft Sans Serif", heightFont / 0.9f);
+            lbRBDetail.Font = new Font("Times New Roman", heightFont / 0.9f);
             lbRBDetail.Size = new Size((int)w * 20, (int)h * 6);
             lbRBDetail.Location = new Point((int)w * 75, (int)h * 8);
 
@@ -326,7 +326,7 @@ namespace RestaurantManagement
             fpRBDTotal.Size = new Size((int)w * 20, pageThongKe.Size.Height - fpRBDetail.Location.Y - fpRBDetail.Size.Height);
             fpRBDTotal.Location = new Point(fpRBDetail.Location.X + fpRBDetail.Size.Width - fpRBDTotal.Size.Width, fpRBDetail.Location.Y + fpRBDetail.Size.Height);
 
-            lbRBDCost.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            lbRBDCost.Font = new Font("Times New Roman", heightFont / 1.8f);
             lbRBDCost.Size = new Size(fpRBDTotal.Size.Width, (int)h * 4);
 
             lbRBDTotal.Font = lbRBDDiscount.Font = lbRBDCost.Font;
@@ -335,29 +335,29 @@ namespace RestaurantManagement
             fpRDBTlb.Size = new Size((int)w * 8, pageThongKe.Size.Height - fpRBDetail.Location.Y - fpRBDetail.Size.Height);
             fpRDBTlb.Location = new Point(fpRBDetail.Location.X, fpRBDetail.Location.Y + fpRBDetail.Size.Height);
 
-            lbRBDClb.Font = new Font("Microsoft Sans Serif", heightFont / 1.8f);
+            lbRBDClb.Font = new Font("Times New Roman", heightFont / 1.8f);
             lbRBDClb.Size = new Size(fpRBDTotal.Size.Width, (int)h * 4);
 
             lbRBDDlb.Font = lbRBDTlb.Font = lbRBDClb.Font;
             lbRBDDlb.Size = lbRBDTlb.Size = lbRBDClb.Size;
 
-            fpRlbName.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f, FontStyle.Bold);
+            fpRlbName.Font = new Font("Times New Roman", heightFont / 1.5f, FontStyle.Bold);
             fpRlbName.Size = new Size((int)fpRBDetail.Width/6*3 -10, (int)h * 10);
 
             fpRlbCnt.Text = "SL";
-            fpRlbCnt.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f, FontStyle.Bold);
+            fpRlbCnt.Font = new Font("Times New Roman", heightFont / 1.4f, FontStyle.Bold);
             fpRlbCnt.Size = new Size((int)fpRBDetail.Width / 6*1 -10, (int)h * 10);
             
-            fpRlbPrice.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f, FontStyle.Bold);
+            fpRlbPrice.Font = new Font("Times New Roman", heightFont / 1.5f, FontStyle.Bold);
             fpRlbPrice.Size = new Size(fpRBDetail.Width / 6*2-10, (int)h * 10);
 
-            fpRlbN.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            fpRlbN.Font = new Font("Times New Roman", heightFont / 2.0f);
             fpRlbN.Size = new Size((int)fpRBDetail.Width / 6*3 - 10, (int)h * 4);
 
-            fpRlbC.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            fpRlbC.Font = new Font("Times New Roman", heightFont / 2.0f);
             fpRlbC.Size = new Size((int)fpRBDetail.Width / 6*1 - 10, (int)h * 4);
 
-            fpRlbP.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
+            fpRlbP.Font = new Font("Times New Roman", heightFont / 2.0f);
             fpRlbP.Size = new Size((int)fpRBDetail.Width / 6*2 - 10, (int)h * 4);
 
 

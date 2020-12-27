@@ -24,7 +24,7 @@ namespace RestaurantManagement
             //            MessageBox.Show(ConfigurationManager.AppSettings["database"]);
             //            configuration.Save(ConfigurationSaveMode.Modified, true);
             // Saves settings in application configuration file
-          //  Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            //  Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             // config.AppSettings.Settings.Remove("database");
             //config.Save(ConfigurationSaveMode.Minimal);
             string Test = "";

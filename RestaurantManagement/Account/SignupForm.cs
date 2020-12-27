@@ -226,10 +226,7 @@ namespace RestaurantManagement
                     try
                     {
                         string nameDB;
-                        using (StreamReader sr = new StreamReader("database.txt"))
-                        {
-                            nameDB = sr.ReadLine();
-                        }
+                        nameDB = ConfigurationManager.AppSettings["database"];
                         String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                         connection = new SqlConnection(connString);
                         connection.Open();

@@ -162,6 +162,7 @@ namespace RestaurantManagement
                         this.dgStaff.CurrentRow.Cells[4].Value = tbSDoB.Text;
                         this.dgStaff.CurrentRow.Cells[5].Value = tbSICnumber.Text;
                         this.dgStaff.CurrentRow.Cells[6].Value = tbSEmail.Text;
+                        MessageBox.Show("Cập nhật thông tin thành công");
                     }
                     catch
                     {
