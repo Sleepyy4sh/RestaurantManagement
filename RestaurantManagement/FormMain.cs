@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RestaurantManagement
 { 
@@ -49,10 +50,7 @@ namespace RestaurantManagement
             server = in4[0];
             ID = in4[1];
             Svpassword = in4[2];
-            using (StreamReader sr = new StreamReader("database.txt"))
-            {
-                nameDB = sr.ReadLine();
-            }
+            nameDB = System.Configuration.ConfigurationManager.AppSettings["database"];
         }
 
         public void AddFood(string name, string price, Byte[] byt,int isFood)
@@ -194,14 +192,18 @@ namespace RestaurantManagement
             ableDelete = !ableDelete;
             CheckDelete();
         }
-
         private void btMasterSignout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            File.Delete("database.txt");
-            this.Close();
-            Form formLoginMaster = new LoginMasterForm();
-            formLoginMaster.ShowDialog();
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings.Remove("database");
+            config.Save(ConfigurationSaveMode.Full);
+            // MessageBox.Show("Đã đăng xuất tài nhà hàng: "+ ConfigurationManager.AppSettings["database"]);
+
+            //this.Close();
+            //Form formLoginMaster = new LoginMasterForm();
+            //formLoginMaster.ShowDialog();
+            Application.Exit();
         }
 
         void InitAccount()

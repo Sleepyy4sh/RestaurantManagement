@@ -20,10 +20,7 @@ namespace RestaurantManagement
             this.parent = parent;
             initIn4Server();
             string nameDB;
-            using (StreamReader sr = new StreamReader("database.txt"))
-            {
-                nameDB = sr.ReadLine();
-            }
+            nameDB = System.Configuration.ConfigurationManager.AppSettings["database"];
             connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
             connection = new SqlConnection(connString);
             connection.Open();

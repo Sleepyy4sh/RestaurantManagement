@@ -42,7 +42,6 @@ E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.K
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\ComponentFactory.Krypton.Workspace.dll
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.dll
 E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\itextsharp.xml
-E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csprojAssemblyReference.cache
 E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangeInfo.resources
 E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.FormChangePass.resources
 E:\Clone2\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.AddTable.resources
@@ -94,3 +93,11 @@ G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\aaa
 G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\aaa.csproj.CopyComplete
 G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.exe
 G:\Nam 2\TrucQuan\Clone3\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.dll
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.AccessControl.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Permissions.xml
+E:\Clone2\RestaurantManagement\RestaurantManagement\bin\Debug\System.Security.Principal.Windows.xml

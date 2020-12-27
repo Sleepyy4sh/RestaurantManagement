@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.IO;
+using System.Configuration;
 
 namespace RestaurantManagement
 {
@@ -88,12 +89,11 @@ namespace RestaurantManagement
       
             connection.Close();
 
-            var myFile = File.Create("database.txt");
-            myFile.Close();
-            using (StreamWriter sw = new StreamWriter("database.txt"))
-            {
-                sw.WriteLine(nameDB);
-            }
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings.Add("database", nameDB);
+            config.Save(ConfigurationSaveMode.Full);
+            Application.Exit();
+            MessageBox.Show("Vui lòng mở lại chương trình để xác nhận");
         }
 
         bool whitespaceContain(string s)

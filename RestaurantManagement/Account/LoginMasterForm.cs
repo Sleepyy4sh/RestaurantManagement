@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.IO;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RestaurantManagement
 {
@@ -83,19 +84,26 @@ namespace RestaurantManagement
                         flag = true;
                         if (reader.GetString(1) == password)
                         {
-                            if (!File.Exists("database.txt"))
-                            {
-                                var myFile = File.Create("database.txt");
-                                myFile.Close();
-                                using (StreamWriter sw = new StreamWriter("database.txt"))
-                                {
-                                    sw.WriteLine(tbUsername.Text);
-                                }
-                            }
+                            //{ 
+                            //    if (!File.Exists("database.txt"))
+                            //    {
+                            //        var myFile = File.Create("database.txt");
+                            //        myFile.Close();
+                            //        using (StreamWriter sw = new StreamWriter("database.txt"))
+                            //        {
+                            //            sw.WriteLine(tbUsername.Text);
+                            //        }
+                            //    }
+                            //}
+                            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                            config.AppSettings.Settings.Add("database", tbUsername.Text);
+                            config.Save(ConfigurationSaveMode.Full);
 
+                            MessageBox.Show("Vui lòng mở lại chương trình để xác nhận");
+                            Application.Exit();
                             this.Hide();
-                            Form FormQLMenu = new FormMain(true, tbUsername.Text);
-                            FormQLMenu.ShowDialog();
+                            //Form FormQLMenu = new FormMain(true, tbUsername.Text);
+                            //FormQLMenu.ShowDialog(); 
                             this.Close();
                         }
                         else

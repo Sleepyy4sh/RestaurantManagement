@@ -93,7 +93,7 @@ namespace RestaurantManagement
         {
             if (this.dgStaff.SelectedRows.Count > 0)
             {
-                DialogResult ConfirmDelete = MessageBox.Show("Xác nhận xóa tài khoản ?", "", MessageBoxButtons.OKCancel);
+                DialogResult ConfirmDelete = MessageBox.Show("Xác nhận xóa nhân viên ?", "", MessageBoxButtons.OKCancel);
                 if (ConfirmDelete == DialogResult.OK)
                 {
                     //DeleteAccount

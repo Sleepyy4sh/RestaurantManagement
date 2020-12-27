@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Security.Cryptography;
+using System.Configuration;
 
 namespace RestaurantManagement
 {
@@ -64,10 +65,7 @@ namespace RestaurantManagement
                 string newPass = EncodePass(tbNewPass.Text);
 
                 string nameDB;
-                using (StreamReader sr = new StreamReader("database.txt"))
-                {
-                    nameDB = sr.ReadLine();
-                }
+                nameDB = ConfigurationManager.AppSettings["database"];
 
                 String connString = @"Server=" + server + ";Database=" + nameDB + ";User Id=" + ID + ";Password=" + Svpassword + ";";
                 SqlConnection connection = new SqlConnection(connString);

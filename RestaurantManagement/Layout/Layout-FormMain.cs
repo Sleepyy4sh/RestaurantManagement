@@ -342,22 +342,23 @@ namespace RestaurantManagement
             lbRBDDlb.Size = lbRBDTlb.Size = lbRBDClb.Size;
 
             fpRlbName.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f, FontStyle.Bold);
-            fpRlbName.Size = new Size((int)w * 15, (int)h * 10);
+            fpRlbName.Size = new Size((int)fpRBDetail.Width/6*3 -10, (int)h * 10);
 
+            fpRlbCnt.Text = "SL";
             fpRlbCnt.Font = new Font("Microsoft Sans Serif", heightFont / 1.4f, FontStyle.Bold);
-            fpRlbCnt.Size = new Size((int)w * 5, (int)h * 10);
+            fpRlbCnt.Size = new Size((int)fpRBDetail.Width / 6*1 -10, (int)h * 10);
             
             fpRlbPrice.Font = new Font("Microsoft Sans Serif", heightFont / 1.5f, FontStyle.Bold);
-            fpRlbPrice.Size = new Size((int)w * 7, (int)h * 10);
+            fpRlbPrice.Size = new Size(fpRBDetail.Width / 6*2-10, (int)h * 10);
 
             fpRlbN.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            fpRlbN.Size = new Size((int)w * 15, (int)h * 4);
+            fpRlbN.Size = new Size((int)fpRBDetail.Width / 6*3 - 10, (int)h * 4);
 
             fpRlbC.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            fpRlbC.Size = new Size((int)w * 4, (int)h * 4);
+            fpRlbC.Size = new Size((int)fpRBDetail.Width / 6*1 - 10, (int)h * 4);
 
             fpRlbP.Font = new Font("Microsoft Sans Serif", heightFont / 2.0f);
-            fpRlbP.Size = new Size((int)w * 7, (int)h * 4);
+            fpRlbP.Size = new Size((int)fpRBDetail.Width / 6*2 - 10, (int)h * 4);
 
 
         }
