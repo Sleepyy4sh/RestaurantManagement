@@ -60,10 +60,10 @@ namespace RestaurantManagement
 
         private void btComfirm_Click(object sender, EventArgs e)
         {
-            if ((cbType.SelectedIndex == 0) && (tbValue.Text != "") && (Int64.Parse(tbValue.Text) >= 100))
+            if ((cbType.SelectedIndex == 0) && (tbValue.Text != "") && (Int64.Parse(tbValue.Text) > 100))
                 MessageBox.Show("% Phải nhỏ hơn hoặc bằng 100%");
             else
-            if (Int64.Parse(tbValue.Text) > Sum * 1000)
+            if (tbValue.Text!="" && Int64.Parse(tbValue.Text) > Sum * 1000)
                 MessageBox.Show("Tiền giảm giá phải nhỏ hơn hoặc bằng tổng tiền");
             else
             {
