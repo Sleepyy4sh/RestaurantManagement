@@ -96,6 +96,17 @@ namespace RestaurantManagement
                             command = new SqlCommand(sqlQuery, connection);
                             reader = command.ExecuteReader();
                             reader.Close();
+
+                            sqlQuery = "USE MASTER_USER";
+                            command = new SqlCommand(sqlQuery, connection);
+                            reader = command.ExecuteReader();
+                            reader.Close();
+
+                            sqlQuery = "UPDATE USERS SET PASS = '" + newPass + "' WHERE USERNAME='" + username + "'";
+                            command = new SqlCommand(sqlQuery, connection);
+                            reader = command.ExecuteReader();
+                            reader.Close();
+
                             MessageBox.Show("Đổi mật khẩu thành công");
                             this.Close();
                             break;
